@@ -1,0 +1,105 @@
+.navbar-shadow {
+  filter: drop-shadow(0px 0px 10px black);
+}
+
+.nav-link-hover a {
+  padding: 10px 20px;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  -webkit-transition: 0.3s ease-out;
+  -moz-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+.nav-link-hover a span:before {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-top: 2px solid #b014a5;
+  border-left: 2px solid #b014a5;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.nav-link-hover a span:after {
+  width: 6px;
+  height: 6px;
+  background: transparent;
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-right: 2px solid #b014a5;
+  border-bottom: 2px solid #b014a5;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.nav-link-hover a:before {
+  width: 6px;
+  height: 6px;
+  background: transparent;
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-right: 2px solid #b014a5;
+  border-top: 2px solid #b014a5;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.nav-link-hover a:after {
+  width: 6px;
+  height: 6px;
+  background: transparent;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-left: 2px solid #b014a5;
+  border-bottom: 2px solid #b014a5;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.nav-link-hover a:hover {
+  color: #b014a5;
+}
+
+.nav-link-hover a:hover:before {
+  opacity: 1;
+  right: 5px;
+  top: 5px;
+}
+
+.nav-link-hover a:hover:after {
+  opacity: 1;
+  left: 5px;
+  bottom: 5px;
+}
+
+.nav-link-hover a:hover span:before {
+  opacity: 1;
+  left: 5px;
+  top: 5px;
+}
+
+.nav-link-hover a:hover span:after {
+  opacity: 1;
+  right: 5px;
+  bottom: 5px;
+}
