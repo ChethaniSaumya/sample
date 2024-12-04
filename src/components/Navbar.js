@@ -6,7 +6,7 @@ import "../styles/Navbar.css";
 const Navbar = () => {
   return (
     <section
-      className="bg-[#41305F6B] py-6 backdrop-blur-sm"
+      className="relative bg-[#41305F6B] py-6 backdrop-blur-md z-50"
       style={{
         clipPath:
           "polygon(0% 0%, 100% 0%, 100% 60%, 34% 60%, 32% 100%, 0% 100%)",
@@ -43,7 +43,7 @@ const Navbar = () => {
               <a href="/">MORE</a>
             </li>
           </ul>
-          <button className="bg-gradient-to-r from-[#B014A5] via-[#6514DB] to-[#B014A5] bg-[length:200%_200%] font-vermin-vibes-v text-[13px] px-[45px] py-[10px] transition-all duration-500 hover:bg-right hover:shadow-[0_0_5px_0_#B014A5]">
+          <button className="bg-gradient-to-r from-[#B014A5] via-[#6514DB] to-[#B014A5] bg-[length:200%_200%] font-vermin-vibes-v text-[13px] px-[3.5em] py-[0.8em] transition-all duration-500 hover:bg-right hover:shadow-[0_0_5px_0_#B014A5]">
             CONNECT
           </button>
         </div>
