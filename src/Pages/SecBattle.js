@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -12,8 +12,22 @@ import letterS from "../assets/versus-letter-s.png";
 import gary from "../assets/GARY-removebg.png";
 import middleCrystal from "../assets/sec-battle-middle-crystal.png";
 import bottomCrystal from "../assets/sec-battle-bottom-crystal.png";
+import "../styles/SecBattle.css";
 
 const SecBattle = () => {
+  const [isVisble, setIsVisble] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsVisble(true);
+      setTimeout(() => {
+        setIsVisble(false);
+      }, 2500);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div
       className="relative min-h-screen flex flex-col bg-cover bg-center text-white bg-white overflow-x-hidden"
@@ -47,24 +61,35 @@ const SecBattle = () => {
               style={{ backgroundImage: `url(${richard})` }}
             ></div>
           </div>
+
           {/* VS */}
           <div className="relative col-span-4 flex flex-col items-center justify-center gap-y-14">
-            <div className="flex">
-              <img
-                src={letterV}
-                alt="Letter V"
-                className="object-contain -translate-y-2 translate-x-3"
-              />
-              <img
-                src={letterS}
-                alt="Letter S"
-                className="object-contain translate-y-2 -translate-x-3"
-              />
+            <div className="relative flex z-[2] vs-bounce-animation">
+              {isVisble && (
+                <div className="absolute top-0 z-[1]">
+                  <div className="absolute inset-0 z-10"></div>
+                  <iframe
+                    src="https://giphy.com/embed/Vd8jRsGoIOZPXoREMe"
+                    className="-translate-y-2 pointer-events-none"
+                    width={250}
+                    height={180}
+                    allowFullScreen
+                    title="Lightning Bolt GIF"
+                  ></iframe>
+                </div>
+              )}
+              <div className="letter-v-slide-in">
+                <img src={letterV} alt="Letter V" className="object-contain" />
+              </div>
+              <div className="letter-s-slide-in z-[2]">
+                <img src={letterS} alt="Letter S" className="object-contain" />
+              </div>
             </div>
             <button className="bg-gradient-to-r from-[#B014A5] via-[#6514DB] to-[#B014A5] bg-[length:200%_200%] font-vermin-vibes-v text-[20px] px-[3.8em] py-[0.9em] transition-all duration-500 rounded-full hover:bg-right hover:shadow-[0_0_10px_0_#B014A5] hover:[text-shadow:_0_0_3px_white]">
               COMBAT
             </button>
           </div>
+
           {/* Enemy */}
           <div className="col-span-4">
             <HealthBar type="enemy" label="enemy" healthPercentage={96} />
@@ -75,6 +100,7 @@ const SecBattle = () => {
           </div>
         </div>
       </div>
+
       <Footer />
     </div>
   );
