@@ -1,0 +1,39 @@
+.vs-bounce-animation {
+  animation: vs-bounce-animation 3s ease-in-out infinite;
+}
+
+.letter-v-slide-in {
+  animation: letter-v-slide-in 1.5s forwards ease-out;
+}
+
+.letter-s-slide-in {
+  animation: letter-s-slide-in 1.5s forwards ease-out;
+}
+
+@keyframes vs-bounce-animation {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+@keyframes letter-v-slide-in {
+  from {
+    transform: translateX(-240%) translateY(-8px);
+  }
+  to {
+    transform: translateX(12px) translateY(-8px);
+  }
+}
+
+@keyframes letter-s-slide-in {
+  from {
+    transform: translateX(240%) translateY(8px);
+  }
+  to {
+    transform: translateX(-12px) translateY(8px);
+  }
+}

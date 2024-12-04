@@ -15,7 +15,7 @@ import cz from "../assets/cz-without-bg.png";
 import elom from "../assets/elom-without-bg.png";
 import crystalBg from "../assets/hero-crystal-bg.png";
 import bottomCrystal from "../assets/hero-bottom-crystal.png";
-import logo from "../assets/logo.png";
+import Footer from "../components/Footer";
 import "../styles/Home.css";
 
 const heroData = [
@@ -93,7 +93,7 @@ const Home = () => {
                 {/* <div className="h-[64px]  relative overflow-hidden bg-white/20 h-[288px]"> */}
                 <div className="relative">
                   <button
-                    className="relative flex items-center gap-x-[1.3125em] bg-gradient-to-r from-[#B014A5] via-[#6514DB] to-[#B014A5] bg-[length:200%_200%] font-vermin-vibes-v px-[1.15625em] transition-all duration-500 hover:bg-right hover:shadow-[0_0_5px_0_#B014A5] z-[1]"
+                    className="relative flex items-center gap-x-[1.3125em] bg-gradient-to-r from-[#B014A5] via-[#6514DB] to-[#B014A5] bg-[length:200%_200%] font-vermin-vibes-v px-[1.15625em] transition-all duration-500 hover:bg-right hover:shadow-[0_0_5px_0_#B014A5] hover:[text-shadow:_0_0_3px_white] z-[1]"
                     onClick={() => setIsOpen((prev) => !prev)}
                   >
                     BUY CHEST{" "}
@@ -178,21 +178,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="h-[160px] bg-black/10 backdrop-blur-md">
-        <div className="container h-full mx-auto flex items-center justify-center gap-x-[60px]">
-          <div className="w-[337px] h-px bg-white/50"></div>
-          <a
-            href="/"
-            className="flex items-center gap-3 hover:text-white hover:scale-105 transition-transform duration-150 will-change-transform"
-          >
-            <div className="size-[52px] rounded-full bg-white">
-              <img src={logo} alt="Pulseheroes" className="rounded-full" />
-            </div>
-            <h2 className="text-[25px] font-bold">PULSEHEROES</h2>
-          </a>
-          <div className="w-[337px] h-px bg-white/50"></div>
-        </div>
-      </section>
+      <Footer />
     </div>
   );
 };

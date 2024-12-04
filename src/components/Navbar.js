@@ -37,7 +37,7 @@ const Navbar = () => {
               <a href="/">BATTLE</a>
             </li>
             <li className="nav-link-hover font-bold">
-              <a href="/">SEC BATTLE</a>
+              <a href="/sec-battle">SEC BATTLE</a>
             </li>
             <li className="nav-link-hover font-bold">
               <a href="/">MORE</a>
