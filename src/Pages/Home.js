@@ -93,7 +93,7 @@ const Home = () => {
                 {/* <div className="h-[64px]  relative overflow-hidden bg-white/20 h-[288px]"> */}
                 <div className="relative">
                   <button
-                    className="relative flex items-center gap-x-[1.3125em] bg-gradient-to-r from-[#B014A5] via-[#6514DB] to-[#B014A5] bg-[length:200%_200%] font-vermin-vibes-v px-[1.15625em] transition-all duration-500 hover:bg-right hover:shadow-[0_0_5px_0_#B014A5] z-[1]"
+                    className="relative flex items-center gap-x-[1.3125em] bg-gradient-to-r from-[#B014A5] via-[#6514DB] to-[#B014A5] bg-[length:200%_200%] font-vermin-vibes-v px-[1.15625em] transition-all duration-500 hover:bg-right hover:shadow-[0_0_5px_0_#B014A5] hover:[text-shadow:_0_0_3px_white] z-[1]"
                     onClick={() => setIsOpen((prev) => !prev)}
                   >
                     BUY CHEST{" "}
