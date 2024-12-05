@@ -2,12 +2,22 @@
   animation: vs-bounce-animation 3s ease-in-out infinite;
 }
 
-.letter-v-slide-in {
-  animation: letter-v-slide-in 1.5s forwards ease-out;
+/* .letter-v-slide-in {
+  transform: translateX(-28px) scale(0.8);
+  opacity: 0;
 }
 
 .letter-s-slide-in {
-  animation: letter-s-slide-in 1.5s forwards ease-out;
+  transform: translateX(28px) scale(0.8);
+  opacity: 0;
+} */
+
+.letter-v-slide-in {
+  animation: letter-v-slide-in 1s ease-in-out forwards;
+}
+
+.letter-s-slide-in {
+  animation: letter-s-slide-in 1s ease-in-out forwards;
 }
 
 @keyframes vs-bounce-animation {
@@ -21,19 +31,39 @@
 }
 
 @keyframes letter-v-slide-in {
-  from {
-    transform: translateX(-240%) translateY(-8px);
+  0% {
+    transform: translateX(-28px) translateY(-8px) scale(0.8);
+    opacity: 0;
   }
-  to {
-    transform: translateX(12px) translateY(-8px);
+  30% {
+    transform: translateX(-28px) translateY(-8px) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(16px) translateY(-8px) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(8px) translateY(-8px) scale(1);
+    opacity: 1;
   }
 }
 
 @keyframes letter-s-slide-in {
-  from {
-    transform: translateX(240%) translateY(8px);
+  0% {
+    transform: translateX(28px) translateY(8px) scale(0.8);
+    opacity: 0;
   }
-  to {
-    transform: translateX(-12px) translateY(8px);
+  30% {
+    transform: translateX(28px) translateY(8px) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-16px) translateY(8px) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-8px) translateY(8px) scale(1);
+    opacity: 1;
   }
 }

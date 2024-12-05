@@ -15,17 +15,37 @@ import bottomCrystal from "../assets/sec-battle-bottom-crystal.png";
 import "../styles/SecBattle.css";
 
 const SecBattle = () => {
-  const [isVisble, setIsVisble] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setIsVisble(true);
+  //     setTimeout(() => {
+  //       setIsVisble(false);
+  //     }, 2500);
+  //   }, 4000);
+
+  //   return () => clearInterval(interval);
+  // }, []);
 
   useEffect(() => {
+    setIsVisible(true);
+
+    const timerTwo = setTimeout(() => {
+      setIsVisible(false);
+    }, 1300);
+
     const interval = setInterval(() => {
-      setIsVisble(true);
+      setIsVisible(true);
       setTimeout(() => {
-        setIsVisble(false);
+        setIsVisible(false);
       }, 2500);
     }, 4000);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearTimeout(timerTwo);
+      clearInterval(interval);
+    };
   }, []);
 
   return (
@@ -63,9 +83,9 @@ const SecBattle = () => {
           </div>
 
           {/* VS */}
-          <div className="relative col-span-4 flex flex-col items-center justify-center gap-y-14">
+          <div className="relative col-span-4 flex flex-col items-center justify-center gap-y-14 tests">
             <div className="relative flex z-[2] vs-bounce-animation">
-              {isVisble && (
+              {isVisible && (
                 <div className="absolute top-0 z-[1]">
                   <div className="absolute inset-0 z-10"></div>
                   <iframe
