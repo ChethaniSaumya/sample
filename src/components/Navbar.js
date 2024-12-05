@@ -28,16 +28,16 @@ const Navbar = () => {
               <a href="/">CHESTS PRESALE</a>
             </li>
             <li className="nav-link-hover font-bold">
-              <a href="/">BUY CHESTS</a>
+              <a href="buy-chests">BUY CHESTS</a>
             </li>
             <li className="nav-link-hover font-bold">
               <a href="/">MARKETPLACE</a>
             </li>
             <li className="nav-link-hover font-bold">
-              <a href="/">BATTLE</a>
+              <a href="battle">BATTLE</a>
             </li>
             <li className="nav-link-hover font-bold">
-              <a href="/sec-battle">SEC BATTLE</a>
+              <a href="sec-batttle">SEC BATTLE</a>
             </li>
             <li className="nav-link-hover font-bold">
               <a href="/">MORE</a>
