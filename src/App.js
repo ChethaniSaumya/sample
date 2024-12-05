@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Home from "./Pages/Home";
 import Fight from "./Pages/Fight";
-import Vs from "./Pages/Vs";
+import ChestOpening from "./Pages/chestOpening";
+import SecBattle from './Pages/secBattle';
  
 function App() {
 
@@ -12,10 +13,11 @@ function App() {
 				<Routes>
 
 					<Route path='/' element={<Home />} />
-					<Route path='sec-batttle' element={<Fight />} />
-					<Route path='batttle' element={<Vs />} />
+					<Route path='battle' element={<Fight />} />
+					<Route path='sec-batttle' element={<SecBattle />} />
+					<Route path='buy-chests' element={<ChestOpening />} />
   
-				</Routes>
+				</Routes> 
 			</BrowserRouter>
 			<div>
 		
