@@ -2,17 +2,18 @@ import React, { useState } from "react";
 
 import Navbar from "../components/Navbar";
 import DownArrowHeadIcon from "../components/DownArrowHeadIcon";
-import UpArrowHeadIcon from "../components/UpArrowHeadIcon";
 
 import bg from "../assets/bg2.png";
-import topCrystal from "../assets/hero-top-crystal.png";
 import treasure from "../assets/treasure.png";
-import richard from "../assets/richard copy.png";
-import terrain from "../assets/hero-terrain.png";
+import richardHeroImage from "../assets/richard copy.png";
 import cardLayout from "../assets/card-layout.png";
-import biden from "../assets/biden-without-bg.png";
-import cz from "../assets/cz-without-bg.png";
-import elom from "../assets/elom-without-bg.png";
+import vitalip from "../assets/heroes/vitalip.png";
+import richard from "../assets/heroes/richard.png";
+import gz from "../assets/heroes/gz.png";
+import trunk from "../assets/heroes/trunk.png";
+import jesus from "../assets/heroes/jesus.png";
+import elom from "../assets/heroes/elom.png";
+import satoshi from "../assets/heroes/satoshi.png";
 import crystalBg from "../assets/hero-crystal-bg.png";
 import bottomCrystal from "../assets/hero-bottom-crystal.png";
 import Footer from "../components/Footer";
@@ -20,28 +21,32 @@ import "../styles/Home.css";
 
 const heroData = [
   {
-    image: biden,
-    name: "biden",
+    image: vitalip,
+    name: "vitalip",
   },
   {
-    image: cz,
-    name: "cz",
+    image: richard,
+    name: "richard",
+  },
+  {
+    image: gz,
+    name: "gz",
+  },
+  {
+    image: trunk,
+    name: "trunk",
+  },
+  {
+    image: jesus,
+    name: "jesus",
   },
   {
     image: elom,
     name: "elom",
   },
   {
-    image: biden,
-    name: "biden",
-  },
-  {
-    image: cz,
-    name: "cz",
-  },
-  {
-    image: elom,
-    name: "elom",
+    image: satoshi,
+    name: "satoshi",
   },
 ];
 
@@ -50,7 +55,7 @@ const Home = () => {
 
   return (
     <div
-      className="relative bg-cover bg-center text-white bg-white overflow-x-hidden"
+      className="relative bg-cover bg-center text-white bg-white overflow-hidden"
       style={{ backgroundImage: `url(${bg})` }}
     >
       <Navbar />
@@ -64,14 +69,9 @@ const Home = () => {
       {/* Middle right leaklight */}
       <div className="absolute top-1/2 -translate-y-1/2 -right-[80px] size-[550px] bg-[#9F129A] rounded-full blur-[140px]"></div>
 
-      {/* Top crystal */}
-      <div className="absolute -top-[60px] -right-[70px]">
-        <img src={topCrystal} alt="Crystal" />
-      </div>
-
       {/* Bottom crystal */}
-      <div className="absolute bottom-[40px] -left-[100px]">
-        <img src={bottomCrystal} alt="Crystal" />
+      <div className="absolute -bottom-24 -left-[40px]">
+        <img src={bottomCrystal} alt="Crystal" className="size-fit" />
       </div>
 
       {/* Hero section */}
@@ -97,7 +97,14 @@ const Home = () => {
                     onClick={() => setIsOpen((prev) => !prev)}
                   >
                     BUY CHEST{" "}
-                    {!isOpen ? <DownArrowHeadIcon /> : <UpArrowHeadIcon />}
+                    <div
+                      className={`${
+                        isOpen ? "-rotate-180" : ""
+                      } transition-transform duration-200 ease-in-out`}
+                    >
+                      <DownArrowHeadIcon />
+                    </div>
+                    {/* {!isOpen ? <DownArrowHeadIcon c /> : <UpArrowHeadIcon />} */}
                   </button>
                   <div
                     className={`${
@@ -129,7 +136,7 @@ const Home = () => {
           </div>
           <div className="col-span-6">
             <div className="relative z-[1]">
-              <img src={richard} alt="Richard" />
+              <img src={richardHeroImage} alt="Richard" />
               <div className="absolute left-1/2 bottom-[50px] -translate-x-full w-32 h-[1000px] bg-gradient-to-t from-[#460844] to-[#AC14A6] -z-[1]"></div>
             </div>
           </div>
@@ -137,18 +144,19 @@ const Home = () => {
       </section>
 
       {/* Hero terrain */}
-      <div className="relative w-full -mt-36 z-[1]">
+      {/* <div className="relative w-full -mt-36 z-[1]">
         <img src={terrain} alt="terrain" className="w-full" />
         <div className="absolute left-0 bottom-0 w-full h-52 bg-gradient-to-t from-black to-transparent"></div>
-      </div>
+      </div> */}
 
       {/* Card section */}
-      <section
-        className="relative bg-cover bg-center"
-        style={{ backgroundImage: `url(${crystalBg})` }}
-      >
-        <div className="absolute left-0 top-0 w-full h-52 bg-gradient-to-b from-black to-transparent"></div>
-        <div className="relative pt-[260px] pb-[40px] container mx-auto z-[1] flex justify-between">
+      <section className="relative">
+        <div className="absolute top-0 left-0 right-0 w-fit mx-auto -translate-y-1/4">
+          <img src={crystalBg} alt="Crystal" className="size-fit" />
+        </div>
+
+        {/* <div className="absolute left-0 top-0 w-full h-52 bg-gradient-to-b from-black to-transparent"></div> */}
+        <div className="relative container mx-auto pb-[100px] z-[1] flex justify-around">
           {/* <article
             className="w-fit flex items-center justify-center"
             style={{
@@ -167,10 +175,13 @@ const Home = () => {
           {heroData.map(({ image, name }) => (
             <article className="relative w-[176px] h-[232px] flex items-end justify-end transition-transform duration-300 hover:scale-105 hover:-translate-y-1">
               <img src={cardLayout} alt="Card layout" className="absolute" />
-              <div className="absolute right-[15px] bottom-0 w-[190px] flex justify-center">
-                <img src={image} alt="hero" />
+              <div
+                className="absolute inset-0 w-[90%] h-[98%] m-auto bg-contain bg-no-repeat bg-center"
+                style={{ backgroundImage: `url(${image})` }}
+              >
+                {/* <img src={image} alt="hero" /> */}
               </div>
-              <p className="relative font-vermin-vibes-v text-[19px] mb-1 me-6 z-[1]">
+              <p className="absolute bottom-0 left-0 right-0 w-fit mx-auto translate-y-full font-vermin-vibes-v text-[19px] z-[1]">
                 {name}
               </p>
             </article>

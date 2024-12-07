@@ -4,7 +4,7 @@ import logo from "../assets/logo.png";
 
 const Footer = () => {
   return (
-    <section className="h-[160px] bg-black/10 backdrop-blur-md">
+    <section className="h-[160px] bg-black/10 backdrop-blur-md z-50">
       <div className="container h-full mx-auto flex items-center justify-center gap-x-[60px]">
         <div className="w-[337px] h-px bg-white/50"></div>
         <a
