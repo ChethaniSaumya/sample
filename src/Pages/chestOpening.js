@@ -73,7 +73,7 @@ const ChestOpening = () => {
 
 				<div className='btns3'>
 					<button className='btn1' onClick={chestOpen}><img src={chest} /> <div className='txt'><span>04</span> OPEN CHEST</div></button>
-					<button className='btn2'><div>Putchase Crates</div></button>
+					<button className='btn2'><div>Purchase Crates</div></button>
 
 					<div className="relative">
 						<button
