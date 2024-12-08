@@ -3,6 +3,7 @@ import "../styles/ChestOpening.css";
 
 import cl from '../assets/chainlink.png';
 import chest from '../assets/chest.png';
+import chestAnim from '../assets/chestAnimation.mp4';
 import logo from '../assets/logo.png';
 import Navbar from "../components/Navbar";
 import treasure from "../assets/treasure.png";
@@ -47,7 +48,7 @@ const ChestOpening = () => {
 
 	return (
 
-		<div className='cont'>
+		<div className='contMain'>
 
 			<Navbar />
 
