@@ -363,7 +363,7 @@
     width: 100%;
   }
 
-  .title {
+  .titleMain {
     font-family: 'American Captain', sans-serif;
     color: white;
     font-size: 45px;
@@ -372,12 +372,12 @@
     margin-top: 3vh;
   }
 
-  .title span {
+  .titleMain span {
     color: #F241E5;
     font-family: 'American Captain', sans-serif;
   }
 
-  .title2 {
+  .title2Main {
     text-align: center;
     font-size: 22px;
     color: white;
@@ -388,7 +388,7 @@
     margin: auto
   }
 
-  .title2 img {
+  .title2Main img {
     width: 130px;
     margin-left: 15px;
   }
@@ -1126,7 +1126,7 @@
     width: 100%;
   }
 
-  .title {
+  .titleMain {
     font-family: 'American Captain', sans-serif;
     color: white;
     font-size: 50px;
@@ -1135,12 +1135,12 @@
     margin-top: 3vh;
   }
 
-  .title span {
+  .titleMain span {
     color: #F241E5;
     font-family: 'American Captain', sans-serif;
   }
 
-  .title2 {
+  .title2Main {
     text-align: center;
     font-size: 22px;
     color: white;
@@ -1151,7 +1151,7 @@
     margin: auto
   }
 
-  .title2 img {
+  .title2Main img {
     width: 130px;
     margin-left: 15px;
   }
@@ -1892,7 +1892,7 @@
     width: 100%;
   }
 
-  .title {
+  .titleMain {
     font-family: 'American Captain', sans-serif;
     color: white;
     font-size: 55px;
@@ -1901,12 +1901,12 @@
     margin-top: 3vh;
   }
 
-  .title span {
+  .titleMain span {
     color: #F241E5;
     font-family: 'American Captain', sans-serif;
   }
 
-  .title2 {
+  .title2Main {
     text-align: center;
     font-size: 22px;
     color: white;
@@ -1917,7 +1917,7 @@
     margin: auto
   }
 
-  .title2 img {
+  .title2Main img {
     width: 130px;
     margin-left: 15px;
   }
@@ -2632,7 +2632,7 @@
     width: 100%;
   }
 
-  .title {
+  .titleMain {
     font-family: 'American Captain', sans-serif;
     color: white;
     font-size: 55px;
@@ -2641,12 +2641,12 @@
     margin-top: 3vh;
   }
 
-  .title span {
+  .titleMain span {
     color: #F241E5;
     font-family: 'American Captain', sans-serif;
   }
 
-  .title2 {
+  .title2Main {
     text-align: center;
     font-size: 22px;
     color: white;
@@ -2657,7 +2657,7 @@
     margin: auto
   }
 
-  .title2 img {
+  .title2Main img {
     width: 130px;
     margin-left: 15px;
   }
@@ -3367,7 +3367,7 @@
     width: 100%;
   }
 
-  .title {
+  .titleMain {
     font-family: 'American Captain', sans-serif;
     color: white;
     font-size: 55px;
@@ -3376,12 +3376,12 @@
     margin-top: 3vh;
   }
 
-  .title span {
+  .titleMain span {
     color: #F241E5;
     font-family: 'American Captain', sans-serif;
   }
 
-  .title2 {
+  .title2Main {
     text-align: center;
     font-size: 22px;
     color: white;
@@ -3392,7 +3392,7 @@
     margin: auto
   }
 
-  .title2 img {
+  .title2Main img {
     width: 130px;
     margin-left: 15px;
   }
@@ -4103,7 +4103,7 @@
     width: 100%;
   }
 
-  .title {
+  .titleMain {
     font-family: 'American Captain', sans-serif;
     color: white;
     font-size: 62px;
@@ -4112,12 +4112,12 @@
     margin-top: 7vh;
   }
 
-  .title span {
+  .titleMain span {
     color: #F241E5;
     font-family: 'American Captain', sans-serif;
   }
 
-  .title2 {
+  .title2Main {
     text-align: center;
     font-size: 22px;
     color: white;
@@ -4128,7 +4128,7 @@
     margin: auto
   }
 
-  .title2 img {
+  .title2Main img {
     width: 130px;
     margin-left: 15px;
   }
@@ -4838,7 +4838,7 @@
     width: 100%;
   }
 
-  .title {
+  .titleMain {
     font-family: 'American Captain', sans-serif;
     color: white;
     font-size: 90px;
@@ -4847,12 +4847,12 @@
     margin-top: 7vh;
   }
 
-  .title span {
+  .titleMain span {
     color: #F241E5;
     font-family: 'American Captain', sans-serif;
   }
 
-  .title2 {
+  .title2Main {
     text-align: center;
     font-size: 35px;
     color: white;
@@ -4863,7 +4863,7 @@
     margin: auto
   }
 
-  .title2 img {
+  .title2Main img {
     width: 180px;
     margin-left: 35px;
   }
@@ -5584,7 +5584,7 @@
     width: 100%;
   }
 
-  .title {
+  .titleMain {
     font-family: 'American Captain', sans-serif;
     color: white;
     font-size: 140px;
@@ -5593,12 +5593,12 @@
     margin-top: 8vh;
   }
 
-  .title span {
+  .titleMain span {
     color: #F241E5;
     font-family: 'American Captain', sans-serif;
   }
 
-  .title2 {
+  .title2Main {
     text-align: center;
     font-size: 45px;
     color: white;
@@ -5609,7 +5609,7 @@
     margin: auto
   }
 
-  .title2 img {
+  .title2Main img {
     width: 250px;
     margin-left: 35px;
   }
