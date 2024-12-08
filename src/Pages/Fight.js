@@ -107,8 +107,6 @@ const Vs = () => {
 	};
 
 	return (
-		<div class="allWrap">
-			<div class="light">
 
 				<div className='cont3'>
 					<div className='cont-2'>
@@ -304,11 +302,8 @@ const Vs = () => {
 					</div>
 
 				</div>
-			</div>
 
-
-		</div >
-	)
+ 	)
 
 }
 export default Vs;
