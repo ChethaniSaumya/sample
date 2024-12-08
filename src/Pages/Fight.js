@@ -82,6 +82,14 @@ const Vs = () => {
 		return visible;
 	};
 
+	const visibleImagesMob = () => {
+		let visible = [];
+		for (let i = 0; i < 3; i++) {
+			visible.push(images[(currentIndex + i) % images.length]);
+		}
+		return visible;
+	};
+
 	const handleImageClick = (man, image) => {
 		if (image === crd1) {
 			setShowNftSection(false); // Hide nftSection3Main
@@ -128,6 +136,10 @@ const Vs = () => {
 						{!showNftSection && !cardSelected ? (
 							<div className='nftSection3Main'></div>) : null}
 
+						{!showNftSection && !cardSelected ? (
+							<div className='nftSection3Main-mob'></div>) : null}
+
+
 						{showNftSection ? (
 							<div className='nftSection3Main'>
 
@@ -165,16 +177,52 @@ const Vs = () => {
 
 						) : null}
 
+						{showNftSection ? (
+							<div className='nftSection3Main-mob'>
+
+								<div className='arrowsDiv' onClick={handleLeftClick}>
+									<img className='arrows' src={left} alt="Left Arrow" />
+								</div>
+
+								<div className='nftSection3'>
+									{visibleImagesMob().map((image, index) => (
+										<div className="imageContainer" key={index}>
+
+											<img
+												src={image}
+												alt={`Slide ${index + 1}`}
+												className="nftImage"
+												onClick={() => handleImageClick('man1', image)} // Pass image to handler
+											/>
+
+											{image !== crd1 && (
+												<div className="overlay">
+													<div className="timer">
+														<div>03 : 54 : <span className='sec'>23</span></div>
+														<div>HOURS LEFT</div>
+													</div>
+												</div>
+											)}
+										</div>
+									))}
+								</div>
+
+								<div className='arrowsDiv' onClick={handleRightClick}>
+									<img className='arrows' src={right} alt="Right Arrow" />
+								</div>
+							</div>
+
+						) : null}
 
 						{cardSelected > 0 ?
 							<div className='battleSectionMain'>
 								<div className='battleSection'>
 									<div className='battleSection2'>
 										<div>
-											<img src={bar1} />
+											<img id="bar1" src={bar1} />
 											<img id="battleImgs" src={jesus} />
 										</div>
-										<div className="relative col-span-4 flex flex-col items-center justify-center gap-y-14">
+										<div id="vsMain" className="relative col-span-4 flex flex-col items-center justify-center gap-y-14">
 											<div className="relative flex z-[2] vs-bounce-animation">
 												{isVisble && (
 													<div className="absolute top-0 z-[1]">
