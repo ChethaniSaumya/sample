@@ -56,7 +56,7 @@ const ChestOpening = () => {
 				<div className='titleMain'>FIND YOUR PULSE HERO <span>NFT</span></div>
 				<div className='title2Main'>Secured by <img className='chainlink' src={cl} /></div>		
 				
-				<img className='treasure' src={treasure} />
+				<img className='treasureIMG' src={treasure} />
 				
 				{/*_chestOpen > 0 ?
 				<div className="video-container">
