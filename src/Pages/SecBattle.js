@@ -13,9 +13,19 @@ import gary from "../assets/GARY-removebg.png";
 import middleCrystal from "../assets/sec-battle-middle-crystal.png";
 import bottomCrystal from "../assets/sec-battle-bottom-crystal.png";
 import "../styles/SecBattle.css";
+import garyNoBg from "../assets/Gary-remove.png";
 
 const SecBattle = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [_combat, setCombat] = useState(0);
+
+  const close = () => {
+		window.location.reload(true);
+	}
+
+	const combat = () => {
+		setCombat(1);
+	}
 
   // useEffect(() => {
   //   const interval = setInterval(() => {
@@ -82,6 +92,18 @@ const SecBattle = () => {
             ></div>
           </div>
 
+          {_combat > 0 ?
+            <div class="popup-containerMain3">
+              <div class="popup-containerMain">
+                <div class="popup">
+                  <img src={garyNoBg} alt="Man" class="character" />
+                  <span class="close-button" onClick={close}>&times;</span>
+                  <p class="popup-text">SEC WON!</p>
+                </div>
+              </div>
+            </div> : null}
+
+
           {/* VS */}
           <div className="relative col-span-4 flex flex-col items-center justify-center gap-y-14 tests">
             <div className="relative flex z-[2] vs-bounce-animation">
@@ -105,7 +127,7 @@ const SecBattle = () => {
                 <img src={letterS} alt="Letter S" className="object-contain" />
               </div>
             </div>
-            <button className="bg-gradient-to-r from-[#B014A5] via-[#6514DB] to-[#B014A5] bg-[length:200%_200%] font-vermin-vibes-v text-[20px] px-[3.8em] py-[0.9em] transition-all duration-500 rounded-full hover:bg-right hover:shadow-[0_0_10px_0_#B014A5] hover:[text-shadow:_0_0_3px_white]">
+            <button onClick={combat} className="bg-gradient-to-r from-[#B014A5] via-[#6514DB] to-[#B014A5] bg-[length:200%_200%] font-vermin-vibes-v text-[20px] px-[3.8em] py-[0.9em] transition-all duration-500 rounded-full hover:bg-right hover:shadow-[0_0_10px_0_#B014A5] hover:[text-shadow:_0_0_3px_white]">
               COMBAT
             </button>
           </div>
