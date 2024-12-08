@@ -3,22 +3,11 @@ import "../styles/ChestOpening.css";
 
 import cl from '../assets/chainlink.png';
 import chest from '../assets/chest.png';
-import down from '../assets/Chevron Down.png';
+import chestAnim from '../assets/chestAnimation.mp4';
 import logo from '../assets/logo.png';
-import crystels from '../assets/crystels.png';
-import crystels2 from '../assets/crystels2.png';
 import Navbar from "../components/Navbar";
-import bg from "../assets/bg2.png";
-import topCrystal from "../assets/hero-top-crystal.png";
 import treasure from "../assets/treasure.png";
-import richard from "../assets/richard copy.png";
-import terrain from "../assets/hero-terrain.png";
-import cardLayout from "../assets/card-layout.png";
-import biden from "../assets/biden-without-bg.png";
 import cz from "../assets/cz-without-bg.png";
-import elom from "../assets/elom-without-bg.png";
-import crystalBg from "../assets/hero-crystal-bg.png";
-import bottomCrystal from "../assets/hero-bottom-crystal.png";
 import "../styles/Home.css";
 import DownArrowHeadIcon from "../components/DownArrowHeadIcon";
 import UpArrowHeadIcon from "../components/UpArrowHeadIcon";
@@ -38,11 +27,16 @@ const ChestOpening = () => {
 	const [loading, setLoading] = useState(true);
 	const [isOpen, setIsOpen] = useState(false);
 	const [showDropdown, setShowDropdown] = useState(false);
+	const [_chestOpen, set_chestOpen] = useState(0);
+
 
 	const toggleDropdown = () => {
 		setShowDropdown(!showDropdown);
 	};
 
+	const chestOpen = () => {
+		set_chestOpen(1);
+	};
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
@@ -60,12 +54,25 @@ const ChestOpening = () => {
 
 			<div className='cont-2'>
 				<div className='title'>FIND YOUR PULSE HERO <span>NFT</span></div>
-				<div className='title2'>Secured by <img src={cl} /></div>
-
+				<div className='title2'>Secured by <img className='chainlink' src={cl} /></div>		
+				
 				<img className='treasure' src={treasure} />
+				
+				{/*_chestOpen > 0 ?
+				<div className="video-container">
+					<video
+						className="treasure"
+						src={chestAnim} // Adjust the path if needed
+						autoPlay
+						loop
+						muted
+					>
+					</video>
+				</div>:
+				<img className='treasure' src={treasure} />*/}
 
 				<div className='btns3'>
-					<button className='btn1'><img src={chest} /> <div className='txt'><span>04</span> OPEN CHEST</div></button>
+					<button className='btn1' onClick={chestOpen}><img src={chest} /> <div className='txt'><span>04</span> OPEN CHEST</div></button>
 					<button className='btn2'><div>Putchase Crates</div></button>
 
 					<div className="relative">
