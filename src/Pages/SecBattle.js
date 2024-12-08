@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
 
+import Lottie from "react-lottie";
+
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import HealthBar from "../components/HealthBar";
 
 import bg from "../assets/bg1.png";
 import battleStage from "../assets/battle-stage.png";
+import playerHP from "../assets/player-health-bar.png";
+import enemyHP from "../assets/enemy-health-bar.png";
 import richard from "../assets/RICHARD-removebg.png";
 import letterV from "../assets/versus-letter-v.png";
+import lightning from "../assets/animations/lightning.json";
 import letterS from "../assets/versus-letter-s.png";
 import gary from "../assets/GARY-removebg.png";
-import middleCrystal from "../assets/sec-battle-middle-crystal.png";
-import bottomCrystal from "../assets/sec-battle-bottom-crystal.png";
+import logo from "../assets/logo.png";
 import "../styles/SecBattle.css";
 import garyNoBg from "../assets/Gary-remove.png";
 
@@ -27,65 +29,43 @@ const SecBattle = () => {
 		setCombat(1);
 	}
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setIsVisble(true);
-  //     setTimeout(() => {
-  //       setIsVisble(false);
-  //     }, 2500);
-  //   }, 4000);
-
-  //   return () => clearInterval(interval);
-  // }, []);
+  const defaultOptions = {
+    loop: false,
+    autoplay: isVisible,
+    animationData: lightning,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
 
   useEffect(() => {
-    setIsVisible(true);
-
-    const timerTwo = setTimeout(() => {
-      setIsVisible(false);
-    }, 1300);
-
-    const interval = setInterval(() => {
+    const timer = setTimeout(() => {
       setIsVisible(true);
-      setTimeout(() => {
-        setIsVisible(false);
-      }, 2500);
-    }, 4000);
+    }, 1400);
 
-    return () => {
-      clearTimeout(timerTwo);
-      clearInterval(interval);
-    };
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <div
-      className="relative min-h-screen flex flex-col bg-cover bg-center text-white bg-white overflow-x-hidden"
+      className="relative min-h-screen flex flex-col bg-cover text-white bg-white overflow-x-hidden"
       style={{ backgroundImage: `url(${bg})` }}
     >
       <Navbar />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50"></div>
-
-      {/* Bottom crystal */}
-      <div className="absolute top-1/2 -translate-y-1/2 -right-[90px]">
-        <img src={middleCrystal} alt="Crystal" />
-      </div>
-
-      {/* Bottom crystal */}
-      <div className="absolute bottom-[20px] -left-[130px]">
-        <img src={bottomCrystal} alt="Crystal" />
-      </div>
+      <div className="absolute inset-0 bg-black/50 z-[1]"></div>
 
       <div
-        className="flex-grow flex items-center justify-center bg-cover bg-center -mt-[60px]"
+        className="relative flex-grow flex items-center justify-center bg-cover bg-center -mt-[60px]"
         style={{ backgroundImage: `url(${battleStage})` }}
       >
-        <div className="relative container w-full grid grid-cols-12 z-[1]">
+        <div className="container w-full grid grid-cols-12">
           {/* Player */}
-          <div className="col-span-4">
-            <HealthBar type="player" label="player" healthPercentage={66} />
+          <div className="relative col-span-4 z-[1]">
+            <div className="flex items-center justify-start">
+              <img src={playerHP} alt="Player HP" className="object-contain" />
+            </div>
             <div
               className="h-96 bg-contain bg-no-repeat mt-12"
               style={{ backgroundImage: `url(${richard})` }}
@@ -105,21 +85,15 @@ const SecBattle = () => {
 
 
           {/* VS */}
-          <div className="relative col-span-4 flex flex-col items-center justify-center gap-y-14 tests">
+          <div className="relative col-span-4 flex flex-col items-center justify-center gap-y-14 tests z-[1]">
             <div className="relative flex z-[2] vs-bounce-animation">
-              {isVisible && (
-                <div className="absolute top-0 z-[1]">
-                  <div className="absolute inset-0 z-10"></div>
-                  <iframe
-                    src="https://giphy.com/embed/Vd8jRsGoIOZPXoREMe"
-                    className="-translate-y-2 pointer-events-none"
-                    width={250}
-                    height={180}
-                    allowFullScreen
-                    title="Lightning Bolt GIF"
-                  ></iframe>
-                </div>
-              )}
+              <div
+                className={`absolute inset-0 z-[1] ${
+                  isVisible ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                <Lottie options={defaultOptions} />
+              </div>
               <div className="letter-v-slide-in">
                 <img src={letterV} alt="Letter V" className="object-contain" />
               </div>
@@ -133,17 +107,38 @@ const SecBattle = () => {
           </div>
 
           {/* Enemy */}
-          <div className="col-span-4">
-            <HealthBar type="enemy" label="enemy" healthPercentage={96} />
+          <div className="relative col-span-4 z-[1]">
+            <div className="flex items-center justify-end">
+              <img src={enemyHP} alt="Sec HP" className="object-contain" />
+            </div>
             <div
               className="h-96 bg-contain bg-no-repeat mt-12 -scale-x-100"
               style={{ backgroundImage: `url(${gary})` }}
             ></div>
           </div>
         </div>
+
+        {/* Bottom gradient */}
+        <div className="absolute left-0 bottom-0 w-full h-52 bg-gradient-to-t from-black to-transparent"></div>
       </div>
 
-      <Footer />
+      <section className="relative h-[160px] bg-black/10 backdrop-blur-md z-50">
+        <div className="absolute left-0 top-0 w-full h-full bg-gradient-to-b from-black to-transparent"></div>
+
+        <div className="container h-full mx-auto flex items-center justify-center gap-x-[60px]">
+          <div className="w-[337px] h-px bg-white/50"></div>
+          <a
+            href="/"
+            className="flex items-center gap-3 hover:text-white hover:scale-105 transition-transform duration-150 will-change-transform"
+          >
+            <div className="size-[52px] rounded-full bg-white">
+              <img src={logo} alt="Pulseheroes" className="rounded-full" />
+            </div>
+            <h2 className="text-[25px] font-bold">PULSEHEROES</h2>
+          </a>
+          <div className="w-[337px] h-px bg-white/50"></div>
+        </div>
+      </section>
     </div>
   );
 };

@@ -13,11 +13,15 @@
 } */
 
 .letter-v-slide-in {
+  opacity: 0;
   animation: letter-v-slide-in 1s ease-in-out forwards;
+  animation-delay: 1s;
 }
 
 .letter-s-slide-in {
+  opacity: 0;
   animation: letter-s-slide-in 1s ease-in-out forwards;
+  animation-delay: 1s;
 }
 
 @keyframes vs-bounce-animation {
