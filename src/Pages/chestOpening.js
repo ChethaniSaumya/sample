@@ -52,7 +52,7 @@ const ChestOpening = () => {
 			<Navbar />
 
 			<div className='cont-2'>
-				<div className='title'>FIND YOUR PULSE HERO <span>NFT</span></div>
+				<div className='title'>FIND YOUR PULSE HEROsss <span>NFT</span></div>
 				<div className='title2'>Secured by <img className='chainlink' src={cl} /></div>		
 				
 				<img className='treasure' src={treasure} />
