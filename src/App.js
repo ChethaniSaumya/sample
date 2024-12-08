@@ -3,7 +3,7 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Home from "./Pages/Home";
 import Fight from "./Pages/Fight";
 import ChestOpening from "./Pages/chestOpening";
-import SecBattle from './Pages/secBattle';
+import SecBattle from './Pages/SecBattle';
  
 function App() {
 
