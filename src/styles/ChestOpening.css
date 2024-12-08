@@ -316,6 +316,7 @@
   }
 
   .allWrap {
+    width: 100%;
     background-color: black;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -666,7 +667,7 @@
     font-family: 'Vermin Vibes V', sans-serif;
     text-align: center;
     color: white;
-    font-size: 42px;
+    font-size: 35px;
     padding-top: 50px;
   }
 
@@ -1079,6 +1080,7 @@
   }
 
   .allWrap {
+    width: 100%;
     background-color: black;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -1845,6 +1847,7 @@
   }
 
   .allWrap {
+    width: 100%;
     background-color: black;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -2585,6 +2588,7 @@
   }
 
   .allWrap {
+    width: 100%;
     background-color: black;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -3320,6 +3324,7 @@
   }
 
   .allWrap {
+    width: 100%;
     background-color: black;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -4056,6 +4061,7 @@
   }
 
   .allWrap {
+    width: 100%;
     background-color: black;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -4791,6 +4797,7 @@
   }
 
   .allWrap {
+    width: 100%;
     background-color: black;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -5537,6 +5544,7 @@
   }
 
   .allWrap {
+    width: 100%;
     background-color: black;
     -webkit-background-size: cover;
     -moz-background-size: cover;
