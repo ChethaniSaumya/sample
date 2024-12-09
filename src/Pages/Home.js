@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import Navbar from "../components/Navbar";
 import DownArrowHeadIcon from "../components/DownArrowHeadIcon";
 
@@ -52,10 +56,61 @@ const heroData = [
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const settings = {
+    dots: true,
+    arrows: false,
+    infinite: true,
+    slidesToShow: 7,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+    className: "center",
+    centerMode: true,
+    centerPadding: "30px",
+    responsive: [
+      {
+        breakpoint: 1535,
+        settings: {
+          slidesToShow: 6,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1279,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1023,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 639,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
 
   return (
     <div
-      className="relative min-h-screen bg-cover bg-center text-white bg-white overflow-hidden"
+      className="relative min-h-screen bg-cover bg-center text-white bg-[#41305f] flex flex-col justify-between overflow-hidden"
       style={{ backgroundImage: `url(${bg})` }}
     >
       <Navbar />
@@ -154,12 +209,12 @@ const Home = () => {
       </section>
 
       {/* Card section */}
-      {/* <section className="relative">
+      <section className="relative mt-10">
         <div className="absolute top-0 left-0 right-0 w-fit mx-auto -translate-y-1/4">
           <img src={crystalBg} alt="Crystal" className="size-fit" />
         </div>
 
-        <div className="relative container mx-auto pb-[100px] z-[1] flex justify-around">
+        {/* <div className="relative container mx-auto pb-[100px] z-[1] flex justify-around">
           {heroData.map(({ image, name }) => (
             <article className="relative w-[176px] h-[232px] flex items-end justify-end transition-transform duration-300 hover:scale-105 hover:-translate-y-1">
               <img src={cardLayout} alt="Card layout" className="absolute" />
@@ -172,10 +227,31 @@ const Home = () => {
               </p>
             </article>
           ))}
-        </div>
-      </section> */}
+        </div> */}
 
-      {/* <Footer /> */}
+        <div className="relative container mx-auto pb-[100px] z-[1]">
+          <Slider {...settings}>
+            {heroData.map(({ image, name }) => (
+              <article className="relative w-fit max-w-fit mx-auto my-10 flex items-end justify-end transition-transform duration-300 hover:-translate-y-1">
+                <img
+                  src={cardLayout}
+                  alt="Card layout"
+                  className="w-[122px] h-[170px] sm:w-[136px] sm:h-[188px] md:w-[150px] md:h-[206px] lg:w-[162px] lg:h-[220px] xl:w-[170px] xl:h-[226px] 2xl:w-[176px] 2xl:h-[232px]"
+                />
+                <div
+                  className="absolute inset-0 w-[90%] h-[98%] m-auto bg-contain bg-no-repeat bg-center"
+                  style={{ backgroundImage: `url(${image})` }}
+                ></div>
+                <p className="absolute bottom-0 left-0 right-0 w-fit mx-auto translate-y-full font-vermin-vibes-v text-[19px] z-[1]">
+                  {name}
+                </p>
+              </article>
+            ))}
+          </Slider>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 };
