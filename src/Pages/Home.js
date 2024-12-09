@@ -19,9 +19,9 @@ import jesus from "../assets/heroes/jesus.png";
 import elom from "../assets/heroes/elom.png";
 import satoshi from "../assets/heroes/satoshi.png";
 import crystalBg from "../assets/hero-crystal-bg.png";
-import bottomCrystal from "../assets/hero-bottom-crystal.png";
 import Footer from "../components/Footer";
 import "../styles/Home.css";
+import Countdown from "../components/Countdown";
 
 const heroData = [
   {
@@ -119,15 +119,10 @@ const Home = () => {
       <div className="absolute inset-0 bg-black/50"></div>
 
       {/* Top left leaklight */}
-      {/* <div className="absolute -top-[140px] -left-[80px] size-[550px] bg-[#9F129A] rounded-full blur-[140px]"></div> */}
+      <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 size-[300px] sm:size-[375px] md:size-[425px] lg:size-[475px] xl:size-[515px] 2xl:size-[550px] bg-[#9F129A] rounded-full blur-[80px] sm:blur-[90px] md:blur-[100px] lg:blur-[115px] xl:blur-[130px] 2xl:blur-[140px]"></div>
 
       {/* Middle right leaklight */}
-      {/* <div className="absolute top-1/2 -translate-y-1/2 -right-[80px] size-[550px] bg-[#9F129A] rounded-full blur-[140px]"></div> */}
-
-      {/* Bottom crystal */}
-      {/* <div className="absolute -bottom-24 -left-[40px]">
-        <img src={bottomCrystal} alt="Crystal" className="size-fit" />
-      </div> */}
+      <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 size-[300px] sm:size-[375px] md:size-[425px] lg:size-[475px] xl:size-[515px] 2xl:size-[550px] bg-[#9F129A] rounded-full blur-[80px] sm:blur-[90px] md:blur-[100px] lg:blur-[115px] xl:blur-[130px] 2xl:blur-[140px]"></div>
 
       {/* Hero section */}
       <section className="relative container mx-auto px-[36px] mt-[50px] z-[2]">
@@ -180,9 +175,7 @@ const Home = () => {
                     </button>
                   </div>
                 </div>
-                <h2 className="font-saira-condensed font-semibold text-[42px] sm:text-[60px] md:text-[75px] lg:text-[90px] xl:text-[100px] 2xl:text-[105px]">
-                  23:37:23
-                </h2>
+                <Countdown />
               </div>
               <div className="w-[113px] sm:w-[132px] md:w-[151px] lg:w-[170px] xl:w-[179px] 2xl:w-[188px]">
                 <img src={treasure} alt="Pulsehero chest" />
@@ -213,21 +206,6 @@ const Home = () => {
         <div className="absolute top-0 left-0 right-0 w-fit mx-auto -translate-y-1/4">
           <img src={crystalBg} alt="Crystal" className="size-fit" />
         </div>
-
-        {/* <div className="relative container mx-auto pb-[100px] z-[1] flex justify-around">
-          {heroData.map(({ image, name }) => (
-            <article className="relative w-[176px] h-[232px] flex items-end justify-end transition-transform duration-300 hover:scale-105 hover:-translate-y-1">
-              <img src={cardLayout} alt="Card layout" className="absolute" />
-              <div
-                className="absolute inset-0 w-[90%] h-[98%] m-auto bg-contain bg-no-repeat bg-center"
-                style={{ backgroundImage: `url(${image})` }}
-              ></div>
-              <p className="absolute bottom-0 left-0 right-0 w-fit mx-auto translate-y-full font-vermin-vibes-v text-[19px] z-[1]">
-                {name}
-              </p>
-            </article>
-          ))}
-        </div> */}
 
         <div className="relative container mx-auto pb-[100px] z-[1]">
           <Slider {...settings}>
