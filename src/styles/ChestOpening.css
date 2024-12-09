@@ -7,6 +7,20 @@
 @import url('https://fonts.cdnfonts.com/css/american-captain');
 @import url('https://fonts.cdnfonts.com/css/vermin-vibes-v');
 
+
+.btn2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #d9d9d94d;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+
 .video-container {
   text-align: center;
   margin-top: 20px;
@@ -15,10 +29,11 @@
 .video-player {
   width: 80%;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow for aesthetics */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  /* Optional: Adds a shadow for aesthetics */
 }
 
-.fight:hover{
+.fight:hover {
   cursor: pointer;
 }
 
@@ -278,42 +293,7 @@
     position: relative;
   }
 
-  .dropdown {
-    position: absolute;
-    top: 30px;
-    left: 0;
-    background: rgba(15, 12, 41, 0.9);
-    border: 1px solid #00d4ff;
-    box-shadow: 0px 4px 15px rgba(0, 212, 255, 0.4);
-    border-radius: 8px;
-    overflow: hidden;
-    animation: dropdown-slide 0.4s ease-out;
-    z-index: 1000;
-  }
 
-  .dropdown-item {
-    padding: 10px 20px;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-
-  .dropdown-item:hover {
-    background: rgba(48, 43, 99, 0.9);
-    color: #67e6ff;
-  }
-
-  @keyframes dropdown-slide {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
   .allWrap {
     width: 100%;
@@ -327,7 +307,7 @@
     justify-content: center;
   }
 
-  .contMain{
+  .contMain {
     background: radial-gradient(circle, rgba(0, 0, 0, 0.2877457865168539) 0%, rgba(0, 0, 0, 0.4450491573033708) 50%, rgba(0, 0, 0, 0.5911165730337078) 100%), url('../assets/bg3.png') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -473,6 +453,73 @@
     justify-content: center;
     transition: 0.3s ease-in-out;
     height: 80px;
+  }
+
+  .dropdown-container {
+    position: relative;
+    width: fit-content;
+    margin: auto;
+  }
+
+  #dropdown {
+    position: absolute;
+    top: 110px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(217, 217, 217, 0.336);
+    backdrop-filter: blur(5px);
+    border: 1px solid white;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    z-index: 50;
+  }
+  
+  .dropdown-item {
+    width: 90%;
+    background: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.1s ease;
+    font-family: 'Vermin Vibes V', sans-serif;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.61);
+  }
+  
+  #lastNum {
+    border: none;
+  }
+  
+  .dropdown-item:hover {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: transparent;
+  }
+  
+  .dropdown-item:lanst-child {
+    border-bottom: none;
+  }
+  
+  .dropdown-menu.open {
+    max-height: 350px;
+    background-color: #2da8fa;
+  }
+  
+  /* Arrow rotation */
+  #arrow-icon {
+    margin-left: 10px;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+  }
+  
+  #arrow-icon.rotate {
+    transform: rotate(180deg);
   }
 
   .btn2:hover {
@@ -1042,42 +1089,7 @@
     position: relative;
   }
 
-  .dropdown {
-    position: absolute;
-    top: 30px;
-    left: 0;
-    background: rgba(15, 12, 41, 0.9);
-    border: 1px solid #00d4ff;
-    box-shadow: 0px 4px 15px rgba(0, 212, 255, 0.4);
-    border-radius: 8px;
-    overflow: hidden;
-    animation: dropdown-slide 0.4s ease-out;
-    z-index: 1000;
-  }
 
-  .dropdown-item {
-    padding: 10px 20px;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-
-  .dropdown-item:hover {
-    background: rgba(48, 43, 99, 0.9);
-    color: #67e6ff;
-  }
-
-  @keyframes dropdown-slide {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
   .allWrap {
     width: 100%;
@@ -1091,7 +1103,7 @@
     justify-content: center;
   }
 
-  .contMain{
+  .contMain {
     background: radial-gradient(circle, rgba(0, 0, 0, 0.2877457865168539) 0%, rgba(0, 0, 0, 0.4450491573033708) 50%, rgba(0, 0, 0, 0.5911165730337078) 100%), url('../assets/bg3.png') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -1238,6 +1250,74 @@
     transition: 0.3s ease-in-out;
     height: 80px;
   }
+
+  .dropdown-container {
+    position: relative;
+    width: fit-content;
+    margin: auto;
+  }
+
+  #dropdown {
+    position: absolute;
+    top: 110px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(217, 217, 217, 0.336);
+    backdrop-filter: blur(5px);
+    border: 1px solid white;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    z-index: 50;
+  }
+  
+  .dropdown-item {
+    width: 90%;
+    background: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    transition: color 0.1s ease;
+    font-family: 'Vermin Vibes V', sans-serif;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.61);
+  }
+  
+  #lastNum {
+    border: none;
+  }
+  
+  .dropdown-item:hover {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: transparent;
+  }
+  
+  .dropdown-item:lanst-child {
+    border-bottom: none;
+  }
+  
+  .dropdown-menu.open {
+    max-height: 350px;
+    background-color: #2da8fa;
+  }
+  
+  /* Arrow rotation */
+  #arrow-icon {
+    margin-left: 10px;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+  }
+  
+  #arrow-icon.rotate {
+    transform: rotate(180deg);
+  }
+
 
   .btn2:hover {
     background-color: rgba(255, 255, 255, 0.11);
@@ -1809,42 +1889,7 @@
     position: relative;
   }
 
-  .dropdown {
-    position: absolute;
-    top: 30px;
-    left: 0;
-    background: rgba(15, 12, 41, 0.9);
-    border: 1px solid #00d4ff;
-    box-shadow: 0px 4px 15px rgba(0, 212, 255, 0.4);
-    border-radius: 8px;
-    overflow: hidden;
-    animation: dropdown-slide 0.4s ease-out;
-    z-index: 1000;
-  }
 
-  .dropdown-item {
-    padding: 10px 20px;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-
-  .dropdown-item:hover {
-    background: rgba(48, 43, 99, 0.9);
-    color: #67e6ff;
-  }
-
-  @keyframes dropdown-slide {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
   .allWrap {
     width: 100%;
@@ -1858,7 +1903,7 @@
     justify-content: center;
   }
 
-  .contMain{
+  .contMain {
     background: radial-gradient(circle, rgba(0, 0, 0, 0.2877457865168539) 0%, rgba(0, 0, 0, 0.4450491573033708) 50%, rgba(0, 0, 0, 0.5911165730337078) 100%), url('../assets/bg3.png') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -2004,6 +2049,73 @@
     justify-content: center;
     transition: 0.3s ease-in-out;
     height: 80px;
+  }
+
+  .dropdown-container {
+    position: relative;
+    width: fit-content;
+    margin: auto;
+  }
+
+  #dropdown {
+    position: absolute;
+    top: 110px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(217, 217, 217, 0.336);
+    backdrop-filter: blur(5px);
+    border: 1px solid white;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    z-index: 50;
+  }
+  
+  .dropdown-item {
+    width: 90%;
+    background: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    transition: color 0.1s ease;
+    font-family: 'Vermin Vibes V', sans-serif;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.61);
+  }
+  
+  #lastNum {
+    border: none;
+  }
+  
+  .dropdown-item:hover {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: transparent;
+  }
+  
+  .dropdown-item:lanst-child {
+    border-bottom: none;
+  }
+  
+  .dropdown-menu.open {
+    max-height: 350px;
+    background-color: #2da8fa;
+  }
+  
+  /* Arrow rotation */
+  #arrow-icon {
+    margin-left: 10px;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+  }
+  
+  #arrow-icon.rotate {
+    transform: rotate(180deg);
   }
 
   .btn2:hover {
@@ -2550,42 +2662,7 @@
     position: relative;
   }
 
-  .dropdown {
-    position: absolute;
-    top: 30px;
-    left: 0;
-    background: rgba(15, 12, 41, 0.9);
-    border: 1px solid #00d4ff;
-    box-shadow: 0px 4px 15px rgba(0, 212, 255, 0.4);
-    border-radius: 8px;
-    overflow: hidden;
-    animation: dropdown-slide 0.4s ease-out;
-    z-index: 1000;
-  }
 
-  .dropdown-item {
-    padding: 10px 20px;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-
-  .dropdown-item:hover {
-    background: rgba(48, 43, 99, 0.9);
-    color: #67e6ff;
-  }
-
-  @keyframes dropdown-slide {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
   .allWrap {
     width: 100%;
@@ -2599,7 +2676,7 @@
     justify-content: center;
   }
 
-  .contMain{
+  .contMain {
     background: radial-gradient(circle, rgba(0, 0, 0, 0.2877457865168539) 0%, rgba(0, 0, 0, 0.4450491573033708) 50%, rgba(0, 0, 0, 0.5911165730337078) 100%), url('../assets/bg3.png') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -2742,6 +2819,73 @@
     transition: 0.3s ease-in-out;
     height: 80px;
   }
+
+  
+.dropdown-container {
+  position: relative;
+  width: fit-content;
+}
+  
+#dropdown {
+  position: absolute;
+  top: 110px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba(217, 217, 217, 0.336);
+  backdrop-filter: blur(5px);
+  border: 1px solid white;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  z-index: 50;
+}
+
+.dropdown-item {
+  width: 90%;
+  background: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  transition: color 0.1s ease;
+  font-family: 'Vermin Vibes V', sans-serif;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.61);
+}
+
+#lastNum {
+  border: none;
+}
+
+.dropdown-item:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: transparent;
+}
+
+.dropdown-item:lanst-child {
+  border-bottom: none;
+}
+
+.dropdown-menu.open {
+  max-height: 350px;
+  background-color: #2da8fa;
+}
+
+/* Arrow rotation */
+#arrow-icon {
+  margin-left: 10px;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+#arrow-icon.rotate {
+  transform: rotate(180deg);
+}
 
   .btn2:hover {
     background-color: rgba(255, 255, 255, 0.11);
@@ -3168,7 +3312,11 @@
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1919px) {
-  
+
+  .dropdown-container {
+    position: relative;
+    width: fit-content;
+  }
   .nftSection3Main-mob {
     display: none;
   }
@@ -3286,42 +3434,7 @@
     position: relative;
   }
 
-  .dropdown {
-    position: absolute;
-    top: 30px;
-    left: 0;
-    background: rgba(15, 12, 41, 0.9);
-    border: 1px solid #00d4ff;
-    box-shadow: 0px 4px 15px rgba(0, 212, 255, 0.4);
-    border-radius: 8px;
-    overflow: hidden;
-    animation: dropdown-slide 0.4s ease-out;
-    z-index: 1000;
-  }
 
-  .dropdown-item {
-    padding: 10px 20px;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-
-  .dropdown-item:hover {
-    background: rgba(48, 43, 99, 0.9);
-    color: #67e6ff;
-  }
-
-  @keyframes dropdown-slide {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
   .allWrap {
     width: 100%;
@@ -3335,7 +3448,7 @@
     justify-content: center;
   }
 
-  .contMain{
+  .contMain {
     background: radial-gradient(circle, rgba(0, 0, 0, 0.2877457865168539) 0%, rgba(0, 0, 0, 0.4450491573033708) 50%, rgba(0, 0, 0, 0.5911165730337078) 100%), url('../assets/bg3.png') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -3479,6 +3592,68 @@
     height: 80px;
   }
 
+  
+#dropdown {
+  position: absolute;
+  top: 110px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba(217, 217, 217, 0.336);
+  backdrop-filter: blur(5px);
+  border: 1px solid white;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  z-index: 50;
+}
+
+.dropdown-item {
+  width: 90%;
+  background: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  transition: color 0.1s ease;
+  font-family: 'Vermin Vibes V', sans-serif;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.61);
+}
+
+#lastNum {
+  border: none;
+}
+
+.dropdown-item:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: transparent;
+}
+
+.dropdown-item:lanst-child {
+  border-bottom: none;
+}
+
+.dropdown-menu.open {
+  max-height: 350px;
+  background-color: #2da8fa;
+}
+
+/* Arrow rotation */
+#arrow-icon {
+  margin-left: 10px;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+#arrow-icon.rotate {
+  transform: rotate(180deg);
+}
+
   .btn2:hover {
     background-color: rgba(255, 255, 255, 0.11);
     -webkit-backdrop-filter: blur(2);
@@ -3571,7 +3746,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-     height: 35vh;
+    height: 35vh;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: auto;
@@ -3905,7 +4080,11 @@
 }
 
 @media screen and (min-width: 1920px) {
-  
+
+  .dropdown-container {
+    position: relative;
+    width: fit-content;
+  }
   .nftSection3Main-mob {
     display: none;
   }
@@ -4023,42 +4202,7 @@
     position: relative;
   }
 
-  .dropdown {
-    position: absolute;
-    top: 30px;
-    left: 0;
-    background: rgba(15, 12, 41, 0.9);
-    border: 1px solid #00d4ff;
-    box-shadow: 0px 4px 15px rgba(0, 212, 255, 0.4);
-    border-radius: 8px;
-    overflow: hidden;
-    animation: dropdown-slide 0.4s ease-out;
-    z-index: 1000;
-  }
 
-  .dropdown-item {
-    padding: 10px 20px;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-
-  .dropdown-item:hover {
-    background: rgba(48, 43, 99, 0.9);
-    color: #67e6ff;
-  }
-
-  @keyframes dropdown-slide {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
   .allWrap {
     width: 100%;
@@ -4072,7 +4216,7 @@
     justify-content: center;
   }
 
-  .contMain{
+  .contMain {
     background: radial-gradient(circle, rgba(0, 0, 0, 0.2877457865168539) 0%, rgba(0, 0, 0, 0.4450491573033708) 50%, rgba(0, 0, 0, 0.5911165730337078) 100%), url('../assets/bg3.png');
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -4215,6 +4359,68 @@
     transition: 0.3s ease-in-out;
     height: 80px;
   }
+
+  
+#dropdown {
+  position: absolute;
+  top: 110px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba(217, 217, 217, 0.336);
+  backdrop-filter: blur(5px);
+  border: 1px solid white;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  z-index: 50;
+}
+
+.dropdown-item {
+  width: 90%;
+  background: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  transition: color 0.1s ease;
+  font-family: 'Vermin Vibes V', sans-serif;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.61);
+}
+
+#lastNum {
+  border: none;
+}
+
+.dropdown-item:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: transparent;
+}
+
+.dropdown-item:lanst-child {
+  border-bottom: none;
+}
+
+.dropdown-menu.open {
+  max-height: 350px;
+  background-color: #2da8fa;
+}
+
+/* Arrow rotation */
+#arrow-icon {
+  margin-left: 10px;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+#arrow-icon.rotate {
+  transform: rotate(180deg);
+}
 
   .btn2:hover {
     background-color: rgba(255, 255, 255, 0.11);
@@ -4641,7 +4847,7 @@
 }
 
 @media screen and (min-width: 1921px) and (max-width: 3839px) {
-  
+
   .nftSection3Main-mob {
     display: none;
   }
@@ -4759,42 +4965,7 @@
     position: relative;
   }
 
-  .dropdown {
-    position: absolute;
-    top: 30px;
-    left: 0;
-    background: rgba(15, 12, 41, 0.9);
-    border: 1px solid #00d4ff;
-    box-shadow: 0px 4px 15px rgba(0, 212, 255, 0.4);
-    border-radius: 8px;
-    overflow: hidden;
-    animation: dropdown-slide 0.4s ease-out;
-    z-index: 1000;
-  }
 
-  .dropdown-item {
-    padding: 10px 20px;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-
-  .dropdown-item:hover {
-    background: rgba(48, 43, 99, 0.9);
-    color: #67e6ff;
-  }
-
-  @keyframes dropdown-slide {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
   .allWrap {
     width: 100%;
@@ -4808,7 +4979,7 @@
     justify-content: center;
   }
 
-  .contMain{
+  .contMain {
     background: radial-gradient(circle, rgba(0, 0, 0, 0.2877457865168539) 0%, rgba(0, 0, 0, 0.4450491573033708) 50%, rgba(0, 0, 0, 0.5911165730337078) 100%), url('../assets/bg3.png');
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -4910,7 +5081,7 @@
     align-items: center;
     margin: auto 0;
     transition: 0.5s ease-in-out;
-     /* Smooth transition for background */
+    /* Smooth transition for background */
   }
 
   .btn1:hover {
@@ -4951,6 +5122,83 @@
     transition: 0.3s ease-in-out;
     height: 120px;
   }
+
+  .btn2 {
+    font-family: "Montserrat Alternates", serif;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    font-size: 35px;
+    width: 390px;
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    justify-content: center;
+    transition: 0.3s ease-in-out;
+    height: 120px;
+  }
+
+  
+#dropdown {
+  position: absolute;
+  top: 180px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba(217, 217, 217, 0.336);
+  backdrop-filter: blur(5px);
+  border: 1px solid white;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  z-index: 50;
+}
+
+.dropdown-item {
+  width: 90%;
+  background: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  transition: color 0.1s ease;
+  font-family: 'Vermin Vibes V', sans-serif;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.61);
+}
+
+#lastNum {
+  border: none;
+}
+
+.dropdown-item:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: transparent;
+}
+
+.dropdown-item:lanst-child {
+  border-bottom: none;
+}
+
+.dropdown-menu.open {
+  max-height: 350px;
+  background-color: #2da8fa;
+}
+
+/* Arrow rotation */
+#arrow-icon {
+  margin-left: 20px;
+  font-size: 25px;
+  transition: transform 0.3s ease;
+}
+
+#arrow-icon.rotate {
+  transform: rotate(180deg);
+}
 
   .btn2:hover {
     background-color: rgba(255, 255, 255, 0.11);
@@ -5056,7 +5304,7 @@
     margin-top: auto;
     width: fit-content;
     width: 50%;
-   }
+  }
 
   /*.nftImage {
   width: calc(100% / 5);
@@ -5231,7 +5479,7 @@
     }
   }
 
-  #bar1{
+  #bar1 {
     width: 80%;
   }
 
@@ -5388,7 +5636,7 @@
   }
 }
 
-@media screen and (min-width: 3840px) {  
+@media screen and (min-width: 3840px) {
   .nftSection3Main-mob {
     display: none;
   }
@@ -5506,42 +5754,7 @@
     position: relative;
   }
 
-  .dropdown {
-    position: absolute;
-    top: 30px;
-    left: 0;
-    background: rgba(15, 12, 41, 0.9);
-    border: 1px solid #00d4ff;
-    box-shadow: 0px 4px 15px rgba(0, 212, 255, 0.4);
-    border-radius: 8px;
-    overflow: hidden;
-    animation: dropdown-slide 0.4s ease-out;
-    z-index: 1000;
-  }
 
-  .dropdown-item {
-    padding: 10px 20px;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-
-  .dropdown-item:hover {
-    background: rgba(48, 43, 99, 0.9);
-    color: #67e6ff;
-  }
-
-  @keyframes dropdown-slide {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
   .allWrap {
     width: 100%;
@@ -5555,7 +5768,7 @@
     justify-content: center;
   }
 
-  .contMain{
+  .contMain {
     background: radial-gradient(circle, rgba(0, 0, 0, 0.2877457865168539) 0%, rgba(0, 0, 0, 0.4450491573033708) 50%, rgba(0, 0, 0, 0.5911165730337078) 100%), url('../assets/bg3.png');
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -5657,7 +5870,7 @@
     align-items: center;
     margin: auto 0;
     transition: 0.5s ease-in-out;
-     /* Smooth transition for background */
+    /* Smooth transition for background */
   }
 
   .btn1:hover {
@@ -5698,6 +5911,69 @@
     transition: 0.3s ease-in-out;
     height: 160px;
   }
+
+  
+#dropdown {
+  position: absolute;
+  top: 250px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba(217, 217, 217, 0.336);
+  backdrop-filter: blur(5px);
+  border: 1px solid white;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  z-index: 50;
+}
+
+.dropdown-item {
+  width: 90%;
+  background: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  border: none;
+  font-size: 45px;
+  cursor: pointer;
+  transition: color 0.1s ease;
+  font-family: 'Vermin Vibes V', sans-serif;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.61);
+}
+
+#lastNum {
+  border: none;
+}
+
+.dropdown-item:hover {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: transparent;
+}
+
+.dropdown-item:lanst-child {
+  border-bottom: none;
+}
+
+.dropdown-menu.open {
+  max-height: 350px;
+  background-color: #2da8fa;
+}
+
+/* Arrow rotation */
+#arrow-icon {
+  margin-left: 30px;
+  font-size: 45px;
+  transition: transform 0.3s ease;
+}
+
+#arrow-icon.rotate {
+  transform: rotate(180deg);
+}
+
 
   .btn2:hover {
     background-color: rgba(255, 255, 255, 0.11);
@@ -5803,7 +6079,7 @@
     margin-top: auto;
     width: fit-content;
     width: 50%;
-   }
+  }
 
   /*.nftImage {
   width: calc(100% / 5);
@@ -5978,7 +6254,7 @@
     }
   }
 
-  #bar1{
+  #bar1 {
     width: 80%;
   }
 
@@ -6134,4 +6410,3 @@
     width: 230px;
   }
 }
- 
