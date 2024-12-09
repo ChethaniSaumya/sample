@@ -55,7 +55,7 @@ const Home = () => {
 
   return (
     <div
-      className="relative bg-cover bg-center text-white bg-white overflow-hidden"
+      className="relative min-h-screen bg-cover bg-center text-white bg-white overflow-hidden"
       style={{ backgroundImage: `url(${bg})` }}
     >
       <Navbar />
@@ -64,36 +64,35 @@ const Home = () => {
       <div className="absolute inset-0 bg-black/50"></div>
 
       {/* Top left leaklight */}
-      <div className="absolute -top-[140px] -left-[80px] size-[550px] bg-[#9F129A] rounded-full blur-[140px]"></div>
+      {/* <div className="absolute -top-[140px] -left-[80px] size-[550px] bg-[#9F129A] rounded-full blur-[140px]"></div> */}
 
       {/* Middle right leaklight */}
-      <div className="absolute top-1/2 -translate-y-1/2 -right-[80px] size-[550px] bg-[#9F129A] rounded-full blur-[140px]"></div>
+      {/* <div className="absolute top-1/2 -translate-y-1/2 -right-[80px] size-[550px] bg-[#9F129A] rounded-full blur-[140px]"></div> */}
 
       {/* Bottom crystal */}
-      <div className="absolute -bottom-24 -left-[40px]">
+      {/* <div className="absolute -bottom-24 -left-[40px]">
         <img src={bottomCrystal} alt="Crystal" className="size-fit" />
-      </div>
+      </div> */}
 
       {/* Hero section */}
-      <section className="relative container mx-auto mt-[50px] z-[2]">
-        <div className="grid grid-cols-12 items-center">
-          <div className="col-span-6">
-            <div>
-              <h3 className="text-[40px] font-montserrat-alternates">
+      <section className="relative container mx-auto px-[36px] mt-[50px] z-[2]">
+        <div className="grid grid-cols-12 items-end sm:items-center">
+          <div className="col-span-7 lg:col-span-6">
+            <div className="hidden sm:block">
+              <h3 className="font-montserrat-alternates text-[16px] sm:text-[22px] md:text-[28px] lg:text-[34px] xl:text-[37px] 2xl:text-[40px]">
                 Pulse Your Way to Victory!
               </h3>
-              <h1 className="text-[80px] font-vermin-vibes-v">
+              <h1 className="font-vermin-vibes-v text-[29px] sm:text-[40px] md:text-[52px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px]">
                 Pulse
                 <span className="text-[#F241E5] font-vermin-vibes-v">r</span>oes
               </h1>
-              <div className="w-[12ch] h-1 bg-[#D9D9D9] text-[80px] mt-3"></div>
+              <div className="w-[12ch] h-1 bg-[#D9D9D9] text-[29px] mt-3 sm:text-[40px] md:text-[52px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px]"></div>
             </div>
-            <div className="flex items-center gap-x-[30px] text-[32px] mt-[1.5em]">
-              <div>
-                {/* <div className="h-[64px]  relative overflow-hidden bg-white/20 h-[288px]"> */}
+            <div className="flex flex-col sm:flex-row items-start gap-[1em] text-[13px] mt-[1.5em] sm:text-[14px] md:text-[18px] lg:text-[22px] xl:text-[29px] 2xl:text-[32px]">
+              <div className="flex flex-col-reverse sm:flex-col">
                 <div className="relative">
                   <button
-                    className="relative flex items-center gap-x-[1.3125em] bg-gradient-to-r from-[#B014A5] via-[#6514DB] to-[#B014A5] bg-[length:200%_200%] font-vermin-vibes-v px-[1.15625em] transition-all duration-500 hover:bg-right hover:shadow-[0_0_5px_0_#B014A5] hover:[text-shadow:_0_0_3px_white] z-[1]"
+                    className="relative flex items-center gap-x-[1.3125em] bg-gradient-to-r from-[#B014A5] via-[#6514DB] to-[#B014A5] bg-[length:200%_200%] font-vermin-vibes-v ps-[0.8em] pe-[0.3em] py-[0.2em] sm:px-[0.8em] 2xl:px-[1.15625em] transition-all duration-500 hover:bg-right hover:shadow-[0_0_5px_0_#B014A5] hover:[text-shadow:_0_0_3px_white] z-[1]"
                     onClick={() => setIsOpen((prev) => !prev)}
                   >
                     BUY CHEST{" "}
@@ -104,12 +103,13 @@ const Home = () => {
                     >
                       <DownArrowHeadIcon />
                     </div>
-                    {/* {!isOpen ? <DownArrowHeadIcon c /> : <UpArrowHeadIcon />} */}
                   </button>
                   <div
                     className={`${
-                      !isOpen ? "h-0" : "h-[208px] border"
-                    } absolute top-16 left-0 right-0 w-full font-vermin-vibes-v text-[24px] bg-[#D9D9D94D] px-5 mt-3 backdrop-blur-[10px] overflow-hidden transition-all duration-500`}
+                      !isOpen
+                        ? "h-0"
+                        : "h-[154px] border sm:h-[166px] md:h-[178px] lg:h-[190px] xl:h-[199px] 2xl:h-[208px]"
+                    } absolute top-[36px] sm:top-[46px] md:top-[56px] lg:top-[66px] xl:top-[76px] 2xl:top-[80px] left-0 right-0 w-full font-vermin-vibes-v text-[12px] bg-[#D9D9D94D] 2xl:px-5 backdrop-blur-[10px] overflow-hidden transition-all duration-500 sm:text-[13px] md:text-[16px] lg:text-[20px] xl:text-[22px] 2xl:text-[24px]`}
                   >
                     <button className="w-full flex items-center justify-center gap-x-[1.3125em] py-3 border-b border-b-white/50 transition-colors duration-100 hover:text-white/80">
                       BUY CHEST
@@ -125,71 +125,57 @@ const Home = () => {
                     </button>
                   </div>
                 </div>
-                <h2 className="font-saira-condensed font-semibold text-[105px]">
+                <h2 className="font-saira-condensed font-semibold text-[42px] sm:text-[60px] md:text-[75px] lg:text-[90px] xl:text-[100px] 2xl:text-[105px]">
                   23:37:23
                 </h2>
               </div>
-              <div className="w-[188px]">
+              <div className="w-[113px] sm:w-[132px] md:w-[151px] lg:w-[170px] xl:w-[179px] 2xl:w-[188px]">
                 <img src={treasure} alt="Pulsehero chest" />
               </div>
             </div>
           </div>
-          <div className="col-span-6">
-            <div className="relative z-[1]">
-              <img src={richardHeroImage} alt="Richard" />
-              <div className="absolute left-1/2 bottom-[50px] -translate-x-full w-32 h-[1000px] bg-gradient-to-t from-[#460844] to-[#AC14A6] -z-[1]"></div>
+          <div className="col-span-5 lg:col-span-6">
+            <div className="relative z-[1] flex items-center justify-center">
+              <img src={richardHeroImage} alt="Richard" className="" />
+              <div className="absolute left-0 right-0 mx-auto bottom-[3%] w-14 sm:w-18 md:w-24 lg:w-28 xl:w-30 2xl:w-32 h-[1000px] bg-gradient-to-t from-[#460844] to-[#AC14A6] -z-[1]"></div>
             </div>
           </div>
         </div>
+        <div className="sm:hidden">
+          <h3 className="font-montserrat-alternates text-[16px] sm:text-[22px] md:text-[28px] lg:text-[34px] xl:text-[37px] 2xl:text-[40px]">
+            Pulse Your Way to Victory!
+          </h3>
+          <h1 className="font-vermin-vibes-v text-[29px] sm:text-[40px] md:text-[52px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px]">
+            Pulse
+            <span className="text-[#F241E5] font-vermin-vibes-v">r</span>oes
+          </h1>
+          <div className="w-[12ch] h-1 bg-[#D9D9D9] text-[29px] mt-3 sm:text-[40px] md:text-[52px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px]"></div>
+        </div>
       </section>
 
-      {/* Hero terrain */}
-      {/* <div className="relative w-full -mt-36 z-[1]">
-        <img src={terrain} alt="terrain" className="w-full" />
-        <div className="absolute left-0 bottom-0 w-full h-52 bg-gradient-to-t from-black to-transparent"></div>
-      </div> */}
-
       {/* Card section */}
-      <section className="relative">
+      {/* <section className="relative">
         <div className="absolute top-0 left-0 right-0 w-fit mx-auto -translate-y-1/4">
           <img src={crystalBg} alt="Crystal" className="size-fit" />
         </div>
 
-        {/* <div className="absolute left-0 top-0 w-full h-52 bg-gradient-to-b from-black to-transparent"></div> */}
         <div className="relative container mx-auto pb-[100px] z-[1] flex justify-around">
-          {/* <article
-            className="w-fit flex items-center justify-center"
-            style={{
-              clipPath:
-                "polygon(7% 0%, 0% 4.5%, 0% 32%, 6% 38%, 6% 58%, 0% 63%, 0 94%, 8% 100%, 92% 100%, 100% 94.5%, 100% 82%, 95% 78%, 95% 67%, 100% 63%, 100% 0%)",
-            }}
-          >
-            <div
-              className="w-[176px] h-[232px] bg-black/40 m-0.5"
-              style={{
-                clipPath:
-                  "polygon(7% 0%, 0% 4.5%, 0% 32%, 6% 38%, 6% 58%, 0% 63%, 0 94%, 8% 100%, 92% 100%, 100% 94.5%, 100% 82%, 95% 78%, 95% 67%, 100% 63%, 100% 0%)",
-              }}
-            ></div>
-            </article> */}
           {heroData.map(({ image, name }) => (
             <article className="relative w-[176px] h-[232px] flex items-end justify-end transition-transform duration-300 hover:scale-105 hover:-translate-y-1">
               <img src={cardLayout} alt="Card layout" className="absolute" />
               <div
                 className="absolute inset-0 w-[90%] h-[98%] m-auto bg-contain bg-no-repeat bg-center"
                 style={{ backgroundImage: `url(${image})` }}
-              >
-                {/* <img src={image} alt="hero" /> */}
-              </div>
+              ></div>
               <p className="absolute bottom-0 left-0 right-0 w-fit mx-auto translate-y-full font-vermin-vibes-v text-[19px] z-[1]">
                 {name}
               </p>
             </article>
           ))}
         </div>
-      </section>
+      </section> */}
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
