@@ -779,7 +779,7 @@
     display: flex;
     margin-bottom: 5vh;
     margin-top: 2vh;
-    z-index: 1000;
+    z-index: 1;
     position: relative;
   }
 
@@ -1577,7 +1577,7 @@
     display: flex;
     margin-bottom: 5vh;
     margin-top: 2vh;
-    z-index: 1000;
+    z-index: 1;
     position: relative;
   }
 
@@ -2369,8 +2369,7 @@
     justify-content: center;
     display: flex;
     margin-bottom: 10vh;
-    margin-top: -10vh;
-    z-index: 1000;
+     z-index: 1;
     position: relative;
   }
 
