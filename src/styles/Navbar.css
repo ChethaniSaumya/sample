@@ -1,3 +1,7 @@
+.navbar-clip {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 38% 60%, 33% 100%, 0% 100%);
+}
+
 .navbar-shadow {
   filter: drop-shadow(0px 0px 10px black);
 }
@@ -102,4 +106,27 @@
   opacity: 1;
   right: 5px;
   bottom: 5px;
+}
+
+.reverse-animate-toggle-button > div {
+  background-color: white;
+}
+
+.animate-toggle-button > div {
+  transform: rotate(180deg);
+  background-color: transparent;
+}
+
+.animate-toggle-button > div::before {
+  transform: translateY(0) rotate(45deg);
+}
+
+.animate-toggle-button > div::after {
+  transform: translateY(0) rotate(-45deg);
+}
+
+@media (min-width: 640px) {
+  .navbar-clip {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 34% 60%, 32% 100%, 0% 100%);
+  }
 }
