@@ -20,23 +20,24 @@ const heroData = [
 	},
 ];
 
-
 const ChestOpening = () => {
 	const [_navbarOpen, setNavbarOpen] = useState(0);
 	const [isDropdownVisible, setDropdownVisible] = useState(false);
 	const [loading, setLoading] = useState(true);
-	const [isOpen, setIsOpen] = useState(false);
+	//const [isOpen, setIsOpen] = useState(false);
 	const [showDropdown, setShowDropdown] = useState(false);
 	const [_chestOpen, set_chestOpen] = useState(0);
-
-
-	const toggleDropdown = () => {
-		setShowDropdown(!showDropdown);
-	};
 
 	const chestOpen = () => {
 		set_chestOpen(1);
 	};
+
+	const [isOpen, setIsOpen] = useState(false);
+
+	const toggleDropdown = () => {
+		setIsOpen(!isOpen);
+	};
+
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
@@ -54,10 +55,10 @@ const ChestOpening = () => {
 
 			<div className='cont-2'>
 				<div className='titleMain'>FIND YOUR PULSE HERO <span>NFT</span></div>
-				<div className='title2Main'>Secured by <img className='chainlink' src={cl} /></div>		
-				
+				<div className='title2Main'>Secured by <img className='chainlink' src={cl} /></div>
+
 				<img className='treasureIMG' src={treasure} />
-				
+
 				{/*_chestOpen > 0 ?
 				<div className="video-container">
 					<video
@@ -73,36 +74,21 @@ const ChestOpening = () => {
 
 				<div className='btns3'>
 					<button className='btn1' onClick={chestOpen}><img src={chest} /> <div className='txt'><span>04</span> OPEN CHEST</div></button>
-					<button className='btn2'><div>Purchase Crates</div></button>
-
-					<div className="relative">
-						<button
-							className="btn2"
-							onClick={() => setIsOpen((prev) => !prev)}
-						>
-							<div>1 - 10</div>
-							{!isOpen ? <DownArrowHeadIcon /> : <UpArrowHeadIcon />}
-						</button>
-						<div
-							className={`${!isOpen ? "h-0" : "h-[350px] border"} 
-                absolute top-16 left-0 right-0 w-full font-vermin-vibes-v text-[20px] bg-[#D9D9D94D] px-5 mt-3 backdrop-blur-[10px] overflow-hidden transition-all duration-500 z-50`}
-						>
-							<button className="w-full flex items-center justify-center text-center gap-x-[1.3125em] py-3 border-b border-b-white/50 transition-colors duration-100 hover:text-white/80">
-								1
-							</button>
-							<button className="w-full flex items-center justify-center text-center gap-x-[1.3125em] py-3 border-b border-b-white/50 transition-colors duration-100 hover:text-white/80">
-								3
-							</button>
-							<button className="w-full flex items-center justify-center text-center gap-x-[1.3125em] py-3 border-b border-b-white/50 transition-colors duration-100 hover:text-white/80">
-								5
-							</button>
-							<button className="w-full flex items-center justify-center text-center gap-x-[1.3125em] py-3 border-b border-b-white/50 transition-colors duration-100 hover:text-white/80">
-								10
-							</button>
-						</div>
-					</div>
-
-
+					<button className='btn2'><div>Purchase Chests</div></button>
+					
+				<div className="dropdown-container">
+					<button className="btn2" onClick={toggleDropdown}>
+						<div>1 - 10</div>
+						<span id="arrow-icon" className={isOpen ? "rotate" : ""}>▼</span>
+					</button>
+				  {isOpen &&
+					<div id='dropdown'>
+						<button className="dropdown-item">1</button>
+						<button className="dropdown-item">3</button>
+						<button className="dropdown-item">5</button>
+						<button className="dropdown-item" id="lastNum">10</button>
+					</div>}
+				</div>
 				</div>
 
 				<div className='nftSection'>
