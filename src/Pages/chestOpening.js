@@ -3,7 +3,7 @@ import "../styles/ChestOpening.css";
 
 import cl from '../assets/chainlink.png';
 import chest from '../assets/chest.png';
-import chestAnim from '../assets/treasure.png';
+import chestAnim from '../assets/Treasure_Box_GIff_EX.gif';
 import logo from '../assets/logo.png';
 import Navbar from "../components/Navbar";
 import treasure from "../assets/Comp 1_00088.png";
@@ -17,6 +17,7 @@ import trunk from "../assets/heroes/trunk.png";
 import jesus from "../assets/heroes/jesus.png";
 import elom from "../assets/heroes/elom.png";
 import satoshi from "../assets/heroes/satoshi.png";
+
 
 var Scroll = require('react-scroll');
 
@@ -71,9 +72,12 @@ const ChestOpening = () => {
 	const chestOpen = async () => {
 		set_chestOpen(1);
 
-		await new Promise(resolve => setTimeout(resolve, 1000));
+		await new Promise(resolve => setTimeout(resolve, 4500));
 		carouseOpen();
 
+		await new Promise(resolve => setTimeout(resolve, 2500));
+
+		set_chestOpen(0);
 		/*await new Promise(resolve => setTimeout(resolve, 6000));
 		nftSectionRef.current.scrollIntoView({ behavior: 'smooth' });
 */
@@ -89,6 +93,9 @@ const ChestOpening = () => {
 		setCarouselRun(0);
 		await new Promise(resolve => setTimeout(resolve, 5000));
 		setCardShow(0);
+
+		await new Promise(resolve => setTimeout(resolve, 4000));
+		window.location.reload(true);
 	};
 
 
@@ -132,8 +139,8 @@ const ChestOpening = () => {
 				<div className="video-container"><img className='treasureIMG' src={treasure} /></div>
 
 				<div className='btns3'>
-				<Link activeClass="" to="cards" spy={true} smooth={true} duration={1000}>
-				<button className='btn1' onClick={chestOpen} ><img src={chest} /> <div className='txt'><span>04</span> OPEN CHEST</div></button></Link>
+					<Link activeClass="" to="cards" spy={true} smooth={true} duration={550}>
+						<button className='btn1' onClick={chestOpen} ><img src={chest} /> <div className='txt'><span>04</span> OPEN CHEST</div></button></Link>
 					<button className='btn2'><div>Purchase Chests</div></button>
 
 					<div className="dropdown-container">
@@ -154,19 +161,15 @@ const ChestOpening = () => {
 				<div className='nftSection'>
 					<div>
 
-						{/*_chestOpen > 0 ?
-							<div className="video-container">
-								<video
-									className="treasureIMG"
-									src={treasureVid} // Adjust the path if needed
-									autoPlay
-									loop
-									muted
+						{_chestOpen > 0 ?
+						<div className='treasureIMG2Div'><img
+							id="treasureIMG2"
+							className={`${cardShow > 0 ? "fade-out" : ""
+							} ${carouselRun > 0 ? "hidden" : ""}`}
+							src={chestAnim} // Adjust the path if needed
+						>
+						</img></div>:null}
 
-								>
-								</video>
-							</div>
-							: null*/}
 
 						<Element name="cards">
 							{carouselRun > 0 ?
