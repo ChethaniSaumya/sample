@@ -40,13 +40,13 @@
   z-index: 10000;
 }
 
-.popUpImg{
+.popUpImg {
   background: rgba(255, 255, 255, 0.253);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.534);
- }
+}
 
 #greenScreen2 {
   opacity: 0.2;
@@ -74,7 +74,7 @@
   gap: 20px;
 }
 
-#rowImgs--2{
+#rowImgs--2 {
   display: flex;
   gap: 20px;
   /* Space between images */
@@ -287,6 +287,15 @@
 }
 
 @media screen and (max-width: 499px) {
+  #treasureIMG2{
+    width: 150%;
+    margin-top: -150px;
+    z-index: 10;
+  }
+
+  .treasureIMG2Div{
+    width: 1000px
+  }
 
   .headers {
     display: flex;
@@ -1085,7 +1094,16 @@
 }
 
 @media screen and (min-width: 500px) and (max-width: 767px) {
+  #treasureIMG2{
+    width: 150%;
+    margin-top: -180px;
+    z-index: 10;
+  }
 
+  .treasureIMG2Div{
+    width: 1200px
+  }
+  
   .headers {
     display: flex;
     align-items: center;
@@ -1882,6 +1900,16 @@
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
 
+  #treasureIMG2{
+    width: 150%;
+    margin-top: -150px;
+    z-index: 10;
+  }
+
+  .treasureIMG2Div{
+    width: 1200px
+  }
+
   .nftSection3Main-mob {
     display: none;
   }
@@ -2653,6 +2681,12 @@
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
 
+  #treasureIMG2{
+    width: 100%;
+    margin-top: -100px;
+    z-index: 10;
+  }
+
   .nftSection3Main-mob {
     display: none;
   }
@@ -3024,7 +3058,7 @@
     margin-right: auto;
     justify-content: center;
     display: flex;
-    height: 60vh;
+    height: 50vh;
   }
 
   .nftSection2 {
@@ -3420,6 +3454,12 @@
 
 @media screen and (min-width: 1200px) and (max-width: 1919px) {
 
+  #treasureIMG2{
+    width: 100%;
+    margin-top: -150px;
+    z-index: 10;
+  }
+
   .dropdown-container {
     position: relative;
     width: fit-content;
@@ -3791,7 +3831,7 @@
     margin-right: auto;
     justify-content: center;
     display: flex;
-    height: 60vh;
+    height: 53vh;
   }
 
   .nftSection2 {
@@ -4187,6 +4227,11 @@
 }
 
 @media screen and (min-width: 1920px) {
+
+  #treasureIMG2 {
+    width: 100%;
+    margin-top: -220px;
+  }
 
   .dropdown-container {
     position: relative;
@@ -4954,6 +4999,11 @@
 }
 
 @media screen and (min-width: 1921px) and (max-width: 3839px) {
+
+  #treasureIMG2 {
+    width: 100%;
+    margin-top: -190px;
+  }
 
   .nftSection3Main-mob {
     display: none;
@@ -5743,6 +5793,18 @@
 }
 
 @media screen and (min-width: 3840px) {
+
+  #treasureIMG2 {
+    width: 100%;
+    margin-top: -440px;
+  }
+
+  
+  .treasureIMG2Div{
+    width: 3900px
+  }
+
+
   .nftSection3Main-mob {
     display: none;
   }
@@ -5943,7 +6005,7 @@
 
   .treasureIMG {
     width: 1800px;
-     margin-top: 6vh;
+    margin-top: 6vh;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -6110,8 +6172,8 @@
     margin-right: auto;
     justify-content: center;
     display: flex;
-    margin-top: 20vh;
-    margin-bottom: 10vh;
+    height: 70vh;
+
   }
 
   .nftSection2 {
