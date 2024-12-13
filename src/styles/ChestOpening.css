@@ -2681,12 +2681,12 @@
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
 
-  #treasureIMG2{
+  #treasureIMG2 {
     width: 100%;
     margin-top: -100px;
-    z-index: 10;
+    margin-left: auto;
+    margin-right: auto;
   }
-
   .nftSection3Main-mob {
     display: none;
   }
@@ -2959,7 +2959,7 @@
     margin-bottom: auto;
     justify-content: center;
     transition: 0.3s ease-in-out;
-    height: 80px;
+    height: 70px;
   }
 
 
@@ -3454,10 +3454,11 @@
 
 @media screen and (min-width: 1200px) and (max-width: 1919px) {
 
-  #treasureIMG2{
+  #treasureIMG2 {
     width: 100%;
     margin-top: -150px;
-    z-index: 10;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .dropdown-container {
@@ -4229,10 +4230,12 @@
 @media screen and (min-width: 1920px) {
 
   #treasureIMG2 {
-    width: 100%;
-    margin-top: -220px;
+    width: 85%;
+    margin-top: -250px;
+    margin-left: auto;
+    margin-right: auto;
   }
-
+ 
   .dropdown-container {
     position: relative;
     width: fit-content;
@@ -5002,7 +5005,9 @@
 
   #treasureIMG2 {
     width: 100%;
-    margin-top: -190px;
+    margin-top: -280px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .nftSection3Main-mob {
@@ -5794,11 +5799,13 @@
 
 @media screen and (min-width: 3840px) {
 
+
   #treasureIMG2 {
     width: 100%;
-    margin-top: -440px;
+    margin-top: -500px;
+    margin-left: auto;
+    margin-right: auto;
   }
-
   
   .treasureIMG2Div{
     width: 3900px
