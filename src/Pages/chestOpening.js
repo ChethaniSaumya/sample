@@ -17,8 +17,6 @@ import trunk from "../assets/heroes/trunk.png";
 import jesus from "../assets/heroes/jesus.png";
 import elom from "../assets/heroes/elom.png";
 import satoshi from "../assets/heroes/satoshi.png";
-import explosion from "../assets/explosion-unscreen.gif";
-import explosion2 from "../assets/explosion-unscreen2.gif";
 
 var Scroll = require('react-scroll');
 
