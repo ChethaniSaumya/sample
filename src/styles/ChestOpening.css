@@ -7,6 +7,113 @@
 @import url('https://fonts.cdnfonts.com/css/american-captain');
 @import url('https://fonts.cdnfonts.com/css/vermin-vibes-v');
 
+@keyframes carousel {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+.popUpImgMain {
+  position: fixed;
+  /* Ensures it stays in the viewport */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.767);
+  width: fit-content;
+  height: fit-content;
+  animation: fadeIn 0.4s ease-in-out forwards;
+  z-index: 10000;
+}
+
+.popUpImg{
+  background: rgba(255, 255, 255, 0.253);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.534);
+ }
+
+#greenScreen2 {
+  opacity: 0.2;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  /* Space between images */
+  width: max-content;
+}
+
+#rowImgs {
+  overflow: hidden;
+  /* Ensure only visible area shows */
+  position: relative;
+  padding-top: 3vh;
+}
+
+.flexIMGS {
+  flex-flow: row nowrap;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+#rowImgs--2{
+  display: flex;
+  gap: 20px;
+  /* Space between images */
+  width: max-content;
+  margin-top: 20px;
+}
+
+.animate-carousel {
+  animation: carousel 2s linear infinite;
+}
+
+.magic-card {
+  opacity: 0;
+  /* Start invisible */
+  transform: scale(0.5) rotate(10deg);
+  /* Start small and rotated */
+  animation: magicAppear 0.5s forwards;
+  /* Animation to appear */
+}
+
+#rowImgs2 {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes magicAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(10deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
 
 .btn2 {
   display: flex;
@@ -24,6 +131,7 @@
 .video-container {
   text-align: center;
   margin-top: 20px;
+  height: 35vh;
 }
 
 .video-player {
@@ -375,7 +483,7 @@
   }
 
   .treasureIMG {
-    width: 250px;
+    width: 100%;
     margin-top: 6vh;
     margin-left: auto;
     margin-right: auto;
@@ -474,7 +582,7 @@
     transition: all 0.5s ease;
     z-index: 50;
   }
-  
+
   .dropdown-item {
     width: 90%;
     background: none;
@@ -492,32 +600,32 @@
     color: white;
     border-bottom: 1px solid rgba(255, 255, 255, 0.61);
   }
-  
+
   #lastNum {
     border: none;
   }
-  
+
   .dropdown-item:hover {
     color: rgba(255, 255, 255, 0.8);
     background-color: transparent;
   }
-  
+
   .dropdown-item:lanst-child {
     border-bottom: none;
   }
-  
+
   .dropdown-menu.open {
     max-height: 350px;
     background-color: #2da8fa;
   }
-  
+
   /* Arrow rotation */
   #arrow-icon {
     margin-left: 10px;
     font-size: 16px;
     transition: transform 0.3s ease;
   }
-  
+
   #arrow-icon.rotate {
     transform: rotate(180deg);
   }
@@ -551,8 +659,8 @@
     margin-right: auto;
     justify-content: center;
     display: flex;
-    margin-top: 20vh;
-    margin-bottom: 10vh;
+    height: 45vh;
+
   }
 
   .nftSection2 {
@@ -740,8 +848,8 @@
     width: 70%;
   }
 
- 
- 
+
+
   .battleSectionMain {
     width: 96%;
     margin-left: auto;
@@ -1173,7 +1281,7 @@
   }
 
   .treasureIMG {
-    width: 250px;
+    width: 100%;
     margin-top: 6vh;
     margin-left: auto;
     margin-right: auto;
@@ -1272,7 +1380,7 @@
     transition: all 0.5s ease;
     z-index: 50;
   }
-  
+
   .dropdown-item {
     width: 90%;
     background: none;
@@ -1290,32 +1398,32 @@
     color: white;
     border-bottom: 1px solid rgba(255, 255, 255, 0.61);
   }
-  
+
   #lastNum {
     border: none;
   }
-  
+
   .dropdown-item:hover {
     color: rgba(255, 255, 255, 0.8);
     background-color: transparent;
   }
-  
+
   .dropdown-item:lanst-child {
     border-bottom: none;
   }
-  
+
   .dropdown-menu.open {
     max-height: 350px;
     background-color: #2da8fa;
   }
-  
+
   /* Arrow rotation */
   #arrow-icon {
     margin-left: 10px;
     font-size: 16px;
     transition: transform 0.3s ease;
   }
-  
+
   #arrow-icon.rotate {
     transform: rotate(180deg);
   }
@@ -1350,8 +1458,8 @@
     margin-right: auto;
     justify-content: center;
     display: flex;
-    margin-top: 20vh;
-    margin-bottom: 10vh;
+    height: 45vh;
+
   }
 
   .nftSection2 {
@@ -1539,7 +1647,7 @@
     width: 70%;
   }
 
- 
+
   .battleSectionMain {
     width: 96%;
     margin-left: auto;
@@ -1973,7 +2081,7 @@
   }
 
   .treasureIMG {
-    width: 250px;
+    width: 95%;
     margin-top: 6vh;
     margin-left: auto;
     margin-right: auto;
@@ -1985,7 +2093,7 @@
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 7vh;
+    margin-top: 10vh;
     flex-flow: column nowrap;
   }
 
@@ -2072,7 +2180,7 @@
     transition: all 0.5s ease;
     z-index: 50;
   }
-  
+
   .dropdown-item {
     width: 90%;
     background: none;
@@ -2090,32 +2198,32 @@
     color: white;
     border-bottom: 1px solid rgba(255, 255, 255, 0.61);
   }
-  
+
   #lastNum {
     border: none;
   }
-  
+
   .dropdown-item:hover {
     color: rgba(255, 255, 255, 0.8);
     background-color: transparent;
   }
-  
+
   .dropdown-item:lanst-child {
     border-bottom: none;
   }
-  
+
   .dropdown-menu.open {
     max-height: 350px;
     background-color: #2da8fa;
   }
-  
+
   /* Arrow rotation */
   #arrow-icon {
     margin-left: 10px;
     font-size: 16px;
     transition: transform 0.3s ease;
   }
-  
+
   #arrow-icon.rotate {
     transform: rotate(180deg);
   }
@@ -2149,8 +2257,7 @@
     margin-right: auto;
     justify-content: center;
     display: flex;
-    margin-top: 20vh;
-    margin-bottom: 10vh;
+    height: 55vh;
   }
 
   .nftSection2 {
@@ -2369,7 +2476,7 @@
     justify-content: center;
     display: flex;
     margin-bottom: 10vh;
-     z-index: 1;
+    z-index: 1;
     position: relative;
   }
 
@@ -2745,7 +2852,7 @@
   }
 
   .treasureIMG {
-    width: 250px;
+    width: 600px;
     margin-top: 6vh;
     margin-left: auto;
     margin-right: auto;
@@ -2821,72 +2928,72 @@
     height: 80px;
   }
 
-  
-.dropdown-container {
-  position: relative;
-  width: fit-content;
-}
-  
-#dropdown {
-  position: absolute;
-  top: 110px;
-  left: 0;
-  right: 0;
-  width: 100%;
-  background-color: rgba(217, 217, 217, 0.336);
-  backdrop-filter: blur(5px);
-  border: 1px solid white;
-  overflow: hidden;
-  transition: all 0.5s ease;
-  z-index: 50;
-}
 
-.dropdown-item {
-  width: 90%;
-  background: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: center;
-  border: none;
-  font-size: 22px;
-  cursor: pointer;
-  transition: color 0.1s ease;
-  font-family: 'Vermin Vibes V', sans-serif;
-  color: white;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.61);
-}
+  .dropdown-container {
+    position: relative;
+    width: fit-content;
+  }
 
-#lastNum {
-  border: none;
-}
+  #dropdown {
+    position: absolute;
+    top: 110px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(217, 217, 217, 0.336);
+    backdrop-filter: blur(5px);
+    border: 1px solid white;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    z-index: 50;
+  }
 
-.dropdown-item:hover {
-  color: rgba(255, 255, 255, 0.8);
-  background-color: transparent;
-}
+  .dropdown-item {
+    width: 90%;
+    background: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    transition: color 0.1s ease;
+    font-family: 'Vermin Vibes V', sans-serif;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.61);
+  }
 
-.dropdown-item:lanst-child {
-  border-bottom: none;
-}
+  #lastNum {
+    border: none;
+  }
 
-.dropdown-menu.open {
-  max-height: 350px;
-  background-color: #2da8fa;
-}
+  .dropdown-item:hover {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: transparent;
+  }
 
-/* Arrow rotation */
-#arrow-icon {
-  margin-left: 10px;
-  font-size: 16px;
-  transition: transform 0.3s ease;
-}
+  .dropdown-item:lanst-child {
+    border-bottom: none;
+  }
 
-#arrow-icon.rotate {
-  transform: rotate(180deg);
-}
+  .dropdown-menu.open {
+    max-height: 350px;
+    background-color: #2da8fa;
+  }
+
+  /* Arrow rotation */
+  #arrow-icon {
+    margin-left: 10px;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+  }
+
+  #arrow-icon.rotate {
+    transform: rotate(180deg);
+  }
 
   .btn2:hover {
     background-color: rgba(255, 255, 255, 0.11);
@@ -2917,8 +3024,7 @@
     margin-right: auto;
     justify-content: center;
     display: flex;
-    margin-top: 20vh;
-    margin-bottom: 10vh;
+    height: 60vh;
   }
 
   .nftSection2 {
@@ -3318,6 +3424,7 @@
     position: relative;
     width: fit-content;
   }
+
   .nftSection3Main-mob {
     display: none;
   }
@@ -3517,7 +3624,7 @@
   }
 
   .treasureIMG {
-    width: 250px;
+    width: 600px;
     margin-top: 6vh;
     margin-left: auto;
     margin-right: auto;
@@ -3593,67 +3700,67 @@
     height: 80px;
   }
 
-  
-#dropdown {
-  position: absolute;
-  top: 110px;
-  left: 0;
-  right: 0;
-  width: 100%;
-  background-color: rgba(217, 217, 217, 0.336);
-  backdrop-filter: blur(5px);
-  border: 1px solid white;
-  overflow: hidden;
-  transition: all 0.5s ease;
-  z-index: 50;
-}
 
-.dropdown-item {
-  width: 90%;
-  background: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: center;
-  border: none;
-  font-size: 22px;
-  cursor: pointer;
-  transition: color 0.1s ease;
-  font-family: 'Vermin Vibes V', sans-serif;
-  color: white;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.61);
-}
+  #dropdown {
+    position: absolute;
+    top: 110px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(217, 217, 217, 0.336);
+    backdrop-filter: blur(5px);
+    border: 1px solid white;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    z-index: 50;
+  }
 
-#lastNum {
-  border: none;
-}
+  .dropdown-item {
+    width: 90%;
+    background: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    transition: color 0.1s ease;
+    font-family: 'Vermin Vibes V', sans-serif;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.61);
+  }
 
-.dropdown-item:hover {
-  color: rgba(255, 255, 255, 0.8);
-  background-color: transparent;
-}
+  #lastNum {
+    border: none;
+  }
 
-.dropdown-item:lanst-child {
-  border-bottom: none;
-}
+  .dropdown-item:hover {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: transparent;
+  }
 
-.dropdown-menu.open {
-  max-height: 350px;
-  background-color: #2da8fa;
-}
+  .dropdown-item:lanst-child {
+    border-bottom: none;
+  }
 
-/* Arrow rotation */
-#arrow-icon {
-  margin-left: 10px;
-  font-size: 16px;
-  transition: transform 0.3s ease;
-}
+  .dropdown-menu.open {
+    max-height: 350px;
+    background-color: #2da8fa;
+  }
 
-#arrow-icon.rotate {
-  transform: rotate(180deg);
-}
+  /* Arrow rotation */
+  #arrow-icon {
+    margin-left: 10px;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+  }
+
+  #arrow-icon.rotate {
+    transform: rotate(180deg);
+  }
 
   .btn2:hover {
     background-color: rgba(255, 255, 255, 0.11);
@@ -3684,8 +3791,7 @@
     margin-right: auto;
     justify-content: center;
     display: flex;
-    margin-top: 20vh;
-    margin-bottom: 10vh;
+    height: 60vh;
   }
 
   .nftSection2 {
@@ -4086,6 +4192,7 @@
     position: relative;
     width: fit-content;
   }
+
   .nftSection3Main-mob {
     display: none;
   }
@@ -4218,7 +4325,7 @@
   }
 
   .contMain {
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.2877457865168539) 0%, rgba(0, 0, 0, 0.4450491573033708) 50%, rgba(0, 0, 0, 0.5911165730337078) 100%), url('../assets/bg3.png');
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.2877457865168539) 0%, rgba(0, 0, 0, 0.4450491573033708) 50%, rgba(0, 0, 0, 0.5911165730337078) 100%), url('../assets/bg3.png') center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -4285,8 +4392,8 @@
   }
 
   .treasureIMG {
-    width: 300px;
-    margin-top: 6vh;
+    width: 550px;
+    margin-top: 5vh;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -4361,67 +4468,67 @@
     height: 80px;
   }
 
-  
-#dropdown {
-  position: absolute;
-  top: 110px;
-  left: 0;
-  right: 0;
-  width: 100%;
-  background-color: rgba(217, 217, 217, 0.336);
-  backdrop-filter: blur(5px);
-  border: 1px solid white;
-  overflow: hidden;
-  transition: all 0.5s ease;
-  z-index: 50;
-}
 
-.dropdown-item {
-  width: 90%;
-  background: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: center;
-  border: none;
-  font-size: 22px;
-  cursor: pointer;
-  transition: color 0.1s ease;
-  font-family: 'Vermin Vibes V', sans-serif;
-  color: white;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.61);
-}
+  #dropdown {
+    position: absolute;
+    top: 110px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(217, 217, 217, 0.336);
+    backdrop-filter: blur(5px);
+    border: 1px solid white;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    z-index: 50;
+  }
 
-#lastNum {
-  border: none;
-}
+  .dropdown-item {
+    width: 90%;
+    background: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    transition: color 0.1s ease;
+    font-family: 'Vermin Vibes V', sans-serif;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.61);
+  }
 
-.dropdown-item:hover {
-  color: rgba(255, 255, 255, 0.8);
-  background-color: transparent;
-}
+  #lastNum {
+    border: none;
+  }
 
-.dropdown-item:lanst-child {
-  border-bottom: none;
-}
+  .dropdown-item:hover {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: transparent;
+  }
 
-.dropdown-menu.open {
-  max-height: 350px;
-  background-color: #2da8fa;
-}
+  .dropdown-item:lanst-child {
+    border-bottom: none;
+  }
 
-/* Arrow rotation */
-#arrow-icon {
-  margin-left: 10px;
-  font-size: 16px;
-  transition: transform 0.3s ease;
-}
+  .dropdown-menu.open {
+    max-height: 350px;
+    background-color: #2da8fa;
+  }
 
-#arrow-icon.rotate {
-  transform: rotate(180deg);
-}
+  /* Arrow rotation */
+  #arrow-icon {
+    margin-left: 10px;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+  }
+
+  #arrow-icon.rotate {
+    transform: rotate(180deg);
+  }
 
   .btn2:hover {
     background-color: rgba(255, 255, 255, 0.11);
@@ -4452,8 +4559,7 @@
     margin-right: auto;
     justify-content: center;
     display: flex;
-    margin-top: 20vh;
-    margin-bottom: 10vh;
+    height: 60vh;
   }
 
   .nftSection2 {
@@ -4981,7 +5087,7 @@
   }
 
   .contMain {
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.2877457865168539) 0%, rgba(0, 0, 0, 0.4450491573033708) 50%, rgba(0, 0, 0, 0.5911165730337078) 100%), url('../assets/bg3.png');
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.2877457865168539) 0%, rgba(0, 0, 0, 0.4450491573033708) 50%, rgba(0, 0, 0, 0.5911165730337078) 100%), url('../assets/bg3.png')center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -5048,7 +5154,7 @@
   }
 
   .treasureIMG {
-    width: 400px;
+    width: 800px;
     margin-top: 6vh;
     margin-left: auto;
     margin-right: auto;
@@ -5139,67 +5245,67 @@
     height: 120px;
   }
 
-  
-#dropdown {
-  position: absolute;
-  top: 180px;
-  left: 0;
-  right: 0;
-  width: 100%;
-  background-color: rgba(217, 217, 217, 0.336);
-  backdrop-filter: blur(5px);
-  border: 1px solid white;
-  overflow: hidden;
-  transition: all 0.5s ease;
-  z-index: 50;
-}
 
-.dropdown-item {
-  width: 90%;
-  background: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: center;
-  border: none;
-  font-size: 28px;
-  cursor: pointer;
-  transition: color 0.1s ease;
-  font-family: 'Vermin Vibes V', sans-serif;
-  color: white;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.61);
-}
+  #dropdown {
+    position: absolute;
+    top: 180px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(217, 217, 217, 0.336);
+    backdrop-filter: blur(5px);
+    border: 1px solid white;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    z-index: 50;
+  }
 
-#lastNum {
-  border: none;
-}
+  .dropdown-item {
+    width: 90%;
+    background: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    transition: color 0.1s ease;
+    font-family: 'Vermin Vibes V', sans-serif;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.61);
+  }
 
-.dropdown-item:hover {
-  color: rgba(255, 255, 255, 0.8);
-  background-color: transparent;
-}
+  #lastNum {
+    border: none;
+  }
 
-.dropdown-item:lanst-child {
-  border-bottom: none;
-}
+  .dropdown-item:hover {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: transparent;
+  }
 
-.dropdown-menu.open {
-  max-height: 350px;
-  background-color: #2da8fa;
-}
+  .dropdown-item:lanst-child {
+    border-bottom: none;
+  }
 
-/* Arrow rotation */
-#arrow-icon {
-  margin-left: 20px;
-  font-size: 25px;
-  transition: transform 0.3s ease;
-}
+  .dropdown-menu.open {
+    max-height: 350px;
+    background-color: #2da8fa;
+  }
 
-#arrow-icon.rotate {
-  transform: rotate(180deg);
-}
+  /* Arrow rotation */
+  #arrow-icon {
+    margin-left: 20px;
+    font-size: 25px;
+    transition: transform 0.3s ease;
+  }
+
+  #arrow-icon.rotate {
+    transform: rotate(180deg);
+  }
 
   .btn2:hover {
     background-color: rgba(255, 255, 255, 0.11);
@@ -5230,8 +5336,7 @@
     margin-right: auto;
     justify-content: center;
     display: flex;
-    margin-top: 20vh;
-    margin-bottom: 10vh;
+    height: 50vh;
   }
 
   .nftSection2 {
@@ -5770,7 +5875,7 @@
   }
 
   .contMain {
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.2877457865168539) 0%, rgba(0, 0, 0, 0.4450491573033708) 50%, rgba(0, 0, 0, 0.5911165730337078) 100%), url('../assets/bg3.png');
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.2877457865168539) 0%, rgba(0, 0, 0, 0.4450491573033708) 50%, rgba(0, 0, 0, 0.5911165730337078) 100%), url('../assets/bg3.png') center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -5837,8 +5942,8 @@
   }
 
   .treasureIMG {
-    width: 650px;
-    margin-top: 6vh;
+    width: 1800px;
+     margin-top: 6vh;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -5849,7 +5954,7 @@
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 7vh;
+    margin-top: 15vh;
   }
 
   .btns3 button {
@@ -5913,67 +6018,67 @@
     height: 160px;
   }
 
-  
-#dropdown {
-  position: absolute;
-  top: 250px;
-  left: 0;
-  right: 0;
-  width: 100%;
-  background-color: rgba(217, 217, 217, 0.336);
-  backdrop-filter: blur(5px);
-  border: 1px solid white;
-  overflow: hidden;
-  transition: all 0.5s ease;
-  z-index: 50;
-}
 
-.dropdown-item {
-  width: 90%;
-  background: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: center;
-  border: none;
-  font-size: 45px;
-  cursor: pointer;
-  transition: color 0.1s ease;
-  font-family: 'Vermin Vibes V', sans-serif;
-  color: white;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.61);
-}
+  #dropdown {
+    position: absolute;
+    top: 250px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(217, 217, 217, 0.336);
+    backdrop-filter: blur(5px);
+    border: 1px solid white;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    z-index: 50;
+  }
 
-#lastNum {
-  border: none;
-}
+  .dropdown-item {
+    width: 90%;
+    background: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    border: none;
+    font-size: 45px;
+    cursor: pointer;
+    transition: color 0.1s ease;
+    font-family: 'Vermin Vibes V', sans-serif;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.61);
+  }
 
-.dropdown-item:hover {
-  color: rgba(255, 255, 255, 0.8);
-  background-color: transparent;
-}
+  #lastNum {
+    border: none;
+  }
 
-.dropdown-item:lanst-child {
-  border-bottom: none;
-}
+  .dropdown-item:hover {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: transparent;
+  }
 
-.dropdown-menu.open {
-  max-height: 350px;
-  background-color: #2da8fa;
-}
+  .dropdown-item:lanst-child {
+    border-bottom: none;
+  }
 
-/* Arrow rotation */
-#arrow-icon {
-  margin-left: 30px;
-  font-size: 45px;
-  transition: transform 0.3s ease;
-}
+  .dropdown-menu.open {
+    max-height: 350px;
+    background-color: #2da8fa;
+  }
 
-#arrow-icon.rotate {
-  transform: rotate(180deg);
-}
+  /* Arrow rotation */
+  #arrow-icon {
+    margin-left: 30px;
+    font-size: 45px;
+    transition: transform 0.3s ease;
+  }
+
+  #arrow-icon.rotate {
+    transform: rotate(180deg);
+  }
 
 
   .btn2:hover {
