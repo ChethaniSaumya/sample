@@ -17,11 +17,6 @@ import trunk from "../assets/heroes/trunk.png";
 import jesus from "../assets/heroes/jesus.png";
 import elom from "../assets/heroes/elom.png";
 import satoshi from "../assets/heroes/satoshi.png";
-import webmVid from "../assets/BOX_Animation-vp9-chrome.webm";
-import movChest from "../assets/Traeasure.mov";
-
-
-
 
 var Scroll = require('react-scroll');
 
