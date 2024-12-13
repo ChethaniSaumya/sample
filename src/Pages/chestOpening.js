@@ -3,7 +3,7 @@ import "../styles/ChestOpening.css";
 
 import cl from '../assets/chainlink.png';
 import chest from '../assets/chest.png';
-import chestAnim from '../assets/Treasure_Box_GIff_EX.gif';
+import chestAnim from '../assets/Comp 1-vp9-chrome.webm';
 import logo from '../assets/logo.png';
 import Navbar from "../components/Navbar";
 import treasure from "../assets/Comp 1_00088.png";
@@ -17,6 +17,10 @@ import trunk from "../assets/heroes/trunk.png";
 import jesus from "../assets/heroes/jesus.png";
 import elom from "../assets/heroes/elom.png";
 import satoshi from "../assets/heroes/satoshi.png";
+import webmVid from "../assets/BOX_Animation-vp9-chrome.webm";
+import movChest from "../assets/Traeasure.mov";
+
+
 
 
 var Scroll = require('react-scroll');
@@ -162,14 +166,11 @@ const ChestOpening = () => {
 					<div>
 
 						{_chestOpen > 0 ?
-						<div className='treasureIMG2Div'><img
-							id="treasureIMG2"
-							className={`${cardShow > 0 ? "fade-out" : ""
-							} ${carouselRun > 0 ? "hidden" : ""}`}
-							src={chestAnim} // Adjust the path if needed
-						>
-						</img></div>:null}
-
+							<div className='treasureIMG2Div'>
+								<video id="treasureIMG2" className={`${cardShow > 0 ? "fade-out" : ""
+									} ${carouselRun > 0 ? "hidden" : ""}`} autoPlay loop muted playsInline>
+									<source src={chestAnim} type="video/webm" />
+								</video></div> : null}
 
 						<Element name="cards">
 							{carouselRun > 0 ?
