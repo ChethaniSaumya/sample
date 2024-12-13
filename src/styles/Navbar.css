@@ -6,6 +6,14 @@
   filter: drop-shadow(0px 0px 10px black);
 }
 
+.desktop-links {
+  display: none;
+}
+
+.connect-button {
+  display: none;
+}
+
 .nav-link-hover a {
   padding: 10px 20px;
   position: relative;
@@ -128,5 +136,18 @@
 @media (min-width: 640px) {
   .navbar-clip {
     clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 34% 60%, 32% 100%, 0% 100%);
+  }
+}
+
+@media (min-width: 1024px) {
+  .desktop-links {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .connect-button {
+    display: block;
   }
 }

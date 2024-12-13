@@ -20,7 +20,7 @@ const Navbar = () => {
             <h2 className="font-bold">PULSEHEROES</h2>
           </a>
           <div className="flex text-[12px] xl:text-[14px] 2xl:text-[16px] xl:gap-[20px] 2xl:gap-[40px] -translate-y-[14px] lg:-translate-y-[18px] xl:-translate-y-[22px] 2xl:-translate-y-[23px] items-center">
-            <ul className="hidden lg:flex items-center xl:gap-[10px] 2xl:gap-[15px]">
+            <ul className="desktop-links xl:gap-[10px] 2xl:gap-[15px]">
               <li className="nav-link-hover font-bold">
                 <a href="/">CHESTS PRESALE</a>
               </li>
@@ -40,7 +40,7 @@ const Navbar = () => {
                 <a href="/">MORE</a>
               </li>
             </ul>
-            <button className="hidden lg:block bg-gradient-to-r from-[#B014A5] via-[#6514DB] to-[#B014A5] bg-[length:200%_200%] font-vermin-vibes-v text-[10px] xl:text-[11px] 2xl:text-[13px] px-[3.5em] py-[0.8em] transition-all duration-500 hover:bg-right hover:shadow-[0_0_5px_0_#B014A5]">
+            <button className="connect-button bg-gradient-to-r from-[#B014A5] via-[#6514DB] to-[#B014A5] bg-[length:200%_200%] font-vermin-vibes-v text-[10px] xl:text-[11px] 2xl:text-[13px] px-[3.5em] py-[0.8em] transition-all duration-500 hover:bg-right hover:shadow-[0_0_5px_0_#B014A5]">
               CONNECT
             </button>
             <button
