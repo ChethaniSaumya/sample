@@ -184,124 +184,97 @@ const ChestOpening = () => {
 				<div className='titleMain'>FIND YOUR PULSE HERO <span>NFT</span></div>
 				<div className='title2Main'>Secured by <img className='chainlink' src={cl} /></div>
 
-				<div className="video-container"><img className='treasureIMG' src={treasure} /></div>
-
-				<div className='btns3'>
-					<Link activeClass="" to="cards" spy={true} smooth={true} duration={550}>
-						<button className='btn1' id="btn1PC" onClick={chestOpen} ><img src={chest} /> <div className='txt'><span>04</span> OPEN CHEST</div></button></Link>
-
-					<Link activeClass="" to="cards" spy={true} smooth={true} duration={550}>
-						<button id="btn1Mobile" className='btn1' onClick={chestOpenMob} ><img src={chest} /> <div className='txt'><span>04</span> OPEN CHEST</div></button></Link>
-
-					<button className='btn2'><div>Purchase Chests</div></button>
-
-					<div className="dropdown-container">
-						<button className="btn2" onClick={toggleDropdown}>
-							<div>1 - 10</div>
-							<span id="arrow-icon" className={isOpen ? "rotate" : ""}>▼</span>
-						</button>
-						{isOpen &&
-							<div id='dropdown'>
-								<button className="dropdown-item">1</button>
-								<button className="dropdown-item">3</button>
-								<button className="dropdown-item">5</button>
-								<button className="dropdown-item" id="lastNum">10</button>
-							</div>}
-					</div>
-				</div>
-
-
 				<div className='nftSection'>
-
-					{spreadRun > 0 ?
-
-						<div className="carouselImgs">
-							<img src={vitalip} style={{ "--target-left": "10vw" }} alt="Vitalip" />
-							<img src={richard} style={{ "--target-left": "23vw" }} alt="Richard" />
-							<img src={gz} style={{ "--target-left": "36vw" }} alt="GZ" />
-							<img src={trunk} style={{ "--target-left": "49vw" }} alt="Trunk" />
-							<img src={jesus} style={{ "--target-left": "62vw" }} alt="Jesus" />
-							<img src={elom} style={{ "--target-left": "75vw" }} alt="Elom" />
-							<img src={satoshi} style={{ "--target-left": "88vw" }} alt="Satoshi" />
-
-						</div> : null}
-
-					{carouselRun > 0 ?
-						<div
-							id="rowImgs"
-							className={`relative overflow-hidden container mx-auto pb-[100px] z-[1] ${cardShow > 0 ? "fade-out" : ""
-								} ${cardShow > 0 && carouselRun === 0 ? "hidden" : ""}`}
-						>
-							<div className="carousel-track flex w-fit animate-carousel">
-								{/* Duplicate images for seamless looping */}
-								{heroData.concat(heroData).map(({ image, name }, index) => (
-									<article
-										key={index}
-										className="relative w-fit max-w-fit mx-3 my-10 flex items-end justify-end transition-transform duration-300 hover:-translate-y-1"
-									>
-										<img
-											src={cardLayout}
-											alt="Card layout"
-											style={{
-												width: '10vw', // Adjust width based on viewport width
-												height: '14vw', // Adjust height based on viewport width
-											}}
-										/>
-										<div
-											className="absolute inset-0 w-[90%] h-[98%] m-auto bg-contain bg-no-repeat bg-center"
-											style={{ backgroundImage: `url(${image})` }}
-										></div>
-										<p id="sizeFonts">
-											{name}
-										</p>
-									</article>
-								))}
-							</div>
-						</div>
-						: null}
-
-					{carouselRunMob > 0 ?
-						<div
-							id="rowImgs"
-							className={`relative overflow-hidden container mx-auto pb-[100px] z-[1] ${cardShow > 0 ? "fade-out" : ""
-								} ${cardShow > 0 && carouselRun === 0 ? "hidden" : ""}`}
-						>
-							<div className="carousel-track flex w-fit animate-carousel">
-								{/* Duplicate images for seamless looping */}
-								{heroData.concat(heroData).map(({ image, name }, index) => (
-									<article
-										key={index}
-										className="relative w-fit max-w-fit mx-5 my-10 flex items-end justify-end transition-transform duration-300 hover:-translate-y-1"
-									>
-										<img
-											src={cardLayout}
-											alt="Card layout"
-											className="w-[122px] h-[170px] sm:w-[136px] sm:h-[188px] md:w-[150px] md:h-[206px] lg:w-[162px] lg:h-[220px] xl:w-[170px] xl:h-[226px] 2xl:w-[176px] 2xl:h-[232px]"
-										/>
-										<div
-											className="absolute inset-0 w-[90%] h-[98%] m-auto bg-contain bg-no-repeat bg-center"
-											style={{ backgroundImage: `url(${image})` }}
-										></div>
-										<p className="absolute bottom-0 left-0 right-0 w-fit mx-auto translate-y-full font-vermin-vibes-v text-[19px] z-[1]">
-											{name}
-										</p>
-									</article>
-								))}
-							</div>
-						</div>
-						: null}
+ 					{_chestOpen > 0 ?
+						<div className='treasureIMG2Div'>
+							<video id="treasureIMG2" className={`${cardShow > 0 ? "fade-out" : ""
+								} ${carouselRun > 0 ? "hidden" : ""}`} autoPlay loop muted playsInline>
+								<source src={chestAnim} type="video/webm" />
+							</video></div> :
+						<div className="video-container"><img className='treasureIMG' src={treasure} /></div>}
+ 
 					<div>
+						{spreadRun > 0 ?
 
-						{_chestOpen > 0 ?
-							<div className='treasureIMG2Div'>
-								<video id="treasureIMG2" className={`${cardShow > 0 ? "fade-out" : ""
-									} ${carouselRun > 0 ? "hidden" : ""}`} autoPlay loop muted playsInline>
-									<source src={chestAnim} type="video/webm" />
-								</video></div> : null}
+							<div className="carouselImgs">
+								<img src={vitalip} style={{ "--target-left": "10vw" }} alt="Vitalip" />
+								<img src={richard} style={{ "--target-left": "23vw" }} alt="Richard" />
+								<img src={gz} style={{ "--target-left": "36vw" }} alt="GZ" />
+								<img src={trunk} style={{ "--target-left": "49vw" }} alt="Trunk" />
+								<img src={jesus} style={{ "--target-left": "62vw" }} alt="Jesus" />
+								<img src={elom} style={{ "--target-left": "75vw" }} alt="Elom" />
+								<img src={satoshi} style={{ "--target-left": "88vw" }} alt="Satoshi" />
 
-						<Element name="cards">
+							</div> : null}
 
-						</Element>
+						{carouselRun > 0 ?
+							<div
+								id="rowImgs"
+								className={`relative overflow-hidden container mx-auto pb-[100px] z-[1] ${cardShow > 0 ? "fade-out" : ""
+									} ${cardShow > 0 && carouselRun === 0 ? "hidden" : ""}`}
+							>
+								<div className="carousel-track flex w-fit animate-carousel">
+									{/* Duplicate images for seamless looping */}
+									{heroData.concat(heroData).map(({ image, name }, index) => (
+										<article
+											key={index}
+											className="relative w-fit max-w-fit mx-3 my-10 flex items-end justify-end transition-transform duration-300 hover:-translate-y-1"
+										>
+											<img
+												src={cardLayout}
+												alt="Card layout"
+												style={{
+													width: '10vw', // Adjust width based on viewport width
+													height: '14vw', // Adjust height based on viewport width
+												}}
+											/>
+											<div
+												className="absolute inset-0 w-[90%] h-[98%] m-auto bg-contain bg-no-repeat bg-center"
+												style={{ backgroundImage: `url(${image})` }}
+											></div>
+											<p id="sizeFonts">
+												{name}
+											</p>
+										</article>
+									))}
+								</div>
+							</div>
+							: null}
+ 
+						{carouselRunMob > 0 ?
+							<div
+								id="rowImgs"
+								className={`relative overflow-hidden container mx-auto pb-[100px] z-[1] ${cardShow > 0 ? "fade-out" : ""
+									} ${cardShow > 0 && carouselRun === 0 ? "hidden" : ""}`}
+							>
+								<div className="carousel-track flex w-fit animate-carousel">
+									{/* Duplicate images for seamless looping */}
+									{heroData.concat(heroData).map(({ image, name }, index) => (
+										<article
+											key={index}
+											className="relative w-fit max-w-fit mx-5 my-10 flex items-end justify-end transition-transform duration-300 hover:-translate-y-1"
+										>
+											<img
+												src={cardLayout}
+												alt="Card layout"
+												className="w-[122px] h-[170px] sm:w-[136px] sm:h-[188px] md:w-[150px] md:h-[206px] lg:w-[162px] lg:h-[220px] xl:w-[170px] xl:h-[226px] 2xl:w-[176px] 2xl:h-[232px]"
+											/>
+											<div
+												className="absolute inset-0 w-[90%] h-[98%] m-auto bg-contain bg-no-repeat bg-center"
+												style={{ backgroundImage: `url(${image})` }}
+											></div>
+											<p className="absolute bottom-0 left-0 right-0 w-fit mx-auto translate-y-full font-vermin-vibes-v text-[19px] z-[1]">
+												{name}
+											</p>
+										</article>
+									))}
+								</div>
+							</div>
+							: null}
+
+					</div>
+
+					<div>
 
 						{cardShow > 0 ?
 							<div className='popUpImgMain'>
@@ -331,8 +304,32 @@ const ChestOpening = () => {
 
 					</div>
 				</div>
+
+				<div className='btns3'>
+
+					<button className='btn1' id="btn1PC" onClick={chestOpen} ><img src={chest} /> <div className='txt'><span>04</span> OPEN CHEST</div></button>
+					<button id="btn1Mobile" className='btn1' onClick={chestOpenMob} ><img src={chest} /> <div className='txt'><span>04</span> OPEN CHEST</div></button>
+
+					<button className='btn2'><div>Purchase Chests</div></button>
+
+					<div className="dropdown-container">
+						<button className="btn2" onClick={toggleDropdown}>
+							<div>1 - 10</div>
+							<span id="arrow-icon" className={isOpen ? "rotate" : ""}>▼</span>
+						</button>
+						{isOpen &&
+							<div id='dropdown'>
+								<button className="dropdown-item">1</button>
+								<button className="dropdown-item">3</button>
+								<button className="dropdown-item">5</button>
+								<button className="dropdown-item" id="lastNum">10</button>
+							</div>}
+					</div>
+				</div>
+
 			</div>
 
+			<div className='nftSection'></div>
 
 			<section className="h-[160px] bg-black/10 backdrop-blur-md">
 				<div className="container h-full mx-auto flex items-center justify-center gap-x-[60px]">
