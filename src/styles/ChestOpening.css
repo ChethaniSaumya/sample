@@ -73,12 +73,6 @@
   width: max-content;
 }
 
-#rowImgs {
-  overflow: hidden;
-  /* Ensure only visible area shows */
-  position: relative;
-  padding-top: 3vh;
-}
 
 .flexIMGS {
   flex-flow: row nowrap;
@@ -97,7 +91,7 @@
 }
 
 .animate-carousel {
-  animation: carousel 1s linear infinite;
+  animation: carousel 0.7s linear infinite;
 }
 
 .magic-card {
@@ -301,10 +295,20 @@
 }
 
 @media screen and (max-width: 499px) {
+
+.video-container{
+  margin-left: -15px;
+}  
+
 #btn1PC{
   display: none;
 }
-
+#rowImgs {
+  overflow: hidden;
+  /* Ensure only visible area shows */
+  position: relative;
+  margin-top: -82px;
+  }
   .carouselImgs {
     position: relative;
     width: 100vw;
@@ -316,7 +320,6 @@
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -7vh;
     display: none;
 
   }
@@ -350,22 +353,26 @@
   }
 
   #treasureIMG2 {
-    width: 100%;
+    width: 150%;
     margin-top: -150px;
     z-index: 10;
-
-    -webkit-mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
+     -webkit-mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
     mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
     -webkit-mask-composite: destination-in;
     mask-composite: intersect;
-   }
+  }
 
   .treasureIMG2Div {
-    width: 800px;
+    width: 1200px;
     position: relative;
     overflow: hidden;
-    padding-top: 100px;
-   }
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    display: flex;
+     margin-left: -400px;
+     padding-top: 80px;
+    }
 
   .headers {
     display: flex;
@@ -737,8 +744,7 @@
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
-    display: flex;
-    height: 45vh;
+    height: 52vh;
 
   }
 
@@ -1164,6 +1170,13 @@
 }
 
 @media screen and (min-width: 500px) and (max-width: 767px) {
+  #rowImgs {
+    overflow: hidden;
+    /* Ensure only visible area shows */
+    position: relative;
+    margin-top: -82px;
+    }
+
   #btn1PC{
     display: none;
   }
@@ -1179,7 +1192,6 @@
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -5vh;
     display: none;
 
   }
@@ -1226,7 +1238,7 @@
 
   #treasureIMG2 {
     width: 150%;
-    margin-top: -250px;
+    margin-top: -150px;
     z-index: 10;
 
     -webkit-mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
@@ -1239,8 +1251,12 @@
     width: 1200px;
     position: relative;
     overflow: hidden;
-    padding-top: 130px;
-  }
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    display: flex;
+     margin-left: -350px;
+    }
 
   .headers {
     display: flex;
@@ -1613,8 +1629,7 @@
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
-    display: flex;
-    height: 45vh;
+    height: 52vh;
 
   }
 
@@ -2041,6 +2056,12 @@
     display: none;
   }
 
+  #rowImgs {
+    overflow: hidden;
+    /* Ensure only visible area shows */
+    position: relative;
+    margin-top: 52px;
+   }
   .carouselImgs {
     position: relative;
     width: 100vw;
@@ -2052,8 +2073,6 @@
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -2.9vh;
-
   }
 
   
@@ -2088,21 +2107,25 @@
   }
 
   #treasureIMG2 {
-    width: 150%;
-    margin-top: -150px;
-    z-index: 10;
+      z-index: 10;
 
     -webkit-mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
     mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
     -webkit-mask-composite: destination-in;
     mask-composite: intersect;
+    margin-top: -150px;
   }
 
   .treasureIMG2Div {
-    width: 1200px;
+    width: 1500px;
     position: relative;
     overflow: hidden;
-  }
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    display: flex;
+     margin-left: -370px;
+    }
 
   .nftSection3Main-mob {
     display: none;
@@ -2303,7 +2326,7 @@
   }
 
   .treasureIMG {
-    width: 95%;
+    width: 85%;
     margin-top: 6vh;
     margin-left: auto;
     margin-right: auto;
@@ -2478,7 +2501,6 @@
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
-    display: flex;
     height: 55vh;
   }
 
@@ -2882,6 +2904,12 @@
     overflow: hidden;
   }
 
+  #rowImgs {
+    overflow: hidden;
+    /* Ensure only visible area shows */
+    position: relative;
+    margin-top: -35px;
+   }
   .carouselImgs {
     position: relative;
     width: 88vw;
@@ -2893,8 +2921,7 @@
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -1vh;
-
+    margin-top: -75px;
   }
 
   
@@ -3140,8 +3167,8 @@
   }
 
   .treasureIMG {
-    width: 600px;
-    margin-top: 6vh;
+    width: 450px;
+    margin-top: 12vh;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -3311,7 +3338,6 @@
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
-    display: flex;
     height: 50vh;
   }
 
@@ -3715,6 +3741,12 @@
     overflow: hidden;
   }
 
+  #rowImgs {
+    overflow: hidden;
+    /* Ensure only visible area shows */
+    position: relative;
+    margin-top: -35px;
+   }
   #sizeFonts {
     position: absolute;
     bottom: 0;
@@ -3739,7 +3771,7 @@
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px;
+    margin-top: -50px;
   }
 
   .carouselImgs img {
@@ -3975,8 +4007,8 @@
   }
 
   .treasureIMG {
-    width: 600px;
-    margin-top: 6vh;
+    width: 500px;
+    margin-top: 14vh;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -4141,7 +4173,6 @@
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
-    display: flex;
     height: 53vh;
   }
 
@@ -4541,11 +4572,13 @@
   #btn1Mobile{
     display: none;
   }
-  .treasureIMG2Div {
-    position: relative;
-    overflow: hidden;
-  }
 
+  #rowImgs {
+    overflow: hidden;
+    /* Ensure only visible area shows */
+    position: relative;
+    margin-top: -35px;
+   }
   #sizeFonts {
     position: absolute;
     bottom: 0;
@@ -4570,8 +4603,7 @@
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 6.9vh;
-
+ 
   }
 
   .carouselImgs img {
@@ -4591,9 +4623,18 @@
     /* Trigger the animation */
   }
  
+  .treasureIMG2Div {
+    position: relative;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    display: flex;
+    padding-top: 230px;
+   }
 
   #treasureIMG2 {
-    width: 100%;
+    width: 80%;
    margin-top: -280px;
 
     -webkit-mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
@@ -4971,8 +5012,7 @@
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
-    display: flex;
-    height: 60vh;
+    height: 63vh;
   }
 
   .nftSection2 {
@@ -5367,11 +5407,13 @@
 }
 
 @media screen and (min-width: 1921px) and (max-width: 3839px) {
-  .treasureIMG2Div {
-    position: relative;
+ 
+  #rowImgs {
     overflow: hidden;
-  }
-
+    /* Ensure only visible area shows */
+    position: relative;
+    margin-top: -60px;
+   }
   #btn1Mobile{
     display: none;
   }
@@ -5400,7 +5442,7 @@
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5vh;
+    margin-top: -50px;
   }
 
   .carouselImgs img {
@@ -5421,16 +5463,25 @@
   }
 
   #treasureIMG2 {
-    width: 100%;
-    margin-top: -200px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 90%;
 
     -webkit-mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
     mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
     -webkit-mask-composite: destination-in;
     mask-composite: intersect;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    display: flex;
+   }
+
+   .treasureIMG2Div {
+    position: relative;
+    overflow: hidden;
+     margin-top: -100px;
+
   }
+
 
   .nftSection3Main-mob {
     display: none;
@@ -5812,8 +5863,7 @@
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
-    display: flex;
-    height: 50vh;
+    height: 55vh;
   }
 
   .nftSection2 {
@@ -6224,6 +6274,13 @@
     display: none;
   }
 
+  #rowImgs {
+    overflow: hidden;
+    /* Ensure only visible area shows */
+    position: relative;
+    margin-top: 250px;
+   }
+
   .carouselImgs {
     position: relative;
     width: 88vw;
@@ -6235,7 +6292,7 @@
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5vh;
+    margin-top: 250px;
   }
 
   #sizeFonts {
@@ -6652,7 +6709,6 @@
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
-    display: flex;
     height: 70vh;
 
   }
