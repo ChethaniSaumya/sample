@@ -167,6 +167,10 @@ const Home = () => {
                     </button>
                     <button className="w-full flex items-center justify-center gap-x-[1.3125em] py-3 border-b border-b-white/50 transition-colors duration-100 hover:text-white/80">
                       BUY CHEST
+                      <span className="font-vermin-vibes-v">03</span>
+                    </button>
+                    <button className="w-full flex items-center justify-center gap-x-[1.3125em] py-3 border-b border-b-white/50 transition-colors duration-100 hover:text-white/80">
+                      BUY CHEST
                       <span className="font-vermin-vibes-v">05</span>
                     </button>
                     <button className="w-full flex items-center justify-center gap-x-[1.3125em] py-3 transition-colors duration-100 hover:text-white/80">
