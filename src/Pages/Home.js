@@ -154,28 +154,28 @@ const Home = () => {
                       <DownArrowHeadIcon />
                     </div>
                   </button>
-                                    <div
-  className={`${
-    !isOpen ? "max-h-0" : "max-h-[500px]"
-  } absolute top-[36px] sm:top-[46px] md:top-[56px] lg:top-[66px] xl:top-[76px] 2xl:top-[80px] left-0 right-0 w-full font-vermin-vibes-v text-[12px] bg-[#D9D9D94D] 2xl:px-5 backdrop-blur-[10px] overflow-hidden transition-all duration-500 sm:text-[13px] md:text-[16px] lg:text-[20px] xl:text-[22px] 2xl:text-[24px]`}
->
-  <button className="w-full flex items-center justify-center gap-x-[1.3125em] py-3 border-b border-b-white/50 transition-colors duration-100 hover:text-white/80">
-    BUY CHEST
-    <span className="font-vermin-vibes-v">01</span>
-  </button>
-  <button className="w-full flex items-center justify-center gap-x-[1.3125em] py-3 border-b border-b-white/50 transition-colors duration-100 hover:text-white/80">
-    BUY CHEST
-    <span className="font-vermin-vibes-v">03</span>
-  </button>
-  <button className="w-full flex items-center justify-center gap-x-[1.3125em] py-3 border-b border-b-white/50 transition-colors duration-100 hover:text-white/80">
-    BUY CHEST
-    <span className="font-vermin-vibes-v">05</span>
-  </button>
-  <button className="w-full flex items-center justify-center gap-x-[1.3125em] py-3 transition-colors duration-100 hover:text-white/80">
-    BUY CHEST
-    <span className="font-vermin-vibes-v">10</span>
-  </button>
-</div>
+                 <div
+                      className={`${
+                        !isOpen ? "max-h-0" : "max-h-[500px]"
+                      } absolute top-[36px] sm:top-[46px] md:top-[56px] lg:top-[66px] xl:top-[76px] 2xl:top-[80px] left-0 right-0 w-full font-vermin-vibes-v text-[12px] bg-[#D9D9D94D] 2xl:px-5 backdrop-blur-[10px] overflow-hidden transition-all duration-500 sm:text-[13px] md:text-[16px] lg:text-[20px] xl:text-[22px] 2xl:text-[24px]`}
+                    >
+                      <button className="w-full flex items-center justify-center gap-x-[1.3125em] py-3 border-b border-b-white/50 transition-colors duration-100 hover:text-white/80">
+                        BUY CHEST
+                        <span className="font-vermin-vibes-v">01</span>
+                      </button>
+                      <button className="w-full flex items-center justify-center gap-x-[1.3125em] py-3 border-b border-b-white/50 transition-colors duration-100 hover:text-white/80">
+                        BUY CHEST
+                        <span className="font-vermin-vibes-v">03</span>
+                      </button>
+                      <button className="w-full flex items-center justify-center gap-x-[1.3125em] py-3 border-b border-b-white/50 transition-colors duration-100 hover:text-white/80">
+                        BUY CHEST
+                        <span className="font-vermin-vibes-v">05</span>
+                      </button>
+                      <button className="w-full flex items-center justify-center gap-x-[1.3125em] py-3 transition-colors duration-100 hover:text-white/80">
+                        BUY CHEST
+                        <span className="font-vermin-vibes-v">10</span>
+                      </button>
+                    </div>
                 </div>
                 <Countdown />
               </div>
