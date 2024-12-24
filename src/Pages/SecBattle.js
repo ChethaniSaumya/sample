@@ -80,7 +80,7 @@ const SecBattle = () => {
                   <span class="close-button" onClick={close}>
                     &times;
                   </span>
-                  <p class="popup-text">SEC WON!</p>
+                  <p class="popup-text">SEC BRIBED VICTORY!</p>
                 </div>
               </div>
             </div>
