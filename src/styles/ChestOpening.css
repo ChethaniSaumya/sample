@@ -7,6 +7,69 @@
 @import url('https://fonts.cdnfonts.com/css/american-captain');
 @import url('https://fonts.cdnfonts.com/css/vermin-vibes-v');
 
+
+@keyframes carousel-slow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-carousel-slow {
+  animation: carousel-slow 5s linear infinite; /* Slower animation */
+}
+ 
+
+@keyframes carousel {
+  0% {
+   transform: translateX(0);
+ }
+
+ 100% {
+   transform: translateX(-50%);
+ }
+}
+
+/*@keyframes slow-carousel {
+  0% {
+    transform: translateX(0);
+    animation-timing-function: ease-in; 
+  }
+  50% {
+    transform: translateX(-25%); 
+    animation-timing-function: ease-out; 
+  }
+  100% {
+    transform: translateX(-50%);
+    animation-timing-function: ease-out; 
+  }
+}
+
+.animate-carousel {
+  animation: slow-carousel 10s infinite; 
+}*/
+
+@keyframes fast-to-slow-carousel {
+  0% {
+    transform: translateX(0);
+    animation-timing-function: ease-out; /* Start fast */
+  }
+  80% {
+    transform: translateX(-45%);
+    animation-timing-function: ease-in; /* Slow down */
+  }
+  100% {
+    transform: translateX(-50%);
+    animation-timing-function: linear; /* Stop smoothly */
+  }
+}
+
+.animate-carousel {
+  animation: fast-to-slow-carousel 13s forwards; /* Forward ensures the animation ends in the final state */
+}
+
 @keyframes spread {
   0% {
     left: 50%;
@@ -21,16 +84,6 @@
   }
 }
 
-@keyframes carousel {
-   0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
 .fade-out {
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -41,17 +94,18 @@
 }
 
 .popUpImgMain {
-  position: fixed;
-  /* Ensures it stays in the viewport */
+ position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 5;
-  background-color: rgba(0, 0, 0, 0.767);
   width: fit-content;
   height: fit-content;
   animation: fadeIn 0.4s ease-in-out forwards;
   z-index: 10000;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .popUpImg {
@@ -71,6 +125,8 @@
   gap: 20px;
   /* Space between images */
   width: max-content;
+  transition: animation-duration 0.5s ease; /* Smooth transition for animation duration */
+
 }
 
 
@@ -90,9 +146,10 @@
   margin-top: 20px;
 }
 
+/*
 .animate-carousel {
-  animation: carousel 0.7s linear infinite;
-}
+  animation: carousel 1.8s linear infinite;
+}*/
 
 .magic-card {
   opacity: 0;
@@ -296,20 +353,36 @@
 
 @media screen and (max-width: 499px) {
 
-.video-container{
-  margin-left: -15px;
-}  
-
-#btn1PC{
-  display: none;
-}
-#rowImgs {
-  overflow: hidden;
-  /* Ensure only visible area shows */
-  position: relative;
-  margin-top: -82px;
+  .popUpImgMain img{
+    width: 190px;
   }
-  .carouselImgs {
+  
+  .close-button-2{
+    z-index: 100;
+    font-size: 35px;
+    justify-content: flex-end;
+    display: flex;
+    margin-right: -25px;
+    cursor: pointer;
+  }
+
+  
+  .video-container {
+    margin-left: -15px;
+  }
+
+  #btn1PC {
+    display: none;
+  }
+
+  #rowImgs {
+    overflow: hidden;
+    /* Ensure only visible area shows */
+    position: relative;
+    margin-top: -82px;
+  }
+
+  .carouselImgs-2 {
     position: relative;
     width: 100vw;
     height: 300px;
@@ -323,6 +396,7 @@
     display: none;
 
   }
+
   #sizeFonts {
     position: absolute;
     bottom: 0;
@@ -335,7 +409,8 @@
     z-index: 1;
     font-size: 8px;
   }
-  .carouselImgs img {
+
+  .carouselImgs-2 img {
     position: absolute;
     /* Ensure all images overlap */
     top: 50%;
@@ -356,10 +431,10 @@
     width: 150%;
     margin-top: -150px;
     z-index: 10;
-     -webkit-mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
+   /* -webkit-mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
     mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
     -webkit-mask-composite: destination-in;
-    mask-composite: intersect;
+    mask-composite: intersect;*/
   }
 
   .treasureIMG2Div {
@@ -370,9 +445,9 @@
     margin-right: auto;
     justify-content: center;
     display: flex;
-     margin-left: -400px;
-     padding-top: 80px;
-    }
+    margin-left: -400px;
+    padding-top: 80px;
+  }
 
   .headers {
     display: flex;
@@ -1028,20 +1103,19 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 5;
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 90%;
+    width: 100%;
     height: fit-content;
     animation: fadeIn 0.4s ease-in-out forwards;
     z-index: 10000;
   }
 
   .character {
-    width: 470px;
+    width: 235px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-top: -100px;
+    margin-top: -80px;
   }
 
   .popup {
@@ -1051,11 +1125,14 @@
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.534);
     text-align: center;
-    height: 30vh;
+    height: 280px;
+    width: 95%;
+    margin: auto;
+
   }
 
   .popup-text {
-    font-size: 2rem;
+    font-size: 1.3rem;
     font-family: 'Vermin Vibes V', sans-serif;
     color: white;
     margin-top: auto;
@@ -1065,6 +1142,7 @@
     text-align: center;
     margin-top: 5px;
   }
+
 
   .close-button {
     position: absolute;
@@ -1175,13 +1253,26 @@
     /* Ensure only visible area shows */
     position: relative;
     margin-top: -82px;
-    }
+  }
 
-  #btn1PC{
+  .popUpImgMain img{
+    width: 190px;
+  }
+  
+  .close-button-2{
+    z-index: 100;
+    font-size: 35px;
+    justify-content: flex-end;
+    display: flex;
+    margin-right: -25px;
+    cursor: pointer;
+  }
+  
+  #btn1PC {
     display: none;
   }
 
-  .carouselImgs {
+  .carouselImgs-2 {
     position: relative;
     width: 100vw;
     height: 300px;
@@ -1219,7 +1310,7 @@
     color: white;
   }
 
-  .carouselImgs img {
+  .carouselImgs-2 img {
     position: absolute;
     /* Ensure all images overlap */
     top: 50%;
@@ -1255,8 +1346,8 @@
     margin-right: auto;
     justify-content: center;
     display: flex;
-     margin-left: -350px;
-    }
+    margin-left: -350px;
+  }
 
   .headers {
     display: flex;
@@ -1910,19 +2001,19 @@
     transform: translate(-50%, -50%);
     z-index: 5;
     background-color: rgba(0, 0, 0, 0.5);
-    width: 90%;
     height: fit-content;
     animation: fadeIn 0.4s ease-in-out forwards;
     z-index: 10000;
+    width: 100%;
   }
 
   .character {
-    width: 470px;
+    width: 275px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-top: -145px;
+    margin-top: -140px;
   }
 
   .popup {
@@ -1932,11 +2023,15 @@
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.534);
     text-align: center;
-    height: 30vh;
+    height: 280px;
+    width: 90%;
+    margin: auto;
+
   }
 
+
   .popup-text {
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-family: 'Vermin Vibes V', sans-serif;
     color: white;
     margin-top: auto;
@@ -2052,17 +2147,31 @@
 
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  #btn1Mobile{
+  #btn1Mobile {
     display: none;
   }
 
+  .popUpImgMain img{
+    width: 100px;
+  }
+  
+  .close-button-2{
+    z-index: 100;
+    font-size: 35px;
+    justify-content: flex-end;
+    display: flex;
+    margin-right: -25px;
+    cursor: pointer;
+  }
+  
   #rowImgs {
     overflow: hidden;
     /* Ensure only visible area shows */
     position: relative;
     margin-top: 52px;
-   }
-  .carouselImgs {
+  }
+
+  .carouselImgs-2 {
     position: relative;
     width: 100vw;
     height: 300px;
@@ -2075,7 +2184,7 @@
     margin-right: auto;
   }
 
-  
+
   #sizeFonts {
     position: absolute;
     bottom: 0;
@@ -2089,7 +2198,7 @@
     font-size: 14px;
   }
 
-  .carouselImgs img {
+  .carouselImgs-2 img {
     position: absolute;
     /* Ensure all images overlap */
     top: 50%;
@@ -2107,7 +2216,7 @@
   }
 
   #treasureIMG2 {
-      z-index: 10;
+    z-index: 10;
 
     -webkit-mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
     mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
@@ -2124,8 +2233,8 @@
     margin-right: auto;
     justify-content: center;
     display: flex;
-     margin-left: -370px;
-    }
+    margin-left: -370px;
+  }
 
   .nftSection3Main-mob {
     display: none;
@@ -2755,14 +2864,13 @@
     transform: translate(-50%, -50%);
     z-index: 5;
     background-color: rgba(0, 0, 0, 0.5);
-    width: 60%;
     height: fit-content;
     animation: fadeIn 0.4s ease-in-out forwards;
     z-index: 10000;
   }
 
   .character {
-    width: 470px;
+    width: 275px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
@@ -2777,8 +2885,10 @@
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.534);
     text-align: center;
-    height: 30vh;
+    height: 280px;
+    width: 600px;
   }
+
 
   .popup-text {
     font-size: 2rem;
@@ -2896,12 +3006,30 @@
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  #btn1Mobile{
+  #btn1Mobile {
     display: none;
   }
+
+  .popUpImgMain img{
+    width: 190px;
+  }
+  
+  .close-button-2{
+    z-index: 100;
+    font-size: 35px;
+    justify-content: flex-end;
+    display: flex;
+    margin-right: -25px;
+    cursor: pointer;
+  }
+  
   .treasureIMG2Div {
     position: relative;
     overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    display: flex;
   }
 
   #rowImgs {
@@ -2909,8 +3037,9 @@
     /* Ensure only visible area shows */
     position: relative;
     margin-top: -35px;
-   }
-  .carouselImgs {
+  }
+
+  .carouselImgs-2 {
     position: relative;
     width: 88vw;
     height: 300px;
@@ -2924,7 +3053,7 @@
     margin-top: -75px;
   }
 
-  
+
   #sizeFonts {
     position: absolute;
     bottom: 0;
@@ -2938,7 +3067,7 @@
     font-size: 14px;
   }
 
-  .carouselImgs img {
+  .carouselImgs-2 img {
     position: absolute;
     /* Ensure all images overlap */
     top: 50%;
@@ -2960,12 +3089,12 @@
     margin-top: -100px;
     margin-left: auto;
     margin-right: auto;
-        
+
     -webkit-mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
     mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
     -webkit-mask-composite: destination-in;
     mask-composite: intersect;
-  
+
   }
 
   .nftSection3Main-mob {
@@ -3179,7 +3308,7 @@
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 7vh;
+    margin-top: 10vh;
   }
 
   .btns3 button {
@@ -3592,14 +3721,13 @@
     transform: translate(-50%, -50%);
     z-index: 5;
     background-color: rgba(0, 0, 0, 0.5);
-    width: 60%;
     height: fit-content;
     animation: fadeIn 0.4s ease-in-out forwards;
     z-index: 10000;
   }
 
   .character {
-    width: 470px;
+    width: 275px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
@@ -3614,8 +3742,10 @@
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.534);
     text-align: center;
-    height: 30vh;
+    height: 280px;
+    width: 700px;
   }
+
 
   .popup-text {
     font-size: 2rem;
@@ -3733,12 +3863,30 @@
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1919px) {
-  #btn1Mobile{
+  #btn1Mobile {
     display: none;
   }
+
+  .popUpImgMain img{
+    width: 190px;
+  }
+  
+  .close-button-2{
+    z-index: 100;
+    font-size: 35px;
+    justify-content: flex-end;
+    display: flex;
+    margin-right: -25px;
+    cursor: pointer;
+  }
+  
   .treasureIMG2Div {
     position: relative;
     overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    display: flex;
   }
 
   #rowImgs {
@@ -3746,7 +3894,8 @@
     /* Ensure only visible area shows */
     position: relative;
     margin-top: -35px;
-   }
+  }
+
   #sizeFonts {
     position: absolute;
     bottom: 0;
@@ -3760,7 +3909,7 @@
     font-size: 14px;
   }
 
-  .carouselImgs {
+  .carouselImgs-2 {
     position: relative;
     width: 88vw;
     height: 300px;
@@ -3774,7 +3923,7 @@
     margin-top: -50px;
   }
 
-  .carouselImgs img {
+  .carouselImgs-2 img {
     position: absolute;
     /* Ensure all images overlap */
     top: 50%;
@@ -4019,7 +4168,7 @@
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 7vh;
+    margin-top: 15vh;
   }
 
   .btns3 button {
@@ -4428,14 +4577,13 @@
     transform: translate(-50%, -50%);
     z-index: 5;
     background-color: rgba(0, 0, 0, 0.5);
-    width: 40%;
     height: fit-content;
     animation: fadeIn 0.4s ease-in-out forwards;
     z-index: 10000;
   }
 
   .character {
-    width: 470px;
+    width: 275px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
@@ -4450,7 +4598,8 @@
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.534);
     text-align: center;
-    height: 30vh;
+    height: 280px;
+    width: 700px;
   }
 
   .popup-text {
@@ -4569,16 +4718,38 @@
 }
 
 @media screen and (min-width: 1920px) {
-  #btn1Mobile{
+  #btn1Mobile {
     display: none;
   }
-
+  .popUpImgMain img{
+    width: 190px;
+  }
+  
+  .close-button-2{
+    z-index: 100;
+    font-size: 35px;
+    justify-content: flex-end;
+    display: flex;
+    margin-right: -25px;
+    cursor: pointer;
+  }
+  
+  .close-button-2{
+    z-index: 100;
+    font-size: 50px;
+    justify-content: flex-end;
+    display: flex;
+    margin-right: -45px;
+    cursor: pointer;
+  }
+  
   #rowImgs {
     overflow: hidden;
     /* Ensure only visible area shows */
     position: relative;
     margin-top: -35px;
-   }
+  }
+
   #sizeFonts {
     position: absolute;
     bottom: 0;
@@ -4592,7 +4763,7 @@
     font-size: 19px;
   }
 
-  .carouselImgs {
+  .carouselImgs-2 {
     position: relative;
     width: 88vw;
     height: 300px;
@@ -4603,10 +4774,10 @@
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
- 
+
   }
 
-  .carouselImgs img {
+  .carouselImgs-2 img {
     position: absolute;
     /* Ensure all images overlap */
     top: 50%;
@@ -4622,7 +4793,7 @@
     animation: spread 2s ease-in-out forwards;
     /* Trigger the animation */
   }
- 
+
   .treasureIMG2Div {
     position: relative;
     overflow: hidden;
@@ -4631,17 +4802,18 @@
     justify-content: center;
     display: flex;
     padding-top: 230px;
-   }
+  }
 
   #treasureIMG2 {
     width: 80%;
-   margin-top: -280px;
+    margin-top: -280px;
 
     -webkit-mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
     mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
     -webkit-mask-composite: destination-in;
     mask-composite: intersect;
-   }
+  }
+
   .dropdown-container {
     position: relative;
     width: fit-content;
@@ -4858,7 +5030,7 @@
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 7vh;
+    margin-top: 12vh;
   }
 
   .btns3 button {
@@ -5266,14 +5438,13 @@
     transform: translate(-50%, -50%);
     z-index: 5;
     background-color: rgba(0, 0, 0, 0.5);
-    width: 40%;
     height: fit-content;
     animation: fadeIn 0.4s ease-in-out forwards;
     z-index: 10000;
   }
 
   .character {
-    width: 470px;
+    width: 275px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
@@ -5288,7 +5459,8 @@
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.534);
     text-align: center;
-    height: 30vh;
+    height: 280px;
+    width: 700px;
   }
 
   .popup-text {
@@ -5407,14 +5579,28 @@
 }
 
 @media screen and (min-width: 1921px) and (max-width: 3839px) {
- 
+
+  .popUpImgMain img{
+    width: 270px;
+  }
+  
+  .close-button-2{
+    z-index: 100;
+    font-size: 50px;
+    justify-content: flex-end;
+    display: flex;
+    margin-right: -45px;
+    cursor: pointer;
+  }
+  
   #rowImgs {
     overflow: hidden;
     /* Ensure only visible area shows */
     position: relative;
     margin-top: -60px;
-   }
-  #btn1Mobile{
+  }
+
+  #btn1Mobile {
     display: none;
   }
 
@@ -5431,7 +5617,7 @@
     font-size: 19px;
   }
 
-  .carouselImgs {
+  .carouselImgs-2 {
     position: relative;
     width: 88vw;
     height: 400px;
@@ -5445,7 +5631,7 @@
     margin-top: -50px;
   }
 
-  .carouselImgs img {
+  .carouselImgs-2 img {
     position: absolute;
     /* Ensure all images overlap */
     top: 50%;
@@ -5473,13 +5659,16 @@
     margin-right: auto;
     justify-content: center;
     display: flex;
-   }
+  }
 
-   .treasureIMG2Div {
+  .treasureIMG2Div {
     position: relative;
     overflow: hidden;
-     margin-top: -100px;
-
+    margin-top: -100px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    display: flex;
   }
 
 
@@ -5694,7 +5883,7 @@
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 7vh;
+    margin-top: 14vh;
   }
 
   .btns3 button {
@@ -6129,19 +6318,18 @@
     transform: translate(-50%, -50%);
     z-index: 5;
     background-color: rgba(0, 0, 0, 0.5);
-    width: 40%;
     height: fit-content;
     animation: fadeIn 0.4s ease-in-out forwards;
     z-index: 10000;
   }
 
   .character {
-    width: 768px;
+    width: 375px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-top: -255px;
+    margin-top: -145px;
   }
 
   .popup {
@@ -6151,7 +6339,8 @@
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.534);
     text-align: center;
-    height: 30vh;
+    height: 440px;
+    width: 900px;
   }
 
   .popup-text {
@@ -6270,20 +6459,32 @@
 }
 
 @media screen and (min-width: 3840px) {
-  #btn1Mobile{
+  #btn1Mobile {
     display: none;
   }
-
+  .popUpImgMain img{
+    width: 400px;
+  }
+  
+  .close-button-2{
+    z-index: 100;
+    font-size: 45px;
+    justify-content: flex-end;
+    display: flex;
+    margin-right: -35px;
+    cursor: pointer;
+  }
+  
   #rowImgs {
     overflow: hidden;
     /* Ensure only visible area shows */
     position: relative;
     margin-top: 250px;
-   }
+  }
 
-  .carouselImgs {
+  .carouselImgs-2 {
     position: relative;
-    width: 88vw;
+    width: 86vw;
     height: 600px;
     /* Adjust as needed */
     display: flex;
@@ -6307,7 +6508,8 @@
     z-index: 1;
     font-size: 19px;
   }
-  .carouselImgs img {
+
+  .carouselImgs-2 img {
     position: absolute;
     /* Ensure all images overlap */
     top: 50%;
@@ -6315,7 +6517,7 @@
     left: 50%;
     /* Start at the center */
     transform: translate(-50%, -50%);
-    width: 10vw;
+    width: 9vw;
     /* Adjust size as needed */
     height: auto;
     opacity: 1;
@@ -6340,6 +6542,10 @@
     width: 3900px;
     position: relative;
     overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    display: flex;
   }
 
 
@@ -6976,19 +7182,18 @@
     transform: translate(-50%, -50%);
     z-index: 5;
     background-color: rgba(0, 0, 0, 0.5);
-    width: 40%;
     height: fit-content;
     animation: fadeIn 0.4s ease-in-out forwards;
     z-index: 10000;
   }
 
   .character {
-    width: 1170px;
+    width: 505px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-top: -390px;
+    margin-top: -145px;
   }
 
   .popup {
@@ -6998,7 +7203,8 @@
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.534);
     text-align: center;
-    height: 30vh;
+    height: 640px;
+    width: 1100px;
   }
 
   .popup-text {
