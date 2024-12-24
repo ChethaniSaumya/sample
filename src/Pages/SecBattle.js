@@ -15,7 +15,7 @@ import letterS from "../assets/versus-letter-s.png";
 import gary from "../assets/GARY-removebg.png";
 import logo from "../assets/logo.png";
 import "../styles/SecBattle.css";
-import garyNoBg from "../assets/Gary-remove.png";
+import garyNoBg from "../assets/GARY-2.png";
 
 const SecBattle = () => {
   const [isVisible, setIsVisible] = useState(false);
