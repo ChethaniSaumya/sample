@@ -616,7 +616,7 @@
   .titleMain {
     font-family: 'American Captain', sans-serif;
     color: white;
-    font-size: 45px;
+    font-size: 37px;
     text-align: center;
     text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.096), 0px -5px 35px rgba(255, 255, 255, 0.3);
     margin-top: 3vh;
@@ -629,7 +629,7 @@
 
   .title2Main {
     text-align: center;
-    font-size: 22px;
+    font-size: 18.5px;
     color: white;
     text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.096), 0px -5px 35px rgba(255, 255, 255, 0.3);
     font-family: "Montserrat Alternates", serif;
@@ -639,7 +639,7 @@
   }
 
   .title2Main img {
-    width: 130px;
+    width: 100px;
     margin-left: 15px;
   }
 
@@ -675,8 +675,8 @@
     border: #0084ff 1px solid;
     letter-spacing: 2px;
     font-weight: 400;
-    font-size: 25px;
-    width: 350px;
+    font-size: 23px;
+    width: 280px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -696,7 +696,7 @@
     font-family: 'American Captain', sans-serif;
     border-left: 1px solid white;
     border-right: 1px solid white;
-    font-size: 30px;
+    font-size: 26px;
     padding: 10px;
     margin-top: auto;
     margin-bottom: auto;
@@ -714,14 +714,14 @@
     color: white;
     background-color: transparent;
     border: 1px solid white;
-    font-size: 25px;
-    width: 350px;
+    font-size: 21px;
+    width: 280px;
     display: flex;
     margin-top: auto;
     margin-bottom: auto;
     justify-content: center;
     transition: 0.3s ease-in-out;
-    height: 80px;
+    height: 60px;
   }
 
   .dropdown-container {
@@ -735,7 +735,9 @@
     top: 110px;
     left: 0;
     right: 0;
-    width: 100%;
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
     background-color: rgba(217, 217, 217, 0.336);
     backdrop-filter: blur(5px);
     border: 1px solid white;
@@ -745,7 +747,7 @@
   }
 
   .dropdown-item {
-    width: 90%;
+    width: 280px;
     background: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     text-align: center;
@@ -754,7 +756,7 @@
     display: flex;
     justify-content: center;
     border: none;
-    font-size: 20px;
+    font-size: 14px;
     cursor: pointer;
     transition: color 0.1s ease;
     font-family: 'Vermin Vibes V', sans-serif;
@@ -804,7 +806,7 @@
   }
 
   .btn1 img {
-    width: 40px;
+    width: 30px;
     margin-top: -2px;
     margin-top: auto;
     margin-bottom: auto;
@@ -834,7 +836,7 @@
   }
 
   .nftSection2 img {
-    width: 22%;
+    width: 95px;
     transition: transform .2s;
   }
 
@@ -982,7 +984,7 @@
     font-family: 'Vermin Vibes V', sans-serif;
     text-align: center;
     color: white;
-    font-size: 35px;
+    font-size: 28px;
     padding-top: 50px;
   }
 
@@ -1005,7 +1007,7 @@
     margin-right: auto;
     display: flex;
     margin-top: 20px;
-    width: 70%;
+    width: 250px;
   }
 
 
@@ -1054,7 +1056,7 @@
 
   #battleImgs {
     animation: float 20s ease-in-out infinite;
-    width: 100%;
+    width: 280px;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
@@ -1109,14 +1111,25 @@
     z-index: 10000;
   }
 
+
   .character {
-    width: 235px;
+    width: 215px;
+    /* Adjust to fit your design */
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -40px;
+  }
+
+  .character--2 {
+    width: 245px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
     margin-left: auto;
     margin-top: -80px;
   }
+
 
   .popup {
     background: rgba(255, 255, 255, 0.253);
@@ -1132,7 +1145,7 @@
   }
 
   .popup-text {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-family: 'Vermin Vibes V', sans-serif;
     color: white;
     margin-top: auto;
@@ -1516,7 +1529,7 @@
   .titleMain {
     font-family: 'American Captain', sans-serif;
     color: white;
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
     text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.096), 0px -5px 35px rgba(255, 255, 255, 0.3);
     margin-top: 3vh;
@@ -1527,9 +1540,10 @@
     font-family: 'American Captain', sans-serif;
   }
 
+
   .title2Main {
     text-align: center;
-    font-size: 22px;
+    font-size: 19px;
     color: white;
     text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.096), 0px -5px 35px rgba(255, 255, 255, 0.3);
     font-family: "Montserrat Alternates", serif;
@@ -1539,12 +1553,14 @@
   }
 
   .title2Main img {
-    width: 130px;
+    width: 108px;
     margin-left: 15px;
   }
 
+
+
   .treasureIMG {
-    width: 100%;
+    width: 450px;
     margin-top: 6vh;
     margin-left: auto;
     margin-right: auto;
@@ -1575,8 +1591,8 @@
     border: #0084ff 1px solid;
     letter-spacing: 2px;
     font-weight: 400;
-    font-size: 25px;
-    width: 350px;
+    font-size: 23px;
+    width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1596,7 +1612,7 @@
     font-family: 'American Captain', sans-serif;
     border-left: 1px solid white;
     border-right: 1px solid white;
-    font-size: 30px;
+    font-size: 26px;
     padding: 10px;
     margin-top: auto;
     margin-bottom: auto;
@@ -1614,14 +1630,14 @@
     color: white;
     background-color: transparent;
     border: 1px solid white;
-    font-size: 25px;
-    width: 350px;
+    font-size: 21px;
+    width: 300px;
     display: flex;
     margin-top: auto;
     margin-bottom: auto;
     justify-content: center;
     transition: 0.3s ease-in-out;
-    height: 80px;
+    height: 63px;
   }
 
   .dropdown-container {
@@ -1635,7 +1651,9 @@
     top: 110px;
     left: 0;
     right: 0;
-    width: 100%;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
     background-color: rgba(217, 217, 217, 0.336);
     backdrop-filter: blur(5px);
     border: 1px solid white;
@@ -1654,7 +1672,7 @@
     display: flex;
     justify-content: center;
     border: none;
-    font-size: 22px;
+    font-size: 15px;
     cursor: pointer;
     transition: color 0.1s ease;
     font-family: 'Vermin Vibes V', sans-serif;
@@ -1705,7 +1723,7 @@
   }
 
   .btn1 img {
-    width: 40px;
+    width: 30px;
     margin-top: -2px;
     margin-top: auto;
     margin-bottom: auto;
@@ -1735,7 +1753,7 @@
   }
 
   .nftSection2 img {
-    width: 22%;
+    width: 115px;
     transition: transform .2s;
   }
 
@@ -1883,7 +1901,7 @@
     font-family: 'Vermin Vibes V', sans-serif;
     text-align: center;
     color: white;
-    font-size: 42px;
+    font-size: 30px;
     padding-top: 50px;
   }
 
@@ -1906,7 +1924,7 @@
     margin-right: auto;
     display: flex;
     margin-top: 20px;
-    width: 70%;
+    width: 300px;
   }
 
 
@@ -2007,13 +2025,23 @@
     width: 100%;
   }
 
+
   .character {
-    width: 275px;
+    width: 245px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-top: -140px;
+    margin-top: -90px;
+  }
+
+  .character--2 {
+    width: 245px;
+    /* Adjust to fit your design */
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -90px;
   }
 
   .popup {
@@ -2031,7 +2059,7 @@
 
 
   .popup-text {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-family: 'Vermin Vibes V', sans-serif;
     color: white;
     margin-top: auto;
@@ -2407,7 +2435,7 @@
   .titleMain {
     font-family: 'American Captain', sans-serif;
     color: white;
-    font-size: 55px;
+    font-size: 42px;
     text-align: center;
     text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.096), 0px -5px 35px rgba(255, 255, 255, 0.3);
     margin-top: 3vh;
@@ -2418,9 +2446,10 @@
     font-family: 'American Captain', sans-serif;
   }
 
+
   .title2Main {
     text-align: center;
-    font-size: 22px;
+    font-size: 19px;
     color: white;
     text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.096), 0px -5px 35px rgba(255, 255, 255, 0.3);
     font-family: "Montserrat Alternates", serif;
@@ -2430,12 +2459,13 @@
   }
 
   .title2Main img {
-    width: 130px;
+    width: 108px;
     margin-left: 15px;
   }
 
+
   .treasureIMG {
-    width: 85%;
+    width: 450px;
     margin-top: 6vh;
     margin-left: auto;
     margin-right: auto;
@@ -2467,7 +2497,7 @@
     letter-spacing: 2px;
     font-weight: 400;
     font-size: 25px;
-    width: 350px;
+    width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2487,7 +2517,7 @@
     font-family: 'American Captain', sans-serif;
     border-left: 1px solid white;
     border-right: 1px solid white;
-    font-size: 30px;
+    font-size: 28px;
     padding: 10px;
     margin-top: auto;
     margin-bottom: auto;
@@ -2505,14 +2535,14 @@
     color: white;
     background-color: transparent;
     border: 1px solid white;
-    font-size: 25px;
-    width: 350px;
+    font-size: 23px;
+    width: 300px;
     display: flex;
     margin-top: auto;
     margin-bottom: auto;
     justify-content: center;
     transition: 0.3s ease-in-out;
-    height: 80px;
+    height: 68px;
   }
 
   .dropdown-container {
@@ -2526,7 +2556,9 @@
     top: 110px;
     left: 0;
     right: 0;
-    width: 100%;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
     background-color: rgba(217, 217, 217, 0.336);
     backdrop-filter: blur(5px);
     border: 1px solid white;
@@ -2545,7 +2577,7 @@
     display: flex;
     justify-content: center;
     border: none;
-    font-size: 22px;
+    font-size: 15px;
     cursor: pointer;
     transition: color 0.1s ease;
     font-family: 'Vermin Vibes V', sans-serif;
@@ -2595,7 +2627,7 @@
   }
 
   .btn1 img {
-    width: 40px;
+    width: 30px;
     margin-top: -2px;
     margin-top: auto;
     margin-bottom: auto;
@@ -2624,7 +2656,7 @@
   }
 
   .nftSection2 img {
-    width: 22%;
+    width: 145px;
     transition: transform .2s;
   }
 
@@ -2768,7 +2800,7 @@
     font-family: 'Vermin Vibes V', sans-serif;
     text-align: center;
     color: white;
-    font-size: 65px;
+    font-size: 35px;
     padding-top: 50px;
   }
 
@@ -2791,6 +2823,7 @@
     margin-right: auto;
     display: flex;
     margin-top: 20px;
+    width: 300px;
   }
 
   .battleSectionMain {
@@ -2836,7 +2869,7 @@
 
   #battleImgs {
     animation: float 20s ease-in-out infinite;
-    width: 100%;
+    width: 220px;
   }
 
   @keyframes float {
@@ -2869,13 +2902,23 @@
     z-index: 10000;
   }
 
+
   .character {
-    width: 275px;
+    width: 245px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-top: -145px;
+    margin-top: -90px;
+  }
+
+  .character--2 {
+    width: 245px;
+    /* Adjust to fit your design */
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -90px;
   }
 
   .popup {
@@ -2891,7 +2934,7 @@
 
 
   .popup-text {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: 'Vermin Vibes V', sans-serif;
     color: white;
     margin-top: auto;
@@ -3268,7 +3311,7 @@
   .titleMain {
     font-family: 'American Captain', sans-serif;
     color: white;
-    font-size: 55px;
+    font-size: 42px;
     text-align: center;
     text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.096), 0px -5px 35px rgba(255, 255, 255, 0.3);
     margin-top: 3vh;
@@ -3281,7 +3324,7 @@
 
   .title2Main {
     text-align: center;
-    font-size: 22px;
+    font-size: 20px;
     color: white;
     text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.096), 0px -5px 35px rgba(255, 255, 255, 0.3);
     font-family: "Montserrat Alternates", serif;
@@ -3291,9 +3334,10 @@
   }
 
   .title2Main img {
-    width: 130px;
+    width: 110px;
     margin-left: 15px;
   }
+
 
   .treasureIMG {
     width: 450px;
@@ -3324,7 +3368,7 @@
     letter-spacing: 2px;
     font-weight: 400;
     font-size: 25px;
-    width: 300px;
+    width: 310px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -3344,7 +3388,7 @@
     font-family: 'American Captain', sans-serif;
     border-left: 1px solid white;
     border-right: 1px solid white;
-    font-size: 30px;
+    font-size:  33px;
     padding: 10px;
     margin-top: auto;
     margin-bottom: auto;
@@ -3362,8 +3406,8 @@
     color: white;
     background-color: transparent;
     border: 1px solid white;
-    font-size: 25px;
-    width: 240px;
+    font-size: 23px;
+    width: 250px;
     display: flex;
     margin-top: auto;
     margin-bottom: auto;
@@ -3371,7 +3415,6 @@
     transition: 0.3s ease-in-out;
     height: 70px;
   }
-
 
   .dropdown-container {
     position: relative;
@@ -3383,7 +3426,9 @@
     top: 110px;
     left: 0;
     right: 0;
-    width: 100%;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
     background-color: rgba(217, 217, 217, 0.336);
     backdrop-filter: blur(5px);
     border: 1px solid white;
@@ -3402,7 +3447,7 @@
     display: flex;
     justify-content: center;
     border: none;
-    font-size: 22px;
+    font-size: 16px;
     cursor: pointer;
     transition: color 0.1s ease;
     font-family: 'Vermin Vibes V', sans-serif;
@@ -3452,7 +3497,7 @@
   }
 
   .btn1 img {
-    width: 40px;
+    width: 30px;
     margin-top: -2px;
     margin-top: auto;
     margin-bottom: auto;
@@ -3481,7 +3526,7 @@
   }
 
   .nftSection2 img {
-    width: 22%;
+    width: 175px;
     transition: transform .2s;
   }
 
@@ -3625,7 +3670,7 @@
     font-family: 'Vermin Vibes V', sans-serif;
     text-align: center;
     color: white;
-    font-size: 65px;
+    font-size: 35px;
     padding-top: 50px;
   }
 
@@ -3648,6 +3693,7 @@
     margin-right: auto;
     display: flex;
     margin-top: 20px;
+    width: 300px;
   }
 
   .battleSectionMain {
@@ -3686,7 +3732,7 @@
     justify-content: center;
     display: flex;
     margin-bottom: 10vh;
-    margin-top: -10vh;
+    margin-top: -5vh;
     z-index: 1000;
     position: relative;
   }
@@ -3694,7 +3740,7 @@
 
   #battleImgs {
     animation: float 20s ease-in-out infinite;
-    width: 100%;
+    width: 240px;
   }
 
   @keyframes float {
@@ -3726,13 +3772,23 @@
     z-index: 10000;
   }
 
+
   .character {
-    width: 275px;
+    width: 245px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-top: -145px;
+    margin-top: -90px;
+  }
+
+  .character--2 {
+    width: 245px;
+    /* Adjust to fit your design */
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -90px;
   }
 
   .popup {
@@ -3748,7 +3804,7 @@
 
 
   .popup-text {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: 'Vermin Vibes V', sans-serif;
     color: white;
     margin-top: auto;
@@ -4128,7 +4184,7 @@
   .titleMain {
     font-family: 'American Captain', sans-serif;
     color: white;
-    font-size: 55px;
+    font-size: 45px;
     text-align: center;
     text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.096), 0px -5px 35px rgba(255, 255, 255, 0.3);
     margin-top: 3vh;
@@ -4139,9 +4195,10 @@
     font-family: 'American Captain', sans-serif;
   }
 
+
   .title2Main {
     text-align: center;
-    font-size: 22px;
+    font-size: 20px;
     color: white;
     text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.096), 0px -5px 35px rgba(255, 255, 255, 0.3);
     font-family: "Montserrat Alternates", serif;
@@ -4151,12 +4208,12 @@
   }
 
   .title2Main img {
-    width: 130px;
+    width: 110px;
     margin-left: 15px;
   }
 
   .treasureIMG {
-    width: 500px;
+    width: 450px;
     margin-top: 14vh;
     margin-left: auto;
     margin-right: auto;
@@ -4183,8 +4240,8 @@
     border: #0084ff 1px solid;
     letter-spacing: 2px;
     font-weight: 400;
-    font-size: 28px;
-    width: 350px;
+    font-size: 25px;
+    width: 310px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -4204,7 +4261,7 @@
     font-family: 'American Captain', sans-serif;
     border-left: 1px solid white;
     border-right: 1px solid white;
-    font-size: 38px;
+    font-size:  33px;
     padding: 10px;
     margin-top: auto;
     margin-bottom: auto;
@@ -4222,23 +4279,24 @@
     color: white;
     background-color: transparent;
     border: 1px solid white;
-    font-size: 25px;
-    width: 260px;
+    font-size: 23px;
+    width: 250px;
     display: flex;
     margin-top: auto;
     margin-bottom: auto;
     justify-content: center;
     transition: 0.3s ease-in-out;
-    height: 80px;
+    height: 70px;
   }
-
 
   #dropdown {
     position: absolute;
     top: 110px;
     left: 0;
     right: 0;
-    width: 100%;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
     background-color: rgba(217, 217, 217, 0.336);
     backdrop-filter: blur(5px);
     border: 1px solid white;
@@ -4257,7 +4315,7 @@
     display: flex;
     justify-content: center;
     border: none;
-    font-size: 22px;
+    font-size: 16px;
     cursor: pointer;
     transition: color 0.1s ease;
     font-family: 'Vermin Vibes V', sans-serif;
@@ -4307,7 +4365,7 @@
   }
 
   .btn1 img {
-    width: 40px;
+    width: 30px;
     margin-top: -2px;
     margin-top: auto;
     margin-bottom: auto;
@@ -4336,7 +4394,7 @@
   }
 
   .nftSection2 img {
-    width: 22%;
+    width: 165px;
     transition: transform .2s;
   }
 
@@ -4481,7 +4539,7 @@
     font-family: 'Vermin Vibes V', sans-serif;
     text-align: center;
     color: white;
-    font-size: 65px;
+    font-size: 35px;
     padding-top: 50px;
   }
 
@@ -4504,6 +4562,8 @@
     margin-right: auto;
     display: flex;
     margin-top: 20px;
+    width: 300px;
+
   }
 
   .battleSectionMain {
@@ -4542,7 +4602,7 @@
     justify-content: center;
     display: flex;
     margin-bottom: 10vh;
-    margin-top: -10vh;
+    margin-top: -5vh;
     z-index: 1000;
     position: relative;
   }
@@ -4550,7 +4610,7 @@
 
   #battleImgs {
     animation: float 20s ease-in-out infinite;
-    width: 100%;
+    width: 250px;
   }
 
   @keyframes float {
@@ -4582,13 +4642,23 @@
     z-index: 10000;
   }
 
+  
   .character {
-    width: 275px;
+    width: 245px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-top: -145px;
+    margin-top: -90px;
+  }
+
+  .character--2 {
+    width: 245px;
+    /* Adjust to fit your design */
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -90px;
   }
 
   .popup {
@@ -4603,7 +4673,7 @@
   }
 
   .popup-text {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: 'Vermin Vibes V', sans-serif;
     color: white;
     margin-top: auto;
@@ -4990,7 +5060,7 @@
   .titleMain {
     font-family: 'American Captain', sans-serif;
     color: white;
-    font-size: 62px;
+    font-size: 50px;
     text-align: center;
     text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.096), 0px -5px 35px rgba(255, 255, 255, 0.3);
     margin-top: 7vh;
@@ -5003,7 +5073,7 @@
 
   .title2Main {
     text-align: center;
-    font-size: 22px;
+    font-size: 20px;
     color: white;
     text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.096), 0px -5px 35px rgba(255, 255, 255, 0.3);
     font-family: "Montserrat Alternates", serif;
@@ -5013,12 +5083,12 @@
   }
 
   .title2Main img {
-    width: 130px;
+    width: 110px;
     margin-left: 15px;
   }
 
   .treasureIMG {
-    width: 550px;
+    width: 500px;
     margin-top: 5vh;
     margin-left: auto;
     margin-right: auto;
@@ -5045,8 +5115,8 @@
     border: #0084ff 1px solid;
     letter-spacing: 2px;
     font-weight: 400;
-    font-size: 28px;
-    width: 350px;
+    font-size: 25px;
+    width: 310px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -5066,7 +5136,7 @@
     font-family: 'American Captain', sans-serif;
     border-left: 1px solid white;
     border-right: 1px solid white;
-    font-size: 38px;
+    font-size:  33px;
     padding: 10px;
     margin-top: auto;
     margin-bottom: auto;
@@ -5084,8 +5154,8 @@
     color: white;
     background-color: transparent;
     border: 1px solid white;
-    font-size: 25px;
-    width: 260px;
+    font-size: 23px;
+    width: 250px;
     display: flex;
     margin-top: auto;
     margin-bottom: auto;
@@ -5100,7 +5170,9 @@
     top: 110px;
     left: 0;
     right: 0;
-    width: 100%;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
     background-color: rgba(217, 217, 217, 0.336);
     backdrop-filter: blur(5px);
     border: 1px solid white;
@@ -5119,7 +5191,7 @@
     display: flex;
     justify-content: center;
     border: none;
-    font-size: 22px;
+    font-size: 17px;
     cursor: pointer;
     transition: color 0.1s ease;
     font-family: 'Vermin Vibes V', sans-serif;
@@ -5169,7 +5241,7 @@
   }
 
   .btn1 img {
-    width: 40px;
+    width: 30px;
     margin-top: -2px;
     margin-top: auto;
     margin-bottom: auto;
@@ -5198,7 +5270,7 @@
   }
 
   .nftSection2 img {
-    width: 22%;
+    width: 175px;
     transition: transform .2s;
   }
 
@@ -5221,7 +5293,7 @@
   .nftSection3 {
     display: flex;
     overflow: hidden;
-    width: 80%;
+    width: 70%;
   }
 
   .nftSection3 img {
@@ -5342,7 +5414,7 @@
     font-family: 'Vermin Vibes V', sans-serif;
     text-align: center;
     color: white;
-    font-size: 65px;
+    font-size: 47px;
     padding-top: 50px;
   }
 
@@ -5365,6 +5437,7 @@
     margin-right: auto;
     display: flex;
     margin-top: 20px;
+    width: 350px;
   }
 
   .battleSectionMain {
@@ -5403,7 +5476,7 @@
     justify-content: center;
     display: flex;
     margin-bottom: 10vh;
-    margin-top: -10vh;
+    margin-top: -5vh;
     z-index: 1000;
     position: relative;
   }
@@ -5411,7 +5484,7 @@
 
   #battleImgs {
     animation: float 20s ease-in-out infinite;
-    width: 100%;
+    width: 300px;
   }
 
   @keyframes float {
@@ -5444,14 +5517,23 @@
   }
 
   .character {
-    width: 275px;
+    width: 245px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-top: -145px;
+    margin-top: -90px;
   }
 
+  .character--2 {
+    width: 255px;
+    /* Adjust to fit your design */
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -105px;
+  }
+ 
   .popup {
     background: rgba(255, 255, 255, 0.253);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -5464,7 +5546,7 @@
   }
 
   .popup-text {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: 'Vermin Vibes V', sans-serif;
     color: white;
     margin-top: auto;
@@ -5843,7 +5925,7 @@
   .titleMain {
     font-family: 'American Captain', sans-serif;
     color: white;
-    font-size: 90px;
+    font-size: 70px;
     text-align: center;
     text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.096), 0px -5px 35px rgba(255, 255, 255, 0.3);
     margin-top: 7vh;
@@ -5856,7 +5938,7 @@
 
   .title2Main {
     text-align: center;
-    font-size: 35px;
+    font-size: 30px;
     color: white;
     text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.096), 0px -5px 35px rgba(255, 255, 255, 0.3);
     font-family: "Montserrat Alternates", serif;
@@ -5866,12 +5948,12 @@
   }
 
   .title2Main img {
-    width: 180px;
+    width: 158px;
     margin-left: 35px;
   }
 
   .treasureIMG {
-    width: 800px;
+    width: 700px;
     margin-top: 6vh;
     margin-left: auto;
     margin-right: auto;
@@ -5898,7 +5980,7 @@
     border: #0084ff 1px solid;
     letter-spacing: 3px;
     font-weight: 400;
-    font-size: 42px;
+    font-size: 35px;
     width: 500px;
     display: flex;
     justify-content: center;
@@ -5919,7 +6001,7 @@
     font-family: 'American Captain', sans-serif;
     border-left: 1px solid white;
     border-right: 1px solid white;
-    font-size: 47px;
+    font-size: 40px;
     padding: 15px;
     margin-top: auto;
     margin-bottom: auto;
@@ -5937,29 +6019,14 @@
     color: white;
     background-color: transparent;
     border: 1px solid white;
-    font-size: 38px;
-    width: 500px;
-    display: flex;
-    margin-top: auto;
-    margin-bottom: auto;
-    justify-content: center;
-    transition: 0.3s ease-in-out;
-    height: 120px;
-  }
-
-  .btn2 {
-    font-family: "Montserrat Alternates", serif;
-    color: white;
-    background-color: transparent;
-    border: 1px solid white;
     font-size: 35px;
-    width: 390px;
+    width: 370px;
     display: flex;
     margin-top: auto;
     margin-bottom: auto;
     justify-content: center;
     transition: 0.3s ease-in-out;
-    height: 120px;
+    height: 105px;
   }
 
 
@@ -5968,7 +6035,9 @@
     top: 180px;
     left: 0;
     right: 0;
-    width: 100%;
+    width: 370px;
+    margin-left: auto;
+    margin-right: auto;
     background-color: rgba(217, 217, 217, 0.336);
     backdrop-filter: blur(5px);
     border: 1px solid white;
@@ -5987,7 +6056,7 @@
     display: flex;
     justify-content: center;
     border: none;
-    font-size: 28px;
+    font-size: 22px;
     cursor: pointer;
     transition: color 0.1s ease;
     font-family: 'Vermin Vibes V', sans-serif;
@@ -6037,7 +6106,7 @@
   }
 
   .btn1 img {
-    width: 60px;
+    width: 40px;
     margin-top: -2px;
     margin-top: auto;
     margin-bottom: auto;
@@ -6066,7 +6135,7 @@
   }
 
   .nftSection2 img {
-    width: 22%;
+    width: 240px;
     transition: transform .2s;
   }
 
@@ -6092,7 +6161,7 @@
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
-    width: 100%;
+    width: 80%;
     padding: 10px;
   }
 
@@ -6216,7 +6285,7 @@
     font-family: 'Vermin Vibes V', sans-serif;
     text-align: center;
     color: white;
-    font-size: 85px;
+    font-size: 50px;
     padding-top: 50px;
   }
 
@@ -6239,7 +6308,7 @@
     margin-right: auto;
     display: flex;
     margin-top: 20px;
-    width: 22%;
+    width: 385px;
   }
 
   .battleSectionMain {
@@ -6278,7 +6347,7 @@
     justify-content: center;
     display: flex;
     margin-bottom: 10vh;
-    margin-top: -10vh;
+    margin-top: -5vh;
     z-index: 1000;
     position: relative;
   }
@@ -6286,7 +6355,7 @@
 
   #battleImgs {
     animation: float 20s ease-in-out infinite;
-    width: 550px;
+    width: 360px;
   }
 
   @keyframes float {
@@ -6323,13 +6392,24 @@
     z-index: 10000;
   }
 
+
   .character {
-    width: 375px;
+    width: 355px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-top: -145px;
+    margin-top: -100px;
+  }
+
+
+  .character--2 {
+    width: 365px;
+    /* Adjust to fit your design */
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -105px;
   }
 
   .popup {
@@ -6344,7 +6424,7 @@
   }
 
   .popup-text {
-    font-size: 3rem;
+    font-size: 2.3rem;
     font-family: 'Vermin Vibes V', sans-serif;
     color: white;
     margin-top: auto;
@@ -6720,7 +6800,7 @@
   .titleMain {
     font-family: 'American Captain', sans-serif;
     color: white;
-    font-size: 140px;
+    font-size: 100px;
     text-align: center;
     text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.096), 0px -5px 35px rgba(255, 255, 255, 0.3);
     margin-top: 8vh;
@@ -6733,7 +6813,7 @@
 
   .title2Main {
     text-align: center;
-    font-size: 45px;
+    font-size: 40px;
     color: white;
     text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.096), 0px -5px 35px rgba(255, 255, 255, 0.3);
     font-family: "Montserrat Alternates", serif;
@@ -6743,12 +6823,12 @@
   }
 
   .title2Main img {
-    width: 250px;
+    width: 220px;
     margin-left: 35px;
   }
 
   .treasureIMG {
-    width: 1800px;
+    width: 1150px;
     margin-top: 6vh;
     margin-left: auto;
     margin-right: auto;
@@ -6775,8 +6855,8 @@
     border: #0084ff 1px solid;
     letter-spacing: 3px;
     font-weight: 400;
-    font-size: 55px;
-    width: 700px;
+    font-size: 50px;
+    width: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6796,7 +6876,7 @@
     font-family: 'American Captain', sans-serif;
     border-left: 1px solid white;
     border-right: 1px solid white;
-    font-size: 65px;
+    font-size: 60px;
     padding: 15px;
     margin-top: auto;
     margin-bottom: auto;
@@ -6814,8 +6894,8 @@
     color: white;
     background-color: transparent;
     border: 1px solid white;
-    font-size: 60px;
-    width: 650px;
+    font-size: 49px;
+    width: 530px;
     display: flex;
     margin-top: auto;
     margin-bottom: auto;
@@ -6830,13 +6910,15 @@
     top: 250px;
     left: 0;
     right: 0;
-    width: 100%;
+    width: 90%;
     background-color: rgba(217, 217, 217, 0.336);
     backdrop-filter: blur(5px);
     border: 1px solid white;
     overflow: hidden;
     transition: all 0.5s ease;
     z-index: 50;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .dropdown-item {
@@ -6849,7 +6931,7 @@
     display: flex;
     justify-content: center;
     border: none;
-    font-size: 45px;
+    font-size: 32px;
     cursor: pointer;
     transition: color 0.1s ease;
     font-family: 'Vermin Vibes V', sans-serif;
@@ -6900,7 +6982,7 @@
   }
 
   .btn1 img {
-    width: 80px;
+    width: 70px;
     margin-top: -2px;
     margin-top: auto;
     margin-bottom: auto;
@@ -6930,7 +7012,7 @@
   }
 
   .nftSection2 img {
-    width: 22%;
+    width: 345px;
     transition: transform .2s;
   }
 
@@ -6956,7 +7038,7 @@
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
-    width: 100%;
+    width: 80%;
     padding: 20px;
   }
 
@@ -7080,7 +7162,7 @@
     font-family: 'Vermin Vibes V', sans-serif;
     text-align: center;
     color: white;
-    font-size: 85px;
+    font-size: 73px;
     padding-top: 50px;
   }
 
@@ -7103,7 +7185,7 @@
     margin-right: auto;
     display: flex;
     margin-top: 20px;
-    width: 22%;
+    width: 500px;
   }
 
   .battleSectionMain {
@@ -7142,7 +7224,7 @@
     justify-content: center;
     display: flex;
     margin-bottom: 10vh;
-    margin-top: -10vh;
+    margin-top: -5vh;
     z-index: 1000;
     position: relative;
   }
@@ -7150,7 +7232,7 @@
 
   #battleImgs {
     animation: float 20s ease-in-out infinite;
-    width: 800px;
+    width: 450px;
   }
 
   @keyframes float {
@@ -7193,7 +7275,16 @@
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-top: -145px;
+    margin-top: -110px;
+  }
+
+  .character--2 {
+    width: 495px;
+    /* Adjust to fit your design */
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -111px;
   }
 
   .popup {
@@ -7208,7 +7299,7 @@
   }
 
   .popup-text {
-    font-size: 4rem;
+    font-size: 2.5rem;
     font-family: 'Vermin Vibes V', sans-serif;
     color: white;
     margin-top: auto;
