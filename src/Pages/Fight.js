@@ -117,7 +117,7 @@ const Vs = () => {
 					<div class="popup-containerMain3">
 						<div class="popup-containerMain">
 							<div class="popup">
-								<img src={jesusNoBg} alt="Man" class="character" />
+								<img src={jesusNoBg} alt="Man" class="character--2" />
 								<span class="close-button" onClick={close}>&times;</span>
 								<p class="popup-text">YOU WIN!</p>
 							</div>
