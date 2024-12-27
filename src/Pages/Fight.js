@@ -106,6 +106,7 @@ const Vs = () => {
 
 	};
 
+
 	return (
 
 		<div className='cont3'>
@@ -222,7 +223,7 @@ const Vs = () => {
 								</div>
 								<div id="vsMain" className="relative col-span-4 flex flex-col items-center justify-center gap-y-14">
 									<div className="relative flex z-[2] vs-bounce-animation">
-										
+
 										<div className="letter-v-slide-in">
 											<img src={letterV} alt="Letter V" className="object-contain" />
 										</div>
@@ -239,7 +240,10 @@ const Vs = () => {
 						</div>
 
 						<div className='combat'>
-							<button onClick={combat} className="bg-gradient-to-r from-[#B014A5] via-[#6514DB] to-[#B014A5] bg-[length:200%_200%] font-vermin-vibes-v text-[20px] px-[3.8em] py-[0.9em] transition-all duration-500 rounded-full hover:bg-right hover:shadow-[0_0_10px_0_#B014A5] hover:[text-shadow:_0_0_3px_white]">
+							<button
+								onClick={combat}
+								className="bg-gradient-to-r from-[#B014A5] via-[#6514DB] to-[#B014A5] bg-[length:200%_200%] font-vermin-vibes-v text-[9px] sm:text-[12px] md:text-[14px] lg:text-[16px] xl:text-[18px] 2xl:text-[20px] px-[3.8em] py-[0.9em] transition-all duration-500 rounded-full hover:bg-right hover:shadow-[0_0_10px_0_#B014A5] hover:[text-shadow:_0_0_3px_white]"
+							>
 								COMBAT
 							</button>
 						</div>
