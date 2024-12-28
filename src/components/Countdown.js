@@ -41,7 +41,7 @@ const Countdown = () => {
   }, []);
 
   return (
-    <h2 className="font-saira-condensed font-semibold text-[42px] sm:text-[60px] md:text-[75px] lg:text-[90px] xl:text-[100px] 2xl:text-[105px]">
+    <h2 className="font-saira-condensed font-semibold text-[42px] sm:text-[50px] md:text-[75px] lg:text-[85px] xl:text-[85px] 2xl:text-[90px]">
       {remainingTime}
     </h2>
   );
