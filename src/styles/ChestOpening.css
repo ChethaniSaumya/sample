@@ -1113,23 +1113,22 @@
 
 
   .character {
-    width: 215px;
+    width: 190px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-top: -40px;
+    margin-top: -90px;
   }
 
   .character--2 {
-    width: 245px;
+    width: 190px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-top: -80px;
+    margin-top: -90px;
   }
-
 
   .popup {
     background: rgba(255, 255, 255, 0.253);
@@ -1138,10 +1137,9 @@
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.534);
     text-align: center;
-    height: 280px;
-    width: 95%;
+    height: 200px;
+    width: 75%;
     margin: auto;
-
   }
 
   .popup-text {
@@ -2027,7 +2025,7 @@
 
 
   .character {
-    width: 245px;
+    width: 225px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
@@ -2036,7 +2034,7 @@
   }
 
   .character--2 {
-    width: 245px;
+    width: 225px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
@@ -2051,8 +2049,8 @@
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.534);
     text-align: center;
-    height: 280px;
-    width: 90%;
+    height: 250px;
+    width: 80%;
     margin: auto;
 
   }
@@ -2929,7 +2927,7 @@
     border: 1px solid rgba(255, 255, 255, 0.534);
     text-align: center;
     height: 280px;
-    width: 600px;
+    width: 470px;
   }
 
 
@@ -3799,7 +3797,7 @@
     border: 1px solid rgba(255, 255, 255, 0.534);
     text-align: center;
     height: 280px;
-    width: 700px;
+    width: 470px;
   }
 
 
@@ -4669,7 +4667,7 @@
     border: 1px solid rgba(255, 255, 255, 0.534);
     text-align: center;
     height: 280px;
-    width: 700px;
+    width: 470px;
   }
 
   .popup-text {
@@ -5517,12 +5515,12 @@
   }
 
   .character {
-    width: 245px;
+    width: 255px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-top: -90px;
+    margin-top: -105px;
   }
 
   .character--2 {
@@ -5542,7 +5540,7 @@
     border: 1px solid rgba(255, 255, 255, 0.534);
     text-align: center;
     height: 280px;
-    width: 700px;
+    width: 550px;
   }
 
   .popup-text {
@@ -6394,17 +6392,17 @@
 
 
   .character {
-    width: 355px;
+    width: 330px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-top: -100px;
+    margin-top: -105px;
   }
 
 
   .character--2 {
-    width: 365px;
+    width: 330px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
@@ -6419,12 +6417,12 @@
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.534);
     text-align: center;
-    height: 440px;
-    width: 900px;
+    height: 400px;
+    width: 700px;
   }
 
   .popup-text {
-    font-size: 2.3rem;
+    font-size: 2.1rem;
     font-family: 'Vermin Vibes V', sans-serif;
     color: white;
     margin-top: auto;
@@ -7270,7 +7268,7 @@
   }
 
   .character {
-    width: 505px;
+    width: 455px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
@@ -7279,7 +7277,7 @@
   }
 
   .character--2 {
-    width: 495px;
+    width: 455px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
@@ -7294,8 +7292,8 @@
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.534);
     text-align: center;
-    height: 640px;
-    width: 1100px;
+    height: 560px;
+    width: 900px;
   }
 
   .popup-text {
