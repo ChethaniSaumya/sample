@@ -138,11 +138,11 @@ const Home = () => {
               </h1>
               <div className="w-[12ch] h-1 bg-[#D9D9D9] text-[29px] mt-3 sm:text-[40px] md:text-[52px] lg:text-[64px] xl:text-[72px] 2xl:text-[80px]"></div>
             </div>
-            <div className="flex flex-col sm:flex-row items-start gap-[1em] text-[13px] mt-[1.5em] sm:text-[14px] md:text-[18px] lg:text-[22px] xl:text-[29px] 2xl:text-[32px]">
+            <div className="flex flex-col sm:flex-row items-start gap-[1em] text-[13px] mt-[1.5em] sm:text-[14px] md:text-[18px] lg:text-[22px] xl:text-[26px] 2xl:text-[28px]">
               <div className="flex flex-col-reverse sm:flex-col">
                 <div className="relative">
                   <button
-                    className="relative flex items-center gap-x-[1.3125em] bg-gradient-to-r from-[#B014A5] via-[#6514DB] to-[#B014A5] bg-[length:200%_200%] font-vermin-vibes-v ps-[0.8em] pe-[0.3em] py-[0.2em] sm:px-[0.8em] 2xl:px-[1.15625em] transition-all duration-500 hover:bg-right hover:shadow-[0_0_5px_0_#B014A5] hover:[text-shadow:_0_0_3px_white] z-[1]"
+                    className="relative flex items-center gap-x-[1.3125em] bg-gradient-to-r from-[#B014A5] via-[#6514DB] to-[#B014A5] bg-[length:200%_200%] font-vermin-vibes-v ps-[0.8em] pe-[0.3em] py-[0.2em] sm:px-[0.8em] 2xl:px-[1.15625em] transition-all duration-500 hover:bg-right hover:shadow-[0_0_5px_0_#B014A5] hover:[text-shadow:_0_0_3px_white] z-[1] "
                     onClick={() => setIsOpen((prev) => !prev)}
                   >
                     BUY CHEST{" "}
@@ -155,7 +155,7 @@ const Home = () => {
                     </div>
                   </button>
                  <div
-                    className={`absolute top-[36px] sm:top-[46px] md:top-[56px] lg:top-[66px] xl:top-[76px] 2xl:top-[80px] left-0 right-0 w-full font-vermin-vibes-v text-[12px] bg-[#D9D9D94D] 2xl:px-5 backdrop-blur-[10px] overflow-hidden border border-white/50 transition-all duration-500 sm:text-[13px] md:text-[16px] lg:text-[20px] xl:text-[22px] 2xl:text-[24px] ${!isOpen ? "max-h-0" : "max-h-[500px]"
+                    className={`absolute top-[36px] sm:top-[46px] md:top-[56px] lg:top-[66px] xl:top-[76px] 2xl:top-[80px] left-0 right-0 w-full font-vermin-vibes-v text-[12px] bg-[#D9D9D94D] 2xl:px-5 backdrop-blur-[10px] overflow-hidden border border-white/50 transition-all duration-500 sm:text-[13px] md:text-[16px] lg:text-[18px] xl:text-[18px] 2xl:text-[19px] ${!isOpen ? "max-h-0" : "max-h-[500px]"
                       }`}
                   >
                     <button className="w-full flex items-center justify-center gap-x-[1.3125em] py-3 border-b border-b-white/50 transition-colors duration-100 hover:text-white/80">
