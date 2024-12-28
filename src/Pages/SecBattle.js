@@ -88,7 +88,7 @@ const SecBattle = () => {
 
           {/* VS */}
           <div className="relative col-span-4 flex flex-col items-center justify-center gap-y-8 sm:gap-y-9 md:gap-y-10 lg:gap-y-12 xl:gap-y-13 2xl:gap-y-14 tests z-[1]">
-            <div className="relative w-[117px] sm:w-[150px] md:w-[200px] lg:w-[250px] xl:w-[275px] 2xl:w-[300px] flex justify-center z-[2] vs-bounce-animation">
+            <div className="relative w-[100px] sm:w-[150px] md:w-[150px] lg:w-[210px] xl:w-[245px] 2xl:w-[200px] flex justify-center z-[2] vs-bounce-animation">
               <div
                 className={`absolute inset-0 z-[1] ${
                   isVisible ? "opacity-100" : "opacity-0"
