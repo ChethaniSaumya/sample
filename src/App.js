@@ -3,7 +3,8 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Home from "./Pages/Home";
 import Fight from "./Pages/Fight";
 import ChestOpening from "./Pages/chestOpening";
-import SecBattle from './Pages/SecBattle';
+import SecBattle from './Pages/secBattle';
+import CarouselOpen from './Pages/carouseTest';
 import Marketplace from './Pages/Marketplace';
 
 function App() {
@@ -17,8 +18,9 @@ function App() {
 					<Route path='battle' element={<Fight />} />
 					<Route path='sec-batttle' element={<SecBattle />} />
 					<Route path='buy-chests' element={<ChestOpening />} />
-  					<Route path='marketplace' element={<Marketplace />} />
-
+					<Route path='carousel' element={<CarouselOpen />} />
+					<Route path='marketplace' element={<Marketplace />} />
+  
 				</Routes> 
 			</BrowserRouter>
 			<div>
