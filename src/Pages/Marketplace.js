@@ -135,7 +135,7 @@ const Marketplace = () => {
     }
 
     return (
-        <div className='light'>
+        <div className='marketPlaceMain'>
 
             <Navbar />
 
