@@ -28,7 +28,7 @@ const Navbar = () => {
                 <a href="buy-chests">BUY CHESTS</a>
               </li>
               <li className="nav-link-hover font-bold">
-                <a href="/">MARKETPLACE</a>
+                <a href="marketplace">MARKETPLACE</a>
               </li>
               <li className="nav-link-hover font-bold">
                 <a href="battle">BATTLE</a>
@@ -71,7 +71,7 @@ const Navbar = () => {
                 <a href="buy-chests">BUY CHESTS</a>
               </li>
               <li className="font-bold py-3 border-b">
-                <a href="/">MARKETPLACE</a>
+                <a href="marketplace">MARKETPLACE</a>
               </li>
               <li className="font-bold py-3 border-b">
                 <a href="battle">BATTLE</a>
