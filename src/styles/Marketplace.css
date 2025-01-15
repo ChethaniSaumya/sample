@@ -99,7 +99,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle, rgba(25, 25, 25, 0.186622191011236) 0%, rgba(13, 13, 13, 0.5237008426966292) 50%, rgba(0, 0, 0, 0.9281952247191011) 100%),
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.26934523809523814) 0%, rgba(0, 0, 0, 0.2665441176470589) 35%, rgba(0, 0, 0, 0.6671043417366946) 100%),
       url('../assets/marketplace/bg1.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -109,25 +109,13 @@
     height: min-content;
   }
 
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.26934523809523814) 0%, rgba(0, 0, 0, 0.2665441176470589) 35%, rgba(0, 0, 0, 0.6671043417366946) 100%),
-      url('../assets/marketplace/bg1.png') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-
   /* Header Styles */
   .header {
     background-color: #ff6600;
     padding: 1rem;
   }
 
-  .connect-button {
+  .connect-button-2 {
     background-color: #ff3333;
     color: white;
     border: none;
@@ -145,7 +133,7 @@
     display: flex;
   }
 
-  .connect-button:hover {
+  .connect-button-2:hover {
     background-color: #f01f1f;
   }
 
@@ -661,7 +649,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle, rgba(25, 25, 25, 0.186622191011236) 0%, rgba(13, 13, 13, 0.5237008426966292) 50%, rgba(0, 0, 0, 0.9281952247191011) 100%),
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.26934523809523814) 0%, rgba(0, 0, 0, 0.2665441176470589) 35%, rgba(0, 0, 0, 0.6671043417366946) 100%),
       url('../assets/marketplace/bg1.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -671,25 +659,13 @@
     height: min-content;
   }
 
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.26934523809523814) 0%, rgba(0, 0, 0, 0.2665441176470589) 35%, rgba(0, 0, 0, 0.6671043417366946) 100%),
-      url('../assets/marketplace/bg1.png') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-
   /* Header Styles */
   .header {
     background-color: #ff6600;
     padding: 1rem;
   }
 
-  .connect-button {
+  .connect-button-2 {
     background-color: #ff3333;
     color: white;
     border: none;
@@ -707,7 +683,7 @@
     display: flex;
   }
 
-  .connect-button:hover {
+  .connect-button-2:hover {
     background-color: #f01f1f;
   }
 
@@ -1224,7 +1200,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle, rgba(25, 25, 25, 0.186622191011236) 0%, rgba(13, 13, 13, 0.5237008426966292) 50%, rgba(0, 0, 0, 0.9281952247191011) 100%),
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.26934523809523814) 0%, rgba(0, 0, 0, 0.2665441176470589) 35%, rgba(0, 0, 0, 0.6671043417366946) 100%),
       url('../assets/marketplace/bg1.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -1234,25 +1210,13 @@
     height: min-content;
   }
 
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.26934523809523814) 0%, rgba(0, 0, 0, 0.2665441176470589) 35%, rgba(0, 0, 0, 0.6671043417366946) 100%),
-      url('../assets/marketplace/bg1.png') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-
   /* Header Styles */
   .header {
     background-color: #ff6600;
     padding: 1rem;
   }
 
-  .connect-button {
+  .connect-button-2 {
     background-color: #ff3333;
     color: white;
     border: none;
@@ -1270,7 +1234,7 @@
     display: flex;
   }
 
-  .connect-button:hover {
+  .connect-button-2:hover {
     background-color: #f01f1f;
   }
 
@@ -1772,7 +1736,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle, rgba(25, 25, 25, 0.186622191011236) 0%, rgba(13, 13, 13, 0.5237008426966292) 50%, rgba(0, 0, 0, 0.9281952247191011) 100%),
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.26934523809523814) 0%, rgba(0, 0, 0, 0.2665441176470589) 35%, rgba(0, 0, 0, 0.6671043417366946) 100%),
       url('../assets/marketplace/bg1.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -1782,25 +1746,13 @@
     height: min-content;
   }
 
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.26934523809523814) 0%, rgba(0, 0, 0, 0.2665441176470589) 35%, rgba(0, 0, 0, 0.6671043417366946) 100%),
-      url('../assets/marketplace/bg1.png') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-
   /* Header Styles */
   .header {
     background-color: #ff6600;
     padding: 1rem;
   }
 
-  .connect-button {
+  .connect-button-2 {
     background-color: #ff3333;
     color: white;
     border: none;
@@ -1818,7 +1770,7 @@
     display: flex;
   }
 
-  .connect-button:hover {
+  .connect-button-2:hover {
     background-color: #f01f1f;
   }
 
@@ -2319,7 +2271,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle, rgba(25, 25, 25, 0.186622191011236) 0%, rgba(13, 13, 13, 0.5237008426966292) 50%, rgba(0, 0, 0, 0.9281952247191011) 100%),
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.26934523809523814) 0%, rgba(0, 0, 0, 0.2665441176470589) 35%, rgba(0, 0, 0, 0.6671043417366946) 100%),
       url('../assets/marketplace/bg1.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -2329,25 +2281,13 @@
     height: min-content;
   }
 
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.26934523809523814) 0%, rgba(0, 0, 0, 0.2665441176470589) 35%, rgba(0, 0, 0, 0.6671043417366946) 100%),
-      url('../assets/marketplace/bg1.png') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-
   /* Header Styles */
   .header {
     background-color: #ff6600;
     padding: 1rem;
   }
 
-  .connect-button {
+  .connect-button-2 {
     background-color: #ff3333;
     color: white;
     border: none;
@@ -2362,7 +2302,7 @@
     transition: 0.2s ease-in-out;
   }
 
-  .connect-button:hover {
+  .connect-button-2:hover {
     background-color: #f01f1f;
   }
 
@@ -2844,7 +2784,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle, rgba(25, 25, 25, 0.186622191011236) 0%, rgba(13, 13, 13, 0.5237008426966292) 50%, rgba(0, 0, 0, 0.9281952247191011) 100%),
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.26934523809523814) 0%, rgba(0, 0, 0, 0.2665441176470589) 35%, rgba(0, 0, 0, 0.6671043417366946) 100%),
       url('../assets/marketplace/bg1.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -2854,25 +2794,13 @@
     height: min-content;
   }
 
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.26934523809523814) 0%, rgba(0, 0, 0, 0.2665441176470589) 35%, rgba(0, 0, 0, 0.6671043417366946) 100%),
-      url('../assets/marketplace/bg1.png') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-
   /* Header Styles */
   .header {
     background-color: #ff6600;
     padding: 1rem;
   }
 
-  .connect-button {
+  .connect-button-2 {
     background-color: #ff3333;
     color: white;
     border: none;
@@ -2886,7 +2814,7 @@
     transition: 0.2s ease-in-out;
   }
 
-  .connect-button:hover {
+  .connect-button-2:hover {
     background-color: #f01f1f;
   }
 
@@ -3366,7 +3294,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle, rgba(25, 25, 25, 0.186622191011236) 0%, rgba(13, 13, 13, 0.5237008426966292) 50%, rgba(0, 0, 0, 0.9281952247191011) 100%),
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.26934523809523814) 0%, rgba(0, 0, 0, 0.2665441176470589) 35%, rgba(0, 0, 0, 0.6671043417366946) 100%),
       url('../assets/marketplace/bg1.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -3376,25 +3304,13 @@
     height: min-content;
   }
 
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.26934523809523814) 0%, rgba(0, 0, 0, 0.2665441176470589) 35%, rgba(0, 0, 0, 0.6671043417366946) 100%),
-      url('../assets/marketplace/bg1.png') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-
   /* Header Styles */
   .header {
     background-color: #ff6600;
     padding: 1rem;
   }
 
-  .connect-button {
+  .connect-button-2 {
     background-color: #ff3333;
     color: white;
     border: none;
@@ -3409,7 +3325,7 @@
     font-size: 26px;
   }
 
-  .connect-button:hover {
+  .connect-button-2:hover {
     background-color: #f01f1f;
   }
 
@@ -3898,7 +3814,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle, rgba(25, 25, 25, 0.186622191011236) 0%, rgba(13, 13, 13, 0.5237008426966292) 50%, rgba(0, 0, 0, 0.9281952247191011) 100%),
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.26934523809523814) 0%, rgba(0, 0, 0, 0.2665441176470589) 35%, rgba(0, 0, 0, 0.6671043417366946) 100%),
       url('../assets/marketplace/bg1.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -3908,25 +3824,13 @@
     height: min-content;
   }
 
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.26934523809523814) 0%, rgba(0, 0, 0, 0.2665441176470589) 35%, rgba(0, 0, 0, 0.6671043417366946) 100%),
-      url('../assets/marketplace/bg1.png') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-
   /* Header Styles */
   .header {
     background-color: #ff6600;
     padding: 1rem;
   }
 
-  .connect-button {
+  .connect-button-2 {
     background-color: #ff3333;
     color: white;
     border: none;
@@ -3941,7 +3845,7 @@
     font-size: 26px;
   }
 
-  .connect-button:hover {
+  .connect-button-2:hover {
     background-color: #f01f1f;
   }
 
