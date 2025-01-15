@@ -50,7 +50,7 @@ const Navigation = () => {
             {_navbarOpen > 0 ?
                 (<div class="littleNav">
                     <div class="navDiv" onClick={() => window.location.href = '/'}>BUY CHESTS</div>
-                    <div class="navDiv">MARKETPLACE</div>
+                    <div class="navDiv" onClick={() => window.location.href = 'marketplace'}>MARKETPLACE</div>
                     <div class="navDiv" onClick={() => window.location.href = 'batttle'}>BATTLE</div>
                     <div class="navDiv" onClick={() => window.location.href = 'sec-batttle'}>SEC BATTLE</div>
                     <div
