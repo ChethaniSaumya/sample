@@ -135,7 +135,7 @@ const Marketplace = () => {
     }
 
     return (
-        <div>
+        <div className='light'>
 
             <Navbar />
 
@@ -519,7 +519,7 @@ const Marketplace = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <button class="connect-button">Connect</button>
+                                <button class="connect-button-2">Connect</button>
 
                             </div>
                         </div>
@@ -555,7 +555,7 @@ const Marketplace = () => {
                                     </div>
                                 </div>
                             </div>
-                            <button class="connect-button">Connect</button>
+                            <button class="connect-button-2">Connect</button>
 
                         </div>
 
@@ -590,7 +590,7 @@ const Marketplace = () => {
                                     </div>
                                 </div>
                             </div>
-                            <button class="connect-button">Connect</button>
+                            <button class="connect-button-2">Connect</button>
 
                         </div>
 
