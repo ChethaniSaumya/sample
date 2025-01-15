@@ -95,15 +95,15 @@
     background-color: #f82133;
   }
 
-  .light {
+  .marketPlaceMain {
+    margin: 0;
+    padding: 0;
     background: radial-gradient(circle, rgba(0, 0, 0, 0.26934523809523814) 0%, rgba(0, 0, 0, 0.2665441176470589) 35%, rgba(0, 0, 0, 0.6671043417366946) 100%),
       url('../assets/marketplace/bg1.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 100vh;
-    height: min-content;
   }
 
   /* Header Styles */
@@ -642,15 +642,15 @@
     background-color: #f82133;
   }
 
-  .light {
+  .marketPlaceMain {
+    margin: 0;
+    padding: 0;
     background: radial-gradient(circle, rgba(0, 0, 0, 0.26934523809523814) 0%, rgba(0, 0, 0, 0.2665441176470589) 35%, rgba(0, 0, 0, 0.6671043417366946) 100%),
       url('../assets/marketplace/bg1.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 100vh;
-    height: min-content;
   }
 
   /* Header Styles */
@@ -1190,15 +1190,15 @@
     background-color: #f82133;
   }
 
-  .light {
+  .marketPlaceMain {
+    margin: 0;
+    padding: 0;
     background: radial-gradient(circle, rgba(0, 0, 0, 0.26934523809523814) 0%, rgba(0, 0, 0, 0.2665441176470589) 35%, rgba(0, 0, 0, 0.6671043417366946) 100%),
       url('../assets/marketplace/bg1.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 100vh;
-    height: min-content;
   }
 
   /* Header Styles */
@@ -1723,15 +1723,15 @@
     background-color: #f82133;
   }
 
-  .light {
+  .marketPlaceMain {
+    margin: 0;
+    padding: 0;
     background: radial-gradient(circle, rgba(0, 0, 0, 0.26934523809523814) 0%, rgba(0, 0, 0, 0.2665441176470589) 35%, rgba(0, 0, 0, 0.6671043417366946) 100%),
       url('../assets/marketplace/bg1.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 100vh;
-    height: min-content;
   }
 
   /* Header Styles */
@@ -2255,15 +2255,17 @@
     background-color: #f82133;
   }
 
-  .light {
-     background: radial-gradient(circle, rgba(0, 0, 0, 0.26934523809523814) 0%, rgba(0, 0, 0, 0.2665441176470589) 35%, rgba(0, 0, 0, 0.6671043417366946) 100%),
+  .marketPlaceMain {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.26934523809523814) 0%, rgba(0, 0, 0, 0.2665441176470589) 35%, rgba(0, 0, 0, 0.6671043417366946) 100%),
       url('../assets/marketplace/bg1.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     height: 100vh;
-    height: min-content;
+
   }
 
   /* Header Styles */
@@ -2765,7 +2767,9 @@
     background-color: #f82133;
   }
 
-  .light {
+  .marketPlaceMain {
+    margin: 0;
+    padding: 0;
     background: radial-gradient(circle, rgba(0, 0, 0, 0.26934523809523814) 0%, rgba(0, 0, 0, 0.2665441176470589) 35%, rgba(0, 0, 0, 0.6671043417366946) 100%),
       url('../assets/marketplace/bg1.png') no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -2773,7 +2777,6 @@
     -o-background-size: cover;
     background-size: cover;
     height: 100vh;
-    height: min-content;
   }
 
   /* Header Styles */
@@ -3272,7 +3275,9 @@
     background-color: #f82133;
   }
 
-  .light {
+  .marketPlaceMain {
+    margin: 0;
+    padding: 0;
     background: radial-gradient(circle, rgba(0, 0, 0, 0.26934523809523814) 0%, rgba(0, 0, 0, 0.2665441176470589) 35%, rgba(0, 0, 0, 0.6671043417366946) 100%),
       url('../assets/marketplace/bg1.png') no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -3280,7 +3285,6 @@
     -o-background-size: cover;
     background-size: cover;
     height: 100vh;
-    height: min-content;
   }
 
   /* Header Styles */
@@ -3789,7 +3793,9 @@
     background-color: #f82133;
   }
 
-  .light {
+  .marketPlaceMain {
+    margin: 0;
+    padding: 0;
     background: radial-gradient(circle, rgba(0, 0, 0, 0.26934523809523814) 0%, rgba(0, 0, 0, 0.2665441176470589) 35%, rgba(0, 0, 0, 0.6671043417366946) 100%),
       url('../assets/marketplace/bg1.png') no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -3797,7 +3803,6 @@
     -o-background-size: cover;
     background-size: cover;
     height: 100vh;
-    height: min-content;
   }
 
   /* Header Styles */
