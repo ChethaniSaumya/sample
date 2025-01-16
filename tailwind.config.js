@@ -27,6 +27,7 @@ module.exports = {
         "Poppins",
         "sans-serif",
       ],
+      "american-captain": ["American Captain", "sans-serif"],
     },
     extend: {},
   },
