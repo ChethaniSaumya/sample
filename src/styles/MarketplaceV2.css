@@ -1,0 +1,27 @@
+.animate-hover {
+  animation: animate-hover 5s infinite;
+}
+
+.animate-terrain-hover {
+  animation: animate-terrain-hover 5s infinite;
+}
+
+@keyframes animate-hover {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(1%);
+  }
+}
+
+@keyframes animate-terrain-hover {
+  0%,
+  100% {
+    transform: translateY(-20%);
+  }
+  50% {
+    transform: translateY(-19%);
+  }
+}
