@@ -6,9 +6,9 @@ import reportWebVitals from './reportWebVitals';
 import { EthereumClient, w3mConnectors, w3mProvider } from '@web3modal/ethereum'
 import { Web3Modal } from '@web3modal/react'
 import { configureChains, createConfig, WagmiConfig } from 'wagmi'
-import { sepolia } from 'wagmi/chains'
+import { pulsechainV4 } from 'wagmi/chains'
 
-const chains = [sepolia]
+const chains = [pulsechainV4]
 const projectId = '1ee662092220d9e279a243cd7270bbae'
 
 const { publicClient } = configureChains(chains, [w3mProvider({ projectId })])
