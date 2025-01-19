@@ -37,8 +37,8 @@ import { Web3Button, Web3Modal, useWeb3Modal } from '@web3modal/react';
 import { mainnet, useAccount, useContractRead, useContractReads, useContractWrite, useNetwork, usePublicClient, useSwitchNetwork, useWaitForTransaction } from 'wagmi';
 import { createPublicClient, formatEther, http, parseEther, webSocket } from 'viem';
 import { pulsechainV4 } from 'wagmi/chains'
-import Web3 from "web3";
-const web3 = new Web3();
+//import Web3 from "web3";
+//const web3 = new Web3();
 
 var Scroll = require('react-scroll');
 
@@ -1178,10 +1178,10 @@ const ChestOpening = () => {
 			setstatusLoadingPurchase(true)
 			setstatusErrorPurchase(false)
 
-			const amount = web3.utils.toWei("0.001", "ether");
+			//const amount = web3.utils.toWei("0.001", "ether");
 
 			// Convert selectedValue to BN (Big Number) and multiply
-			const totalValue = amount * selectedValue;
+			const totalValue = 1000000000000000 * selectedValue;
 
 
 			var res = await writeAsync({
