@@ -20,7 +20,66 @@
 .animate-carousel-slow {
   animation: carousel-slow 5s linear infinite; /* Slower animation */
 }
+
+#wrongMsg{
+  color: #ff144f;
+}
+
+.notifications{
+  width: 150px;
+  height: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+
+.popupNotificationsLoad {
+  background: rgba(255, 255, 255, 0.253);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.534);
+  text-align: center;
+  margin: auto;
+  padding: 25px;
+  width: 500px;
+}
  
+.popupNotifications {
+  background: rgba(255, 255, 255, 0.253);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.534);
+  text-align: center;
+  margin: auto;
+  padding: 25px;
+}
+
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 45px;
+  aspect-ratio: 1;
+  --c: no-repeat linear-gradient(#d632ff 0 0);
+  background: 
+    var(--c) 0%   50%,
+    var(--c) 50%  50%,
+    var(--c) 100% 50%;
+  background-size: 20% 100%;
+  animation: l1 1s infinite linear;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+@keyframes l1 {
+  0%  {background-size: 20% 100%,20% 100%,20% 100%}
+  33% {background-size: 20% 10% ,20% 100%,20% 100%}
+  50% {background-size: 20% 100%,20% 10% ,20% 100%}
+  66% {background-size: 20% 100%,20% 100%,20% 10% }
+  100%{background-size: 20% 100%,20% 100%,20% 100%}
+}
 
 @keyframes carousel {
   0% {
@@ -256,31 +315,6 @@
   height: 100vh;
   flex-flow: column nowrap;
   /* Adjust the height based on your layout */
-}
-
-.loader {
-  width: 160px;
-  height: 25px;
-  border-radius: 60px;
-  color: #514b82;
-  border: 2px solid;
-  position: relative;
-  overflow: hidden;
-}
-
-.loader::before {
-  content: "";
-  position: absolute;
-  margin: 2px;
-  width: 14px;
-  top: 0;
-  bottom: 0;
-  left: -20px;
-  border-radius: inherit;
-  background: currentColor;
-  box-shadow: -10px 0 12px 3px currentColor;
-  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%, -30px 50%);
-  animation: l14 1s infinite linear;
 }
 
 @keyframes l14 {
@@ -1113,22 +1147,23 @@
 
 
   .character {
-    width: 190px;
+    width: 215px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-top: -90px;
+    margin-top: -40px;
   }
 
   .character--2 {
-    width: 190px;
+    width: 245px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-top: -90px;
+    margin-top: -80px;
   }
+
 
   .popup {
     background: rgba(255, 255, 255, 0.253);
@@ -1137,9 +1172,10 @@
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.534);
     text-align: center;
-    height: 200px;
-    width: 75%;
+    height: 280px;
+    width: 95%;
     margin: auto;
+
   }
 
   .popup-text {
@@ -2025,7 +2061,7 @@
 
 
   .character {
-    width: 225px;
+    width: 245px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
@@ -2034,7 +2070,7 @@
   }
 
   .character--2 {
-    width: 225px;
+    width: 245px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
@@ -2049,8 +2085,8 @@
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.534);
     text-align: center;
-    height: 250px;
-    width: 80%;
+    height: 280px;
+    width: 90%;
     margin: auto;
 
   }
@@ -2927,7 +2963,7 @@
     border: 1px solid rgba(255, 255, 255, 0.534);
     text-align: center;
     height: 280px;
-    width: 470px;
+    width: 600px;
   }
 
 
@@ -3797,7 +3833,7 @@
     border: 1px solid rgba(255, 255, 255, 0.534);
     text-align: center;
     height: 280px;
-    width: 470px;
+    width: 700px;
   }
 
 
@@ -4667,7 +4703,7 @@
     border: 1px solid rgba(255, 255, 255, 0.534);
     text-align: center;
     height: 280px;
-    width: 470px;
+    width: 700px;
   }
 
   .popup-text {
@@ -5515,12 +5551,12 @@
   }
 
   .character {
-    width: 255px;
+    width: 245px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-top: -105px;
+    margin-top: -90px;
   }
 
   .character--2 {
@@ -5540,7 +5576,7 @@
     border: 1px solid rgba(255, 255, 255, 0.534);
     text-align: center;
     height: 280px;
-    width: 550px;
+    width: 700px;
   }
 
   .popup-text {
@@ -6392,17 +6428,17 @@
 
 
   .character {
-    width: 330px;
+    width: 355px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
     margin-left: auto;
-    margin-top: -105px;
+    margin-top: -100px;
   }
 
 
   .character--2 {
-    width: 330px;
+    width: 365px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
@@ -6417,12 +6453,12 @@
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.534);
     text-align: center;
-    height: 400px;
-    width: 700px;
+    height: 440px;
+    width: 900px;
   }
 
   .popup-text {
-    font-size: 2.1rem;
+    font-size: 2.3rem;
     font-family: 'Vermin Vibes V', sans-serif;
     color: white;
     margin-top: auto;
@@ -7268,7 +7304,7 @@
   }
 
   .character {
-    width: 455px;
+    width: 505px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
@@ -7277,7 +7313,7 @@
   }
 
   .character--2 {
-    width: 455px;
+    width: 495px;
     /* Adjust to fit your design */
     display: block;
     margin-right: auto;
@@ -7292,8 +7328,8 @@
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.534);
     text-align: center;
-    height: 560px;
-    width: 900px;
+    height: 640px;
+    width: 1100px;
   }
 
   .popup-text {
