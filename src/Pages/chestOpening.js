@@ -1173,7 +1173,7 @@ const ChestOpening = () => {
 	}
 
 	async function purchase() {
-		try { 
+		try {
 
 			setstatusLoadingPurchase(true)
 			setstatusErrorPurchase(false)
@@ -1341,7 +1341,7 @@ const ChestOpening = () => {
 
 			<div className='cont-2'>
 				<div className='titleMain'>FIND YOUR PULSE HEROS <span>NFT</span></div>
-				<div className='title2Main'>Secured by <img className='chainlink' src={cl} /></div>
+				{/*<div className='title2Main'>Secured by <img className='chainlink' src={cl} /></div>*/}
 
 				<div className='nftSection'>
 					{_chestOpen > 0 ?
@@ -1457,10 +1457,13 @@ const ChestOpening = () => {
 						<button className='btn1' id="btn1PC" disabled><img src={chest} /> <div className='txt'><span>{_chestsPurchasedAmount}</span> OPEN CHEST</div></button> :
 						<button className='btn1' id="btn1PC" onClick={onMint}><img src={chest} /> <div className='txt'><span>{_chestsPurchasedAmount}</span> OPEN CHEST</div></button>}
 					{_statusAnimations ?
-					<button id="btn1Mobile" className='btn1' disabled><img src={chest} /> <div className='txt'><span>{_chestsPurchasedAmount}</span> OPEN CHEST</div></button>:
-					<button id="btn1Mobile" className='btn1' onClick={onMintMob} ><img src={chest} /> <div className='txt'><span>{_chestsPurchasedAmount}</span> OPEN CHEST</div></button>}
+						<button id="btn1Mobile" className='btn1' disabled><img src={chest} /> <div className='txt'><span>{_chestsPurchasedAmount}</span> OPEN CHEST</div></button> :
+						<button id="btn1Mobile" className='btn1' onClick={onMintMob} ><img src={chest} /> <div className='txt'><span>{_chestsPurchasedAmount}</span> OPEN CHEST</div></button>}
 
-					<button className='btn2' onClick={purchase}><div>Purchase Chests</div></button>
+
+					{_statusAnimations ?
+						<button className='btn2' disabled><div>Purchase Chests</div></button> :
+						<button className='btn2' onClick={purchase}><div>Purchase Chests</div></button>}
 
 					<div className="dropdown-container">
 						<button className="btn2" onClick={toggleDropdown}>
