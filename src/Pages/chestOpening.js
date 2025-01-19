@@ -1405,7 +1405,7 @@ const ChestOpening = () => {
 									<>
 										<span class="close-button-2" onClick={close}>&times;</span>
 
-										<img src={elom2} />
+										<img src={gz2} />
 									</>
 								}
 
@@ -1413,7 +1413,7 @@ const ChestOpening = () => {
 									<>
 										<span class="close-button-2" onClick={close}>&times;</span>
 
-										<img src={gz2} />
+										<img src={satoshi2} />
 									</>}
 
 								{number === 3 &&
@@ -1427,21 +1427,21 @@ const ChestOpening = () => {
 									<>
 										<span class="close-button-2" onClick={close}>&times;</span>
 
-										<img src={richard2} />
+										<img src={trunk2} />
 									</>}
 
 								{number === 5 &&
 									<>
 										<span class="close-button-2" onClick={close}>&times;</span>
 
-										<img src={satoshi2} />
+										<img src={elom2} />
 									</>}
 
 								{number === 6 &&
 									<>
 										<span class="close-button-2" onClick={close}>&times;</span>
 
-										<img src={trunk2} />
+										<img src={richard2} />
 									</>}
 
 
