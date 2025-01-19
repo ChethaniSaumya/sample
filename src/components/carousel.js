@@ -206,8 +206,8 @@ const Carousel = ({ number }) => {
 
                 </div>
             }
-
-            {/*ELOM*/}
+            
+            {/*GZ2*/}
             {number === 1 &&
                 <div class="boxWrapC">
                     <div class="slider">
@@ -219,17 +219,17 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={richard2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
+                                <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
                             </div>
 
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={elom2} alt="d5" />
                             </div>
 
                             <div class="slide">
@@ -243,17 +243,17 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={richard2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
+                                <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
                             </div>
 
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={elom2} alt="d5" />
                             </div>
 
                             <div class="slide">
@@ -267,17 +267,17 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={richard2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
+                                <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
                             </div>
 
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={elom2} alt="d5" />
                             </div>
 
                             <div class="slide">
@@ -291,17 +291,17 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={richard2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
+                                <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
                             </div>
 
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={elom2} alt="d5" />
                             </div>
 
                             <div class="slide">
@@ -315,17 +315,17 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={richard2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
+                                <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
                             </div>
 
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={elom2} alt="d5" />
                             </div>
 
                             <div class="slide">
@@ -338,17 +338,17 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={richard2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
+                                <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
                             </div>
 
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={elom2} alt="d5" />
                             </div>
 
                             <div class="slide">
@@ -363,8 +363,8 @@ const Carousel = ({ number }) => {
 
                 </div>
             }
-
-            {/*GZ2*/}
+            
+            {/*SATOSHI*/}
             {number === 2 &&
                 <div class="boxWrapC">
                     <div class="slider">
@@ -376,10 +376,10 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={richard2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
+                                <img class="carouselIMG" src={satoshi2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
@@ -390,7 +390,7 @@ const Carousel = ({ number }) => {
                             </div>
 
                             <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
 
                             <div class="slide">
@@ -400,10 +400,10 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={richard2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
+                                <img class="carouselIMG" src={satoshi2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
@@ -414,7 +414,7 @@ const Carousel = ({ number }) => {
                             </div>
 
                             <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
 
                             <div class="slide">
@@ -424,10 +424,10 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={richard2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
+                                <img class="carouselIMG" src={satoshi2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
@@ -438,7 +438,7 @@ const Carousel = ({ number }) => {
                             </div>
 
                             <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
 
                             <div class="slide">
@@ -448,10 +448,10 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={richard2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
+                                <img class="carouselIMG" src={satoshi2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
@@ -462,7 +462,7 @@ const Carousel = ({ number }) => {
                             </div>
 
                             <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
 
                             <div class="slide">
@@ -472,10 +472,10 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={richard2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
+                                <img class="carouselIMG" src={satoshi2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
@@ -486,7 +486,7 @@ const Carousel = ({ number }) => {
                             </div>
 
                             <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={vitalip2} alt="d5" />
@@ -495,10 +495,10 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={richard2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
+                                <img class="carouselIMG" src={satoshi2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
@@ -509,7 +509,7 @@ const Carousel = ({ number }) => {
                             </div>
 
                             <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
 
                         </div>
@@ -520,7 +520,7 @@ const Carousel = ({ number }) => {
 
                 </div>
             }
-
+            
             {/*JESUS*/}
             {number === 3 &&
                 <div class="boxWrapC">
@@ -677,8 +677,8 @@ const Carousel = ({ number }) => {
 
                 </div>
             }
-
-            {/*RICHARD*/}
+            
+            {/*TRUNK*/}
             {number === 4 &&
                 <div class="boxWrapC">
                     <div class="slider">
@@ -687,13 +687,13 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={vitalip2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={richard2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
@@ -711,13 +711,13 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={vitalip2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={richard2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
@@ -735,13 +735,13 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={vitalip2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={richard2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
@@ -759,13 +759,13 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={vitalip2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={richard2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
@@ -783,13 +783,13 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={vitalip2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={richard2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
@@ -806,13 +806,13 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={vitalip2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={richard2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
@@ -835,7 +835,7 @@ const Carousel = ({ number }) => {
                 </div>
             }
 
-            {/*SATOSHI*/}
+            {/*ELOM*/}
             {number === 5 &&
                 <div class="boxWrapC">
                     <div class="slider">
@@ -850,18 +850,18 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
+                                <img class="carouselIMG" src={elom2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
                             </div>
 
                             <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
 
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={satoshi2} alt="d5" />
                             </div>
 
                             <div class="slide">
@@ -874,18 +874,18 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
+                                <img class="carouselIMG" src={elom2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
                             </div>
 
                             <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
 
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={satoshi2} alt="d5" />
                             </div>
 
                             <div class="slide">
@@ -898,18 +898,18 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
+                                <img class="carouselIMG" src={elom2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
                             </div>
 
                             <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
 
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={satoshi2} alt="d5" />
                             </div>
 
                             <div class="slide">
@@ -922,18 +922,18 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
+                                <img class="carouselIMG" src={elom2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
                             </div>
 
                             <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
 
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={satoshi2} alt="d5" />
                             </div>
 
                             <div class="slide">
@@ -946,18 +946,18 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
+                                <img class="carouselIMG" src={elom2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
                             </div>
 
                             <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
 
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={satoshi2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={vitalip2} alt="d5" />
@@ -969,18 +969,18 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
+                                <img class="carouselIMG" src={elom2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
                             </div>
 
                             <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
 
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={satoshi2} alt="d5" />
                             </div>
 
                         </div>
@@ -993,7 +993,7 @@ const Carousel = ({ number }) => {
             }
 
 
-            {/*TRUNK*/}
+            {/*RICHARD*/}
             {number === 6 &&
                 <div class="boxWrapC">
                     <div class="slider">
@@ -1002,13 +1002,13 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={vitalip2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={richard2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
@@ -1026,13 +1026,13 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={vitalip2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={richard2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
@@ -1050,13 +1050,13 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={vitalip2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={richard2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
@@ -1074,13 +1074,13 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={vitalip2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={richard2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
@@ -1098,13 +1098,13 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={vitalip2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={richard2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
@@ -1121,13 +1121,13 @@ const Carousel = ({ number }) => {
                                 <img class="carouselIMG" src={vitalip2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
+                                <img class="carouselIMG" src={trunk2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={gz2} alt="d5" />
                             </div>
                             <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
+                                <img class="carouselIMG" src={richard2} alt="d5" />
                             </div>
                             <div class="slide">
                                 <img class="carouselIMG" src={jesus2} alt="d5" />
@@ -1149,6 +1149,7 @@ const Carousel = ({ number }) => {
 
                 </div>
             }
+
 
 
         </>
