@@ -30,7 +30,7 @@ import satoshi2 from "../assets/heroes2/satoshi.png";
 import $ from 'jquery';
 import Carousel from '../components/carousel';
 import right from "../assets/heroes2/right.png";
-import tic from "../assets/double-tick.png";
+import correct2 from "../assets/correct2.png";
 import wrong from "../assets/wrong.png";
 
 import { Web3Button, Web3Modal, useWeb3Modal } from '@web3modal/react';
@@ -1470,7 +1470,7 @@ const ChestOpening = () => {
 						<div class="popupNotifications">
 							<span class="close-button" onClick={close}>&times;</span>
 
-							<img src={tic} alt="success" class="notifications" />
+							<img src={correct2} alt="success" class="notifications" />
 							<p class="popup-text">CHEST PURCHASED SUCCESSFULLY!</p>
 						</div>
 					</div>
@@ -1506,7 +1506,7 @@ const ChestOpening = () => {
 						<div class="popupNotifications">
 							<span class="close-button" onClick={close}>&times;</span>
 
-							<img src={tic} alt="success" class="notifications" />
+							<img src={correct2} alt="success" class="notifications" />
 							<p class="popup-text">MINTED SUCCESSFULLY!</p>
 						</div>
 					</div>
