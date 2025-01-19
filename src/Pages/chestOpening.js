@@ -37,6 +37,8 @@ import { Web3Button, Web3Modal, useWeb3Modal } from '@web3modal/react';
 import { mainnet, useAccount, useContractRead, useContractReads, useContractWrite, useNetwork, usePublicClient, useSwitchNetwork, useWaitForTransaction } from 'wagmi';
 import { createPublicClient, formatEther, http, parseEther, webSocket } from 'viem';
 import { pulsechainV4 } from 'wagmi/chains'
+import Web3 from "web3";
+const web3 = new Web3();
 
 var Scroll = require('react-scroll');
 
@@ -437,6 +439,19 @@ let ABI = [
 		"inputs": [
 			{
 				"internalType": "uint256",
+				"name": "newLimit",
+				"type": "uint256"
+			}
+		],
+		"name": "setRarityExclusionLimit",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
 				"name": "rarity",
 				"type": "uint256"
 			},
@@ -748,6 +763,19 @@ let ABI = [
 		"type": "function"
 	},
 	{
+		"inputs": [],
+		"name": "rarityExclusionLimit",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "bytes4",
@@ -800,7 +828,7 @@ let ABI = [
 	}
 ];
 
-let address = "0x22A45b1897139430b52F213Bff90F456381ae561";
+let address = "0x03Be4647dF69F5bF031ec51297Acc6d79238d161";
 
 const ChestOpening = () => {
 
@@ -1145,15 +1173,21 @@ const ChestOpening = () => {
 	}
 
 	async function purchase() {
-		try {
+		try { 
 
 			setstatusLoadingPurchase(true)
 			setstatusErrorPurchase(false)
 
+			const amount = web3.utils.toWei("0.001", "ether");
+
+			// Convert selectedValue to BN (Big Number) and multiply
+			const totalValue = amount * selectedValue;
+
+
 			var res = await writeAsync({
 				functionName: 'purchase',
 				args: [selectedValue],
-				value: selectedValue * Number(1000000000000000)
+				value: totalValue.toString() // 0.01 Ether in Wei
 			})
 
 			var result = await publicClient.waitForTransactionReceipt(res)
@@ -1421,7 +1455,7 @@ const ChestOpening = () => {
 
 					{_statusAnimations ?
 						<button className='btn1' id="btn1PC" disabled><img src={chest} /> <div className='txt'><span>{_chestsPurchasedAmount}</span> OPEN CHEST</div></button> :
-						<button className='btn1' id="btn1PC" onClick={onMintMob}><img src={chest} /> <div className='txt'><span>{_chestsPurchasedAmount}</span> OPEN CHEST</div></button>}
+						<button className='btn1' id="btn1PC" onClick={onMint}><img src={chest} /> <div className='txt'><span>{_chestsPurchasedAmount}</span> OPEN CHEST</div></button>}
 					{_statusAnimations ?
 					<button id="btn1Mobile" className='btn1' disabled><img src={chest} /> <div className='txt'><span>{_chestsPurchasedAmount}</span> OPEN CHEST</div></button>:
 					<button id="btn1Mobile" className='btn1' onClick={onMintMob} ><img src={chest} /> <div className='txt'><span>{_chestsPurchasedAmount}</span> OPEN CHEST</div></button>}
