@@ -6,6 +6,7 @@ import ChestOpening from "./Pages/chestOpening";
 import SecBattle from "./Pages/SecBattle";
 // import Marketplace from "./Pages/Marketplace";
 import MarketplaceV2 from "./Pages/MarketplaceV2";
+import Inventory from './Pages/Inventory';
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
           <Route path="buy-chests" element={<ChestOpening />} />
           {/* <Route path='marketplace' element={<Marketplace />} /> */}
           <Route path="marketplace" element={<MarketplaceV2 />} />
+ 					<Route path='inventory' element={<Inventory />} />
+
         </Routes>
       </BrowserRouter>
       <div></div>
