@@ -1110,7 +1110,7 @@ let ABI = [
 	}
 ];
 
-let address = "0x6806Cef3CAD634e37727FfbE80CbAB98ADA06A75";
+let address = "0x4D09880fC2ecA53c46B23A4912b6A2cEBd3Fe056";
 
 const Inventory = () => {
 
