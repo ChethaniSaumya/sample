@@ -1703,7 +1703,7 @@ const Inventory = () => {
 								<div className="flex items-center justify-center">
 									<article className="w-[17em] max-w-[17em] mx-auto text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[15.5px] 2xl:text-[16px]">
 										<div
-											className="relative h-[14em] bg-contain bg-bottom bg-no-repeat z-[1] animate-hover"
+											className="relative h-[12em] bg-contain bg-bottom bg-no-repeat z-[1] animate-hover"
 											style={{
 												backgroundImage: `url(${rarityImages[nft.rarity]})`
 											}}
@@ -1714,7 +1714,7 @@ const Inventory = () => {
 											style={{ border: "1px solid #FFFFFF4D" }}
 										>
 											<div
-												className="absolute inset-0 h-[50%] bg-contain bg-center bg-no-repeat rounded-[0.5em] animate-terrain-hover"
+												className="absolute inset-0 h-[55%] bg-contain bg-center bg-no-repeat rounded-[0.5em] animate-terrain-hover"
 												style={{ backgroundImage: `url(${terrain})` }}
 											></div>
 
