@@ -1648,6 +1648,7 @@ const ChestOpening = () => {
 
 							</div> : null}
 
+
 						<div>
 							{carouselRun > 0 ? (
 								<>
@@ -1669,66 +1670,73 @@ const ChestOpening = () => {
 
 					</div>
 
-					<div>
-
-						{cardShow > 0 ?
+					{cardShow > 0 ?
+						<div className='popUpMain1'>
 							<div className='popUpImgMain'>
 
 								{number === 0 &&
 									<>
 										<span class="close-button-2" onClick={close}>&times;</span>
-
-										<img src={vitalip2} />
+										<div className='popUpImgBG'>
+											<img src={vitalip2} />
+										</div>
 									</>
 								}
 
 								{number === 1 &&
 									<>
 										<span class="close-button-2" onClick={close}>&times;</span>
-
-										<img src={gz2} />
+										<div className='popUpImgBG'>
+											<img src={gz2} />
+										</div>
 									</>
 								}
 
 								{number === 2 &&
 									<>
 										<span class="close-button-2" onClick={close}>&times;</span>
-
-										<img src={satoshi2} />
+										<div className='popUpImgBG'>
+											<img src={satoshi2} />
+										</div>
 									</>}
 
 								{number === 3 &&
 									<>
 										<span class="close-button-2" onClick={close}>&times;</span>
-
-										<img src={jesus2} />
+										<div className='popUpImgBG'>
+											<img src={jesus2} />
+										</div>
 									</>}
 
 								{number === 4 &&
 									<>
 										<span class="close-button-2" onClick={close}>&times;</span>
-
-										<img src={trunk2} />
+										<div className='popUpImgBG'>
+											<img src={trunk2} />
+										</div>
 									</>}
 
 								{number === 5 &&
 									<>
 										<span class="close-button-2" onClick={close}>&times;</span>
-
-										<img src={elom2} />
+										<div className='popUpImgBG'>
+											<img src={elom2} />
+										</div>
 									</>}
 
 								{number === 6 &&
 									<>
 										<span class="close-button-2" onClick={close}>&times;</span>
-
-										<img src={richard2} />
+										<div className='popUpImgBG'>
+											<img src={richard2} />
+										</div>
 									</>}
 
 
 							</div>
-							: null}
-					</div>
+						</div>
+						: null}
+
 
 				</div>
 
