@@ -343,6 +343,7 @@ const MarketplaceV2 = () => {
                 heroClass,
                 lastFought,
                 owner,
+                floorPrice,
                 price,
               }) => (
                 <div className="flex items-center justify-center">
