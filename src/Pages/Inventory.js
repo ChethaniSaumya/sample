@@ -1748,7 +1748,7 @@ const Inventory = () => {
 
 												<hr className="my-[1em]" />
 												<div className='inBtnsMain'>
-												<a href="inventory"><button className='inBtns1'>Fight</button></a>
+													<button className='inBtns1'><a href="battle">Fight</a></button>
 													<button className='inBtns2' onClick={sellPopUp}>Sell</button>
 												</div>
 											</div>
