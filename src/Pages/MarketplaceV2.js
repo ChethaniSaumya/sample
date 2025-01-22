@@ -231,8 +231,8 @@ const MarketplaceV2 = () => {
                   <button
                     key={i}
                     className={`${isSelected
-                        ? "bg-[#6514DB] text-white"
-                        : "bg-white/30 text-[#6514DB]"
+                      ? "bg-[#6514DB] text-white"
+                      : "bg-white/30 text-[#6514DB]"
                       }  px-[0.5em] py-[0.2em] leading-none rounded-[0.2em] backdrop-blur-md`}
                     style={{ border: "1px solid #6514DB" }}
                     onClick={toggleRarity}
@@ -311,8 +311,8 @@ const MarketplaceV2 = () => {
             </button>
             <div
               className={`absolute top-full left-0 right-0 bg-[#D9D9D94D] font-american-captain tracking-wider mt-[0.3em] text-[12px] 2xl:px-5 backdrop-blur-[10px] overflow-hidden transition-all duration-500 sm:text-[13px] md:text-[16px] lg:text-[18px] xl:text-[18px] 2xl:text-[19px] ${!isOpen
-                  ? "max-h-0 border-0"
-                  : "max-h-[500px] border border-white/50"
+                ? "max-h-0 border-0"
+                : "max-h-[500px] border border-white/50"
                 }`}
             >
               <button className="w-full flex items-center justify-center gap-x-[1.3125em] py-3 border-b border-b-white/50 transition-colors duration-100 hover:text-white/80">
@@ -390,9 +390,12 @@ const MarketplaceV2 = () => {
 
                         <hr className="my-[1em]" />
 
-                        <p className="font-vermin-vibes-v text-[1.8em] text-[#6E0B35] text-center">
-                          {price}
-                        </p>
+                        <div className="priceSection">
+                          <p className="font-vermin-vibes-v text-[1.8em] text-[#6E0B35] text-center">
+                            {price}
+                          </p>
+                          <button className="acceptBtn">Accept last offer</button>
+                        </div>
                       </div>
                     </div>
 
