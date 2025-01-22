@@ -1723,7 +1723,7 @@ const Inventory = () => {
 											style={{ border: "1px solid #FFFFFF4D" }}
 										>
 											<div
-												className="absolute inset-0 h-[50%] bg-contain bg-center bg-no-repeat rounded-[0.5em] animate-terrain-hover"
+												className="absolute inset-0 h-[60%] bg-contain bg-center bg-no-repeat rounded-[0.5em] animate-terrain-hover"
 												style={{ backgroundImage: `url(${terrain})` }}
 											></div>
 
