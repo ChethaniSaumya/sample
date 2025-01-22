@@ -1,14 +1,18 @@
 .priceSection {
   display: flex;
-  justify-content: space-evenly;
+  justify-content:center;
+  flex-flow: column nowrap;
 }
 
 .acceptBtn {
   background-color: #8f215c;
-  width: 70px;
   font-weight: bold;
   padding: 7px;
   transition: 0.2s ease-in-out;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  display: block;
 }
 
 .acceptBtn:hover {
