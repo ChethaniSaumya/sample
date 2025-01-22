@@ -1186,6 +1186,7 @@ const Inventory = () => {
 	const [_public_mint_status, set_public_mint_status] = useState("");
 	const [_MAX_SUPPLY, set_MAX_SUPPLY] = useState("");
 	const [_lastRarity, setLastRarity] = useState("0");
+	const [_sell, setSell] = useState(false);	
 	const [_connected, setConnected] = useState(false);
 	const [selectedValue, setSelectedValue] = useState("1 - 10");
 	const [_MyMints, setFetchMyMints] = useState([]);
@@ -1636,6 +1637,14 @@ const Inventory = () => {
 		window.location.reload(true);
 	}
 
+	const sellPopUp = () => {
+		setSell(true);
+	}
+
+	const sellClose = () => {
+		setSell(false);
+	}
+
 	const handleSelection = (value) => {
 		setSelectedValue(value);
 		setIsOpen(false); // Close the dropdown after selection
@@ -1703,7 +1712,7 @@ const Inventory = () => {
 								<div className="flex items-center justify-center">
 									<article className="w-[17em] max-w-[17em] mx-auto text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[15.5px] 2xl:text-[16px]">
 										<div
-											className="relative h-[12em] bg-contain bg-bottom bg-no-repeat z-[1] animate-hover"
+											className="relative h-[14em] bg-contain bg-bottom bg-no-repeat z-[1] animate-hover"
 											style={{
 												backgroundImage: `url(${rarityImages[nft.rarity]})`
 											}}
@@ -1714,7 +1723,7 @@ const Inventory = () => {
 											style={{ border: "1px solid #FFFFFF4D" }}
 										>
 											<div
-												className="absolute inset-0 h-[60%] bg-contain bg-center bg-no-repeat rounded-[0.5em] animate-terrain-hover"
+												className="absolute inset-0 h-[45%] bg-contain bg-center bg-no-repeat rounded-[0.5em] animate-terrain-hover"
 												style={{ backgroundImage: `url(${terrain})` }}
 											></div>
 
@@ -1732,9 +1741,16 @@ const Inventory = () => {
 												<p className="uppercase font-bold">
 													Rarity: <span className="text-[#6E0B35]">{nft.rarity.toString()}</span>
 												</p>
+												<p className="uppercase font-bold">
+													Fighting ago:{" "}
+													<span className="text-[#6E0B35]">27849H:21M:37S</span>
+												</p>
 
 												<hr className="my-[1em]" />
-
+												<div className='inBtnsMain'>
+													<button className='inBtns1'><a href="inventory">Fight</a></button>
+													<button className='inBtns2' onClick={sellPopUp}>Sell</button>
+												</div>
 											</div>
 										</div>
 
@@ -1756,6 +1772,15 @@ const Inventory = () => {
 					<p className='noNFTs'></p>
 				)}
 
+				{_sell ?
+					<div class="popup-containerIn">
+						<div class="popupIn">
+							<div class="popup-closeIn" onClick={sellClose}>×</div>
+							<h2>Set Selling Price</h2>
+							<input type="number" id="price" placeholder="Enter amount" />
+							<button className='listBtn'><a href="marketplace">List in the Marketplace</a></button>
+						</div>
+					</div> : null}
 			</div>
 
 			<div className='nftSectionIn'></div>
