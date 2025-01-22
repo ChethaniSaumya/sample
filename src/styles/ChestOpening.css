@@ -7,7 +7,134 @@
 @import url('https://fonts.cdnfonts.com/css/american-captain');
 @import url('https://fonts.cdnfonts.com/css/vermin-vibes-v');
 
-.popUpImgBG{
+.popup-containerIn {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.781);
+  /* Changed to solid black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+.popupIn {
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 450px;
+  animation: slideIn 0.3s ease-out;
+  background: rgba(255, 255, 255, 0.397);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.popupIn h2 {
+  margin-top: 0;
+  font-size: 35px;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-align: center;
+  font-family: 'American Captain', sans-serif;
+}
+
+.popupIn input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 3px solid #f3d5ffc4;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: rgb(127, 1, 177);
+  background-color: white;
+}
+
+.listBtn {
+  padding: 10px;
+  background-color: #8f215c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  transition: 0.2s ease-in-out;
+}
+
+.listBtn:hover {
+  background: #b81f70;
+}
+
+.popup-closeIn {
+  background: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+  color: #fffdfd;
+  justify-content: flex-end;
+  margin-right: auto;
+  text-align: right;
+  font-weight: bold;
+}
+
+.inBtnsMain {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.inBtns1 {
+  background-color: #8f215c;
+  width: 70px;
+  font-weight: bold;
+  padding: 7px;
+  transition: 0.2s ease-in-out;
+}
+
+a:hover {
+  color: white;
+}
+
+.inBtns2 {
+  background-color: #f57bbc36;
+  border: 2px solid #8f215c;
+  width: 70px;
+  font-weight: bold;
+  padding: 7px;
+  transition: 0.2s ease-in-out;
+
+}
+
+.inBtns1:hover {
+  background: #b81f70;
+}
+
+.inBtns2:hover {
+  background-color: #f8319b36;
+}
+
+.popUpImgBG {
   background-color: #161616a6;
   padding: 15px;
   border-radius: 20px;
@@ -15,7 +142,7 @@
   border: 2px solid #d6d6d660;
 }
 
-.popUpMain1{
+.popUpMain1 {
   background-color: #161618a2;
   position: fixed;
   top: 50%;
@@ -26,7 +153,7 @@
   z-index: 10;
 }
 
-#tiles{
+#tiles {
   color: white;
   z-index: 10000;
   position: relative;
@@ -40,16 +167,16 @@
 }
 
 
-#showMyNFTs{
+#showMyNFTs {
   display: flex;
   justify-content: space-evenly;
-   width: 95%;
+  width: 95%;
   margin-left: auto;
   margin-right: auto;
   flex-flow: row wrap;
 }
 
-.noNFTs{
+.noNFTs {
   text-align: center;
   margin-top: 60px;
   font-size: 25px;
@@ -118,27 +245,29 @@
   margin-left: auto;
   margin-right: auto;
   display: block;
-   justify-content: center;
+  justify-content: center;
 }
 
 @keyframes carousel-slow {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
 }
 
 .animate-carousel-slow {
-  animation: carousel-slow 5s linear infinite; /* Slower animation */
+  animation: carousel-slow 5s linear infinite;
+  /* Slower animation */
 }
 
-#wrongMsg{
+#wrongMsg {
   color: #ff144f;
 }
 
-.notifications{
+.notifications {
   width: 150px;
   height: 150px;
   margin-left: auto;
@@ -157,7 +286,7 @@
   padding: 25px;
   width: 500px;
 }
- 
+
 .popupNotifications {
   background: rgba(255, 255, 255, 0.253);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -175,9 +304,9 @@
   width: 45px;
   aspect-ratio: 1;
   --c: no-repeat linear-gradient(#d632ff 0 0);
-  background: 
-    var(--c) 0%   50%,
-    var(--c) 50%  50%,
+  background:
+    var(--c) 0% 50%,
+    var(--c) 50% 50%,
     var(--c) 100% 50%;
   background-size: 20% 100%;
   animation: l1 1s infinite linear;
@@ -187,21 +316,35 @@
 }
 
 @keyframes l1 {
-  0%  {background-size: 20% 100%,20% 100%,20% 100%}
-  33% {background-size: 20% 10% ,20% 100%,20% 100%}
-  50% {background-size: 20% 100%,20% 10% ,20% 100%}
-  66% {background-size: 20% 100%,20% 100%,20% 10% }
-  100%{background-size: 20% 100%,20% 100%,20% 100%}
+  0% {
+    background-size: 20% 100%, 20% 100%, 20% 100%
+  }
+
+  33% {
+    background-size: 20% 10%, 20% 100%, 20% 100%
+  }
+
+  50% {
+    background-size: 20% 100%, 20% 10%, 20% 100%
+  }
+
+  66% {
+    background-size: 20% 100%, 20% 100%, 20% 10%
+  }
+
+  100% {
+    background-size: 20% 100%, 20% 100%, 20% 100%
+  }
 }
 
 @keyframes carousel {
   0% {
-   transform: translateX(0);
- }
+    transform: translateX(0);
+  }
 
- 100% {
-   transform: translateX(-50%);
- }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /*@keyframes slow-carousel {
@@ -226,20 +369,26 @@
 @keyframes fast-to-slow-carousel {
   0% {
     transform: translateX(0);
-    animation-timing-function: ease-out; /* Start fast */
+    animation-timing-function: ease-out;
+    /* Start fast */
   }
+
   80% {
     transform: translateX(-45%);
-    animation-timing-function: ease-in; /* Slow down */
+    animation-timing-function: ease-in;
+    /* Slow down */
   }
+
   100% {
     transform: translateX(-50%);
-    animation-timing-function: linear; /* Stop smoothly */
+    animation-timing-function: linear;
+    /* Stop smoothly */
   }
 }
 
 .animate-carousel {
-  animation: fast-to-slow-carousel 13s forwards; /* Forward ensures the animation ends in the final state */
+  animation: fast-to-slow-carousel 13s forwards;
+  /* Forward ensures the animation ends in the final state */
 }
 
 @keyframes spread {
@@ -266,7 +415,7 @@
 }
 
 .popUpImgMain {
- position: fixed;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -297,7 +446,8 @@
   gap: 20px;
   /* Space between images */
   width: max-content;
-  transition: animation-duration 0.5s ease; /* Smooth transition for animation duration */
+  transition: animation-duration 0.5s ease;
+  /* Smooth transition for animation duration */
 
 }
 
@@ -500,11 +650,11 @@
 
 @media screen and (max-width: 499px) {
 
-  .popUpImgMain img{
+  .popUpImgMain img {
     width: 145px;
   }
-  
-  .close-button-2{
+
+  .close-button-2 {
     z-index: 100;
     font-size: 35px;
     justify-content: flex-end;
@@ -513,7 +663,7 @@
     cursor: pointer;
   }
 
-  
+
   .video-container {
     margin-left: -15px;
   }
@@ -578,7 +728,7 @@
     width: 150%;
     margin-top: -150px;
     z-index: 10;
-   /* -webkit-mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
+    /* -webkit-mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
     mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
     -webkit-mask-composite: destination-in;
     mask-composite: intersect;*/
@@ -765,7 +915,7 @@
     color: white;
     font-size: 37px;
     text-align: center;
-    
+
     margin-top: 3vh;
   }
 
@@ -778,7 +928,7 @@
     text-align: center;
     font-size: 18.5px;
     color: white;
-    
+
     font-family: "Montserrat Alternates", serif;
     width: fit-content;
     display: flex;
@@ -1415,11 +1565,11 @@
     margin-top: -82px;
   }
 
-  .popUpImgMain img{
+  .popUpImgMain img {
     width: 190px;
   }
-  
-  .close-button-2{
+
+  .close-button-2 {
     z-index: 100;
     font-size: 35px;
     justify-content: flex-end;
@@ -1427,7 +1577,7 @@
     margin-right: -25px;
     cursor: pointer;
   }
-  
+
   #btn1PC {
     display: none;
   }
@@ -1678,7 +1828,7 @@
     color: white;
     font-size: 40px;
     text-align: center;
-    
+
     margin-top: 3vh;
   }
 
@@ -1692,7 +1842,7 @@
     text-align: center;
     font-size: 19px;
     color: white;
-    
+
     font-family: "Montserrat Alternates", serif;
     width: fit-content;
     display: flex;
@@ -2326,11 +2476,11 @@
     display: none;
   }
 
-  .popUpImgMain img{
+  .popUpImgMain img {
     width: 100px;
   }
-  
-  .close-button-2{
+
+  .close-button-2 {
     z-index: 100;
     font-size: 35px;
     justify-content: flex-end;
@@ -2338,7 +2488,7 @@
     margin-right: -25px;
     cursor: pointer;
   }
-  
+
   #rowImgs {
     overflow: hidden;
     /* Ensure only visible area shows */
@@ -2597,7 +2747,7 @@
     text-align: center;
     font-size: 19px;
     color: white;
-    
+
     font-family: "Montserrat Alternates", serif;
     width: fit-content;
     display: flex;
@@ -3199,11 +3349,11 @@
     display: none;
   }
 
-  .popUpImgMain img{
+  .popUpImgMain img {
     width: 190px;
   }
-  
-  .close-button-2{
+
+  .close-button-2 {
     z-index: 100;
     font-size: 35px;
     justify-content: flex-end;
@@ -3211,7 +3361,7 @@
     margin-right: -25px;
     cursor: pointer;
   }
-  
+
   .treasureIMG2Div {
     position: relative;
     overflow: hidden;
@@ -3459,7 +3609,7 @@
     color: white;
     font-size: 42px;
     text-align: center;
-    
+
     margin-top: 3vh;
   }
 
@@ -3472,7 +3622,7 @@
     text-align: center;
     font-size: 20px;
     color: white;
-    
+
     font-family: "Montserrat Alternates", serif;
     width: fit-content;
     display: flex;
@@ -3534,7 +3684,7 @@
     font-family: 'American Captain', sans-serif;
     border-left: 1px solid white;
     border-right: 1px solid white;
-    font-size:  33px;
+    font-size: 33px;
     padding: 10px;
     margin-top: auto;
     margin-bottom: auto;
@@ -4069,11 +4219,11 @@
     display: none;
   }
 
-  .popUpImgMain img{
+  .popUpImgMain img {
     width: 190px;
   }
-  
-  .close-button-2{
+
+  .close-button-2 {
     z-index: 100;
     font-size: 35px;
     justify-content: flex-end;
@@ -4081,7 +4231,7 @@
     margin-right: -25px;
     cursor: pointer;
   }
-  
+
   .treasureIMG2Div {
     position: relative;
     overflow: hidden;
@@ -4332,7 +4482,7 @@
     color: white;
     font-size: 45px;
     text-align: center;
-    
+
     margin-top: 3vh;
   }
 
@@ -4346,7 +4496,7 @@
     text-align: center;
     font-size: 20px;
     color: white;
-    
+
     font-family: "Montserrat Alternates", serif;
     width: fit-content;
     display: flex;
@@ -4407,7 +4557,7 @@
     font-family: 'American Captain', sans-serif;
     border-left: 1px solid white;
     border-right: 1px solid white;
-    font-size:  33px;
+    font-size: 33px;
     padding: 10px;
     margin-top: auto;
     margin-bottom: auto;
@@ -4788,7 +4938,7 @@
     z-index: 10000;
   }
 
-  
+
   .character {
     width: 245px;
     /* Adjust to fit your design */
@@ -4938,7 +5088,7 @@
     display: none;
   }
 
-  .popUpImgMain img{
+  .popUpImgMain img {
     width: 190px;
     animation: highlightIMG 0.4s infinite;
   }
@@ -4960,7 +5110,7 @@
     }
   }
 
-  .close-button-2{
+  .close-button-2 {
     z-index: 100;
     font-size: 35px;
     justify-content: flex-end;
@@ -4968,8 +5118,8 @@
     margin-right: -25px;
     cursor: pointer;
   }
-  
-  .close-button-2{
+
+  .close-button-2 {
     z-index: 100;
     font-size: 50px;
     justify-content: flex-end;
@@ -4977,7 +5127,7 @@
     margin-right: -45px;
     cursor: pointer;
   }
-  
+
   #rowImgs {
     overflow: hidden;
     /* Ensure only visible area shows */
@@ -5239,7 +5389,7 @@
     text-align: center;
     font-size: 20px;
     color: white;
-    
+
     font-family: "Montserrat Alternates", serif;
     width: fit-content;
     display: flex;
@@ -5300,7 +5450,7 @@
     font-family: 'American Captain', sans-serif;
     border-left: 1px solid white;
     border-right: 1px solid white;
-    font-size:  33px;
+    font-size: 33px;
     padding: 10px;
     margin-top: auto;
     margin-bottom: auto;
@@ -5697,7 +5847,7 @@
     margin-left: auto;
     margin-top: -105px;
   }
- 
+
   .popup {
     background: rgba(255, 255, 255, 0.253);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -5826,20 +5976,20 @@
 
 @media screen and (min-width: 1921px) and (max-width: 3839px) {
 
-  .noNFTs{
+  .noNFTs {
     text-align: center;
     margin-top: 60px;
     font-size: 30px;
     text-transform: uppercase;
     color: #dfdfdf;
   }
-  
-  .popUpImgMain img{
+
+  .popUpImgMain img {
     width: 270px;
 
   }
-  
-  .close-button-2{
+
+  .close-button-2 {
     z-index: 100;
     font-size: 50px;
     justify-content: flex-end;
@@ -5847,7 +5997,7 @@
     margin-right: -45px;
     cursor: pointer;
   }
-  
+
   #rowImgs {
     overflow: hidden;
     /* Ensure only visible area shows */
@@ -6100,7 +6250,7 @@
     color: white;
     font-size: 70px;
     text-align: center;
-    
+
     margin-top: 7vh;
   }
 
@@ -6113,7 +6263,7 @@
     text-align: center;
     font-size: 30px;
     color: white;
-    
+
     font-family: "Montserrat Alternates", serif;
     width: fit-content;
     display: flex;
@@ -6715,11 +6865,12 @@
   #btn1Mobile {
     display: none;
   }
-  .popUpImgMain img{
+
+  .popUpImgMain img {
     width: 400px;
   }
-  
-  .close-button-2{
+
+  .close-button-2 {
     z-index: 100;
     font-size: 45px;
     justify-content: flex-end;
@@ -6727,7 +6878,7 @@
     margin-right: -35px;
     cursor: pointer;
   }
-  
+
   #rowImgs {
     overflow: hidden;
     /* Ensure only visible area shows */
@@ -6975,7 +7126,7 @@
     color: white;
     font-size: 100px;
     text-align: center;
-    
+
     margin-top: 8vh;
   }
 
@@ -6988,7 +7139,7 @@
     text-align: center;
     font-size: 40px;
     color: white;
-    
+
     font-family: "Montserrat Alternates", serif;
     width: fit-content;
     display: flex;
