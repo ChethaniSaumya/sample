@@ -29,6 +29,7 @@ const heroData = [
     heroClass: "A",
     lastFought: "2025-01-01T10:30:00",
     owner: "OX3EJFIOS22",
+    floorPrice: "3 PLS",
     price: 24300,
   },
   {
@@ -39,6 +40,7 @@ const heroData = [
     heroClass: "B",
     lastFought: "2024-12-20T14:45:00",
     owner: "OX9DSFJWE33",
+    floorPrice: "4 PLS",
     price: 28100,
   },
   {
@@ -49,6 +51,7 @@ const heroData = [
     heroClass: "C",
     lastFought: "2024-11-15T09:15:00",
     owner: "OX8DJKWIE29",
+    floorPrice: "6 PLS",
     price: 17900,
   },
   {
@@ -59,6 +62,7 @@ const heroData = [
     heroClass: "A",
     lastFought: "2024-12-30T16:20:00",
     owner: "OX5KDJSWE45",
+    floorPrice: "8 PLS",
     price: 12300,
   },
   {
@@ -69,6 +73,7 @@ const heroData = [
     heroClass: "B",
     lastFought: "2024-10-22T11:10:00",
     owner: "OX1JDHWLE19",
+    floorPrice: "12 PLS",
     price: 8000,
   },
   {
@@ -79,6 +84,7 @@ const heroData = [
     heroClass: "S",
     lastFought: "2025-01-05T18:30:00",
     owner: "OX2KDJWLZ11",
+    floorPrice: "5 PLS",
     price: 20780,
   },
   {
@@ -89,6 +95,7 @@ const heroData = [
     heroClass: "C",
     lastFought: "2024-09-14T07:50:00",
     owner: "OX4LDFJKW77",
+    floorPrice: "9 PLS",
     price: 28920,
   },
 ];
@@ -223,11 +230,10 @@ const MarketplaceV2 = () => {
                 return (
                   <button
                     key={i}
-                    className={`${
-                      isSelected
+                    className={`${isSelected
                         ? "bg-[#6514DB] text-white"
                         : "bg-white/30 text-[#6514DB]"
-                    }  px-[0.5em] py-[0.2em] leading-none rounded-[0.2em] backdrop-blur-md`}
+                      }  px-[0.5em] py-[0.2em] leading-none rounded-[0.2em] backdrop-blur-md`}
                     style={{ border: "1px solid #6514DB" }}
                     onClick={toggleRarity}
                   >
@@ -297,19 +303,17 @@ const MarketplaceV2 = () => {
             >
               FILTER{" "}
               <div
-                className={`${
-                  isOpen ? "-rotate-180" : ""
-                } text-[0.8em] transition-transform duration-200 ease-in-out`}
+                className={`${isOpen ? "-rotate-180" : ""
+                  } text-[0.8em] transition-transform duration-200 ease-in-out`}
               >
                 &#8645;
               </div>
             </button>
             <div
-              className={`absolute top-full left-0 right-0 bg-[#D9D9D94D] font-american-captain tracking-wider mt-[0.3em] text-[12px] 2xl:px-5 backdrop-blur-[10px] overflow-hidden transition-all duration-500 sm:text-[13px] md:text-[16px] lg:text-[18px] xl:text-[18px] 2xl:text-[19px] ${
-                !isOpen
+              className={`absolute top-full left-0 right-0 bg-[#D9D9D94D] font-american-captain tracking-wider mt-[0.3em] text-[12px] 2xl:px-5 backdrop-blur-[10px] overflow-hidden transition-all duration-500 sm:text-[13px] md:text-[16px] lg:text-[18px] xl:text-[18px] 2xl:text-[19px] ${!isOpen
                   ? "max-h-0 border-0"
                   : "max-h-[500px] border border-white/50"
-              }`}
+                }`}
             >
               <button className="w-full flex items-center justify-center gap-x-[1.3125em] py-3 border-b border-b-white/50 transition-colors duration-100 hover:text-white/80">
                 Lowest to highest price
@@ -372,15 +376,15 @@ const MarketplaceV2 = () => {
                           Level: <span className="text-[#6E0B35]">{level}</span>
                         </p>
                         <p className="uppercase font-bold">
-                          Class:{" "}
-                          <span className="text-[#6E0B35]">{heroClass}</span>
-                        </p>
-                        <p className="uppercase font-bold">
                           Fighting ago:{" "}
                           <span className="text-[#6E0B35]">27849H:21M:37S</span>
                         </p>
                         <p className="uppercase font-bold">
                           Owner: <span className="text-[#6E0B35]">{owner}</span>
+                        </p>
+                        <p className="uppercase font-bold">
+                          Floor price:{" "}
+                          <span className="text-[#6E0B35]">{floorPrice}</span>
                         </p>
 
                         <hr className="my-[1em]" />
