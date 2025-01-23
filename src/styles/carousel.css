@@ -1,5 +1,4 @@
 @media screen and (max-width: 499px) {
-
   @keyframes glow {
     from {
       box-shadow: 0 0 10px -10px rgb(96, 37, 163);
@@ -87,17 +86,35 @@
   }
 
   .slider .slide-track2 {
-    /* Existing animations */
-    animation: scroll2-2 7.5s linear 0s,
-      /* Super fast: 7.5 seconds */
-      scroll2-2 15s ease-out 7.5s,
-      fadeOut 1.5s ease-out 24s;
+    /* Previous animation */
+    /* animation: scroll2-2 7.5s linear 0s, scroll2-2 15s ease-out 7.5s,
+      fadeOut 1.5s ease-out 24s; */
+    animation: scroll-cards 2.5s 7 linear,
+      halt 5s cubic-bezier(0, 0, 0.61, 1.25) 17.5s, fadeOut 1.5s ease-out 24s;
     /*Fade out after scrolling stops */
     display: flex;
-    width: calc(20vw * 60);
+    width: calc(428.57vw);
     /* Adjust according to the number of slides */
     animation-fill-mode: forwards;
     /* Keeps the fade-out effect after animation ends */
+  }
+
+  @keyframes scroll-cards {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-200vw);
+    }
+  }
+
+  @keyframes halt {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-255vw);
+    }
   }
 
   @keyframes scroll2-2 {
@@ -110,7 +127,6 @@
       /* Change value based on fast scroll distance */
     }
   }
-
 
   @keyframes fastScroll {
     0% {
@@ -153,7 +169,6 @@
     width: calc(250px * 21);
   }
 
-
   .slider .slide {
     height: 295px;
     width: 435px;
@@ -166,7 +181,7 @@
 
   .welcome {
     font-size: 45px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     text-align: center;
     padding: 50px;
     color: white;
@@ -180,12 +195,11 @@
     transition: left 0.5s ease-in-out;
     /* Smooth transition */
     animation: highlightIMG 0.6s infinite;
-
   }
 
   .carouselIMG.highlight {
     transition: border 0.3s ease, transform 0.3s ease;
-    animation: highlightIMG 0.6s infinite
+    animation: highlightIMG 0.6s infinite;
   }
 
   .carouselIMG {
@@ -212,22 +226,18 @@
     pointer-events: none;
     z-index: 10;
     animation: highlightIMG 0.6s infinite;
-
   }
 
   @keyframes highlightIMG {
     0% {
-
       filter: brightness(1);
     }
 
     50% {
-
       filter: brightness(1.5);
     }
 
     100% {
-
       filter: brightness(1);
     }
   }
@@ -243,10 +253,9 @@
     margin-right: auto;
     width: 30px;
     animation: highlightIMG 0.6s infinite, zoom-in-out 1s infinite;
-   }
+  }
 
   @keyframes zoom-in-out {
-
     0%,
     100% {
       transform: scale(1);
@@ -259,7 +268,6 @@
 }
 
 @media screen and (min-width: 500px) and (max-width: 767px) {
-
   @keyframes glow {
     from {
       box-shadow: 0 0 10px -10px rgb(96, 37, 163);
@@ -347,17 +355,38 @@
   }
 
   .slider .slide-track2 {
-    /* Existing animations */
-    animation: scroll2-2 7.5s linear 0s,
-      /* Super fast: 7.5 seconds */
+    /* Previous animation */
+    /* animation: scroll2-2 7.5s linear 0s,
       scroll2-2 15s ease-out 7.5s,
-      fadeOut 1.5s ease-out 24s;
-    /*Fade out after scrolling stops */
+      fadeOut 1.5s ease-out 24s; */
+
+    animation: scroll-cards 2.5s 7 linear,
+      halt 5s cubic-bezier(0, 0, 0.61, 1.25) 17.5s, fadeOut 1.5s ease-out 24s;
     display: flex;
-    width: calc(18vw * 50);
+    width: calc(321.43vw);
     /* Adjust according to the number of slides */
     animation-fill-mode: forwards;
     /* Keeps the fade-out effect after animation ends */
+  }
+
+  @keyframes scroll-cards {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-150vw);
+    }
+  }
+
+  @keyframes halt {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-180vw);
+    }
   }
 
   @keyframes scroll2-2 {
@@ -370,7 +399,6 @@
       /* Change value based on fast scroll distance */
     }
   }
-
 
   @keyframes fastScroll {
     0% {
@@ -413,7 +441,6 @@
     width: calc(250px * 21);
   }
 
-
   .slider .slide {
     height: 295px;
     width: 435px;
@@ -426,7 +453,7 @@
 
   .welcome {
     font-size: 45px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     text-align: center;
     padding: 50px;
     color: white;
@@ -441,12 +468,12 @@
     height: 10px;
     transition: left 0.5s ease-in-out;
     /* Smooth transition */
-    animation: highlightIMG 0.6s infinite
+    animation: highlightIMG 0.6s infinite;
   }
 
   .carouselIMG.highlight {
     transition: border 0.3s ease, transform 0.3s ease;
-    animation: highlightIMG 0.6s infinite
+    animation: highlightIMG 0.6s infinite;
   }
 
   .carouselIMG {
@@ -477,17 +504,14 @@
 
   @keyframes highlightIMG {
     0% {
-
       filter: brightness(1);
     }
 
     50% {
-
       filter: brightness(1.5);
     }
 
     100% {
-
       filter: brightness(1);
     }
   }
@@ -503,10 +527,9 @@
     margin-right: auto;
     width: 30px;
     animation: highlightIMG 0.6s infinite, zoom-in-out 1s infinite;
-   }
+  }
 
   @keyframes zoom-in-out {
-
     0%,
     100% {
       transform: scale(1);
@@ -519,7 +542,6 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-
   @keyframes glow {
     from {
       box-shadow: 0 0 10px -10px rgb(96, 37, 163);
@@ -608,17 +630,38 @@
   }
 
   .slider .slide-track2 {
-    /* Existing animations */
-    animation: scroll2-2 7.5s linear 0s,
-      /* Super fast: 7.5 seconds */
+    /* Previous animation */
+    /* animation: scroll2-2 7.5s linear 0s,
       scroll2-2 15s ease-out 7.5s,
-      fadeOut 1.5s ease-out 24s;
-    /*Fade out after scrolling stops */
+      fadeOut 1.5s ease-out 24s; */
+
+    animation: scroll-cards 2.5s 7 linear,
+      halt 5s cubic-bezier(0, 0, 0.61, 1.25) 17.5s, fadeOut 1.5s ease-out 24s;
     display: flex;
-    width: calc(15vw * 50);
+    width: calc(267.86vw);
     /* Adjust according to the number of slides */
     animation-fill-mode: forwards;
     /* Keeps the fade-out effect after animation ends */
+  }
+
+  @keyframes scroll-cards {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-125vw);
+    }
+  }
+
+  @keyframes halt {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-142.5vw);
+    }
   }
 
   @keyframes scroll2-2 {
@@ -631,7 +674,6 @@
       /* Change value based on fast scroll distance */
     }
   }
-
 
   @keyframes fastScroll {
     0% {
@@ -674,7 +716,6 @@
     width: calc(250px * 21);
   }
 
-
   .slider .slide {
     height: 295px;
     width: 435px;
@@ -687,7 +728,7 @@
 
   .welcome {
     font-size: 45px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     text-align: center;
     padding: 50px;
     color: white;
@@ -702,12 +743,12 @@
     height: 10px;
     transition: left 0.5s ease-in-out;
     /* Smooth transition */
-    animation: highlightIMG 0.6s infinite
+    animation: highlightIMG 0.6s infinite;
   }
 
   .carouselIMG.highlight {
     transition: border 0.3s ease, transform 0.3s ease;
-    animation: highlightIMG 0.6s infinite
+    animation: highlightIMG 0.6s infinite;
   }
 
   .carouselIMG {
@@ -739,17 +780,14 @@
 
   @keyframes highlightIMG {
     0% {
-
       filter: brightness(1);
     }
 
     50% {
-
       filter: brightness(1.5);
     }
 
     100% {
-
       filter: brightness(1);
     }
   }
@@ -765,10 +803,9 @@
     margin-right: auto;
     width: 35px;
     animation: highlightIMG 0.6s infinite, zoom-in-out 1s infinite;
-   }
+  }
 
   @keyframes zoom-in-out {
-
     0%,
     100% {
       transform: scale(1);
@@ -781,7 +818,6 @@
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-
   @keyframes glow {
     from {
       box-shadow: 0 0 10px -10px rgb(96, 37, 163);
@@ -870,17 +906,36 @@
   }
 
   .slider .slide-track2 {
-    /* Existing animations */
-    animation: scroll2-2 7.5s linear 0s,
-      /* Super fast: 7.5 seconds */
+    /* Previous animation */
+    /* animation: scroll2-2 7.5s linear 0s,
       scroll2-2 15s ease-out 7.5s,
-      fadeOut 1.5s ease-out 24s;
-    /*Fade out after scrolling stops */
+      fadeOut 1.5s ease-out 24s; */
+
+    animation: scroll-cards 2.5s 7 linear,
+      halt 5s cubic-bezier(0, 0, 0.61, 1.25) 17.5s, fadeOut 1.5s ease-out 24s;
     display: flex;
-    width: calc(11vw * 42);
+    width: calc(11vw * 15);
     /* Adjust according to the number of slides */
     animation-fill-mode: forwards;
     /* Keeps the fade-out effect after animation ends */
+  }
+
+  @keyframes scroll-cards {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-77vw);
+    }
+  }
+
+  @keyframes halt {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-70.5vw);
+    }
   }
 
   @keyframes scroll2-2 {
@@ -893,7 +948,6 @@
       /* Change value based on fast scroll distance */
     }
   }
-
 
   @keyframes fastScroll {
     0% {
@@ -936,7 +990,6 @@
     width: calc(250px * 21);
   }
 
-
   .slider .slide {
     height: 295px;
     width: 435px;
@@ -949,7 +1002,7 @@
 
   .welcome {
     font-size: 45px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     text-align: center;
     padding: 50px;
     color: white;
@@ -964,12 +1017,12 @@
     height: 10px;
     transition: left 0.5s ease-in-out;
     /* Smooth transition */
-    animation: highlightIMG 0.6s infinite
+    animation: highlightIMG 0.6s infinite;
   }
 
   .carouselIMG.highlight {
     transition: border 0.3s ease, transform 0.3s ease;
-    animation: highlightIMG 0.6s infinite
+    animation: highlightIMG 0.6s infinite;
   }
 
   .carouselIMG {
@@ -1000,17 +1053,14 @@
 
   @keyframes highlightIMG {
     0% {
-
       filter: brightness(1);
     }
 
     50% {
-
       filter: brightness(1.5);
     }
 
     100% {
-
       filter: brightness(1);
     }
   }
@@ -1026,10 +1076,9 @@
     margin-right: auto;
     width: 35px;
     animation: highlightIMG 0.6s infinite, zoom-in-out 1s infinite;
-   }
+  }
 
   @keyframes zoom-in-out {
-
     0%,
     100% {
       transform: scale(1);
@@ -1042,7 +1091,6 @@
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1919px) {
-
   @keyframes glow {
     from {
       box-shadow: 0 0 10px -10px rgb(96, 37, 163);
@@ -1131,17 +1179,34 @@
   }
 
   .slider .slide-track2 {
-    /* Existing animations */
-    animation: scroll2-2 7.5s linear 0s,
-      /* Super fast: 7.5 seconds */
+    /* Previous animation */
+    /* animation: scroll2-2 7.5s linear 0s,
       scroll2-2 15s ease-out 7.5s,
-      fadeOut 1.5s ease-out 24s;
-    /*Fade out after scrolling stops */
+      fadeOut 1.5s ease-out 24s; */
+
+    animation: scroll-cards 2.5s 7 linear,
+      halt 5s cubic-bezier(0, 0, 0.61, 1.25) 17.5s, fadeOut 1.5s ease-out 24s;
     display: flex;
-    width: calc(11vw * 42);
-    /* Adjust according to the number of slides */
+    width: calc(11vw * 15); /* Adjust according to the number of slides */
     animation-fill-mode: forwards;
-    /* Keeps the fade-out effect after animation ends */
+  }
+
+  @keyframes scroll-cards {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-77vw);
+    }
+  }
+
+  @keyframes halt {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-70.5vw);
+    }
   }
 
   @keyframes scroll2-2 {
@@ -1154,7 +1219,6 @@
       /* Change value based on fast scroll distance */
     }
   }
-
 
   @keyframes fastScroll {
     0% {
@@ -1197,7 +1261,6 @@
     width: calc(250px * 21);
   }
 
-
   .slider .slide {
     height: 295px;
     width: 435px;
@@ -1210,7 +1273,7 @@
 
   .welcome {
     font-size: 45px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     text-align: center;
     padding: 50px;
     color: white;
@@ -1225,12 +1288,12 @@
     height: 10px;
     transition: left 0.5s ease-in-out;
     /* Smooth transition */
-    animation: highlightIMG 0.6s infinite
+    animation: highlightIMG 0.6s infinite;
   }
 
   .carouselIMG.highlight {
     transition: border 0.3s ease, transform 0.3s ease;
-    animation: highlightIMG 0.6s infinite
+    animation: highlightIMG 0.6s infinite;
   }
 
   .carouselIMG {
@@ -1261,17 +1324,14 @@
 
   @keyframes highlightIMG {
     0% {
-
       filter: brightness(1);
     }
 
     50% {
-
       filter: brightness(1.5);
     }
 
     100% {
-
       filter: brightness(1);
     }
   }
@@ -1287,10 +1347,9 @@
     margin-right: auto;
     width: 45px;
     animation: highlightIMG 0.6s infinite, zoom-in-out 1s infinite;
-   }
+  }
 
   @keyframes zoom-in-out {
-
     0%,
     100% {
       transform: scale(1);
@@ -1303,7 +1362,6 @@
 }
 
 @media screen and (min-width: 1920px) {
-
   @keyframes glow {
     from {
       box-shadow: 0 0 10px -10px rgb(96, 37, 163);
@@ -1349,7 +1407,6 @@
     width: 100%;
     overflow: hidden;
     position: relative;
-
   }
 
   .slider2 {
@@ -1393,17 +1450,34 @@
   }
 
   .slider .slide-track2 {
-    /* Existing animations */
-    animation: scroll2-2 7.5s linear 0s,
-      /* Super fast: 7.5 seconds */
+    /* Previous animation */
+    /* animation: scroll2-2 7.5s linear 0s,
       scroll2-2 15s ease-out 7.5s,
-      fadeOut 1.5s ease-out 24s;
-    /*Fade out after scrolling stops */
+      fadeOut 1.5s ease-out 24s; */
+
+    animation: scroll-cards 2.5s 7 linear,
+      halt 5s cubic-bezier(0, 0, 0.61, 1.25) 17.5s, fadeOut 1.5s ease-out 24s;
     display: flex;
-    width: calc(11vw * 42);
-    /* Adjust according to the number of slides */
+    width: calc(11vw * 15); /* Adjust according to the number of slides */
     animation-fill-mode: forwards;
-    /* Keeps the fade-out effect after animation ends */
+  }
+
+  @keyframes scroll-cards {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-77vw);
+    }
+  }
+
+  @keyframes halt {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-70.5vw);
+    }
   }
 
   @keyframes scroll2-2 {
@@ -1416,7 +1490,6 @@
       /* Change value based on fast scroll distance */
     }
   }
-
 
   @keyframes fastScroll {
     0% {
@@ -1459,7 +1532,6 @@
     width: calc(250px * 21);
   }
 
-
   .slider .slide {
     height: 295px;
     width: 435px;
@@ -1472,7 +1544,7 @@
 
   .welcome {
     font-size: 45px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     text-align: center;
     padding: 50px;
     color: white;
@@ -1488,11 +1560,11 @@
     transition: left 0.5s ease-in-out;
     /* Smooth transition */
     animation: highlightIMG 0.6s infinite;
-   }
+  }
 
   .carouselIMG.highlight {
     transition: border 0.3s ease, transform 0.3s ease;
-    animation: highlightIMG 0.6s infinite
+    animation: highlightIMG 0.6s infinite;
   }
 
   .carouselIMG {
@@ -1523,17 +1595,14 @@
 
   @keyframes highlightIMG {
     0% {
-
       filter: brightness(1);
     }
 
     50% {
-
       filter: brightness(1.5);
     }
 
     100% {
-
       filter: brightness(1);
     }
   }
@@ -1549,10 +1618,9 @@
     margin-right: auto;
     width: 45px;
     animation: highlightIMG 0.6s infinite, zoom-in-out 1s infinite;
-   }
+  }
 
   @keyframes zoom-in-out {
-
     0%,
     100% {
       transform: scale(1);
@@ -1565,7 +1633,6 @@
 }
 
 @media screen and (min-width: 1921px) and (max-width: 3839px) {
-
   @keyframes glow {
     from {
       box-shadow: 0 0 10px -10px rgb(96, 37, 163);
@@ -1611,7 +1678,6 @@
     width: 100%;
     overflow: hidden;
     position: relative;
-
   }
 
   .slider2 {
@@ -1655,17 +1721,34 @@
   }
 
   .slider .slide-track2 {
-    /* Existing animations */
-    animation: scroll2-2 7.5s linear 0s,
-      /* Super fast: 7.5 seconds */
+    /* Previous animation */
+    /* animation: scroll2-2 7.5s linear 0s,
       scroll2-2 15s ease-out 7.5s,
-      fadeOut 1.5s ease-out 24s;
-    /*Fade out after scrolling stops */
+      fadeOut 1.5s ease-out 24s; */
+
+    animation: scroll-cards 2.5s 7 linear,
+      halt 5s cubic-bezier(0, 0, 0.61, 1.25) 17.5s, fadeOut 1.5s ease-out 24s;
     display: flex;
-    width: calc(11vw * 42);
-    /* Adjust according to the number of slides */
+    width: calc(11vw * 15); /* Adjust according to the number of slides */
     animation-fill-mode: forwards;
-    /* Keeps the fade-out effect after animation ends */
+  }
+
+  @keyframes scroll-cards {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-77vw);
+    }
+  }
+
+  @keyframes halt {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-70.5vw);
+    }
   }
 
   @keyframes scroll2-2 {
@@ -1678,7 +1761,6 @@
       /* Change value based on fast scroll distance */
     }
   }
-
 
   @keyframes fastScroll {
     0% {
@@ -1721,7 +1803,6 @@
     width: calc(250px * 21);
   }
 
-
   .slider .slide {
     height: 295px;
     width: 435px;
@@ -1734,7 +1815,7 @@
 
   .welcome {
     font-size: 45px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     text-align: center;
     padding: 50px;
     color: white;
@@ -1749,12 +1830,12 @@
     height: 10px;
     transition: left 0.5s ease-in-out;
     /* Smooth transition */
-    animation: highlightIMG 0.6s infinite
+    animation: highlightIMG 0.6s infinite;
   }
 
   .carouselIMG.highlight {
     transition: border 0.3s ease, transform 0.3s ease;
-    animation: highlightIMG 0.6s infinite
+    animation: highlightIMG 0.6s infinite;
   }
 
   .carouselIMG {
@@ -1786,17 +1867,14 @@
 
   @keyframes highlightIMG {
     0% {
-
       filter: brightness(1);
     }
 
     50% {
-
       filter: brightness(1.5);
     }
 
     100% {
-
       filter: brightness(1);
     }
   }
@@ -1812,10 +1890,9 @@
     margin-right: auto;
     width: 46px;
     animation: highlightIMG 0.6s infinite, zoom-in-out 1s infinite;
-   }
+  }
 
   @keyframes zoom-in-out {
-
     0%,
     100% {
       transform: scale(1);
@@ -1827,9 +1904,7 @@
   }
 }
 
-
 @media screen and (min-width: 3840px) {
-
   @keyframes glow {
     from {
       box-shadow: 0 0 10px -10px rgb(96, 37, 163);
@@ -1875,7 +1950,6 @@
     width: 100%;
     overflow: hidden;
     position: relative;
-
   }
 
   .slider2 {
@@ -1919,17 +1993,34 @@
   }
 
   .slider .slide-track2 {
-    /* Existing animations */
-    animation: scroll2-2 7.5s linear 0s,
-      /* Super fast: 7.5 seconds */
+    /* Previous animation */
+    /* animation: scroll2-2 7.5s linear 0s,
       scroll2-2 15s ease-out 7.5s,
-      fadeOut 1.5s ease-out 24s;
-    /*Fade out after scrolling stops */
+      fadeOut 1.5s ease-out 24s; */
+
+    animation: scroll-cards 2.5s 7 linear,
+      halt 5s cubic-bezier(0, 0, 0.61, 1.25) 17.5s, fadeOut 1.5s ease-out 24s;
     display: flex;
-    width: calc(11vw * 42);
-    /* Adjust according to the number of slides */
+    width: calc(11vw * 15); /* Adjust according to the number of slides */
     animation-fill-mode: forwards;
-    /* Keeps the fade-out effect after animation ends */
+  }
+
+  @keyframes scroll-cards {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-77vw);
+    }
+  }
+
+  @keyframes halt {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-70.5vw);
+    }
   }
 
   @keyframes scroll2-2 {
@@ -1942,7 +2033,6 @@
       /* Change value based on fast scroll distance */
     }
   }
-
 
   @keyframes fastScroll {
     0% {
@@ -1985,7 +2075,6 @@
     width: calc(250px * 21);
   }
 
-
   .slider .slide {
     height: 295px;
     width: 435px;
@@ -1998,7 +2087,7 @@
 
   .welcome {
     font-size: 45px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     text-align: center;
     padding: 50px;
     color: white;
@@ -2013,12 +2102,12 @@
     height: 10px;
     transition: left 0.5s ease-in-out;
     /* Smooth transition */
-    animation: highlightIMG 0.6s infinite
+    animation: highlightIMG 0.6s infinite;
   }
 
   .carouselIMG.highlight {
     transition: border 0.3s ease, transform 0.3s ease;
-    animation: highlightIMG 0.6s infinite
+    animation: highlightIMG 0.6s infinite;
   }
 
   .carouselIMG {
@@ -2050,17 +2139,14 @@
 
   @keyframes highlightIMG {
     0% {
-
       filter: brightness(1);
     }
 
     50% {
-
       filter: brightness(1.5);
     }
 
     100% {
-
       filter: brightness(1);
     }
   }
@@ -2076,10 +2162,9 @@
     margin-right: auto;
     width: 83px;
     animation: highlightIMG 0.6s infinite, zoom-in-out 1s infinite;
-   }
+  }
 
   @keyframes zoom-in-out {
-
     0%,
     100% {
       transform: scale(1);
