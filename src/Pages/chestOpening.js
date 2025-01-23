@@ -1136,10 +1136,10 @@ const ChestOpening = () => {
 	const [number, setNumber] = useState(null);
 
 
-	/*const generateRandomNumber = () => {
+	const generateRandomNumber = () => {
 		const randomNum = Math.floor(Math.random() * 7) + 1;
 		setNumber(randomNum);
-	};*/
+	};
 
 	const { open } = useWeb3Modal()
 	const { chain } = useNetwork()
@@ -1197,22 +1197,8 @@ const ChestOpening = () => {
 			switchNetwork(943)
 		}
 
-		//var data = await getBalance();
-		//setmyNFTWallet(Number(data.data));
-		//console.log("myNFTWallet :" + data.data);
 		setConnected(true);
 	}
-
-	/*	const { refetch: getTotalSupply } = useContractRead({
-			...contract,
-			functionName: 'totalSupply',
-		})
-	
-		const { refetch: getBalance } = useContractRead({
-			...contract,
-			functionName: 'balanceOf',
-			args: [walletAddress ? walletAddress : '0x']
-		})*/
 
 	const { refetch: lastRarity } = useContractRead({
 		...contract,
@@ -1239,18 +1225,16 @@ const ChestOpening = () => {
 		if (statusError) {
 			const timer = setTimeout(() => {
 				setstatusError(false);  // Assuming you have a setter to change the state
-			}, 4000); // 4 minutes in milliseconds
+			}, 4000); 
 
-			// Cleanup the timeout when the component unmounts or the statusError changes
 			return () => clearTimeout(timer);
 		}
 
 		if (showErrorDiv) {
 			const timer = setTimeout(() => {
 				setshowErrorDiv(false);  // Assuming you have a setter to change the state
-			}, 4000); // 4 minutes in milliseconds
+			}, 4000);
 
-			// Cleanup the timeout when the component unmounts or the statusError changes
 			return () => clearTimeout(timer);
 		}
 
@@ -1269,34 +1253,6 @@ const ChestOpening = () => {
 
 		// eslint-disable-next-line no-use-before-define
 	}, [showErrorDiv, statusError, _connected, /*getBalance, getCost, getTotalSupply, nftMintingAmount*/]);
-
-	/*	const { data, refetch, isSuccess } = useContractReads({
-			contracts: [
-				{ ...contract, functionName: 'totalSupply' },
-				{ ...contract, functionName: 'max_per_wallet' },
-				{ ...contract, functionName: 'owner' },
-				{ ...contract, functionName: 'getTheMintPrice' },
-				{ ...contract, functionName: 'MAX_SUPPLY' },
-				{ ...contract, functionName: 'public_mint_status' },
-	
-			]
-		},)
-	
-		useMemo(() => {
-	
-			if (isSuccess === true) {
-				settotalSupply(Number(data[0].result))
-				set_max_per_wallet(Number(data[1].result))
-				//set_wlcost(formatEther(data[2].result))
-				set_owner(data[2].result)
-				//set_publicSaleCost(formatEther(data[4].result))
-				set_publicSaleCost(Number(data[3].result)); // Convert WEI to ETH
-				set_MAX_SUPPLY(data[4].result)
-				set_public_mint_status(data[5].result)
-			}
-		}, [_totalSupply, data, isSuccess])
-	*/
-	//........................................//
 
 	const { writeAsync } = useContractWrite({
 		...contract,
@@ -1459,9 +1415,6 @@ const ChestOpening = () => {
 			setstatusLoadingPurchase(true)
 			setstatusErrorPurchase(false)
 
-			//const amount = web3.utils.toWei("0.001", "ether");
-
-			// Convert selectedValue to BN (Big Number) and multiply
 			const totalValue = 1000000000000000 * selectedValue;
 
 
@@ -1540,7 +1493,6 @@ const ChestOpening = () => {
 	};
 
 	const carouseOpen = async () => {
-		// Scroll to the nftSection
 		setSpreadRun(1);
 		set_chestOpen(0);
 
@@ -1564,7 +1516,6 @@ const ChestOpening = () => {
 
 
 	const carouseOpenMob = async () => {
-		// Scroll to the nftSection
 		setCarouselRunMob(1);
 		setArrowShow(1);
 		set_chestOpen(0);
@@ -1590,18 +1541,18 @@ const ChestOpening = () => {
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
-			setLoading(false); // Hide loader after 1.5 seconds
+			setLoading(false);
 		}, 1500);
 
-		return () => clearTimeout(timer); // Cleanup on unmount
+		return () => clearTimeout(timer);
 	}, []);
 
 	useEffect(() => {
 		const interval = setInterval(() => {
 			setCurrentIndex((prevIndex) => (prevIndex + 1) % heroData.length);
-		}, 2000); // Change image every 2 seconds
+		}, 2000);
 
-		return () => clearInterval(interval); // Cleanup on unmount
+		return () => clearInterval(interval);
 	}, []);
 
 	const close = () => {
@@ -1610,7 +1561,7 @@ const ChestOpening = () => {
 
 	const handleSelection = (value) => {
 		setSelectedValue(value);
-		setIsOpen(false); // Close the dropdown after selection
+		setIsOpen(false);
 	};
 
 
