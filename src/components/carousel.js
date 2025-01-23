@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import '../styles/carousel.css';
+import React, { useEffect } from "react";
+import "../styles/carousel.css";
 
 import vitalip2 from "../assets/heroes2/vitalip.png";
 import richard2 from "../assets/heroes2/richard.png";
@@ -11,1150 +11,457 @@ import satoshi2 from "../assets/heroes2/satoshi.png";
 import right from "../assets/heroes2/right.png";
 
 const Carousel = ({ number }) => {
-    useEffect(() => {
-        const highlighter = document.querySelector(".highlighter");
-        const carouselImages = document.querySelectorAll(".carouselIMG");
-
-        const highlightImage = () => {
-            const highlighterRect = highlighter.getBoundingClientRect();
-
-            carouselImages.forEach((img) => {
-                const imgRect = img.getBoundingClientRect();
-
-                if (
-                    imgRect.left >= highlighterRect.left &&
-                    imgRect.right <= highlighterRect.right
-                ) {
-                    img.classList.add("highlight");
-                } else {
-                    img.classList.remove("highlight");
-                }
-            });
-        };
-
-        const observer = new MutationObserver(highlightImage);
-        observer.observe(document.querySelector(".slider"), {
-            childList: true,
-            subtree: true,
-        });
-
-        const intervalId = setInterval(highlightImage, 50);
-
-        return () => {
-            clearInterval(intervalId);
-            observer.disconnect();
-        };
-    }, []);
-
-
-    return (
-        <>
-
-            {/*VITALIP*/}
-            {number === 0 &&
-                <div class="boxWrapC">
-                    <div class="slider">
-                        <div class="slide-track2">
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="highlighter"></div>
-
-
-                </div>
-            }
-            
-            {/*GZ2*/}
-            {number === 1 &&
-                <div class="boxWrapC">
-                    <div class="slider">
-                        <div class="slide-track2">
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="highlighter"></div>
-
-
-                </div>
-            }
-            
-            {/*SATOSHI*/}
-            {number === 2 &&
-                <div class="boxWrapC">
-                    <div class="slider">
-                        <div class="slide-track2">
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="highlighter"></div>
-
-
-                </div>
-            }
-            
-            {/*JESUS*/}
-            {number === 3 &&
-                <div class="boxWrapC">
-                    <div class="slider">
-                        <div class="slide-track2">
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="highlighter"></div>
-
-
-                </div>
-            }
-            
-            {/*TRUNK*/}
-            {number === 4 &&
-                <div class="boxWrapC">
-                    <div class="slider">
-                        <div class="slide-track2">
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="highlighter"></div>
-
-
-                </div>
-            }
-
-            {/*ELOM*/}
-            {number === 5 &&
-                <div class="boxWrapC">
-                    <div class="slider">
-                        <div class="slide-track2">
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="highlighter"></div>
-
-
-                </div>
-            }
-
-
-            {/*RICHARD*/}
-            {number === 6 &&
-                <div class="boxWrapC">
-                    <div class="slider">
-                        <div class="slide-track2">
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={vitalip2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={trunk2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={gz2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={richard2} alt="d5" />
-                            </div>
-                            <div class="slide">
-                                <img class="carouselIMG" src={jesus2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={elom2} alt="d5" />
-                            </div>
-
-                            <div class="slide">
-                                <img class="carouselIMG" src={satoshi2} alt="d5" />
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="highlighter"></div>
-
-
-                </div>
-            }
-
-
-
-        </>
-    );
-
-}
-
-export default Carousel;        
+  useEffect(() => {
+    const highlighter = document.querySelector(".highlighter");
+    const carouselImages = document.querySelectorAll(".carouselIMG");
+
+    const highlightImage = () => {
+      const highlighterRect = highlighter.getBoundingClientRect();
+
+      carouselImages.forEach((img) => {
+        const imgRect = img.getBoundingClientRect();
+
+        if (
+          imgRect.left >= highlighterRect.left &&
+          imgRect.right <= highlighterRect.right
+        ) {
+          img.classList.add("highlight");
+        } else {
+          img.classList.remove("highlight");
+        }
+      });
+    };
+
+    const observer = new MutationObserver(highlightImage);
+    observer.observe(document.querySelector(".slider"), {
+      childList: true,
+      subtree: true,
+    });
+
+    const intervalId = setInterval(highlightImage, 50);
+
+    return () => {
+      clearInterval(intervalId);
+      observer.disconnect();
+    };
+  }, []);
+
+  return (
+    <>
+      {/*VITALIP*/}
+      {number === 0 && (
+        <div class="boxWrapC">
+          <div class="slider">
+            <div class="slide-track2">
+              <div class="slide">
+                <img class="carouselIMG" src={trunk2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={richard2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={gz2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={vitalip2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={jesus2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={elom2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={satoshi2} alt="d5" />
+              </div>
+
+              <div class="slide">
+                <img class="carouselIMG" src={trunk2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={richard2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={gz2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={vitalip2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={jesus2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={elom2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={satoshi2} alt="d5" />
+              </div>
+
+              <div class="slide">
+                <img class="carouselIMG" src={trunk2} alt="d5" />
+              </div>
+            </div>
+          </div>
+
+          <div class="highlighter"></div>
+        </div>
+      )}
+
+      {/*GZ2*/}
+      {number === 1 && (
+        <div class="boxWrapC">
+          <div class="slider">
+            <div class="slide-track2">
+              <div class="slide">
+                <img class="carouselIMG" src={vitalip2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={richard2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={trunk2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={gz2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={jesus2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={elom2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={satoshi2} alt="d5" />
+              </div>
+
+              <div class="slide">
+                <img class="carouselIMG" src={vitalip2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={richard2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={trunk2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={gz2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={jesus2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={elom2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={satoshi2} alt="d5" />
+              </div>
+
+              <div class="slide">
+                <img class="carouselIMG" src={vitalip2} alt="d5" />
+              </div>
+            </div>
+          </div>
+
+          <div class="highlighter"></div>
+        </div>
+      )}
+
+      {/*SATOSHI*/}
+      {number === 2 && (
+        <div class="boxWrapC">
+          <div class="slider">
+            <div class="slide-track2">
+              <div class="slide">
+                <img class="carouselIMG" src={vitalip2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={richard2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={gz2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={satoshi2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={jesus2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={elom2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={trunk2} alt="d5" />
+              </div>
+
+              <div class="slide">
+                <img class="carouselIMG" src={vitalip2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={richard2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={gz2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={satoshi2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={jesus2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={elom2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={trunk2} alt="d5" />
+              </div>
+
+              <div class="slide">
+                <img class="carouselIMG" src={vitalip2} alt="d5" />
+              </div>
+            </div>
+          </div>
+
+          <div class="highlighter"></div>
+        </div>
+      )}
+
+      {/*JESUS*/}
+      {number === 3 && (
+        <div class="boxWrapC">
+          <div class="slider">
+            <div class="slide-track2">
+              <div class="slide">
+                <img class="carouselIMG" src={vitalip2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={richard2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={gz2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={jesus2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={trunk2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={elom2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={satoshi2} alt="d5" />
+              </div>
+
+              <div class="slide">
+                <img class="carouselIMG" src={vitalip2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={richard2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={gz2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={jesus2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={trunk2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={elom2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={satoshi2} alt="d5" />
+              </div>
+
+              <div class="slide">
+                <img class="carouselIMG" src={vitalip2} alt="d5" />
+              </div>
+            </div>
+          </div>
+
+          <div class="highlighter"></div>
+        </div>
+      )}
+
+      {/*TRUNK*/}
+      {number === 4 && (
+        <div class="boxWrapC">
+          <div class="slider">
+            <div class="slide-track2">
+              <div class="slide">
+                <img class="carouselIMG" src={vitalip2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={richard2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={gz2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={trunk2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={jesus2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={elom2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={satoshi2} alt="d5" />
+              </div>
+
+              <div class="slide">
+                <img class="carouselIMG" src={vitalip2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={richard2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={gz2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={trunk2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={jesus2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={elom2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={satoshi2} alt="d5" />
+              </div>
+
+              <div class="slide">
+                <img class="carouselIMG" src={vitalip2} alt="d5" />
+              </div>
+            </div>
+          </div>
+
+          <div class="highlighter"></div>
+        </div>
+      )}
+
+      {/*ELOM*/}
+      {number === 5 && (
+        <div class="boxWrapC">
+          <div class="slider">
+            <div class="slide-track2">
+              <div class="slide">
+                <img class="carouselIMG" src={vitalip2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={richard2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={gz2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={elom2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={jesus2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={trunk2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={satoshi2} alt="d5" />
+              </div>
+
+              <div class="slide">
+                <img class="carouselIMG" src={vitalip2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={richard2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={gz2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={elom2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={jesus2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={trunk2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={satoshi2} alt="d5" />
+              </div>
+
+              <div class="slide">
+                <img class="carouselIMG" src={vitalip2} alt="d5" />
+              </div>
+            </div>
+          </div>
+
+          <div class="highlighter"></div>
+        </div>
+      )}
+
+      {/*RICHARD*/}
+      {number === 6 && (
+        <div class="boxWrapC">
+          <div class="slider">
+            <div class="slide-track2">
+              <div class="slide">
+                <img class="carouselIMG" src={vitalip2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={trunk2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={gz2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={richard2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={jesus2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={elom2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={satoshi2} alt="d5" />
+              </div>
+
+              <div class="slide">
+                <img class="carouselIMG" src={vitalip2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={trunk2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={gz2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={richard2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={jesus2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={elom2} alt="d5" />
+              </div>
+              <div class="slide">
+                <img class="carouselIMG" src={satoshi2} alt="d5" />
+              </div>
+
+              <div class="slide">
+                <img class="carouselIMG" src={vitalip2} alt="d5" />
+              </div>
+            </div>
+          </div>
+
+          <div class="highlighter"></div>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default Carousel;
