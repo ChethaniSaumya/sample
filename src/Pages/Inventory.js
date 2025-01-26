@@ -1675,13 +1675,16 @@ const Inventory = () => {
 
 		<div
 			className="relative min-h-screen bg-cover bg-center text-white bg-[#41305f] flex flex-col justify-between overflow-hidden"
-			style={{ backgroundImage: `url(${bg})` }}
+			style={{
+				backgroundImage: `url(${bg})`,
+				backgroundAttachment: 'fixed',
+			}}
 		>
 
 			<Navbar />
 
 			<div className='cont-2'>
-				<div id="titles" className='titleMain'>INVENTORY</div>
+				<div id="titles" className='titleMain'>My NFTs</div>
 				{/*<div className='title2Main'>Secured by <img className='chainlink' src={cl} /></div>*/}
 
 				{/*<div className="nfts-grid">
@@ -1739,7 +1742,7 @@ const Inventory = () => {
 													<span className="text-[#6E0B35]">{nft.tokenid.toString()}</span>
 												</p>
 												<p className="uppercase font-bold">
-													Rarity: <span className="text-[#6E0B35]">{nft.rarity.toString()}</span>
+													Rarity: <span className="text-[#6E0B35]">{Number(nft.rarity) + 1}</span>
 												</p>
 												<p className="uppercase font-bold">
 													Fighting ago:{" "}
