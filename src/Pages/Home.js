@@ -185,7 +185,7 @@ const Home = () => {
           </div>
           <div className="col-span-5 lg:col-span-6">
             <div className="relative z-[1] flex items-center justify-center">
-              <img src={richardHeroImage} alt="Richard" className="richardImg" />
+              <img src={richardHeroImage} alt="Richard"/>
               <div className="absolute left-0 right-0 mx-auto bottom-[3%] w-14 sm:w-18 md:w-24 lg:w-28 xl:w-30 2xl:w-32 h-[1000px] bg-gradient-to-t from-[#460844] to-[#AC14A6] -z-[1]"></div>
             </div>
           </div>
