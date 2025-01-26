@@ -17,7 +17,7 @@ import satoshi from "../assets/heroes/satoshi.png";
 
 import cardLayout from "../assets/card-layout.png";
 import terrain from "../assets/marketplacev2/terrain.png";
-import bg from "../assets/marketplacev2/marketplace-bg.png";
+import bg from "../assets/marketplaceBG.jpg";
 import "../styles/MarketplaceV2.css";
 
 const heroData = [
