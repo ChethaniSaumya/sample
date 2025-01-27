@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import logo from "../assets/logo.png";
+import music from "../assets/music.png";
 import "../styles/Navbar.css";
 import { Web3Button, Web3Modal, useWeb3Modal } from '@web3modal/react';
 import { mainnet, useAccount, useContractRead, useContractReads, useContractWrite, useNetwork, usePublicClient, useSwitchNetwork, useWaitForTransaction, useDisconnect } from 'wagmi';
@@ -91,6 +92,8 @@ const Navbar = () => {
               <li className="nav-link-hover font-bold">
                 <a href="/">MORE</a>
               </li>
+              <img className="music" src={music}/>
+
             </ul>
 
             {_connected ?
@@ -115,8 +118,9 @@ const Navbar = () => {
       </div>
       <div className="absolute top-[60%] right-0 w-full">
         <div className="container w-full mx-auto flex justify-end">
+          
           <nav
-            className={` ${isToggled ? "h-[409px]" : "h-0"
+            className={` ${isToggled ? "h-[540px]" : "h-0"
               } px-3 bg-white/50 backdrop-blur-md overflow-hidden transition-all ease-in-out duration-500 z-[1] lg:hidden`}
           >
             <ul className="flex flex-col text-center">
@@ -141,6 +145,11 @@ const Navbar = () => {
               <li className="font-bold py-3 border-b">
                 <a href="/">MORE</a>
               </li>
+
+              <li className="font-bold py-3 border-b">
+              <img className="music" src={music}/>
+              </li>
+ 
             </ul>
             {_connected ?
               <button onClick={() => disconnectWallet()} className="bg-gradient-to-r from-[#B014A5] via-[#6514DB] to-[#B014A5] bg-[length:200%_200%] font-vermin-vibes-v text-[13px] my-[1em] px-[3.5em] py-[0.8em] transition-all duration-500 hover:bg-right hover:shadow-[0_0_5px_0_#B014A5]">
