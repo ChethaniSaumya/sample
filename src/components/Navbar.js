@@ -2,6 +2,9 @@ import React, { useState, useRef, useEffect } from "react";
 
 import logo from "../assets/logo.png";
 import music from "../assets/music.png";
+import discord from "../assets/discord.png";
+import twitter from "../assets/twitter.png";
+import telegram from "../assets/telegram.png";
 import "../styles/Navbar.css";
 import { Web3Button, Web3Modal, useWeb3Modal } from "@web3modal/react";
 import {
@@ -182,11 +185,10 @@ const Navbar = () => {
               </button>
             )}
             <button
-              className={`${
-                isToggled
-                  ? "animate-toggle-button"
-                  : "reverse-animate-toggle-button"
-              } relative h-4 w-6 transition-opacity duration-300 xl:hidden`}
+              className={`${isToggled
+                ? "animate-toggle-button"
+                : "reverse-animate-toggle-button"
+                } relative h-4 w-6 transition-opacity duration-300 xl:hidden`}
               onClick={() => {
                 setIsToggled((prev) => !prev);
                 setIsMobileDropdownShown(false);
@@ -200,9 +202,8 @@ const Navbar = () => {
       <div className="absolute top-[60%] right-0 w-full">
         <div className="container w-full mx-auto flex justify-end">
           <nav
-            className={` ${
-              isToggled ? "h-[540px]" : "h-0"
-            } px-3 bg-white/50 backdrop-blur-md transition-all overflow-hidden ease-in-out duration-500 z-[1] xl:hidden`}
+            className={` ${isToggled ? "h-[540px]" : "h-0"
+              } px-3 bg-white/50 backdrop-blur-md transition-all overflow-hidden ease-in-out duration-500 z-[1] xl:hidden`}
           >
             <ul className="flex flex-col text-center">
               <li className="font-bold py-3 border-b">
@@ -228,20 +229,9 @@ const Navbar = () => {
                   MORE
                 </span>
                 <ul
-                  className={`mobile-nav-dropdown ${
-                    isMobileDropdownShown ? "" : "hide"
-                  } absolute bottom-full left-0 right-0 mx-auto w-fit z-50 bg-black/80 text-white border pt-[0.5em] pb-[0.8em] uppercase backdrop-blur-sm text-[1.1em]`}
+                  className={`mobile-nav-dropdown ${isMobileDropdownShown ? "" : "hide"
+                    } absolute bottom-full left-0 right-0 mx-auto w-fit z-50 bg-black/80 text-white border pt-[0.5em] pb-[0.8em] uppercase backdrop-blur-sm text-[1.1em]`}
                 >
-                  <li className="px-[1.4em] py-[0.2em]">
-                    <a
-                      href="/"
-                      className="hover:text-white/80"
-                      onClick={() => setIsMobileDropdownShown(false)}
-                    >
-                      Road map
-                    </a>
-                  </li>
-                  <hr className="w-[80%] mx-auto" />
                   <li className="px-[1.4em] py-[0.5em]">
                     <a
                       href="/"
@@ -270,6 +260,14 @@ const Navbar = () => {
                     >
                       Staking
                     </a>
+                  </li>
+                  <hr className="w-[80%] mx-auto" />
+                  <li className="px-[1.4em] py-[0.5em]">
+                    <div className="socialIcons">
+                      <img src={twitter} />
+                      <img src={discord} />
+                      <img src={telegram} />
+                    </div>
                   </li>
                   <hr className="w-[80%] mx-auto" />
                 </ul>
@@ -305,20 +303,9 @@ const Navbar = () => {
       <ul
         ref={dropdownRef}
         style={dropdownStyle}
-        className={`nav-dropdown ${
-          isDropdownShown ? "" : "hide"
-        } w-fit z-50 bg-white/30 text-white border pt-[0.5em] pb-[0.8em] uppercase backdrop-blur-sm -translate-x-[18%] translate-y-[12%] text-[1.1em]`}
+        className={`nav-dropdown ${isDropdownShown ? "" : "hide"
+          } w-fit z-50 bg-white/30 text-white border pt-[0.5em] pb-[0.8em] uppercase backdrop-blur-sm -translate-x-[18%] translate-y-[12%] text-[1.1em]`}
       >
-        <li className="px-[1.4em] py-[0.2em]">
-          <a
-            href="/"
-            className="hover:text-white/80"
-            onClick={() => setIsDropdownShown(false)}
-          >
-            Road map
-          </a>
-        </li>
-        <hr className="w-[80%] mx-auto" />
         <li className="px-[1.4em] py-[0.5em]">
           <a
             href="/"
@@ -347,6 +334,14 @@ const Navbar = () => {
           >
             Staking
           </a>
+        </li>
+        <hr className="w-[80%] mx-auto" />
+        <li className="px-[1.4em] py-[0.5em]">
+          <div className="socialIcons">
+            <img src={twitter} />
+            <img src={discord} />
+            <img src={telegram} />
+          </div>
         </li>
         <hr className="w-[80%] mx-auto" />
       </ul>
