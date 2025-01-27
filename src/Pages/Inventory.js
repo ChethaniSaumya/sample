@@ -1684,7 +1684,7 @@ const Inventory = () => {
 			<Navbar />
 
 			<div className='cont-2'>
-				<div id="titles" className='titleMain'>My NFTs</div>
+				<div id="titles" className='titleMain'>My NFT</div>
 				{/*<div className='title2Main'>Secured by <img className='chainlink' src={cl} /></div>*/}
 
 				{/*<div className="nfts-grid">
