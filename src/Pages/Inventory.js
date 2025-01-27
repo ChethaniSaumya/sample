@@ -1136,7 +1136,8 @@ const Inventory = () => {
 	const [_chestsPurchasedAmount, setChestsPurchasedAmount] = useState(0);
 
 	const [number, setNumber] = useState(null);
-
+	//const [selectedRarity, setSelectedRarity] = useState([1, 2, 3, 4, 5, 6, 7]);
+	const [selectedRarity, setSelectedRarity] = useState(null); // To hold the selected rarity
 
 	/*const generateRandomNumber = () => {
 		const randomNum = Math.floor(Math.random() * 7) + 1;
@@ -1186,10 +1187,20 @@ const Inventory = () => {
 	const [_public_mint_status, set_public_mint_status] = useState("");
 	const [_MAX_SUPPLY, set_MAX_SUPPLY] = useState("");
 	const [_lastRarity, setLastRarity] = useState("0");
-	const [_sell, setSell] = useState(false);	
+	const [_sell, setSell] = useState(false);
 	const [_connected, setConnected] = useState(false);
 	const [selectedValue, setSelectedValue] = useState("1 - 10");
 	const [_MyMints, setFetchMyMints] = useState([]);
+
+	
+	const filteredMints = selectedRarity
+		? _MyMints.filter((nft) => Number(nft.rarity) + 1 === selectedRarity)
+		: _MyMints;
+
+	const handleRarityClick = (rarityValue) => {
+		setSelectedRarity((prev) => (prev === rarityValue ? null : rarityValue));
+	};
+
 
 	const contract = {
 		address: address,
@@ -1685,6 +1696,32 @@ const Inventory = () => {
 
 			<div className='cont-2'>
 				<div id="titles" className='titleMain'>My NFT</div>
+
+				{/* Container for rarity*/}
+				<div className="w-fit bg-white/30 mx-auto px-[3em] pt-[1em] pb-[3em] *:font-american-captain text-[15px] rounded-[0.5em] text-center backdrop-blur-md sm:text-[16px] md:text-[17px] lg:text-[18px] xl:text-[19px] 2xl:text-[26px]">
+					<h6 className="mb-[0.3em] tracking-wider">Rarity</h6>
+					<div className="flex items-center justify-center gap-[1em] *:font-american-captain">
+						{Array(7)
+							.fill(undefined)
+							.map((_e, i) => {
+								const rarityValue = i + 1;
+								const isSelected = selectedRarity === rarityValue;
+
+								return (
+									<button
+										key={i}
+										className={`${isSelected ? "bg-[#6514DB] text-white" : "bg-white/30 text-[#6514DB]"
+											} px-[0.5em] py-[0.2em] leading-none rounded-[0.2em] backdrop-blur-md`}
+										style={{ border: "1px solid #6514DB" }}
+										onClick={() => handleRarityClick(rarityValue)}
+									>
+										{rarityValue}
+									</button>
+								);
+							})}
+					</div>
+
+				</div>
 				{/*<div className='title2Main'>Secured by <img className='chainlink' src={cl} /></div>*/}
 
 				{/*<div className="nfts-grid">
@@ -1707,36 +1744,29 @@ const Inventory = () => {
 					)}
 				</div>*/}
 
-				{_MyMints && _MyMints.length > 0 ? (
-					<div id="showMyNFTs" className="relative text-[12px] my-[2em] px-[30px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[15.5px] 2xl:text-[16px]">
 
-						{_MyMints.map((nft, index) => (
+				{filteredMints && filteredMints.length > 0 ? (
+					<div id="showMyNFTs" className="relative text-[12px] my-[2em] px-[30px]">
+						{filteredMints.map((nft, index) => (
 							<div key={index}>
 								<div className="flex items-center justify-center">
-									<article className="w-[17em] max-w-[17em] mx-auto text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[15.5px] 2xl:text-[16px]">
-										<div
+								<article className="w-[17em] max-w-[17em] mx-auto text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[15.5px] 2xl:text-[16px]">
+								<div
 											className="relative h-[14em] bg-contain bg-bottom bg-no-repeat z-[1] animate-hover"
 											style={{
-												backgroundImage: `url(${rarityImages[nft.rarity]})`
+												backgroundImage: `url(${rarityImages[nft.rarity]})`,
 											}}
 										></div>
-
-										<div
-											className="relative bg-gradient-to-br from-[#DF00824D] to-[#FFFFFF4D] -mt-[4.8em] pt-[5em] pb-[1em] rounded-[0.5em] backdrop-blur-md"
-											style={{ border: "1px solid #FFFFFF4D" }}
-										>
+										<div className="relative bg-gradient-to-br from-[#DF00824D] to-[#FFFFFF4D] -mt-[4.8em] pt-[5em] pb-[1em] rounded-[0.5em] backdrop-blur-md">
 											<div
 												className="absolute inset-0 h-[60%] bg-contain bg-center bg-no-repeat rounded-[0.5em] animate-terrain-hover"
 												style={{ backgroundImage: `url(${terrain})` }}
 											></div>
-
 											<div className="w-[15em] mx-auto bg-white/30 px-[0.5em] py-[1em] rounded-[0.5em]">
 												<h3 className="relative font-vermin-vibes-v text-[1.8em] text-center z-[1]">
 													{imgNames[nft.rarity]}
 												</h3>
-
 												<hr className="my-[1em]" />
-
 												<p className="uppercase font-bold">
 													Token ID:{" "}
 													<span className="text-[#6E0B35]">{nft.tokenid.toString()}</span>
@@ -1748,32 +1778,26 @@ const Inventory = () => {
 													Fighting ago:{" "}
 													<span className="text-[#6E0B35]">27849H:21M:37S</span>
 												</p>
-
 												<hr className="my-[1em]" />
-												<div className='inBtnsMain'>
-													<button className='inBtns1'><a href="battle">Fight</a></button>
-													<button className='inBtns2' onClick={sellPopUp}>Sell</button>
+												<div className="inBtnsMain">
+													<button className="inBtns1">
+														<a href="battle">Fight</a>
+													</button>
+													<button className="inBtns2" onClick={sellPopUp}>
+														Sell
+													</button>
 												</div>
 											</div>
 										</div>
-
-
 									</article>
 								</div>
 							</div>
-						)
-						)}
-
-
+						))}
 					</div>
-
-
-
-
-
 				) : (
-					<p className='noNFTs'></p>
+					<p className="noNFTs"></p>
 				)}
+
 
 				{_sell ?
 					<div class="popup-containerIn">
