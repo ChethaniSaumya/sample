@@ -14,11 +14,13 @@
   display: none;
 }
 
-.nav-link-hover a {
+.nav-link-hover a,
+.nav-link-hover span {
   padding: 10px 20px;
   position: relative;
   overflow: hidden;
   display: inline-block;
+  cursor: pointer;
   -webkit-transition: 0.3s ease-out;
   -moz-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
@@ -56,7 +58,8 @@
   opacity: 0;
 }
 
-.nav-link-hover a:before {
+.nav-link-hover a::before,
+.nav-link-hover span::before {
   width: 6px;
   height: 6px;
   background: transparent;
@@ -72,7 +75,8 @@
   opacity: 0;
 }
 
-.nav-link-hover a:after {
+.nav-link-hover a::after,
+.nav-link-hover span::after {
   width: 6px;
   height: 6px;
   background: transparent;
@@ -88,17 +92,20 @@
   opacity: 0;
 }
 
-.nav-link-hover a:hover {
+.nav-link-hover a:hover,
+.nav-link-hover span:hover {
   color: #b014a5;
 }
 
-.nav-link-hover a:hover:before {
+.nav-link-hover a:hover::before,
+.nav-link-hover span:hover::before {
   opacity: 1;
   right: 5px;
   top: 5px;
 }
 
-.nav-link-hover a:hover:after {
+.nav-link-hover a:hover::after,
+.nav-link-hover span:hover::after {
   opacity: 1;
   left: 5px;
   bottom: 5px;
@@ -139,23 +146,73 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .desktop-links {
     display: flex;
     align-items: center;
   }
-}
 
-@media (min-width: 1024px) {
   .connect-button {
     display: block;
   }
 }
 
-.music{
+.music {
   width: 35px;
   cursor: pointer;
   margin-right: 10px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.nav-dropdown {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 200px;
+  overflow: hidden;
+  transition: all 0.5s ease-in allow-discrete;
+}
+
+.nav-dropdown.hide {
+  display: none;
+  height: 0px;
+}
+
+@starting-style {
+  .nav-dropdown {
+    height: 0px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .nav-dropdown {
+    display: none;
+    height: 0px;
+  }
+}
+
+.mobile-nav-dropdown {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.5s ease-in allow-discrete;
+}
+
+.mobile-nav-dropdown.hide {
+  display: none;
+  opacity: 0;
+}
+
+@starting-style {
+  .mobile-nav-dropdown {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .mobile-nav-dropdown {
+    display: none;
+    opacity: 0;
+  }
 }
