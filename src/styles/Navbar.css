@@ -216,3 +216,23 @@
     opacity: 0;
   }
 }
+
+.music{
+  width: 35px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.socialIcons{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.socialIcons img{
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
