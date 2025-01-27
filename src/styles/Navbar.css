@@ -152,3 +152,10 @@
   }
 }
 
+.music{
+  width: 35px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
