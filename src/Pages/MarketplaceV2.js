@@ -258,7 +258,7 @@ const MarketplaceV2 = () => {
           </div>
         </div>
 
-        {/* Slider */}
+        {/* Slider 
         <div className="relative px-[30px] -mt-8 sm:-mt-9 md:-mt-10 lg:-mt-11 xl:-mt-13 2xl:-mt-14">
           <Slider ref={sliderOne} {...sliderOneSettings}>
             {heroData.map(({ image }) => (
@@ -290,7 +290,7 @@ const MarketplaceV2 = () => {
             &#x276F;
           </button>
         </div>
-
+*/}
         {/* Reset and filter dropdown*/}
         <div className="flex flex-col items-center gap-[0.5em] mt-[0.4em] mb-[2em] text-[28px]">
           <button className="group w-fit mx-auto font-american-captain tracking-wider hover:text-white/90">
@@ -394,7 +394,8 @@ const MarketplaceV2 = () => {
                           <p className="font-vermin-vibes-v text-[1.8em] text-[#6E0B35] text-center">
                             {price}
                           </p>
-                          <button className="acceptBtn">Accept last offer</button>
+                          <button className="acceptBtn">Accept offer</button>
+                          <button className="acceptBtn">Make an offer</button>
                         </div>
                       </div>
                     </div>
