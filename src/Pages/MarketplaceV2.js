@@ -199,7 +199,7 @@ const MarketplaceV2 = () => {
   return (
     <div
       className="relative min-h-screen bg-cover bg-top"
-      style={{ backgroundImage: `url(${bg})` }}
+      style={{ backgroundImage: `url(${bg})`, backgroundAttachment: 'fixed' }}
     >
       <div className="absolute inset-0 bg-black/40"></div>
       <Navbar />
