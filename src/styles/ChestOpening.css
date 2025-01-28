@@ -7,7 +7,6 @@
 @import url('https://fonts.cdnfonts.com/css/american-captain');
 @import url('https://fonts.cdnfonts.com/css/vermin-vibes-v');
 
-
 .cardMint {
   width: 120px;
   background: linear-gradient(to bottom, #3a3a3a, #1c1c1c);
@@ -1338,8 +1337,15 @@ a:hover {
     background-color: #FFFFFF80;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 60px;
   }
+
+  .wR{
+    text-align: center;
+    color: white;
+    margin-bottom: 80px;
+    font-size: 28px;
+  }
+  
 
   .fight {
     margin-left: auto;
@@ -2230,8 +2236,15 @@ a:hover {
     background-color: #FFFFFF80;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 60px;
   }
+
+  .wR{
+    text-align: center;
+    color: white;
+    margin-bottom: 80px;
+    font-size: 28px;
+  }
+  
 
   .fight {
     margin-left: auto;
@@ -3103,9 +3116,15 @@ a:hover {
     background-color: #FFFFFF80;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 60px;
   }
 
+  .wR{
+    text-align: center;
+    color: white;
+    margin-bottom: 80px;
+    font-size: 32px;
+  }
+  
   .fight {
     margin-left: auto;
     margin-right: auto;
@@ -3948,8 +3967,15 @@ a:hover {
     background-color: #FFFFFF80;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 80px;
   }
+
+  .wR{
+    text-align: center;
+    color: white;
+    margin-bottom: 80px;
+    font-size: 32px;
+  }
+  
 
   .fight {
     margin-left: auto;
@@ -4792,8 +4818,15 @@ a:hover {
     background-color: #FFFFFF80;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 4%;
   }
+
+  .wR{
+    text-align: center;
+    color: white;
+    margin-bottom: 4%;
+    font-size: 35px;
+  }
+  
 
   .fight {
     margin-left: auto;
@@ -5661,8 +5694,14 @@ a:hover {
     background-color: #FFFFFF80;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 4%;
   }
+
+.wR{
+  text-align: center;
+  color: white;
+  margin-bottom: 4%;
+  font-size: 35px;
+}
 
   .fight {
     margin-left: auto;
@@ -6515,8 +6554,15 @@ a:hover {
     background-color: #FFFFFF80;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 4%;
   }
+
+  .wR{
+    text-align: center;
+    color: white;
+    margin-bottom: 4%;
+    font-size: 55px;
+  }
+  
 
   .fight {
     margin-left: auto;
@@ -7367,9 +7413,15 @@ a:hover {
     background-color: #FFFFFF80;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 4%;
   }
 
+  .wR{
+    text-align: center;
+    color: white;
+    margin-bottom: 4%;
+    font-size: 65px;
+  }
+  
   .fight {
     margin-left: auto;
     margin-right: auto;
