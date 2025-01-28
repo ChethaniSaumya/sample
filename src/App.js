@@ -19,7 +19,8 @@ function App() {
           <Route path="buy-chests" element={<ChestOpening />} />
           {/* <Route path='marketplace' element={<Marketplace />} /> */}
           <Route path="marketplace" element={<MarketplaceV2 />} />
- 					<Route path='inventory' element={<Inventory />} />
+ 					<Route path='mynft' element={<Inventory />} />
+
 
         </Routes>
       </BrowserRouter>
