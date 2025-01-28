@@ -242,19 +242,31 @@ const MarketplaceV2 = () => {
                 );
               })}
           </div>
-          <h6 className="mt-[1em] mb-[0.3em] tracking-wider">Level range</h6>
-          <div className="flex items-center justify-center gap-[0.5em]">
-            <input
-              type="number"
-              className="w-[7ch] bg-black/20 px-[0.5em] py-[0.2em] rounded-[0.2em] backdrop-blur-md outline-none"
-              style={{ border: "1px solid #7E0081" }}
-            />
-            <p>-</p>
-            <input
-              type="number"
-              className="w-[7ch] bg-black/20 px-[0.5em] py-[0.2em] rounded-[0.2em] backdrop-blur-md outline-none"
-              style={{ border: "1px solid #7E0081" }}
-            />
+          <div className="pricesMain">
+            <div className="floorPrice1">
+              <div>Floor Price </div>
+              <div className="fp">80 PLS</div>
+            </div>
+            <div>
+              <h6 className="mt-[1em] mb-[0.3em] tracking-wider">Level range</h6>
+              <div className="flex items-center justify-center gap-[0.5em]">
+                <input
+                  type="number"
+                  className="w-[7ch] bg-black/20 px-[0.5em] py-[0.2em] rounded-[0.2em] backdrop-blur-md outline-none"
+                  style={{ border: "1px solid #7E0081" }}
+                />
+                <p>-</p>
+                <input
+                  type="number"
+                  className="w-[7ch] bg-black/20 px-[0.5em] py-[0.2em] rounded-[0.2em] backdrop-blur-md outline-none"
+                  style={{ border: "1px solid #7E0081" }}
+                />
+              </div>
+            </div>
+            <div className="floorPrice2">
+             <div>Accept Offer</div>
+             <button className="ao">60 PLS</button>
+            </div>
           </div>
         </div>
 
@@ -374,15 +386,12 @@ const MarketplaceV2 = () => {
                           <span className="text-[#6E0B35]">{rarity}</span>
                         </p>
                         <p className="uppercase font-bold">
-                          Level: <span className="text-[#6E0B35]">{level}</span>
-                        </p>
-                        <p className="uppercase font-bold">
                           Fighting ago:{" "}
                           <span className="text-[#6E0B35]">27849H:21M:37S</span>
                         </p>
                         <p className="uppercase font-bold">
                           Owner: <span className="text-[#6E0B35]">{owner}</span>
-                        </p>                       
+                        </p>
 
                         <hr className="my-[1em]" />
 
