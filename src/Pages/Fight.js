@@ -1374,9 +1374,7 @@ const Vs = () => {
 																</div>
 															</div>
 														</div>
-														<div class="card-content">
-															<p><strong>Win Rate:</strong> 5%</p>
-														</div>
+
 													</div>
 
 												</div>
@@ -1491,7 +1489,7 @@ const Vs = () => {
 
 
 				<div className='line'></div>
-
+				<div className='wR'>WIN RATE</div>
 				<div className='nftSection2'>
 					<img
 						src={man1}
