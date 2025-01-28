@@ -143,7 +143,7 @@ const Navbar = () => {
                 <a href="buy-chests">BUY CHESTS</a>
               </li>
               <li className="nav-link-hover font-bold">
-                <a href="inventory">INVENTORY</a>
+                <a href="mynft">MY NFT</a>
               </li>
               <li className="nav-link-hover font-bold">
                 <a href="marketplace">MARKETPLACE</a>
@@ -213,7 +213,7 @@ const Navbar = () => {
                 <a href="buy-chests">BUY CHESTS</a>
               </li>
               <li className="font-bold py-3 border-b">
-                <a href="inventory">INVENTORY</a>
+                <a href="mynft">MY NFT</a>
               </li>
               <li className="font-bold py-3 border-b">
                 <a href="marketplace">MARKETPLACE</a>
