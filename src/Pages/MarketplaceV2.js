@@ -382,11 +382,7 @@ const MarketplaceV2 = () => {
                         </p>
                         <p className="uppercase font-bold">
                           Owner: <span className="text-[#6E0B35]">{owner}</span>
-                        </p>
-                        <p className="uppercase font-bold">
-                          Floor price:{" "}
-                          <span className="text-[#6E0B35]">{floorPrice}</span>
-                        </p>
+                        </p>                       
 
                         <hr className="my-[1em]" />
 
@@ -394,7 +390,6 @@ const MarketplaceV2 = () => {
                           <p className="font-vermin-vibes-v text-[1.8em] text-[#6E0B35] text-center">
                             {price}
                           </p>
-                          <button className="acceptBtn">Accept offer</button>
                           <button className="acceptBtn">Make an offer</button>
                         </div>
                       </div>
