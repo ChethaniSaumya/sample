@@ -1382,8 +1382,6 @@ a:hover {
     background-color: #FFFFFF80;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 80px;
-
   }
 
   .wR {
@@ -1392,7 +1390,8 @@ a:hover {
     font-size: 28px;
     color: #fad0f7;
     font-family: 'Vermin Vibes V', sans-serif;
-    margin-bottom: 25px;
+    margin-bottom: 18px;
+    margin-top: 10px;
   }
 
 
@@ -2330,8 +2329,6 @@ a:hover {
     background-color: #FFFFFF80;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 80px;
-
   }
 
   .wR {
@@ -2340,7 +2337,8 @@ a:hover {
     font-size: 28px;
     color: #fad0f7;
     font-family: 'Vermin Vibes V', sans-serif;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+    margin-top: 10px;
   }
 
 
@@ -3259,8 +3257,6 @@ a:hover {
     background-color: #FFFFFF80;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 80px;
-
   }
 
   .wR {
@@ -3269,7 +3265,8 @@ a:hover {
     font-size: 32px;
     color: #fad0f7;
     font-family: 'Vermin Vibes V', sans-serif;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    margin-top: 10px;
   }
 
   .fight {
@@ -4160,8 +4157,6 @@ a:hover {
     background-color: #FFFFFF80;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 80px;
-
   }
 
   .wR {
@@ -4170,7 +4165,8 @@ a:hover {
     font-size: 32px;
     color: #fad0f7;
     font-family: 'Vermin Vibes V', sans-serif;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    margin-top: 10px;
   }
 
 
@@ -5061,7 +5057,7 @@ a:hover {
     background-color: #FFFFFF80;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 4%;
+    
 
   }
 
@@ -5071,7 +5067,8 @@ a:hover {
     font-size: 35px;
     color: #fad0f7;
     font-family: 'Vermin Vibes V', sans-serif;
-    margin-bottom: 30px;
+    margin-bottom: 2%;
+    margin-top: 10px;
   }
 
 
@@ -5986,7 +5983,6 @@ a:hover {
     background-color: #FFFFFF80;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 4%;
   }
 
   .wR {
@@ -5994,7 +5990,8 @@ a:hover {
     font-size: 35px;
     color: #fad0f7;
     font-family: 'Vermin Vibes V', sans-serif;
-    margin-bottom: 30px;
+    margin-bottom: 2%;
+    margin-top: 10px;
   }
 
   .fight {
@@ -6893,7 +6890,6 @@ a:hover {
     background-color: #FFFFFF80;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 4%;
   }
 
   .wR {
@@ -6902,7 +6898,8 @@ a:hover {
     font-size: 55px;
     color: #fad0f7;
     font-family: 'Vermin Vibes V', sans-serif;
-    margin-bottom: 45px;
+    margin-bottom: 2%;
+    margin-top: 20px;
   }
 
 
@@ -7755,7 +7752,6 @@ a:hover {
     background-color: #FFFFFF80;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 4%;
 
   }
 
@@ -7765,7 +7761,8 @@ a:hover {
      font-size: 65px;
     color: #fad0f7;
     font-family: 'Vermin Vibes V', sans-serif;
-    margin-bottom: 65px;
+    margin-bottom: 2%;
+    margin-top: 30px;
   }
 
   .fight {
