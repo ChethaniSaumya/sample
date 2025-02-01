@@ -5,6 +5,7 @@ import music from "../assets/music.png";
 import discord from "../assets/discord.png";
 import twitter from "../assets/twitter.png";
 import telegram from "../assets/telegram.png";
+import notification from "../assets/notification.png";
 import "../styles/Navbar.css";
 import { Web3Button, Web3Modal, useWeb3Modal } from "@web3modal/react";
 import {
@@ -163,6 +164,11 @@ const Navbar = () => {
                 </span>
               </li>
               <img className="music" src={music} alt="Music" />
+               <div className="notification-container">
+                <img src={notification} alt="notification" className="icon" />
+                {/*count > 0 && <span className="badge">{count}</span>*/}
+                {<span className="badge">1</span>}
+              </div>
             </ul>
 
             {_connected ? (
@@ -202,7 +208,7 @@ const Navbar = () => {
       <div className="absolute top-[60%] right-0 w-full">
         <div className="container w-full mx-auto flex justify-end">
           <nav
-            className={` ${isToggled ? "h-[540px]" : "h-0"
+            className={` ${isToggled ? "h-[610px]" : "h-0"
               } px-3 bg-white/50 backdrop-blur-md transition-all overflow-hidden ease-in-out duration-500 z-[1] xl:hidden`}
           >
             <ul className="flex flex-col text-center">
@@ -276,6 +282,15 @@ const Navbar = () => {
               <li className="font-bold py-3 border-b">
                 <img className="music" src={music} alt="Music" />
               </li>
+
+              <li className="font-bold py-3 border-b">
+              <div className="notification-container">
+                <img src={notification} alt="notification" className="icon" />
+                {/*count > 0 && <span className="badge">{count}</span>*/}
+                {<span className="badge">1</span>}
+              </div>
+              </li>
+
             </ul>
             {_connected ? (
               <button
