@@ -718,26 +718,33 @@ a:hover {
   .floorPrice1 {
     font-size: 15px;
     font-weight: bold;
-    margin-bottom: auto;
-    margin-top: auto;
     height: fit-content;
-    margin-top: 20px;
-   }
-  
-  .fp {
-    color: #8f215c;;
+    margin-top: 30px;
+    color: white;
+    background-color: #8f006b;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    font-family: 'Vermin Vibes V', sans-serif;
   }
-  
+
+  .fp {
+    color: #ffffff;
+    font-family: 'Vermin Vibes V', sans-serif;
+    font-weight: 400;
+  }
+
   .ao {
     background-color: #8f215c;
     width: 100px;
     transition: 0.2s ease-in-out;
   }
-  
+
   .ao:hover {
     background-color: #c21f76;
   }
-  
+
   .floorPrice2 {
     font-size: 15px;
     font-weight: bold;
@@ -746,13 +753,14 @@ a:hover {
     height: fit-content;
     margin-top: 20px;
 
-   }
-  
+  }
+
   .pricesMain {
     display: flex;
     justify-content: center;
     flex-flow: column nowrap;
   }
+
   .popUpImgMain img {
     width: 145px;
   }
@@ -1381,6 +1389,8 @@ a:hover {
     color: white;
     margin-bottom: 80px;
     font-size: 28px;
+    color: #fad0f7;
+    font-family: 'Vermin Vibes V', sans-serif;
   }
 
 
@@ -1646,27 +1656,33 @@ a:hover {
   .floorPrice1 {
     font-size: 15px;
     font-weight: bold;
-    margin-bottom: auto;
-    margin-top: auto;
     height: fit-content;
-    margin-right: 15px;
-    margin-bottom: -3px;
+    margin-top: 30px;
+    color: white;
+    background-color: #8f006b;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    font-family: 'Vermin Vibes V', sans-serif;
   }
-  
+
   .fp {
-    color: #8f215c;;
+    color: #ffffff;
+    font-family: 'Vermin Vibes V', sans-serif;
+    font-weight: 400;
   }
-  
+
   .ao {
     background-color: #8f215c;
     width: 100px;
     transition: 0.2s ease-in-out;
   }
-  
+
   .ao:hover {
     background-color: #c21f76;
   }
-  
+
   .floorPrice2 {
     font-size: 15px;
     font-weight: bold;
@@ -1676,7 +1692,7 @@ a:hover {
     margin-left: 15px;
     margin-bottom: -3px;
   }
-  
+
   .pricesMain {
     display: flex;
     justify-content: space-evenly;
@@ -2319,6 +2335,8 @@ a:hover {
     color: white;
     margin-bottom: 80px;
     font-size: 28px;
+    color: #fad0f7;
+    font-family: 'Vermin Vibes V', sans-serif;
   }
 
 
@@ -2581,27 +2599,33 @@ a:hover {
   .floorPrice1 {
     font-size: 16px;
     font-weight: bold;
-    margin-bottom: auto;
-    margin-top: auto;
     height: fit-content;
-    margin-right: 20px;
-    margin-bottom: -5px;
+    margin-top: 30px;
+    color: white;
+    background-color: #8f006b;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    font-family: 'Vermin Vibes V', sans-serif;
   }
-  
+
   .fp {
-    color: #8f215c;;
+    color: #ffffff;
+    font-family: 'Vermin Vibes V', sans-serif;
+    font-weight: 400;
   }
-  
+
   .ao {
     background-color: #8f215c;
     width: 100px;
     transition: 0.2s ease-in-out;
   }
-  
+
   .ao:hover {
     background-color: #c21f76;
   }
-  
+
   .floorPrice2 {
     font-size: 16px;
     font-weight: bold;
@@ -2611,11 +2635,12 @@ a:hover {
     margin-left: 20px;
     margin-bottom: -5px;
   }
-  
+
   .pricesMain {
     display: flex;
     justify-content: space-evenly;
   }
+
   #btn1Mobile {
     display: none;
   }
@@ -3237,6 +3262,8 @@ a:hover {
     color: white;
     margin-bottom: 80px;
     font-size: 32px;
+    color: #fad0f7;
+    font-family: 'Vermin Vibes V', sans-serif;
   }
 
   .fight {
@@ -3470,45 +3497,52 @@ a:hover {
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-    
-.floorPrice1 {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: auto;
-  margin-top: auto;
-  height: fit-content;
-  margin-right: 20px;
-  margin-bottom: -5px;
-}
 
-.fp {
-  color: #8f215c;;
-}
+  .floorPrice1 {
+    font-size: 16px;
+    font-weight: bold;
+    height: fit-content;
+    margin-top: 30px;
+    color: white;
+    background-color: #8f006b;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    font-family: 'Vermin Vibes V', sans-serif;
+  }
 
-.ao {
-  background-color: #8f215c;
-  width: 100px;
-  transition: 0.2s ease-in-out;
-}
+  .fp {
+    color: #ffffff;
+    font-family: 'Vermin Vibes V', sans-serif;
+    font-weight: 400;
+  }
 
-.ao:hover {
-  background-color: #c21f76;
-}
+  .ao {
+    background-color: #8f215c;
+    width: 100px;
+    transition: 0.2s ease-in-out;
+  }
 
-.floorPrice2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: auto;
-  margin-top: auto;
-  height: fit-content;
-  margin-left: 20px;
-  margin-bottom: -5px;
-}
+  .ao:hover {
+    background-color: #c21f76;
+  }
 
-.pricesMain {
-  display: flex;
-  justify-content: space-evenly;
-}
+  .floorPrice2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: auto;
+    margin-top: auto;
+    height: fit-content;
+    margin-left: 20px;
+    margin-bottom: -5px;
+  }
+
+  .pricesMain {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
   #btn1Mobile {
     display: none;
   }
@@ -4127,6 +4161,8 @@ a:hover {
     color: white;
     margin-bottom: 80px;
     font-size: 32px;
+    color: #fad0f7;
+    font-family: 'Vermin Vibes V', sans-serif;
   }
 
 
@@ -4361,45 +4397,51 @@ a:hover {
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1919px) {
-  
-.floorPrice1 {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: auto;
-  margin-top: auto;
-  height: fit-content;
-  margin-right: 20px;
-  margin-bottom: -5px;
-}
 
-.fp {
-  color: #8f215c;;
-}
+  .floorPrice1 {
+    font-size: 18px;
+    font-weight: bold;
+    height: fit-content;
+    margin-top: 30px;
+    color: white;
+    background-color: #8f006b;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    font-family: 'Vermin Vibes V', sans-serif;
+  }
 
-.ao {
-  background-color: #8f215c;
-  width: 100px;
-  transition: 0.2s ease-in-out;
-}
+  .fp {
+    color: #ffffff;
+    font-family: 'Vermin Vibes V', sans-serif;
+    font-weight: 400;
+  }
 
-.ao:hover {
-  background-color: #c21f76;
-}
+  .ao {
+    background-color: #8f215c;
+    width: 100px;
+    transition: 0.2s ease-in-out;
+  }
 
-.floorPrice2 {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: auto;
-  margin-top: auto;
-  height: fit-content;
-  margin-left: 20px;
-  margin-bottom: -5px;
-}
+  .ao:hover {
+    background-color: #c21f76;
+  }
 
-.pricesMain {
-  display: flex;
-  justify-content: space-evenly;
-}
+  .floorPrice2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: auto;
+    margin-top: auto;
+    height: fit-content;
+    margin-left: 20px;
+    margin-bottom: -5px;
+  }
+
+  .pricesMain {
+    display: flex;
+    justify-content: space-evenly;
+  }
 
   #btn1Mobile {
     display: none;
@@ -5018,6 +5060,8 @@ a:hover {
     color: white;
     margin-bottom: 4%;
     font-size: 35px;
+    color: #fad0f7;
+    font-family: 'Vermin Vibes V', sans-serif;
   }
 
 
@@ -5252,45 +5296,50 @@ a:hover {
 }
 
 @media screen and (min-width: 1920px) {
-  
-.floorPrice1 {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: auto;
-  margin-top: auto;
-  height: fit-content;
-  margin-right: 20px;
-  margin-bottom: -5px;
-}
 
-.fp {
-  color: #8f215c;;
-}
+  .floorPrice1 {
+    font-size: 22px;
+    font-weight: bold;
+    height: fit-content;
+    margin-top: 30px;
+    background-color: #8f006b;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    font-family: 'Vermin Vibes V', sans-serif;
+  }
 
-.ao {
-  background-color: #8f215c;
-  width: 100px;
-  transition: 0.2s ease-in-out;
-}
+  .fp {
+    color: #ffffff;
+    font-family: 'Vermin Vibes V', sans-serif;
+    font-weight: 400;
+  }
 
-.ao:hover {
-  background-color: #c21f76;
-}
+  .ao {
+    background-color: #8f215c;
+    width: 100px;
+    transition: 0.2s ease-in-out;
+  }
 
-.floorPrice2 {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: auto;
-  margin-top: auto;
-  height: fit-content;
-  margin-left: 20px;
-  margin-bottom: -5px;
-}
+  .ao:hover {
+    background-color: #c21f76;
+  }
 
-.pricesMain {
-  display: flex;
-  justify-content: space-evenly;
-}
+  .floorPrice2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: auto;
+    margin-top: auto;
+    height: fit-content;
+    margin-left: 20px;
+    margin-bottom: -5px;
+  }
+
+  .pricesMain {
+    display: flex;
+    justify-content: space-evenly;
+  }
 
   #btn1Mobile {
     display: none;
@@ -5931,9 +5980,10 @@ a:hover {
 
   .wR {
     text-align: center;
-    color: white;
     margin-bottom: 4%;
     font-size: 35px;
+    color: #fad0f7;
+    font-family: 'Vermin Vibes V', sans-serif;
   }
 
   .fight {
@@ -6165,31 +6215,37 @@ a:hover {
 }
 
 @media screen and (min-width: 1921px) and (max-width: 3839px) {
- 
+
   .floorPrice1 {
     font-size: 22px;
     font-weight: bold;
-    margin-bottom: auto;
-    margin-top: auto;
     height: fit-content;
-    margin-right: 20px;
-    margin-bottom: -5px;
+    margin-top: 30px;
+    color: white;
+    background-color: #8f006b;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    font-family: 'Vermin Vibes V', sans-serif;
   }
-  
+
   .fp {
-    color: #8f215c;;
+    color: #ffffff;
+    font-family: 'Vermin Vibes V', sans-serif;
+    font-weight: 400;
   }
-  
+
   .ao {
     background-color: #8f215c;
     width: 100px;
     transition: 0.2s ease-in-out;
   }
-  
+
   .ao:hover {
     background-color: #c21f76;
   }
-  
+
   .floorPrice2 {
     font-size: 22px;
     font-weight: bold;
@@ -6199,12 +6255,12 @@ a:hover {
     margin-left: 20px;
     margin-bottom: -5px;
   }
-  
+
   .pricesMain {
     display: flex;
     justify-content: space-evenly;
   }
-  
+
   .noNFTs {
     text-align: center;
     margin-top: 60px;
@@ -6833,6 +6889,8 @@ a:hover {
     color: white;
     margin-bottom: 4%;
     font-size: 55px;
+    color: #fad0f7;
+    font-family: 'Vermin Vibes V', sans-serif;
   }
 
 
@@ -7692,6 +7750,8 @@ a:hover {
     color: white;
     margin-bottom: 4%;
     font-size: 65px;
+    color: #fad0f7;
+    font-family: 'Vermin Vibes V', sans-serif;
   }
 
   .fight {
