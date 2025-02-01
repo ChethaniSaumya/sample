@@ -1319,8 +1319,7 @@ const Vs = () => {
 		<div className='cont3'>
 			<div className='cont-2'>
 				<Navbar />
-
-
+				
 				{_combat > 0 ?
 					<div class="popup-containerMain3">
 						<div class="popup-containerMain">
