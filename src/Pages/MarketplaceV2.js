@@ -391,7 +391,7 @@ const MarketplaceV2 = () => {
                           <span className="text-[#6E0B35]">{rarity}</span>
                         </p>
                         <p className="uppercase font-bold">
-                          Fighting ago:{" "}
+                          TIME LEFT:{" "}
                           <span className="text-[#6E0B35]">27849H:21M:37S</span>
                         </p>
                         <p className="uppercase font-bold">
