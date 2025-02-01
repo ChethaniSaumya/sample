@@ -1369,7 +1369,7 @@ const Vs = () => {
 															<div className="overlay">
 																<div className="timer">
 																	<div>03 : 54 : <span className='sec'>23</span></div>
-																	<div>HOURS LEFT</div>
+																	<div>TIME LEFT</div>
 																</div>
 															</div>
 														</div>
@@ -1421,7 +1421,7 @@ const Vs = () => {
 															<div className="overlay">
 																<div className="timer">
 																	<div>03 : 54 : <span className='sec'>23</span></div>
-																	<div>HOURS LEFT</div>
+																	<div>TIME LEFT</div>
 																</div>
 															</div>
 														</div>
