@@ -242,11 +242,11 @@ const MarketplaceV2 = () => {
                 );
               })}
           </div>
-          <div className="pricesMain">
-            <div className="floorPrice1">
+          <div>
+            {/*<div className="floorPrice1">
               <div>Floor Price </div>
               <div className="fp">80 PLS</div>
-            </div>
+            </div>*/}
             <div>
               <h6 className="mt-[1em] mb-[0.3em] tracking-wider">Level range</h6>
               <div className="flex items-center justify-center gap-[0.5em]">
@@ -263,11 +263,16 @@ const MarketplaceV2 = () => {
                 />
               </div>
             </div>
-            <div className="floorPrice2">
+            {/*<div className="floorPrice2">
              <div>Accept Offer</div>
              <button className="ao">60 PLS</button>
-            </div>
+            </div>*/}
           </div>
+          <div className="floorPrice1">
+              <div>Floor Price </div>
+              <div className="fp">80 PLS</div>
+            </div>
+
         </div>
 
         {/* Slider 
@@ -399,7 +404,8 @@ const MarketplaceV2 = () => {
                           <p className="font-vermin-vibes-v text-[1.8em] text-[#6E0B35] text-center">
                             {price}
                           </p>
-                          <button className="acceptBtn">Make an offer</button>
+                          <button className="acceptBtn">BUY</button>
+                          <button className="acceptBtn">MAKE AN OFFER</button>
                         </div>
                       </div>
                     </div>
