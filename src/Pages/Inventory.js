@@ -1775,7 +1775,7 @@ const Inventory = () => {
 													Rarity: <span className="text-[#6E0B35]">{Number(nft.rarity) + 1}</span>
 												</p>
 												<p className="uppercase font-bold">
-													Fighting ago:{" "}
+													Time Left:{" "}
 													<span className="text-[#6E0B35]">27849H:21M:37S</span>
 												</p>
 												<hr className="my-[1em]" />
