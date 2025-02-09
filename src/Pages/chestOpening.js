@@ -1479,8 +1479,6 @@ const ChestOpening = () => {
 
 		await new Promise(resolve => setTimeout(resolve, 4500));
 		carouseOpen();
-
-
 	};
 
 	const chestOpenMob = async () => {
@@ -1489,7 +1487,6 @@ const ChestOpening = () => {
 
 		await new Promise(resolve => setTimeout(resolve, 4500));
 		carouseOpenMob();
-
 	};
 
 	const carouseOpen = async () => {
@@ -1501,7 +1498,7 @@ const ChestOpening = () => {
 		setArrowShow(1);
 		setSpreadRun(0);
 
-		await new Promise(resolve => setTimeout(resolve, 24000));
+		await new Promise(resolve => setTimeout(resolve, 15100));
 
 		setCardShow(1);
 		setArrowShow(0);
@@ -1520,7 +1517,7 @@ const ChestOpening = () => {
 		setArrowShow(1);
 		set_chestOpen(0);
 
-		await new Promise(resolve => setTimeout(resolve, 24000));
+		await new Promise(resolve => setTimeout(resolve, 15100));
 
 		setCardShow(1);
 		setArrowShow(0);
