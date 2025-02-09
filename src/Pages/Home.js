@@ -57,18 +57,18 @@ const heroData = [
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
   const settings = {
-    dots: true,
+    dots: false,
     arrows: false,
     infinite: true,
     slidesToShow: 7,
     slidesToScroll: 1,
     autoplay: true,
     speed: 2000,
-    autoplaySpeed: 2000,
+    // autoplaySpeed: 2000,
     cssEase: "linear",
-    className: "center",
-    centerMode: true,
-    centerPadding: "30px",
+    // className: "center",
+    // centerMode: true,
+    // centerPadding: "30px",
     responsive: [
       {
         breakpoint: 1535,
@@ -154,9 +154,10 @@ const Home = () => {
                       <DownArrowHeadIcon />
                     </div>
                   </button>
-                 <div
-                    className={`absolute top-[36px] sm:top-[46px] md:top-[56px] lg:top-[66px] xl:top-[76px] 2xl:top-[80px] left-0 right-0 w-full font-vermin-vibes-v text-[12px] bg-[#D9D9D94D] 2xl:px-5 backdrop-blur-[10px] overflow-hidden border border-white/50 transition-all duration-500 sm:text-[13px] md:text-[16px] lg:text-[18px] xl:text-[18px] 2xl:text-[19px] ${!isOpen ? "max-h-0" : "max-h-[500px]"
-                      }`}
+                  <div
+                    className={`absolute top-[36px] sm:top-[46px] md:top-[56px] lg:top-[66px] xl:top-[76px] 2xl:top-[80px] left-0 right-0 w-full font-vermin-vibes-v text-[12px] bg-[#D9D9D94D] 2xl:px-5 backdrop-blur-[10px] overflow-hidden border border-white/50 transition-all duration-500 sm:text-[13px] md:text-[16px] lg:text-[18px] xl:text-[18px] 2xl:text-[19px] ${
+                      !isOpen ? "max-h-0" : "max-h-[500px]"
+                    }`}
                   >
                     <button className="w-full flex items-center justify-center gap-x-[1.3125em] py-3 border-b border-b-white/50 transition-colors duration-100 hover:text-white/80">
                       BUY CHEST
@@ -185,7 +186,11 @@ const Home = () => {
           </div>
           <div className="col-span-5 lg:col-span-6">
             <div className="relative z-[1] flex items-center justify-center">
-               <img src={richardHeroImage} alt="Richard" className="w-32 sm:w-40 md:w-48 lg:w-40 xl:w-58" />
+              <img
+                src={richardHeroImage}
+                alt="Richard"
+                className="w-32 sm:w-40 md:w-48 lg:w-40 xl:w-58"
+              />
               <div className="absolute left-0 right-0 mx-auto bottom-[3%] w-14 sm:w-18 md:w-24 lg:w-28 xl:w-30 2xl:w-32 h-[1000px] bg-gradient-to-t from-[#460844] to-[#AC14A6] -z-[1]"></div>
             </div>
           </div>
@@ -211,20 +216,22 @@ const Home = () => {
         <div className="relative container mx-auto pb-[100px] z-[1]">
           <Slider {...settings}>
             {heroData.map(({ image, name }) => (
-              <article className="relative w-fit max-w-fit mx-auto my-10 flex items-end justify-end transition-transform duration-300 hover:-translate-y-1">
-                <img
-                  src={cardLayout}
-                  alt="Card layout"
-                  className="w-[122px] h-[170px] sm:w-[136px] sm:h-[188px] md:w-[150px] md:h-[206px] lg:w-[162px] lg:h-[220px] xl:w-[170px] xl:h-[226px] 2xl:w-[176px] 2xl:h-[232px]"
-                />
-                <div
-                  className="absolute inset-0 w-[90%] h-[98%] m-auto bg-contain bg-no-repeat bg-center"
-                  style={{ backgroundImage: `url(${image})` }}
-                ></div>
-                <p className="absolute bottom-0 left-0 right-0 w-fit mx-auto translate-y-full font-vermin-vibes-v text-[19px] z-[1]">
-                  {name}
-                </p>
-              </article>
+              <div className="flex items-center justify-center">
+                <article className="relative w-fit max-w-fit mx-auto my-10 flex items-end justify-end transition-transform duration-300 hover:-translate-y-1">
+                  <img
+                    src={cardLayout}
+                    alt="Card layout"
+                    className="w-[122px] h-[170px] sm:w-[136px] sm:h-[188px] md:w-[150px] md:h-[206px] lg:w-[162px] lg:h-[220px] xl:w-[170px] xl:h-[226px] 2xl:w-[176px] 2xl:h-[232px]"
+                  />
+                  <div
+                    className="absolute inset-0 w-[90%] h-[98%] m-auto bg-contain bg-no-repeat bg-center"
+                    style={{ backgroundImage: `url(${image})` }}
+                  ></div>
+                  <p className="absolute bottom-0 left-0 right-0 w-fit mx-auto translate-y-full font-vermin-vibes-v text-[19px] z-[1]">
+                    {name}
+                  </p>
+                </article>
+              </div>
             ))}
           </Slider>
         </div>
