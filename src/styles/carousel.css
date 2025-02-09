@@ -90,7 +90,7 @@
     /* animation: scroll2-2 7.5s linear 0s, scroll2-2 15s ease-out 7.5s,
       fadeOut 1.5s ease-out 24s; */
     animation: scroll-cards 2.5s 7 linear,
-      halt 5s cubic-bezier(0, 0, 0.61, 1.25) 17.5s, fadeOut 1.5s ease-out 24s;
+      halt 5s cubic-bezier(0, 0, 0.61, 1.25) 10s, fadeOut 1.5s ease-out 15s;
     /*Fade out after scrolling stops */
     display: flex;
     width: calc(428.57vw);
@@ -361,7 +361,7 @@
       fadeOut 1.5s ease-out 24s; */
 
     animation: scroll-cards 2.5s 7 linear,
-      halt 5s cubic-bezier(0, 0, 0.61, 1.25) 17.5s, fadeOut 1.5s ease-out 24s;
+      halt 5s cubic-bezier(0, 0, 0.61, 1.25) 10s, fadeOut 1.5s ease-out 15s;
     display: flex;
     width: calc(321.43vw);
     /* Adjust according to the number of slides */
@@ -636,7 +636,7 @@
       fadeOut 1.5s ease-out 24s; */
 
     animation: scroll-cards 2.5s 7 linear,
-      halt 5s cubic-bezier(0, 0, 0.61, 1.25) 17.5s, fadeOut 1.5s ease-out 24s;
+      halt 5s cubic-bezier(0, 0, 0.61, 1.25) 10s, fadeOut 1.5s ease-out 15s;
     display: flex;
     width: calc(267.86vw);
     /* Adjust according to the number of slides */
@@ -912,7 +912,7 @@
       fadeOut 1.5s ease-out 24s; */
 
     animation: scroll-cards 2.5s 7 linear,
-      halt 5s cubic-bezier(0, 0, 0.61, 1.25) 17.5s, fadeOut 1.5s ease-out 24s;
+      halt 5s cubic-bezier(0, 0, 0.61, 1.25) 10s, fadeOut 1.5s ease-out 15s;
     display: flex;
     width: calc(11vw * 15);
     /* Adjust according to the number of slides */
@@ -1185,7 +1185,7 @@
       fadeOut 1.5s ease-out 24s; */
 
     animation: scroll-cards 2.5s 7 linear,
-      halt 5s cubic-bezier(0, 0, 0.61, 1.25) 17.5s, fadeOut 1.5s ease-out 24s;
+      halt 5s cubic-bezier(0, 0, 0.61, 1.25) 10s, fadeOut 1.5s ease-out 15s;
     display: flex;
     width: calc(11vw * 15); /* Adjust according to the number of slides */
     animation-fill-mode: forwards;
@@ -1456,7 +1456,7 @@
       fadeOut 1.5s ease-out 24s; */
 
     animation: scroll-cards 2.5s 7 linear,
-      halt 5s cubic-bezier(0, 0, 0.61, 1.25) 17.5s, fadeOut 1.5s ease-out 24s;
+      halt 5s cubic-bezier(0, 0, 0.61, 1.25) 10s, fadeOut 1.5s ease-out 15s;
     display: flex;
     width: calc(11vw * 15); /* Adjust according to the number of slides */
     animation-fill-mode: forwards;
@@ -1727,7 +1727,7 @@
       fadeOut 1.5s ease-out 24s; */
 
     animation: scroll-cards 2.5s 7 linear,
-      halt 5s cubic-bezier(0, 0, 0.61, 1.25) 17.5s, fadeOut 1.5s ease-out 24s;
+      halt 5s cubic-bezier(0, 0, 0.61, 1.25) 10s, fadeOut 1.5s ease-out 15s;
     display: flex;
     width: calc(11vw * 15); /* Adjust according to the number of slides */
     animation-fill-mode: forwards;
@@ -1999,7 +1999,7 @@
       fadeOut 1.5s ease-out 24s; */
 
     animation: scroll-cards 2.5s 7 linear,
-      halt 5s cubic-bezier(0, 0, 0.61, 1.25) 17.5s, fadeOut 1.5s ease-out 24s;
+      halt 5s cubic-bezier(0, 0, 0.61, 1.25) 10s, fadeOut 1.5s ease-out 15s;
     display: flex;
     width: calc(11vw * 15); /* Adjust according to the number of slides */
     animation-fill-mode: forwards;
