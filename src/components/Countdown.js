@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const presaleExpiration = new Date("2024-12-13T00:00:00+05:30").getTime(); // Specify the time zone here
+const presaleExpiration = 1739355640 * 1000; // Convert epoch seconds to milliseconds
 
 const Countdown = () => {
   const [remainingTime, setRemainingTime] = useState("00:00:00");
@@ -42,7 +42,10 @@ const Countdown = () => {
 
   return (
     <h2 className="font-saira-condensed font-semibold text-[42px] sm:text-[50px] md:text-[75px] lg:text-[85px] xl:text-[85px] 2xl:text-[90px]">
-      {remainingTime}
+      {Number(presaleExpiration) < Date.now() ?
+        <div className="over">Presale is over</div> :
+         remainingTime 
+      }
     </h2>
   );
 };
