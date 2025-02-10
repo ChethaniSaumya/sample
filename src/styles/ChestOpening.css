@@ -7,6 +7,39 @@
 @import url('https://fonts.cdnfonts.com/css/american-captain');
 @import url('https://fonts.cdnfonts.com/css/vermin-vibes-v');
 
+.over{
+  font-size: 28px;
+  font-family: 'Vermin Vibes V', sans-serif;
+  margin-top: 25px;
+  letter-spacing: 2px;
+  font-weight: 200;
+}
+
+.popup-container_carousel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.877);
+  width: 100%;
+  height: 100vh;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.popup-container_carousel2 {
+  position: fixed;
+  /* Ensures it stays in the viewport */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0);
+  height: fit-content;
+  animation: fadeIn 0.4s ease-in-out forwards;
+  z-index: 10000;
+}
+
 .cardMint {
   width: 120px;
   background: linear-gradient(to bottom, #3a3a3a, #1c1c1c);
@@ -493,12 +526,11 @@ a:hover {
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
-}
+ }
 
 .popUpImg {
   background: rgba(255, 255, 255, 0.253);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
+   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.534);
 }
@@ -715,6 +747,14 @@ a:hover {
 }
 
 @media screen and (max-width: 499px) {
+  #btn1PC-2 {
+    display: none;
+  }
+  
+  #btn1Mob-3 {
+    display: none;
+  }
+  
   .floorPrice1 {
     font-size: 15px;
     font-weight: bold;
@@ -1093,6 +1133,43 @@ a:hover {
     /* Smooth transition for background */
   }
 
+
+  .btn1-2 {
+    font-family: 'American Captain', sans-serif;
+    color: white;
+    background: linear-gradient(90deg, rgba(178, 21, 167, 1) 0%, rgba(104, 20, 224, 1) 100%);
+    border: #0084ff 1px solid;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 18px;
+    width: 210px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     transition: 0.5s ease-in-out;
+     margin-bottom: 15px;
+    height: 6vh;
+
+  }
+
+  .btn1-2:hover {
+    background: linear-gradient(90deg, rgba(104, 20, 224, 1) 0%, rgba(178, 21, 167, 1) 100%);
+  }
+
+
+  .btn1-2 span {
+    margin-left: 25px;
+    margin-right: 25px;
+    font-family: 'American Captain', sans-serif;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    font-size: 22px;
+    padding: 8px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+
   .btn1:hover {
     background: linear-gradient(90deg, rgba(104, 20, 224, 1) 0%, rgba(178, 21, 167, 1) 100%);
   }
@@ -1219,6 +1296,14 @@ a:hover {
     margin-top: auto;
     margin-bottom: auto;
   }
+
+  .btn1-2 img {
+    width: 30px;
+    margin-top: -2px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
 
   .btn2 img {
     margin-left: 30px;
@@ -1654,6 +1739,14 @@ a:hover {
 }
 
 @media screen and (min-width: 500px) and (max-width: 767px) {
+  #btn1PC-2 {
+    display: none;
+  }
+
+  #btn1Mob-3 {
+    display: none;
+  }
+
   .floorPrice1 {
     font-size: 15px;
     font-weight: bold;
@@ -2039,6 +2132,42 @@ a:hover {
     /* Smooth transition for background */
   }
 
+  .btn1-2 {
+    font-family: 'American Captain', sans-serif;
+    color: white;
+    background: linear-gradient(90deg, rgba(178, 21, 167, 1) 0%, rgba(104, 20, 224, 1) 100%);
+    border: #0084ff 1px solid;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 18px;
+    width: 210px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     transition: 0.5s ease-in-out;
+     margin-bottom: 15px;
+    height: 5.5vh;
+
+    /* Smooth transition for background */
+  }
+
+  .btn1-2:hover {
+    background: linear-gradient(90deg, rgba(104, 20, 224, 1) 0%, rgba(178, 21, 167, 1) 100%);
+  }
+
+
+  .btn1-2 span {
+    margin-left: 15px;
+    margin-right: 15px;
+    font-family: 'American Captain', sans-serif;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    font-size: 22px;
+    padding: 6px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
   .btn1:hover {
     background: linear-gradient(90deg, rgba(104, 20, 224, 1) 0%, rgba(178, 21, 167, 1) 100%);
   }
@@ -2162,6 +2291,13 @@ a:hover {
 
   .btn1 img {
     width: 30px;
+    margin-top: -2px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .btn1-2 img {
+    width: 25px;
     margin-top: -2px;
     margin-top: auto;
     margin-bottom: auto;
@@ -2598,6 +2734,14 @@ a:hover {
 
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
+  #btn1PC-2 {
+    display: none;
+  }
+
+  #btn1Mob-2 {
+    display: none;
+  }
+
   .floorPrice1 {
     font-size: 16px;
     font-weight: bold;
@@ -2973,6 +3117,42 @@ a:hover {
     /* Smooth transition for background */
   }
 
+  .btn1-2 {
+    font-family: 'American Captain', sans-serif;
+    color: white;
+    background: linear-gradient(90deg, rgba(178, 21, 167, 1) 0%, rgba(104, 20, 224, 1) 100%);
+    border: #0084ff 1px solid;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 20px;
+    width: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0;
+    transition: 0.5s ease-in-out;
+    height: 6.5vh;
+
+    /* Smooth transition for background */
+  }
+
+  .btn1-2:hover {
+    background: linear-gradient(90deg, rgba(104, 20, 224, 1) 0%, rgba(178, 21, 167, 1) 100%);
+  }
+
+
+  .btn1-2 span {
+    margin-left: 25px;
+    margin-right: 25px;
+    font-family: 'American Captain', sans-serif;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    font-size: 25px;
+    padding: 8px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
   .btn1:hover {
     background: linear-gradient(90deg, rgba(104, 20, 224, 1) 0%, rgba(178, 21, 167, 1) 100%);
   }
@@ -3099,6 +3279,14 @@ a:hover {
     margin-top: auto;
     margin-bottom: auto;
   }
+
+  .btn1-2 img {
+    width: 30px;
+    margin-top: -2px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
 
   .btn2 img {
     margin-left: 30px;
@@ -3500,6 +3688,13 @@ a:hover {
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
+  #btn1PC-2 {
+    display: none;
+  }
+
+  #btn1Mob-2 {
+    display: none;
+  }
 
   .floorPrice1 {
     font-size: 16px;
@@ -3891,6 +4086,43 @@ a:hover {
     margin-bottom: auto;
   }
 
+  
+  .btn1-2 {
+    font-family: 'American Captain', sans-serif;
+    color: white;
+    background: linear-gradient(90deg, rgba(178, 21, 167, 1) 0%, rgba(104, 20, 224, 1) 100%);
+    border: #0084ff 1px solid;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 20px;
+    width: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0;
+    transition: 0.5s ease-in-out;
+    height: 6.5vh;
+
+    /* Smooth transition for background */
+  }
+
+  .btn1-2:hover {
+    background: linear-gradient(90deg, rgba(104, 20, 224, 1) 0%, rgba(178, 21, 167, 1) 100%);
+  }
+
+
+  .btn1-2 span {
+    margin-left: 25px;
+    margin-right: 25px;
+    font-family: 'American Captain', sans-serif;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    font-size: 25px;
+    padding: 8px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
   .txt {
     margin-top: auto;
     margin-bottom: auto;
@@ -3994,6 +4226,13 @@ a:hover {
   }
 
   .btn1 img {
+    width: 30px;
+    margin-top: -2px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .btn1-2 img {
     width: 30px;
     margin-top: -2px;
     margin-top: auto;
@@ -4401,6 +4640,17 @@ a:hover {
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1919px) {
+ 
+  #btn1PC-2 {
+    display: none;
+  }
+  #btn1Mob-2 {
+    display: none;
+  }
+
+  #mainPageBTns {
+    width: 1000px;
+  }
 
   .floorPrice1 {
     font-size: 18px;
@@ -4778,6 +5028,44 @@ a:hover {
     /* Smooth transition for background */
   }
 
+  .btn1-2 {
+    font-family: 'American Captain', sans-serif;
+    color: white;
+    background: linear-gradient(90deg, rgba(178, 21, 167, 1) 0%, rgba(104, 20, 224, 1) 100%);
+    border: #0084ff 1px solid;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 20px;
+    width: 267px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0;
+    transition: 0.5s ease-in-out;
+    height: 6.5vh;
+ 
+    /* Smooth transition for background */
+  }
+
+  .btn1-2:hover {
+    background: linear-gradient(90deg, rgba(104, 20, 224, 1) 0%, rgba(178, 21, 167, 1) 100%);
+  }
+
+
+  .btn1-2 span {
+    margin-left: 25px;
+    margin-right: 25px;
+    font-family: 'American Captain', sans-serif;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    font-size: 25px;
+    padding: 8px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+
+
   .btn1:hover {
     background: linear-gradient(90deg, rgba(104, 20, 224, 1) 0%, rgba(178, 21, 167, 1) 100%);
   }
@@ -4898,6 +5186,14 @@ a:hover {
     margin-top: auto;
     margin-bottom: auto;
   }
+
+  .btn1-2 img {
+    width: 30px;
+    margin-top: -2px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
 
   .btn2 img {
     margin-left: 30px;
@@ -5057,7 +5353,7 @@ a:hover {
     background-color: #FFFFFF80;
     margin-left: auto;
     margin-right: auto;
-    
+
 
   }
 
@@ -5303,6 +5599,18 @@ a:hover {
 }
 
 @media screen and (min-width: 1920px) {
+
+  #btn1Mob-2 {
+    display: none;
+  }
+
+  #btn1Mob-3 {
+    display: none;
+  }
+
+  #mainPageBTns {
+    width: 1000px;
+  }
 
   .floorPrice1 {
     font-size: 22px;
@@ -5703,6 +6011,41 @@ a:hover {
     /* Smooth transition for background */
   }
 
+  .btn1-2 {
+    font-family: 'American Captain', sans-serif;
+    color: white;
+    background: linear-gradient(90deg, rgba(178, 21, 167, 1) 0%, rgba(104, 20, 224, 1) 100%);
+    border: #0084ff 1px solid;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 25px;
+    width: 310px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+    height: 8vh;
+    z-index: 10000;
+    /* Smooth transition for background */
+  }
+
+  .btn1-2:hover {
+    background: linear-gradient(90deg, rgba(104, 20, 224, 1) 0%, rgba(178, 21, 167, 1) 100%);
+  }
+
+
+  .btn1-2 span {
+    margin-left: 25px;
+    margin-right: 25px;
+    font-family: 'American Captain', sans-serif;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    font-size: 33px;
+    padding: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
   .btn1:hover {
     background: linear-gradient(90deg, rgba(104, 20, 224, 1) 0%, rgba(178, 21, 167, 1) 100%);
   }
@@ -5819,6 +6162,13 @@ a:hover {
   }
 
   .btn1 img {
+    width: 30px;
+    margin-top: -2px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .btn1-2 img {
     width: 30px;
     margin-top: -2px;
     margin-top: auto;
@@ -6223,6 +6573,17 @@ a:hover {
 }
 
 @media screen and (min-width: 1921px) and (max-width: 3839px) {
+  #btn1Mob-2 {
+    display: none;
+  }
+
+  #btn1Mob-3 {
+    display: none;
+  }
+
+  #mainPageBTns {
+    width: 1200px;
+  }
 
   .floorPrice1 {
     font-size: 22px;
@@ -6606,6 +6967,42 @@ a:hover {
     /* Smooth transition for background */
   }
 
+  .btn1-2 {
+    font-family: 'American Captain', sans-serif;
+    color: white;
+    background: linear-gradient(90deg, rgba(178, 21, 167, 1) 0%, rgba(104, 20, 224, 1) 100%);
+    border: #0084ff 1px solid;
+    letter-spacing: 3px;
+    font-weight: 400;
+    font-size: 30px;
+    width: 370px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+    height: 6.5vh;
+    z-index: 10000;
+
+    /* Smooth transition for background */
+  }
+
+  .btn1-2:hover {
+    background: linear-gradient(90deg, rgba(104, 20, 224, 1) 0%, rgba(178, 21, 167, 1) 100%);
+  }
+
+
+  .btn1-2 span {
+    margin-left: 35px;
+    margin-right: 35px;
+    font-family: 'American Captain', sans-serif;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    font-size: 35px;
+    padding: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
   .btn1:hover {
     background: linear-gradient(90deg, rgba(104, 20, 224, 1) 0%, rgba(178, 21, 167, 1) 100%);
   }
@@ -6727,6 +7124,14 @@ a:hover {
     margin-top: auto;
     margin-bottom: auto;
   }
+
+  .btn1-2 img {
+    width: 40px;
+    margin-top: -2px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
 
   .btn2 img {
     margin-left: 30px;
@@ -7139,6 +7544,19 @@ a:hover {
 }
 
 @media screen and (min-width: 3840px) {
+
+  #btn1Mob-2 {
+    display: none;
+  }
+  
+  #btn1Mob-3 {
+    display: none;
+  }
+
+  #mainPageBTns {
+    width: 1400px;
+  }
+
   #btn1Mobile {
     display: none;
   }
@@ -7466,6 +7884,43 @@ a:hover {
     /* Smooth transition for background */
   }
 
+  .btn1-2 {
+    font-family: 'American Captain', sans-serif;
+    color: white;
+    background: linear-gradient(90deg, rgba(178, 21, 167, 1) 0%, rgba(104, 20, 224, 1) 100%);
+    border: #0084ff 1px solid;
+    letter-spacing: 3px;
+    font-weight: 400;
+    font-size: 35px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+    height: 5vh;
+    z-index: 10000;
+
+    /* Smooth transition for background */
+  }
+
+  .btn1-2:hover {
+    background: linear-gradient(90deg, rgba(104, 20, 224, 1) 0%, rgba(178, 21, 167, 1) 100%);
+  }
+
+
+  .btn1-2 span {
+    margin-left: 35px;
+    margin-right: 35px;
+    font-family: 'American Captain', sans-serif;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    font-size: 40px;
+    padding: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+
   .btn1:hover {
     background: linear-gradient(90deg, rgba(104, 20, 224, 1) 0%, rgba(178, 21, 167, 1) 100%);
   }
@@ -7588,6 +8043,14 @@ a:hover {
     margin-top: auto;
     margin-bottom: auto;
   }
+
+  .btn1-2 img {
+    width: 50px;
+    margin-top: -2px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
 
   .btn2 img {
     margin-left: 30px;
@@ -7758,7 +8221,7 @@ a:hover {
   .wR {
     text-align: center;
     color: white;
-     font-size: 65px;
+    font-size: 65px;
     color: #fad0f7;
     font-family: 'Vermin Vibes V', sans-serif;
     margin-bottom: 2%;
