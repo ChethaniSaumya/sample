@@ -385,12 +385,25 @@ let ABI = [
 	{
 		"inputs": [
 			{
-				"internalType": "bool",
-				"name": "_public_mint_status",
-				"type": "bool"
+				"internalType": "uint256",
+				"name": "_preSaleCost",
+				"type": "uint256"
 			}
 		],
-		"name": "setPublic_mint_status",
+		"name": "setPreSaleCost",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_presaleEndTime",
+				"type": "uint256"
+			}
+		],
+		"name": "setPresaleEndTime",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -448,6 +461,20 @@ let ABI = [
 			}
 		],
 		"name": "setRoyaltyInfo",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "togglePresale",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "togglePublic_mint_status",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -744,6 +771,19 @@ let ABI = [
 	},
 	{
 		"inputs": [],
+		"name": "IsPresaleOn",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "lastRarity",
 		"outputs": [
 			{
@@ -946,6 +986,32 @@ let ABI = [
 	},
 	{
 		"inputs": [],
+		"name": "preSaleCost",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "presaleEndTime",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "public_mint_status",
 		"outputs": [
 			{
@@ -1110,7 +1176,7 @@ let ABI = [
 	}
 ];
 
-let address = "0x4D09880fC2ecA53c46B23A4912b6A2cEBd3Fe056";
+let address = "0x3f099cb65C217Ae4eb4fCC372d2717bf528ef70b";
 
 const Inventory = () => {
 
