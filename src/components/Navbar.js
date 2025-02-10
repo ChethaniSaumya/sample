@@ -138,11 +138,11 @@ const Navbar = () => {
           <div className="flex text-[12px] xl:text-[14px] 2xl:text-[16px] xl:gap-[20px] 2xl:gap-[40px] -translate-y-[14px] lg:-translate-y-[18px] xl:-translate-y-[22px] 2xl:-translate-y-[23px] items-center">
             <ul className="desktop-links xl:gap-[0px] 2xl:gap-[10px]">
               <li className="nav-link-hover font-bold">
-                <a href="/">CHESTS PRESALE</a>
+                <a href="/">BUY PRESALE</a>
               </li>
-              <li className="nav-link-hover font-bold">
+              {/*<li className="nav-link-hover font-bold">
                 <a href="buy-chests">BUY CHESTS</a>
-              </li>
+              </li>*/}
               <li className="nav-link-hover font-bold">
                 <a href="mynft">MY NFT</a>
               </li>
@@ -213,11 +213,11 @@ const Navbar = () => {
           >
             <ul className="flex flex-col text-center">
               <li className="font-bold py-3 border-b">
-                <a href="/">CHESTS PRESALE</a>
+                <a href="/">BUY PRESALE</a>
               </li>
-              <li className="font-bold py-3 border-b">
+              {/*<li className="font-bold py-3 border-b">
                 <a href="buy-chests">BUY CHESTS</a>
-              </li>
+              </li>*/}
               <li className="font-bold py-3 border-b">
                 <a href="mynft">MY NFT</a>
               </li>
