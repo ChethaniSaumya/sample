@@ -210,7 +210,7 @@ const MarketplaceV2 = () => {
           Marketplace
         </h1>
         {/* Container for rarity and level filter */}
-        <div className="w-fit bg-white/30 mx-auto px-[3em] pt-[1em] pb-[3em] *:font-american-captain text-[15px] rounded-[0.5em] text-center backdrop-blur-md sm:text-[16px] md:text-[17px] lg:text-[18px] xl:text-[19px] 2xl:text-[26px]">
+        <div id="borderStyles" className="w-fit bg-white/30 mx-auto px-[3em] pt-[1em] pb-[1.6em] *:font-american-captain text-[15px] text-center backdrop-blur-md sm:text-[16px] md:text-[17px] lg:text-[18px] xl:text-[19px] 2xl:text-[26px]">
           <h6 className="mb-[0.3em] tracking-wider">Rarity</h6>
           <div className="flex items-center justify-center gap-[1em] *:font-american-captain">
             {Array(7)
@@ -248,7 +248,7 @@ const MarketplaceV2 = () => {
               <div className="fp">80 PLS</div>
             </div>*/}
             <div>
-              <h6 className="mt-[1em] mb-[0.3em] tracking-wider">Level range</h6>
+              <h6 id="levelTxt" className="mt-[1em] mb-[0.3em] tracking-wider font-vermin-vibes-v text-center z-[1]">Level range</h6>
               <div className="flex items-center justify-center gap-[0.5em]">
                 <input
                   type="number"
