@@ -264,3 +264,29 @@
   height: 25px;
   cursor: pointer;
 }
+
+#borderStyles {
+  position: relative;
+  margin-top: 20px;
+  padding: 1.5em;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 41px 9px rgba(185, 46, 255, 0.6);
+  border: 2px solid rgba(185, 46, 255, 0.8);
+  border-radius: 10px;
+  clip-path: polygon(0% 13%, 7% 0%, 100% 0%, 100% 88.25%, 92.5% 100%, 0% 100%);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease-in-out;
+}
+
+#borderStyles2 {
+  position: relative;
+  margin-top: 20px;
+  padding: 1.5em;
+  background: rgba(223, 223, 223, 0.247);
+  box-shadow: 0px 0px 41px 9px rgba(185, 46, 255, 0.6);
+  border: 2px solid rgba(185, 46, 255, 0.8);
+  border-radius: 10px;
+  clip-path: polygon(0% 13%, 7% 0%, 100% 0%, 100% 88.25%, 92.5% 100%, 0% 100%);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease-in-out;
+}
