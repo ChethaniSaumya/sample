@@ -1764,7 +1764,7 @@ const Inventory = () => {
 				<div id="titles" className='titleMain'>My NFT</div>
 
 				{/* Container for rarity*/}
-				<div className="w-fit bg-white/30 mx-auto px-[3em] pt-[1em] pb-[3em] *:font-american-captain text-[15px] rounded-[0.5em] text-center backdrop-blur-md sm:text-[16px] md:text-[17px] lg:text-[18px] xl:text-[19px] 2xl:text-[26px]">
+				<div id="borderStyles2" className="w-fit bg-white/30 mx-auto px-[3em] pt-[1em] pb-[1.3em] *:font-american-captain text-[15px] rounded-[0.5em] text-center backdrop-blur-md sm:text-[16px] md:text-[17px] lg:text-[18px] xl:text-[19px] 2xl:text-[26px]">
 					<h6 className="mb-[0.3em] tracking-wider">Rarity</h6>
 					<div className="flex items-center justify-center gap-[1em] *:font-american-captain">
 						{Array(7)
