@@ -7,7 +7,7 @@
 @import url('https://fonts.cdnfonts.com/css/american-captain');
 @import url('https://fonts.cdnfonts.com/css/vermin-vibes-v');
 
-.over{
+.over {
   font-size: 28px;
   font-family: 'Vermin Vibes V', sans-serif;
   margin-top: 25px;
@@ -526,11 +526,11 @@ a:hover {
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
- }
+}
 
 .popUpImg {
   background: rgba(255, 255, 255, 0.253);
-   backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.534);
 }
@@ -747,21 +747,27 @@ a:hover {
 }
 
 @media screen and (max-width: 499px) {
+  
+#levelTxt{
+  font-size: 16px;
+}
+
   #btn1PC-2 {
     display: none;
   }
-  
+
   #btn1Mob-3 {
     display: none;
   }
-  
+
   .floorPrice1 {
     font-size: 15px;
     font-weight: bold;
     height: fit-content;
     margin-top: 30px;
     color: white;
-    background-color: #8f006b;
+    background: rgb(198, 0, 149);
+    background: linear-gradient(100deg, rgba(198, 0, 149, 1) 0%, rgba(101, 0, 75, 1) 100%);
     width: 150px;
     margin-left: auto;
     margin-right: auto;
@@ -1146,8 +1152,8 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-     transition: 0.5s ease-in-out;
-     margin-bottom: 15px;
+    transition: 0.5s ease-in-out;
+    margin-bottom: 15px;
     height: 6vh;
 
   }
@@ -1739,6 +1745,11 @@ a:hover {
 }
 
 @media screen and (min-width: 500px) and (max-width: 767px) {
+  
+#levelTxt{
+  font-size: 16px;
+}
+
   #btn1PC-2 {
     display: none;
   }
@@ -1753,7 +1764,8 @@ a:hover {
     height: fit-content;
     margin-top: 30px;
     color: white;
-    background-color: #8f006b;
+    background: rgb(198, 0, 149);
+    background: linear-gradient(100deg, rgba(198, 0, 149, 1) 0%, rgba(101, 0, 75, 1) 100%);
     width: 150px;
     margin-left: auto;
     margin-right: auto;
@@ -2144,8 +2156,8 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-     transition: 0.5s ease-in-out;
-     margin-bottom: 15px;
+    transition: 0.5s ease-in-out;
+    margin-bottom: 15px;
     height: 5.5vh;
 
     /* Smooth transition for background */
@@ -2734,6 +2746,11 @@ a:hover {
 
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
+  
+#levelTxt{
+  font-size: 16px;
+}
+
   #btn1PC-2 {
     display: none;
   }
@@ -2748,7 +2765,8 @@ a:hover {
     height: fit-content;
     margin-top: 30px;
     color: white;
-    background-color: #8f006b;
+    background: rgb(198, 0, 149);
+    background: linear-gradient(100deg, rgba(198, 0, 149, 1) 0%, rgba(101, 0, 75, 1) 100%);
     width: 150px;
     margin-left: auto;
     margin-right: auto;
@@ -3688,6 +3706,11 @@ a:hover {
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
+  
+#levelTxt{
+  font-size: 16px;
+}
+
   #btn1PC-2 {
     display: none;
   }
@@ -3702,7 +3725,8 @@ a:hover {
     height: fit-content;
     margin-top: 30px;
     color: white;
-    background-color: #8f006b;
+    background: rgb(198, 0, 149);
+    background: linear-gradient(100deg, rgba(198, 0, 149, 1) 0%, rgba(101, 0, 75, 1) 100%);
     width: 200px;
     margin-left: auto;
     margin-right: auto;
@@ -4086,7 +4110,7 @@ a:hover {
     margin-bottom: auto;
   }
 
-  
+
   .btn1-2 {
     font-family: 'American Captain', sans-serif;
     color: white;
@@ -4640,10 +4664,15 @@ a:hover {
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1919px) {
- 
+
+  #levelTxt{
+    font-size: 16px;
+  }
+  
   #btn1PC-2 {
     display: none;
   }
+
   #btn1Mob-2 {
     display: none;
   }
@@ -4658,7 +4687,8 @@ a:hover {
     height: fit-content;
     margin-top: 30px;
     color: white;
-    background-color: #8f006b;
+    background: rgb(198, 0, 149);
+    background: linear-gradient(100deg, rgba(198, 0, 149, 1) 0%, rgba(101, 0, 75, 1) 100%);
     width: 200px;
     margin-left: auto;
     margin-right: auto;
@@ -5043,7 +5073,7 @@ a:hover {
     margin: auto 0;
     transition: 0.5s ease-in-out;
     height: 6.5vh;
- 
+
     /* Smooth transition for background */
   }
 
@@ -5600,6 +5630,10 @@ a:hover {
 
 @media screen and (min-width: 1920px) {
 
+  #levelTxt{
+    font-size: 20px;
+  }
+  
   #btn1Mob-2 {
     display: none;
   }
@@ -5617,7 +5651,8 @@ a:hover {
     font-weight: bold;
     height: fit-content;
     margin-top: 30px;
-    background-color: #8f006b;
+    background: rgb(198, 0, 149);
+    background: linear-gradient(100deg, rgba(198, 0, 149, 1) 0%, rgba(101, 0, 75, 1) 100%);
     width: 200px;
     margin-left: auto;
     margin-right: auto;
@@ -6573,6 +6608,10 @@ a:hover {
 }
 
 @media screen and (min-width: 1921px) and (max-width: 3839px) {
+  #levelTxt{
+    font-size: 22px;
+  }
+
   #btn1Mob-2 {
     display: none;
   }
@@ -6591,7 +6630,8 @@ a:hover {
     height: fit-content;
     margin-top: 30px;
     color: white;
-    background-color: #8f006b;
+    background: rgb(198, 0, 149);
+    background: linear-gradient(100deg, rgba(198, 0, 149, 1) 0%, rgba(101, 0, 75, 1) 100%);
     width: 200px;
     margin-left: auto;
     margin-right: auto;
@@ -7544,11 +7584,14 @@ a:hover {
 }
 
 @media screen and (min-width: 3840px) {
+  #levelTxt{
+    font-size: 23px;
+  }
 
   #btn1Mob-2 {
     display: none;
   }
-  
+
   #btn1Mob-3 {
     display: none;
   }
