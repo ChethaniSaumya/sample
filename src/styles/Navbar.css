@@ -218,7 +218,7 @@
 }
 
 .music{
-  width: 35px;
+  width: 28px;
   cursor: pointer;
   margin-right: 10px;
   margin-left: auto;
@@ -229,10 +229,11 @@
   position: relative;
   display: inline-block;
 }
+ 
 
 .icon {
-  width: 40px; /* Adjust size as needed */
-  height: 40px;
+  width: 30px; /* Adjust size as needed */
+  height: 30px;
 }
 
 .badge {
@@ -250,6 +251,7 @@
   align-items: center;
   justify-content: center;
   transform: translate(-50%, -50%);
+  display: none;
 }
 
 
