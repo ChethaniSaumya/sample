@@ -3,6 +3,7 @@ import { Web3Button, Web3Modal, useWeb3Modal } from '@web3modal/react';
 import { mainnet, useAccount, useContractRead, useContractReads, useContractWrite, useNetwork, usePublicClient, useSwitchNetwork, useWaitForTransaction } from 'wagmi';
 import { createPublicClient, formatEther, http, parseEther, webSocket } from 'viem';
 import { pulsechainV4 } from 'wagmi/chains'
+import chestAnim from '../assets/Comp 1-vp9-chrome.webm';
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -1327,17 +1328,17 @@ const Home = () => {
     ...contract,
     functionName: 'presaleEndTime',
   })
-  
+
   const { refetch: getIsPresaleOn } = useContractRead({
     ...contract,
     functionName: 'IsPresaleOn',
   })
-  
+
   const { refetch: getPreSaleCost } = useContractRead({
     ...contract,
     functionName: 'preSaleCost',
   })
-  
+
 
   useEffect(() => {
 
@@ -1364,7 +1365,7 @@ const Home = () => {
       console.log("chestsPurchasedAmount : " + data.data)
 
     }
-    
+
     async function fetchPreSaleCost() {
       var data = await getPreSaleCost();
 
@@ -1554,7 +1555,7 @@ const Home = () => {
 
     }
   }
-  
+
   async function purchase() {
     try {
 
@@ -1684,21 +1685,39 @@ const Home = () => {
 
     }
   }
+
   const chestOpen = async () => {
     //generateRandomNumber();
+
+    set_chestOpen(1);
+
+    await new Promise(resolve => setTimeout(resolve, 4500));
 
     carouseOpen();
   };
 
   const chestOpenMob = async () => {
     //generateRandomNumber();
+
+    set_chestOpen(1);
+
+    await new Promise(resolve => setTimeout(resolve, 4500));
+
     carouseOpenMob();
   };
 
   const carouseOpen = async () => {
+
+    setSpreadRun(1);
+    set_chestOpen(0);
+
+    await new Promise(resolve => setTimeout(resolve, 2300));
+
     setCarouselRun(1);
     setArrowShow(1);
     setSpreadRun(0);
+
+    set_chestOpen(0);
 
     await new Promise(resolve => setTimeout(resolve, 16000));
 
@@ -1810,7 +1829,7 @@ const Home = () => {
                       <DownArrowHeadIcon />
                     </div>
                   </button>
-                  
+
                   <div
                     className={`absolute top-[36px] sm:top-[46px] md:top-[56px] lg:top-[66px] xl:top-[76px] 2xl:top-[80px] left-0 right-0 w-full font-vermin-vibes-v text-[12px] bg-[#D9D9D94D] 2xl:px-5 backdrop-blur-[10px] overflow-hidden border border-white/50 transition-all duration-500 sm:text-[13px] md:text-[16px] lg:text-[18px] xl:text-[18px] 2xl:text-[19px] ${!isOpen ? "max-h-0" : "max-h-[500px]"
                       }`}
@@ -1903,79 +1922,98 @@ const Home = () => {
         <div class="popup-container_carousel">
           <div class="popup-container_carousel2">
             <>
-              <Carousel number={number} />
-              {arrowShow > 0 ?
-                <div class="highlighter2"><img className='arrow' src={right} /></div> : null}
+              <>
+                <Carousel number={number} />
+                {arrowShow > 0 ?
+                  <div class="highlighter2"><img className='arrow' src={right} /></div> : null}
+              </>
+
+              {cardShow > 0 ?
+                <div className='popUpImgMain'>
+
+                  {number === 0 &&
+                    <>
+                      <span class="close-button-2" onClick={close}>&times;</span>
+                      <div className='popUpImgBG'>
+                        <img src={vitalip2} />
+                      </div>
+                    </>
+                  }
+
+                  {number === 1 &&
+                    <>
+                      <span class="close-button-2" onClick={close}>&times;</span>
+                      <div className='popUpImgBG'>
+                        <img src={gz2} />
+                      </div>
+                    </>
+                  }
+
+                  {number === 2 &&
+                    <>
+                      <span class="close-button-2" onClick={close}>&times;</span>
+                      <div className='popUpImgBG'>
+                        <img src={satoshi2} />
+                      </div>
+                    </>}
+
+                  {number === 3 &&
+                    <>
+                      <span class="close-button-2" onClick={close}>&times;</span>
+                      <div className='popUpImgBG'>
+                        <img src={jesus2} />
+                      </div>
+                    </>}
+
+                  {number === 4 &&
+                    <>
+                      <span class="close-button-2" onClick={close}>&times;</span>
+                      <div className='popUpImgBG'>
+                        <img src={trunk2} />
+                      </div>
+                    </>}
+
+                  {number === 5 &&
+                    <>
+                      <span class="close-button-2" onClick={close}>&times;</span>
+                      <div className='popUpImgBG'>
+                        <img src={elom2} />
+                      </div>
+                    </>}
+
+                  {number === 6 &&
+                    <>
+                      <span class="close-button-2" onClick={close}>&times;</span>
+                      <div className='popUpImgBG'>
+                        <img src={richard2} />
+                      </div>
+                    </>}
+
+
+                </div>
+
+                : null}
             </>
-
-            {cardShow > 0 ?
-              <div className='popUpImgMain'>
-
-                {number === 0 &&
-                  <>
-                    <span class="close-button-2" onClick={close}>&times;</span>
-                    <div className='popUpImgBG'>
-                      <img src={vitalip2} />
-                    </div>
-                  </>
-                }
-
-                {number === 1 &&
-                  <>
-                    <span class="close-button-2" onClick={close}>&times;</span>
-                    <div className='popUpImgBG'>
-                      <img src={gz2} />
-                    </div>
-                  </>
-                }
-
-                {number === 2 &&
-                  <>
-                    <span class="close-button-2" onClick={close}>&times;</span>
-                    <div className='popUpImgBG'>
-                      <img src={satoshi2} />
-                    </div>
-                  </>}
-
-                {number === 3 &&
-                  <>
-                    <span class="close-button-2" onClick={close}>&times;</span>
-                    <div className='popUpImgBG'>
-                      <img src={jesus2} />
-                    </div>
-                  </>}
-
-                {number === 4 &&
-                  <>
-                    <span class="close-button-2" onClick={close}>&times;</span>
-                    <div className='popUpImgBG'>
-                      <img src={trunk2} />
-                    </div>
-                  </>}
-
-                {number === 5 &&
-                  <>
-                    <span class="close-button-2" onClick={close}>&times;</span>
-                    <div className='popUpImgBG'>
-                      <img src={elom2} />
-                    </div>
-                  </>}
-
-                {number === 6 &&
-                  <>
-                    <span class="close-button-2" onClick={close}>&times;</span>
-                    <div className='popUpImgBG'>
-                      <img src={richard2} />
-                    </div>
-                  </>}
-
-
-              </div>
-
-              : null}
-
           </div>
         </div>) : null}
+
+      {spreadRun > 0 ?
+
+        <div class="popup-container_carousel">
+          <div class="popup-container_carousel2">
+
+            <div className="carouselImgs-2">
+              <img src={vitalip2} style={{ "--target-left": "10vw" }} alt="Vitalip" />
+              <img src={richard2} style={{ "--target-left": "23vw" }} alt="Richard" />
+              <img src={gz2} style={{ "--target-left": "36vw" }} alt="GZ" />
+              <img src={trunk2} style={{ "--target-left": "49vw" }} alt="Trunk" />
+              <img src={jesus2} style={{ "--target-left": "62vw" }} alt="Jesus" />
+              <img src={elom2} style={{ "--target-left": "75vw" }} alt="Elom" />
+              <img src={satoshi2} style={{ "--target-left": "88vw" }} alt="Satoshi" />
+
+            </div>
+          </div>
+        </div> : null}
 
       {carouselRunMob > 0 ?
         <div class="popup-container_carousel">
@@ -2055,44 +2093,61 @@ const Home = () => {
           </div>
         </div> : null}
 
- 
-        {successPurchase ?
-				<div class="popup-containerMain3">
-					<div class="popup-containerMain">
-						<div class="popupNotifications">
-							<span class="close-button" onClick={close}>&times;</span>
+      {_chestOpen > 0 ?
+        < div class="popup-container_chest">
+          <div class="popup-container_chest2">
+            <div className='treasureIMG2DivNew'>
+              <video id="treasureIMG2-home" className={`${cardShow > 0 ? "fade-out" : ""
+                } ${carouselRun > 0 ? "hidden" : ""}`} autoPlay loop muted playsInline>
+                <source src={chestAnim} type="video/webm" />
+              </video>
+            </div>
+          </div></div> : null
+      }
 
-							<img src={correct2} alt="success" class="notifications" />
-							<p class="popup-text">CHEST PURCHASED SUCCESSFULLY!</p>
-						</div>
-					</div>
-				</div> : null}
+      {
+        successPurchase ?
+          <div class="popup-containerMain3">
+            <div class="popup-containerMain">
+              <div class="popupNotifications">
+                <span class="close-button" onClick={close}>&times;</span>
 
-			{statusErrorPurchase ?
-				<div class="popup-containerMain3">
-					<div class="popup-containerMain">
-						<div class="popupNotifications">
-							<span class="close-button" onClick={close}>&times;</span>
+                <img src={correct2} alt="success" class="notifications" />
+                <p class="popup-text">CHEST PURCHASED SUCCESSFULLY!</p>
+              </div>
+            </div>
+          </div> : null
+      }
 
-							<img src={wrong} alt="success" class="notifications" />
-							<p class="popup-text" id="wrongMsg">SORRY SOMETHING WENT WRONG <br /> PLEASE TRY AGAIN LATER!</p>
-						</div>
-					</div>
-				</div> : null}
+      {
+        statusErrorPurchase ?
+          <div class="popup-containerMain3">
+            <div class="popup-containerMain">
+              <div class="popupNotifications">
+                <span class="close-button" onClick={close}>&times;</span>
 
-			{statusLoadingPurchase ?
-				<div class="popup-containerMain3">
-					<div class="popup-containerMain">
-						<div class="popupNotificationsLoad">
-							<span class="close-button" onClick={close}>&times;</span>
-							<div class="loader"></div>
-							<p class="popup-text">LOADING</p>
-						</div>
-					</div>
-				</div> : null}
+                <img src={wrong} alt="success" class="notifications" />
+                <p class="popup-text" id="wrongMsg">SORRY SOMETHING WENT WRONG <br /> PLEASE TRY AGAIN LATER!</p>
+              </div>
+            </div>
+          </div> : null
+      }
+
+      {
+        statusLoadingPurchase ?
+          <div class="popup-containerMain3">
+            <div class="popup-containerMain">
+              <div class="popupNotificationsLoad">
+                <span class="close-button" onClick={close}>&times;</span>
+                <div class="loader"></div>
+                <p class="popup-text">LOADING</p>
+              </div>
+            </div>
+          </div> : null
+      }
 
 
-			{/*success ?
+      {/*success ?
 				<div class="popup-containerMain3">
 					<div class="popup-containerMain">
 						<div class="popupNotifications">
@@ -2104,53 +2159,61 @@ const Home = () => {
 					</div>
 				</div> : null*/}
 
-			{statusError ?
-				<div class="popup-containerMain3">
-					<div class="popup-containerMain">
-						<div class="popupNotifications">
-							<span class="close-button" onClick={close}>&times;</span>
+      {
+        statusError ?
+          <div class="popup-containerMain3">
+            <div class="popup-containerMain">
+              <div class="popupNotifications">
+                <span class="close-button" onClick={close}>&times;</span>
 
-							<img src={wrong} alt="success" class="notifications" />
-							<p class="popup-text" id="wrongMsg">SORRY SOMETHING WENT WRONG <br /> PLEASE TRY AGAIN LATER!</p>
-						</div>
-					</div>
-				</div> : null}
+                <img src={wrong} alt="success" class="notifications" />
+                <p class="popup-text" id="wrongMsg">SORRY SOMETHING WENT WRONG <br /> PLEASE TRY AGAIN LATER!</p>
+              </div>
+            </div>
+          </div> : null
+      }
 
-			{statusLoading ?
-				<div class="popup-containerMain3">
-					<div class="popup-containerMain">
-						<div class="popupNotifications">
-							<span class="close-button" onClick={close}>&times;</span>
-							<div class="loader"></div>
-							<p class="popup-text">LOADING, PLEASE WAIT</p>
-						</div>
-					</div>
-				</div> : null}
+      {
+        statusLoading ?
+          <div class="popup-containerMain3">
+            <div class="popup-containerMain">
+              <div class="popupNotifications">
+                <span class="close-button" onClick={close}>&times;</span>
+                <div class="loader"></div>
+                <p class="popup-text">LOADING, PLEASE WAIT</p>
+              </div>
+            </div>
+          </div> : null
+      }
 
-			{showErrorDivPurchase ?
-				<div class="popup-containerMain3">
-					<div class="popup-containerMain">
-						<div class="popupNotifications">
-							<span class="close-button" onClick={close}>&times;</span>
-							<div class="loader"></div>
-							<p class="popup-text">LOADING, PLEASE WAIT</p>
-						</div>
-					</div>
-				</div> : null}
+      {
+        showErrorDivPurchase ?
+          <div class="popup-containerMain3">
+            <div class="popup-containerMain">
+              <div class="popupNotifications">
+                <span class="close-button" onClick={close}>&times;</span>
+                <div class="loader"></div>
+                <p class="popup-text">LOADING, PLEASE WAIT</p>
+              </div>
+            </div>
+          </div> : null
+      }
 
-			{showErrorDiv ?
-				<div class="popup-containerMain3">
-					<div class="popup-containerMain">
-						<div class="popupNotifications">
-							<span class="close-button" onClick={close}>&times;</span>
-							<img src={wrong} alt="success" class="notifications" />
-							<p class="popup-text" id="wrongMsg">INSUFFICIENT FUNDS</p>
-						</div>
-					</div>
-				</div> : null}
+      {
+        showErrorDiv ?
+          <div class="popup-containerMain3">
+            <div class="popup-containerMain">
+              <div class="popupNotifications">
+                <span class="close-button" onClick={close}>&times;</span>
+                <img src={wrong} alt="success" class="notifications" />
+                <p class="popup-text" id="wrongMsg">INSUFFICIENT FUNDS</p>
+              </div>
+            </div>
+          </div> : null
+      }
 
       <Footer />
-    </div>
+    </div >
   );
 };
 
