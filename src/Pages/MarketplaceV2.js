@@ -269,7 +269,7 @@ const MarketplaceV2 = () => {
             </div>*/}
           </div>
           <div className="floorPrice1">
-              <div>Floor Price </div>
+              <div className="fpMain">Floor Price </div>
               <div className="fp">80 PLS</div>
             </div>
 
