@@ -7,6 +7,32 @@
 @import url('https://fonts.cdnfonts.com/css/american-captain');
 @import url('https://fonts.cdnfonts.com/css/vermin-vibes-v');
 
+.popup-container_chest {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.877);
+  width: 100%;
+  height: 100vh;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.popup-container_chest2 {
+  position: fixed;
+  /* Ensures it stays in the viewport */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0);
+  height: fit-content;
+  animation: fadeIn 0.4s ease-in-out forwards;
+  z-index: 10000;
+  width: 100%;
+}
+
 .over {
   font-size: 28px;
   font-family: 'Vermin Vibes V', sans-serif;
@@ -747,10 +773,29 @@ a:hover {
 }
 
 @media screen and (max-width: 499px) {
-  
-#levelTxt{
-  font-size: 16px;
+  .treasureIMG2DivNew {
+    width: 220%;
+    background-color: #0084ff;
+    position: relative; /* This allows absolute positioning of the child element */
+    height: 100%; /* Ensure the container has height */
 }
+
+#treasureIMG2-home {
+    -webkit-mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
+    mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
+    -webkit-mask-composite: destination-in;
+    mask-composite: intersect;
+    position: absolute;
+    top: 50%;
+    left: 23%;
+    transform: translate(-50%, -50%); /* Centers the video */
+    max-width: 100%; /* Ensure the video doesn't overflow */
+    height: auto; /* Keep video aspect ratio */
+}
+
+  #levelTxt {
+    font-size: 16px;
+  }
 
   #btn1PC-2 {
     display: none;
@@ -773,12 +818,21 @@ a:hover {
     margin-right: auto;
     justify-content: center;
     font-family: 'Vermin Vibes V', sans-serif;
+    padding: 5px;
+
   }
 
   .fp {
     color: #ffffff;
     font-family: 'Vermin Vibes V', sans-serif;
     font-weight: 400;
+  }
+
+  .fpMain{
+    font-family: 'American Captain', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 1px
   }
 
   .ao {
@@ -1745,10 +1799,31 @@ a:hover {
 }
 
 @media screen and (min-width: 500px) and (max-width: 767px) {
-  
-#levelTxt{
-  font-size: 16px;
+ 
+
+  .treasureIMG2DivNew {
+    width: 220%;
+    background-color: #0084ff;
+    position: relative; /* This allows absolute positioning of the child element */
+    height: 100%; /* Ensure the container has height */
 }
+
+#treasureIMG2-home {
+    -webkit-mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
+    mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
+    -webkit-mask-composite: destination-in;
+    mask-composite: intersect;
+    position: absolute;
+    top: 50%;
+    left: 24%;
+    transform: translate(-50%, -50%); /* Centers the video */
+    max-width: 100%; /* Ensure the video doesn't overflow */
+    height: auto; /* Keep video aspect ratio */
+}
+
+  #levelTxt {
+    font-size: 16px;
+  }
 
   #btn1PC-2 {
     display: none;
@@ -1771,6 +1846,7 @@ a:hover {
     margin-right: auto;
     justify-content: center;
     font-family: 'Vermin Vibes V', sans-serif;
+    padding: 5px;
   }
 
   .fp {
@@ -1778,6 +1854,14 @@ a:hover {
     font-family: 'Vermin Vibes V', sans-serif;
     font-weight: 400;
   }
+
+  .fpMain{
+    font-family: 'American Captain', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: 1px
+  }
+
 
   .ao {
     background-color: #8f215c;
@@ -2746,10 +2830,30 @@ a:hover {
 
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  
-#levelTxt{
-  font-size: 16px;
+  .treasureIMG2DivNew {
+    width: 220%;
+    background-color: #0084ff;
+    position: relative; /* This allows absolute positioning of the child element */
+    height: 100%; /* Ensure the container has height */
 }
+
+#treasureIMG2-home {
+    -webkit-mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
+    mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
+    -webkit-mask-composite: destination-in;
+    mask-composite: intersect;
+    position: absolute;
+    top: 50%;
+    left: 24%;
+    transform: translate(-50%, -50%); /* Centers the video */
+    max-width: 100%; /* Ensure the video doesn't overflow */
+    height: auto; /* Keep video aspect ratio */
+}
+
+
+  #levelTxt {
+    font-size: 16px;
+  }
 
   #btn1PC-2 {
     display: none;
@@ -2772,12 +2876,21 @@ a:hover {
     margin-right: auto;
     justify-content: center;
     font-family: 'Vermin Vibes V', sans-serif;
+    padding: 5px;
+
   }
 
   .fp {
     color: #ffffff;
     font-family: 'Vermin Vibes V', sans-serif;
     font-weight: 400;
+  }
+  
+  .fpMain{
+    font-family: 'American Captain', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: 1px
   }
 
   .ao {
@@ -3706,10 +3819,30 @@ a:hover {
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  
-#levelTxt{
-  font-size: 16px;
+  .treasureIMG2DivNew {
+    width: 220%;
+    background-color: #0084ff;
+    position: relative; /* This allows absolute positioning of the child element */
+    height: 100%; /* Ensure the container has height */
 }
+
+#treasureIMG2-home {
+    -webkit-mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
+    mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
+    -webkit-mask-composite: destination-in;
+    mask-composite: intersect;
+    position: absolute;
+    top: 50%;
+    left: 24%;
+    transform: translate(-50%, -50%); /* Centers the video */
+    max-width: 100%; /* Ensure the video doesn't overflow */
+    height: auto; /* Keep video aspect ratio */
+}
+
+
+  #levelTxt {
+    font-size: 16px;
+  }
 
   #btn1PC-2 {
     display: none;
@@ -3732,12 +3865,22 @@ a:hover {
     margin-right: auto;
     justify-content: center;
     font-family: 'Vermin Vibes V', sans-serif;
+    padding: 5px;
+
   }
 
   .fp {
     color: #ffffff;
     font-family: 'Vermin Vibes V', sans-serif;
     font-weight: 400;
+  }
+
+
+  .fpMain{
+    font-family: 'American Captain', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: 1px
   }
 
   .ao {
@@ -4664,11 +4807,18 @@ a:hover {
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1919px) {
+  #treasureIMG2-home {
+    -webkit-mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
+    mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
+    -webkit-mask-composite: destination-in;
+    mask-composite: intersect;
+    width: 100%;
+  }
 
-  #levelTxt{
+  #levelTxt {
     font-size: 16px;
   }
-  
+
   #btn1PC-2 {
     display: none;
   }
@@ -4694,12 +4844,21 @@ a:hover {
     margin-right: auto;
     justify-content: center;
     font-family: 'Vermin Vibes V', sans-serif;
+    padding: 5px;
+
   }
 
   .fp {
     color: #ffffff;
     font-family: 'Vermin Vibes V', sans-serif;
     font-weight: 400;
+  }
+
+  .fpMain{
+    font-family: 'American Captain', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    letter-spacing: 1px
   }
 
   .ao {
@@ -5629,11 +5788,18 @@ a:hover {
 }
 
 @media screen and (min-width: 1920px) {
+  #treasureIMG2-home {
+    -webkit-mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
+    mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
+    -webkit-mask-composite: destination-in;
+    mask-composite: intersect;
+    width: 100%;
+  }
 
-  #levelTxt{
+  #levelTxt {
     font-size: 20px;
   }
-  
+
   #btn1Mob-2 {
     display: none;
   }
@@ -5658,12 +5824,21 @@ a:hover {
     margin-right: auto;
     justify-content: center;
     font-family: 'Vermin Vibes V', sans-serif;
+    padding: 5px;
+
   }
 
   .fp {
     color: #ffffff;
     font-family: 'Vermin Vibes V', sans-serif;
     font-weight: 400;
+  }
+
+  .fpMain{
+    font-family: 'American Captain', sans-serif;
+    font-weight: 500;
+    font-size: 29px;
+    letter-spacing: 1px
   }
 
   .ao {
@@ -5805,6 +5980,7 @@ a:hover {
     -webkit-mask-composite: destination-in;
     mask-composite: intersect;
   }
+
 
   .dropdown-container {
     position: relative;
@@ -6608,8 +6784,16 @@ a:hover {
 }
 
 @media screen and (min-width: 1921px) and (max-width: 3839px) {
-  #levelTxt{
+  #levelTxt {
     font-size: 22px;
+  }
+
+  #treasureIMG2-home {
+    -webkit-mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
+    mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
+    -webkit-mask-composite: destination-in;
+    mask-composite: intersect;
+    width: 100%;
   }
 
   #btn1Mob-2 {
@@ -6637,12 +6821,21 @@ a:hover {
     margin-right: auto;
     justify-content: center;
     font-family: 'Vermin Vibes V', sans-serif;
+    padding: 5px;
+
   }
 
   .fp {
     color: #ffffff;
     font-family: 'Vermin Vibes V', sans-serif;
     font-weight: 400;
+  }
+
+  .fpMain{
+    font-family: 'American Captain', sans-serif;
+    font-weight: 500;
+    font-size: 29px;
+    letter-spacing: 1px
   }
 
   .ao {
@@ -7584,8 +7777,29 @@ a:hover {
 }
 
 @media screen and (min-width: 3840px) {
-  #levelTxt{
+  #levelTxt {
     font-size: 23px;
+  }
+
+  .fp {
+    color: #ffffff;
+    font-family: 'Vermin Vibes V', sans-serif;
+    font-weight: 400;
+  }
+
+  .fpMain{
+    font-family: 'American Captain', sans-serif;
+    font-weight: 500;
+    font-size: 29px;
+    letter-spacing: 1px
+  }
+
+  #treasureIMG2-home {
+    -webkit-mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
+    mask-image: linear-gradient(to top, transparent, black 10%, black 50%, transparent);
+    -webkit-mask-composite: destination-in;
+    mask-composite: intersect;
+    width: 100%;
   }
 
   #btn1Mob-2 {
