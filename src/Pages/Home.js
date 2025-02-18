@@ -1183,11 +1183,11 @@ const Home = () => {
     slidesToScroll: 1,
     autoplay: false,
     speed: 2000,
-    // autoplaySpeed: 2000,
+    autoplaySpeed: 2000,
     cssEase: "linear",
-    // className: "center",
-    // centerMode: true,
-    // centerPadding: "30px",
+    className: "center",
+    centerMode: true,
+    centerPadding: "30px",
     responsive: [
       {
         breakpoint: 1535,
