@@ -1,0 +1,47 @@
+@media screen and (max-width: 499px) {
+    #carouselHomePage{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 767px) {
+    #carouselHomePage{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    #carouselHomePage{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    #carouselHomePage{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1919px) {
+    #carouselHomePageMob{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    #carouselHomePageMob{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1921px) and (max-width: 3839px) {
+    #carouselHomePageMob{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 3840px) {
+    #carouselHomePageMob{
+        display: none;
+    }
+}
