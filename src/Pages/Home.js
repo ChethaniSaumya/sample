@@ -40,35 +40,37 @@ import satoshi2 from "../assets/heroes2/satoshi.png";
 import correct2 from "../assets/correct2.png";
 import wrong from "../assets/wrong.png";
 
+
 const heroData = [
   {
     image: vitalip,
     name: "vitalip",
   },
   {
-    image: richard,
-    name: "richard",
-  },
-  {
     image: gz,
     name: "gz",
   },
   {
-    image: trunk,
-    name: "trunk",
+    image: satoshi,
+    name: "satoshi",
   },
   {
     image: jesus,
     name: "jesus",
   },
   {
+    image: trunk,
+    name: "trunk",
+  },
+  {
     image: elom,
     name: "elom",
   },
   {
-    image: satoshi,
-    name: "satoshi",
+    image: richard,
+    name: "richard",
   },
+  ,
 ];
 
 let ABI = [
@@ -1179,7 +1181,7 @@ const Home = () => {
     infinite: true,
     slidesToShow: 7,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     speed: 2000,
     autoplaySpeed: 2000,
     cssEase: "linear",
@@ -1888,8 +1890,39 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Card section */}
-      <section className="relative mt-10">
+      {/* Card section PC*/}
+      <section id="carouselHomePage" className="relative mt-10">
+        <div className="absolute top-0 left-0 right-0 w-fit mx-auto -translate-y-1/4">
+          <img src={crystalBg} alt="Crystal" className="size-fit" />
+        </div>
+
+        <div className="relative container mx-auto pb-[100px] z-[1]">
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-6 lg:flex-nowrap">
+            {heroData.map(({ image, name }) => (
+              <article id="articleImgs"
+                key={name}
+                className="relative w-fit max-w-fit flex items-end justify-end transition-transform duration-300 hover:-translate-y-1"
+              >
+                <img
+                  src={cardLayout}
+                  alt="Card layout"
+                  className="w-[122px] h-[170px] sm:w-[136px] sm:h-[188px] md:w-[90px] md:h-[125px] lg:w-[100px] lg:h-[139px] xl:w-[122px] xl:h-[170px] 2xl:w-[176px] 2xl:h-[232px]"
+                />
+                <div
+                  className="absolute inset-0 w-[90%] h-[98%] m-auto bg-contain bg-no-repeat bg-center"
+                  style={{ backgroundImage: `url(${image})` }}
+                ></div>
+                <p className="absolute bottom-0 left-0 right-0 w-fit mx-auto translate-y-full font-vermin-vibes-v text-[18px] z-[1]">
+                  {name}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Card section Mobile*/}
+      <section id="carouselHomePageMob" className="relative mt-10">
         <div className="absolute top-0 left-0 right-0 w-fit mx-auto -translate-y-1/4">
           <img src={crystalBg} alt="Crystal" className="size-fit" />
         </div>
