@@ -1639,19 +1639,6 @@ let ABI = [
 	},
 	{
 		"inputs": [],
-		"name": "projectedCoolingTime",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
 		"name": "public_mint_status",
 		"outputs": [
 			{
@@ -1941,7 +1928,7 @@ let ABI = [
 	}
 ];
 
-let address = "0x437F7d0B9C711f2fc777C868AD1d860C82e596A1";
+let address = "0xf32B823Be813076cB1482ecf452e440830Fd036C";
 
 const Inventory = () => {
 
@@ -2625,7 +2612,7 @@ const Inventory = () => {
 														Rarity: <span className="text-[#6E0B35]">{Number(nft.rarity) + 1}</span>
 													</p>
 
-													{Number(nft.battlesRemainingInCoolingPeriod) < 1 ? (
+													{Number(nft.battlesRemainingInCoolingPeriod) < 1 && timeDiff > 0 ? (
 														<p className="uppercase font-bold">
 															Time Left:{" "}
 															<span className="text-[#6E0B35]">
@@ -2640,24 +2627,39 @@ const Inventory = () => {
 														</p>)
 													}
 
-													<p className="uppercase font-bold">
-														Fights Left: <span className="text-[#6E0B35]">{Number(nft.battlesRemainingInCoolingPeriod)}</span>
-													</p>
+													{Number(nft.battlesRemainingInCoolingPeriod) > 0 ?
+														<p className="uppercase font-bold">
+															Fights Left: <span className="text-[#6E0B35]">{Number(nft.battlesRemainingInCoolingPeriod)}</span>
+														</p> : null}
 
 													<hr className="my-[1em]" />
 													<div className="inBtnsMain">
 
-														<button
-															className="inBtns1"
-															onClick={() => {
-																if (Number(nft.battlesRemainingInCoolingPeriod) > 0) {
-																	navigate(`/battle2/${nft.tokenid}/${nft.rarity}`);
-																}
-															}}
-															style={{ cursor: Number(nft.battlesRemainingInCoolingPeriod) > 0 ? "pointer" : "not-allowed", opacity: Number(nft.battlesRemainingInCoolingPeriod) > 0 ? 1 : 0.5 }}
-														>
-															Fight
-														</button>
+														{Number(nft.battlesRemainingInCoolingPeriod) > 0 ?
+															<button
+																className="inBtns1"
+																onClick={() => { navigate(`/battle2/${nft.tokenid}/${nft.rarity}`); }}
+																style={{ cursor: "pointer" }}
+															>
+																Fight
+															</button> :
+															timeDiff < 0 ?
+																<button
+																	className="inBtns1"
+																	onClick={() => { navigate(`/battle2/${nft.tokenid}/${nft.rarity}`); }}
+																	style={{ cursor: "pointer" }}
+																>
+																	Fight
+																</button> :
+
+																<button
+																	className="inBtns1"
+																	style={{ cursor: "not-allowed", opacity: 0.5 }}
+																>
+																	Fight
+																</button>
+
+														}
 
 
 														<button className="inBtns2" onClick={sellPopUp}>
