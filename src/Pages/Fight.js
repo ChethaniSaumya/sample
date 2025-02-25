@@ -1623,19 +1623,6 @@ let ABI = [
 	},
 	{
 		"inputs": [],
-		"name": "projectedCoolingTime",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
 		"name": "public_mint_status",
 		"outputs": [
 			{
@@ -1925,7 +1912,7 @@ let ABI = [
 	}
 ];
 
-let address = "0x437F7d0B9C711f2fc777C868AD1d860C82e596A1";
+let address = "0xf32B823Be813076cB1482ecf452e440830Fd036C";
 
 const Vs = () => {
 	const [currentIndex, setCurrentIndex] = useState(0);
@@ -1963,7 +1950,7 @@ const Vs = () => {
 	const closeError = () => {
 		setstatusErrorPurchase(false);
 	}
-	
+
 	const rarityImages = {
 		'0': 'https://bafybeibhsrq2nf4sr4abaud4u5ololygckdncoispfgooy3mcfjrtzaqzi.ipfs.w3s.link/vitalip.png',
 		'1': 'https://bafybeibhsrq2nf4sr4abaud4u5ololygckdncoispfgooy3mcfjrtzaqzi.ipfs.w3s.link/gz.png',
@@ -2111,6 +2098,7 @@ const Vs = () => {
 	useEffect(() => {
 
 
+
 		async function fetchChestsPurchasedAmount() {
 			var data = await chestsPurchasedAmount();
 
@@ -2137,9 +2125,6 @@ const Vs = () => {
 
 				console.log("fetchMyMints data: " + data.data);
 				console.log("fetchMyMints data[0]: " + data.data[1].tokenid);
-				console.log("lastBattleTime: " + data.data[1].lastBattleTime);
-				console.log("battlesRemainingInCoolingPeriod_trump: " + data.data[1].battlesRemainingInCoolingPeriod);
-				console.log("battlesRemainingInCoolingPeriod_vitalip: " + data.data[0].battlesRemainingInCoolingPeriod);
 
 			} catch (error) {
 				console.error("Error fetching mints:", error);
@@ -2596,15 +2581,31 @@ const Vs = () => {
 												<div className='mintedNFTSF'>
 													<div className="cardMint">
 														<div className="card-imageMint">
-															<img
-																src={rarityImages[nft.rarity]}
-																alt="NFT Rarity"
-																onClick={/*timeDiff < 0 &&*/ Number(nft.battlesRemainingInCoolingPeriod) > 0 ? () => handleSelectMintedNft(nft) : undefined}
-																style={{ cursor: /*timeDiff < 0 && */Number(nft.battlesRemainingInCoolingPeriod) > 0 ? "pointer" : "not-allowed", opacity:/* timeDiff < 0 &&*/ Number(nft.battlesRemainingInCoolingPeriod) > 0 ? 1 : 0.5 }}
-															/>
+															{Number(nft.battlesRemainingInCoolingPeriod) > 0 ?
+																<img
+																	src={rarityImages[nft.rarity]}
+																	alt="NFT Rarity"
+																	onClick={/*timeDiff < 0 &&*/ () => handleSelectMintedNft(nft)}
+																	style={{ cursor: "pointer" }}
+																/> :
+																timeDiff < 0 ?
+																	<img
+																		src={rarityImages[nft.rarity]}
+																		alt="NFT Rarity"
+																		onClick={/*timeDiff < 0 &&*/ () => handleSelectMintedNft(nft)}
+																		style={{ cursor: "pointer" }}
+																	/> :
+
+																	<img
+																		src={rarityImages[nft.rarity]}
+																		alt="NFT Rarity"
+																		style={{ cursor: "not-allowed", opacity: 0.5 }}
+																	/>
+
+															}
 
 															<div className="overlay">
-																{timeDiff > 0 && Number(nft.battlesRemainingInCoolingPeriod) < 1 ? (
+																{Number(nft.battlesRemainingInCoolingPeriod) < 1 && timeDiff > 0 ? (
 																	<div className="timer">
 																		<div>{hours} : {minutes} : <span className='sec'>{seconds}</span></div>
 																		<div>TIME LEFT</div>
@@ -2613,9 +2614,10 @@ const Vs = () => {
 															</div>
 														</div>
 
-														<div className="card-content">
-															<p><strong>Fights Left:</strong> {Number(nft.battlesRemainingInCoolingPeriod)}</p>
-														</div>
+														{Number(nft.battlesRemainingInCoolingPeriod) > 0 ?
+															<div className="card-content">
+																<p><strong>Fights Left:</strong> {Number(nft.battlesRemainingInCoolingPeriod)}</p>
+															</div> : null}
 													</div>
 												</div>
 											</div>
@@ -2672,15 +2674,31 @@ const Vs = () => {
 												<div className='mintedNFTSF'>
 													<div className="cardMint">
 														<div className="card-imageMint">
-															<img
-																src={rarityImages[nft.rarity]}
-																alt="NFT Rarity"
-																onClick={/*timeDiff < 0 &&*/ Number(nft.battlesRemainingInCoolingPeriod) > 0 ? () => handleSelectMintedNft(nft) : undefined}
-																style={{ cursor: /*timeDiff < 0 && */Number(nft.battlesRemainingInCoolingPeriod) > 0 ? "pointer" : "not-allowed", opacity:/* timeDiff < 0 &&*/ Number(nft.battlesRemainingInCoolingPeriod) > 0 ? 1 : 0.5 }}
-															/>
+															{Number(nft.battlesRemainingInCoolingPeriod) > 0 ?
+																<img
+																	src={rarityImages[nft.rarity]}
+																	alt="NFT Rarity"
+																	onClick={/*timeDiff < 0 &&*/ () => handleSelectMintedNft(nft)}
+																	style={{ cursor: "pointer" }}
+																/> :
+																timeDiff < 0 ?
+																	<img
+																		src={rarityImages[nft.rarity]}
+																		alt="NFT Rarity"
+																		onClick={/*timeDiff < 0 &&*/ () => handleSelectMintedNft(nft)}
+																		style={{ cursor: "pointer" }}
+																	/> :
+
+																	<img
+																		src={rarityImages[nft.rarity]}
+																		alt="NFT Rarity"
+																		style={{ cursor: "not-allowed", opacity: 0.5 }}
+																	/>
+
+															}
 
 															<div className="overlay">
-																{timeDiff > 0 && Number(nft.battlesRemainingInCoolingPeriod) < 1 ? (
+																{Number(nft.battlesRemainingInCoolingPeriod) < 1 && timeDiff > 0 ? (
 																	<div className="timer">
 																		<div>{hours} : {minutes} : <span className='sec'>{seconds}</span></div>
 																		<div>TIME LEFT</div>
@@ -2689,9 +2707,10 @@ const Vs = () => {
 															</div>
 														</div>
 
-														<div className="card-content">
-															<p><strong>Fights Left:</strong> {Number(nft.battlesRemainingInCoolingPeriod)}</p>
-														</div>
+														{Number(nft.battlesRemainingInCoolingPeriod) > 0 ?
+															<div className="card-content">
+																<p><strong>Fights Left:</strong> {Number(nft.battlesRemainingInCoolingPeriod)}</p>
+															</div> : null}
 													</div>
 												</div>
 											</div>
