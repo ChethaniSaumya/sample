@@ -34,6 +34,7 @@ import correct2 from "../assets/correct2.png";
 import wrong from "../assets/wrong.png";
 import terrain from "../assets/terrain.png";
 import bg from "../assets/bg4.png";
+import { useNavigate } from "react-router-dom";
 
 import { Web3Button, Web3Modal, useWeb3Modal } from '@web3modal/react';
 import { mainnet, useAccount, useContractRead, useContractReads, useContractWrite, useNetwork, usePublicClient, useSwitchNetwork, useWaitForTransaction } from 'wagmi';
@@ -105,6 +106,11 @@ let ABI = [
 				"internalType": "string",
 				"name": "_contractURI",
 				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "_tokenAddress",
+				"type": "address"
 			}
 		],
 		"stateMutability": "nonpayable",
@@ -187,6 +193,70 @@ let ABI = [
 		"name": "approve",
 		"outputs": [],
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "player",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "won",
+				"type": "bool"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "battleType",
+				"type": "uint256"
+			}
+		],
+		"name": "BattleResult",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "level_1_Battle",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "level_2_Battle",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "level_3_Battle",
+		"outputs": [],
+		"stateMutability": "payable",
 		"type": "function"
 	},
 	{
@@ -360,6 +430,71 @@ let ABI = [
 		"inputs": [
 			{
 				"internalType": "uint256",
+				"name": "_coolingTimePeriod",
+				"type": "uint256"
+			}
+		],
+		"name": "setCoolingTimePeriod",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_default_rewards1",
+				"type": "uint256"
+			}
+		],
+		"name": "setDefault_rewards1",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_default_rewards2",
+				"type": "uint256"
+			}
+		],
+		"name": "setDefault_rewards2",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_default_rewards3",
+				"type": "uint256"
+			}
+		],
+		"name": "setDefault_rewards3",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_divider",
+				"type": "uint256"
+			}
+		],
+		"name": "setDivider",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
 				"name": "_MAX_SUPPLY",
 				"type": "uint256"
 			}
@@ -466,6 +601,45 @@ let ABI = [
 		"type": "function"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_tokenContract",
+				"type": "address"
+			}
+		],
+		"name": "setTokenContractMinting",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_tokenDecimals",
+				"type": "uint256"
+			}
+		],
+		"name": "setTokenDecimals",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_tokenContract",
+				"type": "address"
+			}
+		],
+		"name": "setTokenPULSEHEROESContractTransfering",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"name": "togglePresale",
 		"outputs": [],
@@ -482,6 +656,13 @@ let ABI = [
 	{
 		"inputs": [],
 		"name": "toggleReveal",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "tokenWithdrawal",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -555,6 +736,19 @@ let ABI = [
 		"type": "function"
 	},
 	{
+		"inputs": [],
+		"name": "_token_Contract",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "address",
@@ -594,6 +788,43 @@ let ABI = [
 				"internalType": "string",
 				"name": "",
 				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "battleCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "battlesInCoolingPeriod",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -652,7 +883,72 @@ let ABI = [
 	},
 	{
 		"inputs": [],
+		"name": "coolingTimePeriod",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "counter",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "default_rewards1",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "default_rewards2",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "default_rewards3",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "divider",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -677,6 +973,49 @@ let ABI = [
 				"internalType": "address",
 				"name": "",
 				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "getCoolingTime",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "player",
+				"type": "address"
+			}
+		],
+		"name": "getLastBattleResult",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
 			}
 		],
 		"stateMutability": "view",
@@ -717,6 +1056,25 @@ let ABI = [
 	{
 		"inputs": [
 			{
+				"internalType": "uint256",
+				"name": "rarity",
+				"type": "uint256"
+			}
+		],
+		"name": "getMaxBattlesPerRarity",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "pure",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "address",
 				"name": "user",
 				"type": "address"
@@ -735,6 +1093,16 @@ let ABI = [
 						"internalType": "uint256",
 						"name": "rarity",
 						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "lastBattleTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "battlesRemainingInCoolingPeriod",
+						"type": "uint256"
 					}
 				],
 				"internalType": "struct PulseHeroes.myMints[]",
@@ -743,6 +1111,44 @@ let ABI = [
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "player",
+				"type": "address"
+			}
+		],
+		"name": "getPlayerLevel",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "rarity",
+				"type": "uint256"
+			}
+		],
+		"name": "getTokenMultiplier",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "pure",
 		"type": "function"
 	},
 	{
@@ -783,6 +1189,92 @@ let ABI = [
 		"type": "function"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "lastBattleResult",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "lastBattleResultByToken",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "lastBattleTime",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "lastBattleTimestamp",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"name": "lastRarity",
 		"outputs": [
@@ -804,6 +1296,83 @@ let ABI = [
 			}
 		],
 		"name": "lastRarityOfUser",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "level_1_Battle_Cost",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "level_2_Battle_Cost",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "level_3_Battle_Cost",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "losses",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "lossesOfTokenId",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -838,6 +1407,16 @@ let ABI = [
 				"internalType": "uint256",
 				"name": "rarity",
 				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "lastBattleTime",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "battlesRemainingInCoolingPeriod",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -871,6 +1450,54 @@ let ABI = [
 			}
 		],
 		"name": "myNFTCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "myTokenIDLooses",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "myTokenIDWins",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -1012,6 +1639,19 @@ let ABI = [
 	},
 	{
 		"inputs": [],
+		"name": "projectedCoolingTime",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "public_mint_status",
 		"outputs": [
 			{
@@ -1124,6 +1764,32 @@ let ABI = [
 		"type": "function"
 	},
 	{
+		"inputs": [],
+		"name": "token",
+		"outputs": [
+			{
+				"internalType": "contract PULSEHEROES",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "tokenDecimals",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "uint256",
@@ -1137,6 +1803,67 @@ let ABI = [
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "tokenIDHistoryLooses",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "tokenIDHistoryWins",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "tokenPULSEHEROES",
+		"outputs": [
+			{
+				"internalType": "contract IERC20",
+				"name": "",
+				"type": "address"
 			}
 		],
 		"stateMutability": "view",
@@ -1173,10 +1900,48 @@ let ABI = [
 		],
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "wins",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "winsOfTokenId",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
 	}
 ];
 
-let address = "0x3f099cb65C217Ae4eb4fCC372d2717bf528ef70b";
+let address = "0x437F7d0B9C711f2fc777C868AD1d860C82e596A1";
 
 const Inventory = () => {
 
@@ -1200,6 +1965,7 @@ const Inventory = () => {
 	const [isSlowing, setIsSlowing] = useState(false);
 	const [_lapTime, setLapTime] = useState(0.6);
 	const [_chestsPurchasedAmount, setChestsPurchasedAmount] = useState(0);
+	const navigate = useNavigate();
 
 	const [number, setNumber] = useState(null);
 	//const [selectedRarity, setSelectedRarity] = useState([1, 2, 3, 4, 5, 6, 7]);
@@ -1258,7 +2024,6 @@ const Inventory = () => {
 	const [selectedValue, setSelectedValue] = useState("1 - 10");
 	const [_MyMints, setFetchMyMints] = useState([]);
 
-	
 	const filteredMints = selectedRarity
 		? _MyMints.filter((nft) => Number(nft.rarity) + 1 === selectedRarity)
 		: _MyMints;
@@ -1813,52 +2578,99 @@ const Inventory = () => {
 
 				{filteredMints && filteredMints.length > 0 ? (
 					<div id="showMyNFTs" className="relative text-[12px] my-[2em] px-[30px]">
-						{filteredMints.map((nft, index) => (
-							<div key={index}>
-								<div className="flex items-center justify-center">
-								<article className="w-[17em] max-w-[17em] mx-auto text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[15.5px] 2xl:text-[16px]">
-								<div
-											className="relative h-[14em] bg-contain bg-bottom bg-no-repeat z-[1] animate-hover"
-											style={{
-												backgroundImage: `url(${rarityImages[nft.rarity]})`,
-											}}
-										></div>
-										<div className="relative bg-gradient-to-br from-[#DF00824D] to-[#FFFFFF4D] -mt-[4.8em] pt-[5em] pb-[1em] rounded-[0.5em] backdrop-blur-md">
+						{filteredMints.map((nft, index) => {
+							const nexttime = ((Number(nft.lastBattleTime) * 1000) + 14400000);
+							console.log("nexttime :" + nexttime);
+							const timeDiff = Number(nexttime) - Number(Date.now());
+							console.log("timeDiff :" + timeDiff);
+
+
+
+							const formatTime = (ms) => {
+								let totalSeconds = Math.floor(ms / 1000);
+								let hours = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+								let minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+								let seconds = String(totalSeconds % 60).padStart(2, '0');
+
+								return { hours, minutes, seconds };
+							};
+
+							const { hours, minutes, seconds } = formatTime(timeDiff);
+
+							return (
+								<div key={index}>
+									<div className="flex items-center justify-center">
+										<article className="w-[17em] max-w-[17em] mx-auto text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[15.5px] 2xl:text-[16px]">
 											<div
-												className="absolute inset-0 h-[60%] bg-contain bg-center bg-no-repeat rounded-[0.5em] animate-terrain-hover"
-												style={{ backgroundImage: `url(${terrain})` }}
+												className="relative h-[14em] bg-contain bg-bottom bg-no-repeat z-[1] animate-hover"
+												style={{
+													backgroundImage: `url(${rarityImages[nft.rarity]})`,
+												}}
 											></div>
-											<div className="w-[15em] mx-auto bg-white/30 px-[0.5em] py-[1em] rounded-[0.5em]">
-												<h3 className="relative font-vermin-vibes-v text-[1.8em] text-center z-[1]">
-													{imgNames[nft.rarity]}
-												</h3>
-												<hr className="my-[1em]" />
-												<p className="uppercase font-bold">
-													Token ID:{" "}
-													<span className="text-[#6E0B35]">{nft.tokenid.toString()}</span>
-												</p>
-												<p className="uppercase font-bold">
-													Rarity: <span className="text-[#6E0B35]">{Number(nft.rarity) + 1}</span>
-												</p>
-												<p className="uppercase font-bold">
-													Time Left:{" "}
-													<span className="text-[#6E0B35]">27849H:21M:37S</span>
-												</p>
-												<hr className="my-[1em]" />
-												<div className="inBtnsMain">
-													<button className="inBtns1">
-														<a href="battle">Fight</a>
-													</button>
-													<button className="inBtns2" onClick={sellPopUp}>
-														Sell
-													</button>
+											<div className="relative bg-gradient-to-br from-[#DF00824D] to-[#FFFFFF4D] -mt-[4.8em] pt-[5em] pb-[1em] rounded-[0.5em] backdrop-blur-md">
+												<div
+													className="absolute inset-0 h-[60%] bg-contain bg-center bg-no-repeat rounded-[0.5em] animate-terrain-hover"
+													style={{ backgroundImage: `url(${terrain})` }}
+												></div>
+												<div className="w-[15em] mx-auto bg-white/30 px-[0.5em] py-[1em] rounded-[0.5em]">
+													<h3 className="relative font-vermin-vibes-v text-[1.8em] text-center z-[1]">
+														{imgNames[nft.rarity]}
+													</h3>
+													<hr className="my-[1em]" />
+													<p className="uppercase font-bold">
+														Token ID:{" "}
+														<span className="text-[#6E0B35]">{nft.tokenid.toString()}</span>
+													</p>
+													<p className="uppercase font-bold">
+														Rarity: <span className="text-[#6E0B35]">{Number(nft.rarity) + 1}</span>
+													</p>
+
+													{Number(nft.battlesRemainingInCoolingPeriod) < 1 ? (
+														<p className="uppercase font-bold">
+															Time Left:{" "}
+															<span className="text-[#6E0B35]">
+																{hours}H:{minutes}M:{seconds}S
+															</span>
+														</p>) :
+														(<p className="uppercase font-bold">
+															Time Left:{" "}
+															<span className="text-[#6E0B35]">
+																-
+															</span>
+														</p>)
+													}
+
+													<p className="uppercase font-bold">
+														Fights Left: <span className="text-[#6E0B35]">{Number(nft.battlesRemainingInCoolingPeriod)}</span>
+													</p>
+
+													<hr className="my-[1em]" />
+													<div className="inBtnsMain">
+
+														<button
+															className="inBtns1"
+															onClick={() => {
+																if (Number(nft.battlesRemainingInCoolingPeriod) > 0) {
+																	navigate(`/battle2/${nft.tokenid}/${nft.rarity}`);
+																}
+															}}
+															style={{ cursor: Number(nft.battlesRemainingInCoolingPeriod) > 0 ? "pointer" : "not-allowed", opacity: Number(nft.battlesRemainingInCoolingPeriod) > 0 ? 1 : 0.5 }}
+														>
+															Fight
+														</button>
+
+
+														<button className="inBtns2" onClick={sellPopUp}>
+															Sell
+														</button>
+													</div>
 												</div>
 											</div>
-										</div>
-									</article>
+										</article>
+									</div>
 								</div>
-							</div>
-						))}
+							);
+						})}
 					</div>
 				) : (
 					<p className="noNFTs"></p>
@@ -1922,7 +2734,6 @@ const Inventory = () => {
 				<div class="popup-containerMain3">
 					<div class="popup-containerMain">
 						<div class="popupNotificationsLoad">
-							<span class="close-button" onClick={close}>&times;</span>
 							<div class="loader"></div>
 							<p class="popup-text">LOADING</p>
 						</div>
@@ -1958,7 +2769,6 @@ const Inventory = () => {
 				<div class="popup-containerMain3">
 					<div class="popup-containerMain">
 						<div class="popupNotifications">
-							<span class="close-button" onClick={close}>&times;</span>
 							<div class="loader"></div>
 							<p class="popup-text">LOADING, PLEASE WAIT</p>
 						</div>
