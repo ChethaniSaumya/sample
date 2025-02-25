@@ -30,6 +30,7 @@ import {
 import Countdown from "react-countdown";
 import { pulsechainV4 } from "wagmi/chains";
 import DownArrowHeadIcon from "./DownArrowHeadIcon";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isToggled, setIsToggled] = useState(false);
@@ -138,22 +139,22 @@ const Navbar = () => {
           <div className="flex text-[12px] xl:text-[14px] 2xl:text-[16px] xl:gap-[20px] 2xl:gap-[40px] -translate-y-[14px] lg:-translate-y-[18px] xl:-translate-y-[22px] 2xl:-translate-y-[23px] items-center">
             <ul className="desktop-links xl:gap-[0px] 2xl:gap-[10px]">
               <li className="nav-link-hover font-bold">
-                <a href="/">BUY PRESALE</a>
+                <Link to="/">BUY PRESALE</Link>
               </li>
               {/*<li className="nav-link-hover font-bold">
-                <a href="buy-chests">BUY CHESTS</a>
+                <Link to="/buy-chests">BUY CHESTS</Link>
               </li>*/}
               <li className="nav-link-hover font-bold">
-                <a href="mynft">MY NFT</a>
+                 <Link to="/mynft">MY NFT</Link>
               </li>
               <li className="nav-link-hover font-bold">
-                <a href="marketplace">MARKETPLACE</a>
+                <Link to="/marketplace">MARKETPLACE</Link>
               </li>
               <li className="nav-link-hover font-bold">
-                <a href="battle">BATTLE</a>
+                <Link to="/battle">BATTLE</Link>
               </li>
               <li className="nav-link-hover font-bold">
-                <a href="sec-batttle">SEC BATTLE</a>
+                <Link to="/sec-batttle">SEC BATTLE</Link>
               </li>
               <li className="nav-link-hover font-bold">
                 <span
@@ -213,22 +214,22 @@ const Navbar = () => {
           >
             <ul className="flex flex-col text-center">
               <li className="font-bold py-3 border-b">
-                <a href="/">BUY PRESALE</a>
+                <Link to="/">BUY PRESALE</Link>
               </li>
               {/*<li className="font-bold py-3 border-b">
-                <a href="buy-chests">BUY CHESTS</a>
+                <Link to="/buy-chests">BUY CHESTS</Link>
               </li>*/}
               <li className="font-bold py-3 border-b">
-                <a href="mynft">MY NFT</a>
+                <Link to="/mynft">MY NFT</Link>
               </li>
               <li className="font-bold py-3 border-b">
-                <a href="marketplace">MARKETPLACE</a>
+                <Link to="/marketplace">MARKETPLACE</Link>
               </li>
               <li className="font-bold py-3 border-b">
-                <a href="battle">BATTLE</a>
+                <Link to="/battle">BATTLE</Link>
               </li>
               <li className="font-bold py-3 border-b">
-                <a href="sec-batttle">SEC BATTLE</a>
+                <Link to="/sec-batttle">SEC BATTLE</Link>
               </li>
               <li className="relative font-bold py-3 border-b">
                 <span onClick={() => setIsMobileDropdownShown((prev) => !prev)}>
