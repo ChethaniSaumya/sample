@@ -1633,19 +1633,6 @@ let ABI = [
 	},
 	{
 		"inputs": [],
-		"name": "projectedCoolingTime",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
 		"name": "public_mint_status",
 		"outputs": [
 			{
@@ -1933,9 +1920,9 @@ let ABI = [
 		"stateMutability": "view",
 		"type": "function"
 	}
-];
+]; 
 
-let address = "0x437F7d0B9C711f2fc777C868AD1d860C82e596A1";
+let address = "0xf32B823Be813076cB1482ecf452e440830Fd036C";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
