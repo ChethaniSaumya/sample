@@ -31,6 +31,26 @@ import letterS from "../assets/versus-letter-s.png";
 import jesusNoBg from "../assets/GESU-remove.png";
 import terrain from "../assets/terrain.png";
 import elon from "../assets//heroes2/elon.png";
+import correct2 from "../assets/correct2.png";
+import wrong from "../assets/wrong.png";
+import bidel from "../assets/onRocks/biden.png";
+import jelome from "../assets/onRocks/jerome.png";
+import interpool from "../assets/onRocks/interpool.png";
+import img0 from "../assets/onRocks/0.png";
+import img1 from "../assets/onRocks/1.png";
+import img2 from "../assets/onRocks/2.png";
+import img3 from "../assets/onRocks/3.png";
+import img4 from "../assets/onRocks/4.png";
+import img5 from "../assets/onRocks/5.png";
+import img6 from "../assets/onRocks/6.png";
+
+import img0_ from "../assets/qPics/0.png";
+import img1_ from "../assets/qPics/1.png";
+import img2_ from "../assets/qPics/2.png";
+import img3_ from "../assets/qPics/3.png";
+import img4_ from "../assets/qPics/4.png";
+import img5_ from "../assets/qPics/5.png";
+import img6_ from "../assets/qPics/6.png";
 
 import { Web3Button, Web3Modal, useWeb3Modal } from '@web3modal/react';
 import { mainnet, useAccount, useContractRead, useContractReads, useContractWrite, useNetwork, usePublicClient, useSwitchNetwork, useWaitForTransaction } from 'wagmi';
@@ -39,6 +59,9 @@ import { pulsechainV4 } from 'wagmi/chains'
 
 var Scroll = require('react-scroll');
 const images = [crd1, crd2, crd3, crd4, crd5];
+
+//Token Contract
+//0x97C78C0Aff3dC73bc377C84CAC2AA36F32553415
 
 let ABI = [
 	{
@@ -67,6 +90,11 @@ let ABI = [
 				"internalType": "string",
 				"name": "_contractURI",
 				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "_tokenAddress",
+				"type": "address"
 			}
 		],
 		"stateMutability": "nonpayable",
@@ -149,6 +177,70 @@ let ABI = [
 		"name": "approve",
 		"outputs": [],
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "player",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "won",
+				"type": "bool"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "battleType",
+				"type": "uint256"
+			}
+		],
+		"name": "BattleResult",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "level_1_Battle",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "level_2_Battle",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "level_3_Battle",
+		"outputs": [],
+		"stateMutability": "payable",
 		"type": "function"
 	},
 	{
@@ -322,6 +414,71 @@ let ABI = [
 		"inputs": [
 			{
 				"internalType": "uint256",
+				"name": "_coolingTimePeriod",
+				"type": "uint256"
+			}
+		],
+		"name": "setCoolingTimePeriod",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_default_rewards1",
+				"type": "uint256"
+			}
+		],
+		"name": "setDefault_rewards1",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_default_rewards2",
+				"type": "uint256"
+			}
+		],
+		"name": "setDefault_rewards2",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_default_rewards3",
+				"type": "uint256"
+			}
+		],
+		"name": "setDefault_rewards3",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_divider",
+				"type": "uint256"
+			}
+		],
+		"name": "setDivider",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
 				"name": "_MAX_SUPPLY",
 				"type": "uint256"
 			}
@@ -347,12 +504,25 @@ let ABI = [
 	{
 		"inputs": [
 			{
-				"internalType": "bool",
-				"name": "_public_mint_status",
-				"type": "bool"
+				"internalType": "uint256",
+				"name": "_preSaleCost",
+				"type": "uint256"
 			}
 		],
-		"name": "setPublic_mint_status",
+		"name": "setPreSaleCost",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_presaleEndTime",
+				"type": "uint256"
+			}
+		],
+		"name": "setPresaleEndTime",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -415,8 +585,68 @@ let ABI = [
 		"type": "function"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_tokenContract",
+				"type": "address"
+			}
+		],
+		"name": "setTokenContractMinting",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_tokenDecimals",
+				"type": "uint256"
+			}
+		],
+		"name": "setTokenDecimals",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_tokenContract",
+				"type": "address"
+			}
+		],
+		"name": "setTokenPULSEHEROESContractTransfering",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "togglePresale",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "togglePublic_mint_status",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"name": "toggleReveal",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "tokenWithdrawal",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -490,6 +720,19 @@ let ABI = [
 		"type": "function"
 	},
 	{
+		"inputs": [],
+		"name": "_token_Contract",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "address",
@@ -529,6 +772,43 @@ let ABI = [
 				"internalType": "string",
 				"name": "",
 				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "battleCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "battlesInCoolingPeriod",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -587,7 +867,72 @@ let ABI = [
 	},
 	{
 		"inputs": [],
+		"name": "coolingTimePeriod",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "counter",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "default_rewards1",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "default_rewards2",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "default_rewards3",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "divider",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -612,6 +957,49 @@ let ABI = [
 				"internalType": "address",
 				"name": "",
 				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "getCoolingTime",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "player",
+				"type": "address"
+			}
+		],
+		"name": "getLastBattleResult",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
 			}
 		],
 		"stateMutability": "view",
@@ -652,6 +1040,25 @@ let ABI = [
 	{
 		"inputs": [
 			{
+				"internalType": "uint256",
+				"name": "rarity",
+				"type": "uint256"
+			}
+		],
+		"name": "getMaxBattlesPerRarity",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "pure",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "address",
 				"name": "user",
 				"type": "address"
@@ -670,6 +1077,16 @@ let ABI = [
 						"internalType": "uint256",
 						"name": "rarity",
 						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "lastBattleTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "battlesRemainingInCoolingPeriod",
+						"type": "uint256"
 					}
 				],
 				"internalType": "struct PulseHeroes.myMints[]",
@@ -678,6 +1095,44 @@ let ABI = [
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "player",
+				"type": "address"
+			}
+		],
+		"name": "getPlayerLevel",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "rarity",
+				"type": "uint256"
+			}
+		],
+		"name": "getTokenMultiplier",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "pure",
 		"type": "function"
 	},
 	{
@@ -699,6 +1154,105 @@ let ABI = [
 				"internalType": "bool",
 				"name": "",
 				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "IsPresaleOn",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "lastBattleResult",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "lastBattleResultByToken",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "lastBattleTime",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "lastBattleTimestamp",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -737,6 +1291,83 @@ let ABI = [
 		"type": "function"
 	},
 	{
+		"inputs": [],
+		"name": "level_1_Battle_Cost",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "level_2_Battle_Cost",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "level_3_Battle_Cost",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "losses",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "lossesOfTokenId",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "address",
@@ -759,6 +1390,16 @@ let ABI = [
 			{
 				"internalType": "uint256",
 				"name": "rarity",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "lastBattleTime",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "battlesRemainingInCoolingPeriod",
 				"type": "uint256"
 			}
 		],
@@ -793,6 +1434,54 @@ let ABI = [
 			}
 		],
 		"name": "myNFTCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "myTokenIDLooses",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "myTokenIDWins",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -901,6 +1590,45 @@ let ABI = [
 				"internalType": "bool",
 				"name": "",
 				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "preSaleCost",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "presaleEndTime",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "projectedCoolingTime",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -1020,6 +1748,32 @@ let ABI = [
 		"type": "function"
 	},
 	{
+		"inputs": [],
+		"name": "token",
+		"outputs": [
+			{
+				"internalType": "contract PULSEHEROES",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "tokenDecimals",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "uint256",
@@ -1033,6 +1787,67 @@ let ABI = [
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "tokenIDHistoryLooses",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "tokenIDHistoryWins",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "tokenPULSEHEROES",
+		"outputs": [
+			{
+				"internalType": "contract IERC20",
+				"name": "",
+				"type": "address"
 			}
 		],
 		"stateMutability": "view",
@@ -1069,25 +1884,86 @@ let ABI = [
 		],
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "wins",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "winsOfTokenId",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
 	}
 ];
 
-let address = "0x4D09880fC2ecA53c46B23A4912b6A2cEBd3Fe056";
-
+let address = "0x437F7d0B9C711f2fc777C868AD1d860C82e596A1";
 
 const Vs = () => {
 	const [currentIndex, setCurrentIndex] = useState(0);
-	const [selectedMan, setSelectedMan] = useState(null); // State to track the clicked man
 	const [showNftSection, setShowNftSection] = useState(false);
 	const [isVisble, setIsVisble] = useState(false);
 	const [isOpen, setIsOpen] = useState(false);
 	const [_combat, setCombat] = useState(0);
-	const [cardSelected, setCardSelected] = useState(0);
 	const [currentMintIndex, setCurrentMintIndex] = useState(0);
 	const [_MyMints, setFetchMyMints] = useState([]);
 	const [_chestsPurchasedAmount, setChestsPurchasedAmount] = useState(0);
 	const [_connected, setConnected] = useState(false);
+	const [selectedCardImage, setSelectedCardImage] = useState(null);
+	const [statusErrorPurchase, setstatusErrorPurchase] = useState("");
+	const [showErrorDivPurchase, setshowErrorDivPurchase] = useState("");
+	const [statusLoadingPurchase, setstatusLoadingPurchase] = useState("");
+	const [successPurchase, setsuccessPurchase] = useState("");
+	const [showErrorDiv, setshowErrorDiv] = useState("");
+	const [cardSelected, setCardSelected] = useState(0);
+	const [selectedMan, setSelectedMan] = useState(null);
+	const [selectedManImage, setSelectedManImage] = useState(null);
+	const [selectedMintedNft, setSelectedMintedNft] = useState(null);
+	const [selectedMintedNft2, setSelectedMintedNft2] = useState(null);
+	const [selectedMintedNft_winner, setSelectedMintedNft_winner] = useState(null);
+	const [_belowHeroes, set_belowHeroes] = useState(true);
+	const [_lastBattleResultByToken, setLastBattleResultByToken] = useState(null);
+	const [battleResultCame, setBattleResultCame] = useState(false);
+	const [battling, setBattling] = useState(false);
+	const [tokenIDinAction, setTokenIDinAction] = useState();
+	const [_selectedDifficulty, setSelectedDifficulty] = useState('');
 
+	const close = () => {
+		window.location.reload(true);
+	}
+
+	const closeError = () => {
+		setstatusErrorPurchase(false);
+	}
+	
 	const rarityImages = {
 		'0': 'https://bafybeibhsrq2nf4sr4abaud4u5ololygckdncoispfgooy3mcfjrtzaqzi.ipfs.w3s.link/vitalip.png',
 		'1': 'https://bafybeibhsrq2nf4sr4abaud4u5ololygckdncoispfgooy3mcfjrtzaqzi.ipfs.w3s.link/gz.png',
@@ -1170,9 +2046,54 @@ const Vs = () => {
 		/*functionName: 'my_mints',
 		args: [walletAddress]*/
 		functionName: 'getMyMints',
-		args: [walletAddress],           // Pass the user's address as an argument
+		args: [walletAddress],
 	})
 
+	// Function to handle selecting a character (Man 1, Man 2, Man 3)
+	const handleSelectMan = (manKey, manImage, difficulty) => {
+		setShowNftSection(true);
+		setSelectedMan(manKey);
+		setSelectedManImage(manImage);
+		setSelectedDifficulty(difficulty);
+	};
+
+	// Map selectedMan to the correct image
+	const getBattleManImage = () => {
+		if (selectedMan === 'man1') return bidel;
+		if (selectedMan === 'man2') return jelome;
+		if (selectedMan === 'man3') return interpool;
+		return null;
+	};
+
+	const battleImages = {
+		'0': img0,
+		'1': img1,
+		'2': img2,
+		'3': img3,
+		'4': img4,
+		'5': img5,
+		'6': img6,
+	};
+
+	const battleImages2 = {
+		'0': img0_,
+		'1': img1_,
+		'2': img2_,
+		'3': img3_,
+		'4': img4_,
+		'5': img5_,
+		'6': img6_,
+	};
+
+	const handleSelectMintedNft = (nft) => {
+		setSelectedMintedNft(battleImages[nft.rarity]);
+		setSelectedMintedNft2([nft.tokenid]);
+		setSelectedMintedNft_winner(battleImages2[nft.rarity]);
+
+		console.log("nft.tokenId : " + nft.tokenid);
+		console.log("nft.rarity : " + nft.rarity);
+		console.log("nft.battleImages : " + battleImages[nft.rarity]);
+	};
 
 
 	useEffect(() => {
@@ -1184,6 +2105,7 @@ const Vs = () => {
 		}, 4000);
 
 		return () => clearInterval(interval);
+
 	}, []);
 
 	useEffect(() => {
@@ -1214,12 +2136,26 @@ const Vs = () => {
 				setFetchMyMints(data.data);
 
 				console.log("fetchMyMints data: " + data.data);
-				console.log("fetchMyMints data[0]: " + data.data[0].tokenid);
+				console.log("fetchMyMints data[0]: " + data.data[1].tokenid);
+				console.log("lastBattleTime: " + data.data[1].lastBattleTime);
+				console.log("battlesRemainingInCoolingPeriod_trump: " + data.data[1].battlesRemainingInCoolingPeriod);
+				console.log("battlesRemainingInCoolingPeriod_vitalip: " + data.data[0].battlesRemainingInCoolingPeriod);
 
 			} catch (error) {
 				console.error("Error fetching mints:", error);
 			}
 		}
+
+		/*if (battleResultCame) {
+
+			console.log("battleResultCameUSEEFFECT" + battleResultCame);
+			fetchLastBattleResultByToken();
+
+		} else {
+
+			console.log("battleResultCameUSEEFFECT- false" + battleResultCame);
+
+		}*/
 
 
 
@@ -1227,10 +2163,11 @@ const Vs = () => {
 			//fetchLastRarity();
 			fetchChestsPurchasedAmount();
 			fetchMyMints();
+
 		}
 
 		// eslint-disable-next-line no-use-before-define
-	}, [_connected, _MyMints /*getBalance, getCost, getTotalSupply, nftMintingAmount*/]);
+	}, [_connected, _MyMints, battleResultCame /*getBalance, getCost, getTotalSupply, nftMintingAmount*/]);
 
 
 	const handleLeftClick = () => {
@@ -1244,10 +2181,6 @@ const Vs = () => {
 			(prevIndex + 1) % images.length
 		);
 	};
-
-	const close = () => {
-		window.location.reload(true);
-	}
 
 	const combat = () => {
 		setCombat(1);
@@ -1271,20 +2204,18 @@ const Vs = () => {
 
 	const handleImageClick = (man, image) => {
 		if (image === crd1) {
-			setShowNftSection(false); // Hide nftSection3Main
-			console.log("IF showNftSection : " + showNftSection);
+			setShowNftSection(true);
 			setCardSelected(1);
-
 		} else {
 			setShowNftSection(true);
 			setCardSelected(0);
-			console.log("ELSE showNftSection : " + showNftSection);
-
 		}
+
 		setSelectedMan((prevMan) => (prevMan === man ? null : man));
 
+		// Store the selected card image
+		setSelectedCardImage(image);
 	};
-
 
 	const handleLeftClickMints = () => {
 		setCurrentMintIndex((prevIndex) =>
@@ -1300,7 +2231,15 @@ const Vs = () => {
 
 	const visibleMintImages = () => {
 		let visible = [];
-		for (let i = 0; i < 5; i++) {
+		let custom;
+
+		if (_MyMints.length >= 5) {
+			custom = 5;
+		} else {
+			custom = _MyMints.length;
+		}
+
+		for (let i = 0; i < custom; i++) {
 			visible.push(_MyMints[(currentMintIndex + i) % _MyMints.length]);
 		}
 		return visible;
@@ -1308,28 +2247,304 @@ const Vs = () => {
 
 	const visibleMintImagesMob = () => {
 		let visible = [];
-		for (let i = 0; i < 4; i++) {
+		let custom;
+
+		if (_MyMints.length >= 4) {
+			custom = 4;
+		} else {
+			custom = _MyMints.length;
+		}
+
+		for (let i = 0; i < custom; i++) {
 			visible.push(_MyMints[(currentMintIndex + i) % _MyMints.length]);
 		}
 		return visible;
 	};
 
+
+	const { writeAsync } = useContractWrite({
+		...contract,
+		onError(error) {
+			if (error.message.includes('balance')) {
+				setstatusError(true)
+				setstatusLoading(false)
+			}
+		}
+	})
+
+	const { refetch: getLastBattleResultByToken } = useContractRead({
+		...contract,
+		functionName: 'lastBattleResultByToken',
+		args: tokenIDinAction ? [tokenIDinAction] : undefined, // Prevents invalid args
+		enabled: !!tokenIDinAction // Prevents automatic execution if tokenIDinAction is null
+	});
+
+	async function fetchLastBattleResultByToken(tokenId) {
+		setTokenIDinAction(tokenId);
+
+		setBattling(true);
+
+		await new Promise(resolve => setTimeout(resolve, 5000));
+		console.log("tokenIDinAction : " + tokenIDinAction);
+
+		var data = await getLastBattleResultByToken();
+
+		setBattling(false);
+		setLastBattleResultByToken(Number(data.data))
+
+		console.log("tokenId : " + tokenId);
+		console.log("setLastBattleResultByToken : " + data.data);
+		console.log("tokenIDinAction : " + tokenIDinAction);
+
+	}
+
+	async function level_1_Battle(tokenId) {
+		try {
+			setstatusLoadingPurchase(true)
+			setstatusErrorPurchase(false)
+
+			const battleCost = BigInt(0.01 * 10 ** 18);
+
+			var res = await writeAsync({
+				functionName: 'level_1_Battle',
+				args: [tokenId],
+				value: battleCost.toString() // Send 0.01 Ether in Wei
+			});
+
+
+			var result = await publicClient.waitForTransactionReceipt(res)
+			if (result.status === 'success') {
+				//setstatusErrorPurchase(false)
+				//setsuccessPurchase(true)
+				setstatusLoadingPurchase(false)
+				//setshowErrorDivPurchase(false);
+				//setBattleResultCame(true);
+
+				console.log("txn successful");
+
+
+				await new Promise(resolve => setTimeout(resolve, 2000));
+
+				console.log("tokenIDinAction - tokenId:" + tokenId);
+
+				//await fetchLastBattleResultByToken(tokenId); // Pass tokenId here		
+
+				//await new Promise(resolve => setTimeout(resolve, 5000));
+				//window.location.reload(true);
+
+				fetchLastBattleResultByToken(tokenId);
+
+			} else if (result.status) {
+				setsuccessPurchase(false)
+				setstatusErrorPurchase(true)
+				setstatusLoadingPurchase(false)
+				setshowErrorDivPurchase(false);
+			}
+
+		} catch (e) {
+			console.error("Transaction failed:", e);
+			if (e.message.includes("Transaction with hash")) {
+
+				setsuccess(true);
+
+				//await new Promise(resolve => setTimeout(resolve, 5000));
+				//window.location.reload(true);
+			}
+			if (e.message.includes("err: insufficient funds for gas")) {
+				//setErrorMsg1("Insufficient funds");
+				setshowErrorDivPurchase(true); // Show the error div for insufficient funds
+				setstatusErrorPurchase(false);
+				setstatusLoadingPurchase(false);
+
+			} else if (e.message.includes("User rejected the request")) {
+				//setErrorMsg1("User Rejected");
+				setshowErrorDivPurchase(false);
+				setstatusErrorPurchase(false);
+				setstatusLoadingPurchase(false);
+			} else {
+				//setErrorMsg1("Sorry, something went wrong");
+				setshowErrorDivPurchase(false);
+				setstatusErrorPurchase(true);
+				setstatusLoadingPurchase(false);
+			}
+
+		}
+	}
+
+	async function level_2_Battle(tokenId) {
+		try {
+			setstatusLoadingPurchase(true)
+			setstatusErrorPurchase(false)
+
+			const battleCost = BigInt(0.02 * 10 ** 18);
+
+			var res = await writeAsync({
+				functionName: 'level_2_Battle',
+				args: [tokenId],
+				value: battleCost.toString() // Send 0.01 Ether in Wei
+			});
+
+
+			var result = await publicClient.waitForTransactionReceipt(res)
+			if (result.status === 'success') {
+				//setstatusErrorPurchase(false)
+				//setsuccessPurchase(true)
+				setstatusLoadingPurchase(false)
+				//setshowErrorDivPurchase(false);
+				//setBattleResultCame(true);
+
+				console.log("txn successful");
+
+
+				await new Promise(resolve => setTimeout(resolve, 2000));
+
+				console.log("tokenIDinAction - tokenId:" + tokenId);
+
+				//await fetchLastBattleResultByToken(tokenId); // Pass tokenId here		
+
+				//await new Promise(resolve => setTimeout(resolve, 5000));
+				//window.location.reload(true);
+
+				fetchLastBattleResultByToken(tokenId);
+
+			} else if (result.status) {
+				setsuccessPurchase(false)
+				setstatusErrorPurchase(true)
+				setstatusLoadingPurchase(false)
+				setshowErrorDivPurchase(false);
+			}
+
+		} catch (e) {
+			console.error("Transaction failed:", e);
+			if (e.message.includes("Transaction with hash")) {
+
+				setsuccess(true);
+
+				//await new Promise(resolve => setTimeout(resolve, 5000));
+				//window.location.reload(true);
+			}
+			if (e.message.includes("err: insufficient funds for gas")) {
+				//setErrorMsg1("Insufficient funds");
+				setshowErrorDivPurchase(true); // Show the error div for insufficient funds
+				setstatusErrorPurchase(false);
+				setstatusLoadingPurchase(false);
+
+			} else if (e.message.includes("User rejected the request")) {
+				//setErrorMsg1("User Rejected");
+				setshowErrorDivPurchase(false);
+				setstatusErrorPurchase(false);
+				setstatusLoadingPurchase(false);
+			} else {
+				//setErrorMsg1("Sorry, something went wrong");
+				setshowErrorDivPurchase(false);
+				setstatusErrorPurchase(true);
+				setstatusLoadingPurchase(false);
+			}
+
+		}
+	}
+
+	async function level_3_Battle(tokenId) {
+		try {
+			setstatusLoadingPurchase(true)
+			setstatusErrorPurchase(false)
+
+			const battleCost = BigInt(0.03 * 10 ** 18);
+
+			var res = await writeAsync({
+				functionName: 'level_3_Battle',
+				args: [tokenId],
+				value: battleCost.toString() // Send 0.01 Ether in Wei
+			});
+
+
+			var result = await publicClient.waitForTransactionReceipt(res)
+			if (result.status === 'success') {
+				//setstatusErrorPurchase(false)
+				//setsuccessPurchase(true)
+				setstatusLoadingPurchase(false)
+				//setshowErrorDivPurchase(false);
+				//setBattleResultCame(true);
+
+				console.log("txn successful");
+
+
+				await new Promise(resolve => setTimeout(resolve, 2000));
+
+				console.log("tokenIDinAction - tokenId:" + tokenId);
+
+				//await fetchLastBattleResultByToken(tokenId); // Pass tokenId here		
+
+				//await new Promise(resolve => setTimeout(resolve, 5000));
+				//window.location.reload(true);
+
+				fetchLastBattleResultByToken(tokenId);
+
+			} else if (result.status) {
+				setsuccessPurchase(false)
+				setstatusErrorPurchase(true)
+				setstatusLoadingPurchase(false)
+				setshowErrorDivPurchase(false);
+			}
+
+		} catch (e) {
+			console.error("Transaction failed:", e);
+			if (e.message.includes("Transaction with hash")) {
+
+				setsuccess(true);
+
+				//await new Promise(resolve => setTimeout(resolve, 5000));
+				//window.location.reload(true);
+			}
+			if (e.message.includes("err: insufficient funds for gas")) {
+				//setErrorMsg1("Insufficient funds");
+				setshowErrorDivPurchase(true); // Show the error div for insufficient funds
+				setstatusErrorPurchase(false);
+				setstatusLoadingPurchase(false);
+
+			} else if (e.message.includes("User rejected the request")) {
+				//setErrorMsg1("User Rejected");
+				setshowErrorDivPurchase(false);
+				setstatusErrorPurchase(false);
+				setstatusLoadingPurchase(false);
+			} else {
+				//setErrorMsg1("Sorry, something went wrong");
+				setshowErrorDivPurchase(false);
+				setstatusErrorPurchase(true);
+				setstatusLoadingPurchase(false);
+			}
+
+		}
+	}
+
 	return (
 
-		<div className='cont3'>
+		<div id="cont3Main" className='cont3'>
 			<div className='cont-2'>
 				<Navbar />
-				
-				{_combat > 0 ?
+
+				{_lastBattleResultByToken ?
 					<div class="popup-containerMain3">
 						<div class="popup-containerMain">
 							<div class="popup">
-								<img src={jesusNoBg} alt="Man" class="character--2" />
+								<img src={selectedMintedNft_winner} alt="Man" class="character--2" />
 								<span class="close-button" onClick={close}>&times;</span>
 								<p class="popup-text">YOU WIN!</p>
 							</div>
 						</div>
 					</div> : null}
+
+				{_lastBattleResultByToken == false ?
+					<div className="popup-containerMain3">
+						<div className="popup-containerMain">
+							<div className="popup">
+								<img src={selectedMintedNft_winner} alt="Man" className="character--2" />
+								<span className="close-button" onClick={close}>&times;</span>
+								<p className="popup-text">YOU LOSE!</p>
+							</div>
+						</div>
+					</div> : null}
+
 
 				{!cardSelected > 0 ?
 					<>
@@ -1345,7 +2560,7 @@ const Vs = () => {
 					<div className='nftSection3Main-mob'></div>) : null}
 
 
-				{showNftSection ? (
+				{!(selectedManImage && selectedMintedNft) && showNftSection ? (
 					<div className='nftSection3Main'>
 
 						<div className='arrowsDiv' onClick={handleLeftClickMints}>
@@ -1356,34 +2571,58 @@ const Vs = () => {
 							{_MyMints && _MyMints.length > 0 ? (
 
 								<div className='mintedNFTSFMain'>
-									{visibleMintImages().map((nft, index) => (
-										<div key={index}>
+									{visibleMintImages().map((nft, index) => {
+
+										const nexttime = ((Number(nft.lastBattleTime) * 1000) + 14400000);
+										console.log("nexttime :" + nexttime);
+										const timeDiff = Number(nexttime) - Number(Date.now());
+										console.log("timeDiff :" + timeDiff);
+
+
+
+										const formatTime = (ms) => {
+											let totalSeconds = Math.floor(ms / 1000);
+											let hours = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+											let minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+											let seconds = String(totalSeconds % 60).padStart(2, '0');
+
+											return { hours, minutes, seconds };
+										};
+
+										const { hours, minutes, seconds } = formatTime(timeDiff);
+
+										return (
 											<div key={index}>
 												<div className='mintedNFTSF'>
-													<div class="cardMint">
-														<div class="card-imageMint">
+													<div className="cardMint">
+														<div className="card-imageMint">
 															<img
 																src={rarityImages[nft.rarity]}
 																alt="NFT Rarity"
+																onClick={/*timeDiff < 0 &&*/ Number(nft.battlesRemainingInCoolingPeriod) > 0 ? () => handleSelectMintedNft(nft) : undefined}
+																style={{ cursor: /*timeDiff < 0 && */Number(nft.battlesRemainingInCoolingPeriod) > 0 ? "pointer" : "not-allowed", opacity:/* timeDiff < 0 &&*/ Number(nft.battlesRemainingInCoolingPeriod) > 0 ? 1 : 0.5 }}
 															/>
+
 															<div className="overlay">
-																<div className="timer">
-																	<div>03 : 54 : <span className='sec'>23</span></div>
-																	<div>TIME LEFT</div>
-																</div>
+																{timeDiff > 0 && Number(nft.battlesRemainingInCoolingPeriod) < 1 ? (
+																	<div className="timer">
+																		<div>{hours} : {minutes} : <span className='sec'>{seconds}</span></div>
+																		<div>TIME LEFT</div>
+																	</div>
+																) : (<div></div>)}
 															</div>
 														</div>
 
+														<div className="card-content">
+															<p><strong>Fights Left:</strong> {Number(nft.battlesRemainingInCoolingPeriod)}</p>
+														</div>
 													</div>
-
 												</div>
 											</div>
-
-										</div>
-									))}
-
-
+										);
+									})}
 								</div>
+
 							) : (
 								<p className="noNFTs"></p>
 							)
@@ -1397,7 +2636,7 @@ const Vs = () => {
 
 				) : null}
 
-				{showNftSection ? (
+				{!(selectedManImage && selectedMintedNft) && showNftSection ? (
 					<div className='nftSection3Main-mob'>
 
 						<div className='arrowsDiv' onClick={handleLeftClickMints}>
@@ -1408,34 +2647,58 @@ const Vs = () => {
 							{_MyMints && _MyMints.length > 0 ? (
 
 								<div className='mintedNFTSFMain'>
-									{visibleMintImages().map((nft, index) => (
-										<div key={index}>
+									{visibleMintImagesMob().map((nft, index) => {
+
+										const nexttime = ((Number(nft.lastBattleTime) * 1000) + 14400000);
+										console.log("nexttime :" + nexttime);
+										const timeDiff = Number(nexttime) - Number(Date.now());
+										console.log("timeDiff :" + timeDiff);
+
+
+
+										const formatTime = (ms) => {
+											let totalSeconds = Math.floor(ms / 1000);
+											let hours = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+											let minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+											let seconds = String(totalSeconds % 60).padStart(2, '0');
+
+											return { hours, minutes, seconds };
+										};
+
+										const { hours, minutes, seconds } = formatTime(timeDiff);
+
+										return (
 											<div key={index}>
 												<div className='mintedNFTSF'>
-													<div class="cardMint">
-														<div class="card-imageMint">
+													<div className="cardMint">
+														<div className="card-imageMint">
 															<img
 																src={rarityImages[nft.rarity]}
 																alt="NFT Rarity"
+																onClick={/*timeDiff < 0 &&*/ Number(nft.battlesRemainingInCoolingPeriod) > 0 ? () => handleSelectMintedNft(nft) : undefined}
+																style={{ cursor: /*timeDiff < 0 && */Number(nft.battlesRemainingInCoolingPeriod) > 0 ? "pointer" : "not-allowed", opacity:/* timeDiff < 0 &&*/ Number(nft.battlesRemainingInCoolingPeriod) > 0 ? 1 : 0.5 }}
 															/>
+
 															<div className="overlay">
-																<div className="timer">
-																	<div>03 : 54 : <span className='sec'>23</span></div>
-																	<div>TIME LEFT</div>
-																</div>
+																{timeDiff > 0 && Number(nft.battlesRemainingInCoolingPeriod) < 1 ? (
+																	<div className="timer">
+																		<div>{hours} : {minutes} : <span className='sec'>{seconds}</span></div>
+																		<div>TIME LEFT</div>
+																	</div>
+																) : (<div></div>)}
 															</div>
 														</div>
-														<div class="card-content">
-															<p><strong>Win Rate:</strong> 5%</p>
+
+														<div className="card-content">
+															<p><strong>Fights Left:</strong> {Number(nft.battlesRemainingInCoolingPeriod)}</p>
 														</div>
 													</div>
-
 												</div>
 											</div>
-										</div>
-									))}
-
+										);
+									})}
 								</div>
+
 							) : (
 								<p className="noNFTs"></p>
 							)
@@ -1446,20 +2709,18 @@ const Vs = () => {
 							<img className='arrows' src={right} alt="Right Arrow" />
 						</div>
 					</div>
-
 				) : null}
 
-				{cardSelected > 0 ?
+				{selectedManImage && selectedMintedNft ? (
 					<div className='battleSectionMain'>
 						<div className='battleSection'>
 							<div className='battleSection2'>
 								<div>
 									<img id="bar1" src={bar1} />
-									<img id="battleImgs" src={jesus} />
+									<img id="battleImgs" src={selectedMintedNft} alt="Selected Minted NFT" />
 								</div>
 								<div id="vsMain" className="relative col-span-4 flex flex-col items-center justify-center gap-y-14">
 									<div className="relative flex z-[2] vs-bounce-animation">
-
 										<div className="letter-v-slide-in">
 											<img src={letterV} alt="Letter V" className="object-contain" />
 										</div>
@@ -1470,41 +2731,139 @@ const Vs = () => {
 								</div>
 								<div>
 									<img className='bar2' src={bar2} />
-									<img id="battleImgs" src={biden} />
+									<img id="battleImgs" src={getBattleManImage()} alt="Selected Man" />
 								</div>
 							</div>
 						</div>
 
 						<div className='combat'>
-							<button
-								onClick={combat}
-								className="bg-gradient-to-r from-[#B014A5] via-[#6514DB] to-[#B014A5] bg-[length:200%_200%] font-vermin-vibes-v text-[9px] sm:text-[12px] md:text-[14px] lg:text-[16px] xl:text-[18px] 2xl:text-[20px] px-[3.8em] py-[0.9em] transition-all duration-500 rounded-full hover:bg-right hover:shadow-[0_0_10px_0_#B014A5] hover:[text-shadow:_0_0_3px_white]"
-							>
-								COMBAT
-							</button>
+							{_selectedDifficulty == '80' ?
+
+								<button
+									onClick={() => level_1_Battle(selectedMintedNft2)}
+									className="bg-gradient-to-r from-[#B014A5] via-[#6514DB] to-[#B014A5] bg-[length:200%_200%] font-vermin-vibes-v text-[9px] sm:text-[12px] md:text-[14px] lg:text-[16px] xl:text-[18px] 2xl:text-[20px] px-[3.8em] py-[0.9em] transition-all duration-500 rounded-full hover:bg-right hover:shadow-[0_0_10px_0_#B014A5] hover:[text-shadow:_0_0_3px_white]"
+								>
+									COMBAT
+								</button> : null}
+
+							{_selectedDifficulty == '60' ?
+
+								<button
+									onClick={() => level_2_Battle(selectedMintedNft2)}
+									className="bg-gradient-to-r from-[#B014A5] via-[#6514DB] to-[#B014A5] bg-[length:200%_200%] font-vermin-vibes-v text-[9px] sm:text-[12px] md:text-[14px] lg:text-[16px] xl:text-[18px] 2xl:text-[20px] px-[3.8em] py-[0.9em] transition-all duration-500 rounded-full hover:bg-right hover:shadow-[0_0_10px_0_#B014A5] hover:[text-shadow:_0_0_3px_white]"
+								>
+									COMBAT
+								</button> : null}
+
+							{_selectedDifficulty == '25' ?
+
+								<button
+									onClick={() => level_3_Battle(selectedMintedNft2)}
+									className="bg-gradient-to-r from-[#B014A5] via-[#6514DB] to-[#B014A5] bg-[length:200%_200%] font-vermin-vibes-v text-[9px] sm:text-[12px] md:text-[14px] lg:text-[16px] xl:text-[18px] 2xl:text-[20px] px-[3.8em] py-[0.9em] transition-all duration-500 rounded-full hover:bg-right hover:shadow-[0_0_10px_0_#B014A5] hover:[text-shadow:_0_0_3px_white]"
+								>
+									COMBAT
+								</button> : null}
 						</div>
 					</div>
-					: null}
+				) : null}
+
+				{/*!(selectedManImage && selectedMintedNft) && ()*/}
+				<>
+					<div className='line'></div>
+
+					<div className='wR'>WIN RATE</div>
+					<div className='nftSection2'>
+						<img
+							src={man1}
+							alt="Man 1"
+							className={selectedMan === 'man1' ? 'selected' : ''}
+							onClick={() => handleSelectMan('man1', man1, '80')}
+						/>
+						<img
+							src={man2}
+							alt="Man 2"
+							className={selectedMan === 'man2' ? 'selected' : ''}
+							onClick={() => handleSelectMan('man2', man2, '60')}
+						/>
+						<img
+							src={man3}
+							alt="Man 3"
+							className={selectedMan === 'man3' ? 'selected' : ''}
+							onClick={() => handleSelectMan('man3', man3, '25')}
+						/>
+					</div>
+				</>
 
 
-				<div className='line'></div>
-				<div className='wR'>WIN RATE</div>
-				<div className='nftSection2'>
-					<img
-						src={man1}
-						onClick={() => handleImageClick('man1')}
-						alt="Man 1"
-						className={selectedMan === 'man1' ? 'selected' : ''} />
-					<img
-						src={man2}
-						onClick={() => handleImageClick('man2')}
-						alt="Man 2"
-						className={selectedMan === 'man2' ? 'selected' : ''} />
-					<img
-						src={man3}
-						onClick={() => handleImageClick('man3')}
-						alt="Man 3"
-						className={selectedMan === 'man3' ? 'selected' : ''} />
+				{
+					successPurchase ?
+						<div class="popup-containerMain3">
+							<div class="popup-containerMain">
+								<div class="popupNotifications">
+									<span class="close-button" onClick={close}>&times;</span>
+
+									<img src={correct2} alt="success" class="notifications" />
+									<p class="popup-text">TRANSACTION SUCCESSFULLY!</p>
+								</div>
+							</div>
+						</div> : null
+				}
+
+				{
+					statusErrorPurchase ?
+						<div class="popup-containerMain3">
+							<div class="popup-containerMain">
+								<div class="popupNotifications">
+									<span class="close-button" onClick={closeError}>&times;</span>
+
+									<img src={wrong} alt="success" class="notifications" />
+									<p class="popup-text" id="wrongMsg">SORRY SOMETHING WENT WRONG <br /> PLEASE TRY AGAIN LATER!</p>
+								</div>
+							</div>
+						</div> : null
+				}
+
+				{
+					statusLoadingPurchase ?
+						<div class="popup-containerMain3">
+							<div class="popup-containerMain">
+								<div class="popupNotificationsLoad">
+									<div class="loader"></div>
+									<p class="popup-text">LOADING</p>
+								</div>
+							</div>
+						</div> : null
+				}
+
+				{
+					battling ?
+
+						<div class="popup-containerMain3">
+							<div class="popup-containerMain">
+								<div class="popupNotificationsLoad">
+									<div class="loader"></div>
+									<p class="popup-text">BATTLING</p>
+								</div>
+							</div>
+						</div>
+						: null
+				}
+
+				{
+					showErrorDiv ?
+						<div class="popup-containerMain3">
+							<div class="popup-containerMain">
+								<div class="popupNotifications">
+									<span class="close-button" onClick={close}>&times;</span>
+									<img src={wrong} alt="success" class="notifications" />
+									<p class="popup-text" id="wrongMsg">INSUFFICIENT FUNDS</p>
+								</div>
+							</div>
+						</div> : null
+				}
+
+				<div>
+
 				</div>
 
 				<section className="h-[160px] bg-black/10 backdrop-blur-md">
@@ -1522,10 +2881,6 @@ const Vs = () => {
 						<div className="w-[337px] h-px bg-white/50"></div>
 					</div>
 				</section>
-
-			</div>
-
-			<div>
 
 			</div>
 
