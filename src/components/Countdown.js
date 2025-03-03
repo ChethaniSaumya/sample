@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const presaleExpiration = 1740757194 * 1000; // Convert epoch seconds to milliseconds
+const presaleExpiration = 1754245013 * 1000; // Convert epoch seconds to milliseconds
 
 const Countdown = () => {
   const [remainingTime, setRemainingTime] = useState("00:00:00");
