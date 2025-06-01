@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+
 import "../styles/ChestOpening.css";
 import '../styles/carousel.css';
 
@@ -34,7 +35,8 @@ import correct2 from "../assets/correct2.png";
 import wrong from "../assets/wrong.png";
 import terrain from "../assets/terrain.png";
 import bg from "../assets/bg4.png";
-import { useNavigate } from "react-router-dom";
+import InventoryBattle from './InventoryBattle';
+import { useNavigate, useLocation } from "react-router-dom";
 
 import { Web3Button, Web3Modal, useWeb3Modal } from '@web3modal/react';
 import { mainnet, useAccount, useContractRead, useContractReads, useContractWrite, useNetwork, usePublicClient, useSwitchNetwork, useWaitForTransaction } from 'wagmi';
@@ -42,6 +44,13 @@ import { createPublicClient, formatEther, http, parseEther, webSocket } from 'vi
 import { pulsechainV4 } from 'wagmi/chains'
 //import Web3 from "web3";
 //const web3 = new Web3();
+import contractPulse from '../Contracts/contractPulse.json';
+import contractSecBattle from '../Contracts/contractSecBattle.json';
+const address = contractPulse.address;
+const ABI = contractPulse.abi;
+
+const address_contractSecBattle = contractSecBattle.address;
+const ABI_contractSecBattle = contractSecBattle.abi;
 
 var Scroll = require('react-scroll');
 
@@ -78,1857 +87,6 @@ const heroData = [
 		name: "satoshi",
 	},
 ];
-
-let ABI = [
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_name",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_symbol",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_initBaseURI",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_initNotRevealedUri",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_contractURI",
-				"type": "string"
-			},
-			{
-				"internalType": "address",
-				"name": "_tokenAddress",
-				"type": "address"
-			}
-		],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "operator",
-				"type": "address"
-			}
-		],
-		"name": "OperatorNotAllowed",
-		"type": "error"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "approved",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "Approval",
-		"type": "event"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "operator",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"internalType": "bool",
-				"name": "approved",
-				"type": "bool"
-			}
-		],
-		"name": "ApprovalForAll",
-		"type": "event"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "operator",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "approve",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "player",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"internalType": "bool",
-				"name": "won",
-				"type": "bool"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "battleType",
-				"type": "uint256"
-			}
-		],
-		"name": "BattleResult",
-		"type": "event"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "level_1_Battle",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "level_2_Battle",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "level_3_Battle",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "mint",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "previousOwner",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "newOwner",
-				"type": "address"
-			}
-		],
-		"name": "OwnershipTransferred",
-		"type": "event"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bool",
-				"name": "_state",
-				"type": "bool"
-			}
-		],
-		"name": "pause",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "quantity",
-				"type": "uint256"
-			}
-		],
-		"name": "purchase",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "renounceOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "safeTransferFrom",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "bytes",
-				"name": "data",
-				"type": "bytes"
-			}
-		],
-		"name": "safeTransferFrom",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "operator",
-				"type": "address"
-			},
-			{
-				"internalType": "bool",
-				"name": "approved",
-				"type": "bool"
-			}
-		],
-		"name": "setApprovalForAll",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_newBaseExtension",
-				"type": "string"
-			}
-		],
-		"name": "setBaseExtension",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_newBaseURI",
-				"type": "string"
-			}
-		],
-		"name": "setBaseURI",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_contractURI",
-				"type": "string"
-			}
-		],
-		"name": "setContractURI",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_coolingTimePeriod",
-				"type": "uint256"
-			}
-		],
-		"name": "setCoolingTimePeriod",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_default_rewards1",
-				"type": "uint256"
-			}
-		],
-		"name": "setDefault_rewards1",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_default_rewards2",
-				"type": "uint256"
-			}
-		],
-		"name": "setDefault_rewards2",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_default_rewards3",
-				"type": "uint256"
-			}
-		],
-		"name": "setDefault_rewards3",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_divider",
-				"type": "uint256"
-			}
-		],
-		"name": "setDivider",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_MAX_SUPPLY",
-				"type": "uint256"
-			}
-		],
-		"name": "setMAX_SUPPLY",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_notRevealedURI",
-				"type": "string"
-			}
-		],
-		"name": "setNotRevealedURI",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_preSaleCost",
-				"type": "uint256"
-			}
-		],
-		"name": "setPreSaleCost",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_presaleEndTime",
-				"type": "uint256"
-			}
-		],
-		"name": "setPresaleEndTime",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_publicSaleCost",
-				"type": "uint256"
-			}
-		],
-		"name": "setPublicSaleCost",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "newLimit",
-				"type": "uint256"
-			}
-		],
-		"name": "setRarityExclusionLimit",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_royaltyAddress",
-				"type": "address"
-			}
-		],
-		"name": "setRoyaltyAddress",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_receiver",
-				"type": "address"
-			},
-			{
-				"internalType": "uint96",
-				"name": "_royaltyFeesInBips",
-				"type": "uint96"
-			}
-		],
-		"name": "setRoyaltyInfo",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_tokenContract",
-				"type": "address"
-			}
-		],
-		"name": "setTokenContractMinting",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_tokenDecimals",
-				"type": "uint256"
-			}
-		],
-		"name": "setTokenDecimals",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_tokenContract",
-				"type": "address"
-			}
-		],
-		"name": "setTokenPULSEHEROESContractTransfering",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "togglePresale",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "togglePublic_mint_status",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "toggleReveal",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "tokenWithdrawal",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "Transfer",
-		"type": "event"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "to",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "transferFrom",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "newOwner",
-				"type": "address"
-			}
-		],
-		"name": "transferOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "withdraw",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "_token_Contract",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			}
-		],
-		"name": "balanceOf",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "baseExtension",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "baseURI",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "battleCount",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "battlesInCoolingPeriod",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_salePrice",
-				"type": "uint256"
-			}
-		],
-		"name": "calculateRoyalty",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "chestsPurchased",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "contractURI",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "coolingTimePeriod",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "counter",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "default_rewards1",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "default_rewards2",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "default_rewards3",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "divider",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "getApproved",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "user",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "getCoolingTime",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "player",
-				"type": "address"
-			}
-		],
-		"name": "getLastBattleResult",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "getLastRarity",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "userAddress",
-				"type": "address"
-			}
-		],
-		"name": "getLastRarityOfTheUser",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "rarity",
-				"type": "uint256"
-			}
-		],
-		"name": "getMaxBattlesPerRarity",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "pure",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "user",
-				"type": "address"
-			}
-		],
-		"name": "getMyMints",
-		"outputs": [
-			{
-				"components": [
-					{
-						"internalType": "uint256",
-						"name": "tokenid",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "rarity",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "lastBattleTime",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "battlesRemainingInCoolingPeriod",
-						"type": "uint256"
-					}
-				],
-				"internalType": "struct PulseHeroes.myMints[]",
-				"name": "",
-				"type": "tuple[]"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "player",
-				"type": "address"
-			}
-		],
-		"name": "getPlayerLevel",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "rarity",
-				"type": "uint256"
-			}
-		],
-		"name": "getTokenMultiplier",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "pure",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "operator",
-				"type": "address"
-			}
-		],
-		"name": "isApprovedForAll",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "IsPresaleOn",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "lastBattleResult",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "lastBattleResultByToken",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "lastBattleTime",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "lastBattleTimestamp",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "lastRarity",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "lastRarityOfUser",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "level_1_Battle_Cost",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "level_2_Battle_Cost",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "level_3_Battle_Cost",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "losses",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "lossesOfTokenId",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "my_mints",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenid",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "rarity",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "lastBattleTime",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "battlesRemainingInCoolingPeriod",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "myIDs",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "myNFTCount",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "myTokenIDLooses",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "myTokenIDWins",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "name",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "notRevealedUri",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "OPERATOR_FILTER_REGISTRY",
-		"outputs": [
-			{
-				"internalType": "contract IOperatorFilterRegistry",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "originalURIrarity",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "owner",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "ownerOf",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "paused",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "preSaleCost",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "presaleEndTime",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "public_mint_status",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "publicSaleCost",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "rarityExclusionLimit",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "revealed",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_tokenId",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_salePrice",
-				"type": "uint256"
-			}
-		],
-		"name": "royaltyInfo",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bytes4",
-				"name": "interfaceId",
-				"type": "bytes4"
-			}
-		],
-		"name": "supportsInterface",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "symbol",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "token",
-		"outputs": [
-			{
-				"internalType": "contract PULSEHEROES",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "tokenDecimals",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "tokenID_Rarity",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "tokenIDHistoryLooses",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "tokenIDHistoryWins",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "tokenPULSEHEROES",
-		"outputs": [
-			{
-				"internalType": "contract IERC20",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "tokenId",
-				"type": "uint256"
-			}
-		],
-		"name": "tokenURI",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "totalSupply",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "wins",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "winsOfTokenId",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	}
-];
-
-let address = "0xf32B823Be813076cB1482ecf452e440830Fd036C";
 
 const Inventory = () => {
 
@@ -2499,6 +657,18 @@ const Inventory = () => {
 		'6': 'Richard',
 	};
 
+	  const location = useLocation(); // Add this import from 'react-router-dom'
+  
+  // Initialize showBattleView from location state or default to false
+  const [showBattleView, setShowBattleView] = useState(
+    location.state?.showBattleView || false
+  );
+
+
+	// Toggle function
+	const toggleView = () => {
+		setShowBattleView(!showBattleView);
+	};
 
 	return (
 
@@ -2512,37 +682,68 @@ const Inventory = () => {
 
 			<Navbar />
 
-			<div className='cont-2'>
-				<div id="titles" className='titleMain'>My NFT</div>
-
-				{/* Container for rarity*/}
-				<div id="borderStyles2" className="w-fit bg-white/30 mx-auto px-[3em] pt-[1em] pb-[1.3em] *:font-american-captain text-[15px] rounded-[0.5em] text-center backdrop-blur-md sm:text-[16px] md:text-[17px] lg:text-[18px] xl:text-[19px] 2xl:text-[26px]">
-					<h6 className="mb-[0.3em] tracking-wider">Rarity</h6>
-					<div className="flex items-center justify-center gap-[1em] *:font-american-captain">
-						{Array(7)
-							.fill(undefined)
-							.map((_e, i) => {
-								const rarityValue = i + 1;
-								const isSelected = selectedRarity === rarityValue;
-
-								return (
-									<button
-										key={i}
-										className={`${isSelected ? "bg-[#6514DB] text-white" : "bg-white/30 text-[#6514DB]"
-											} px-[0.5em] py-[0.2em] leading-none rounded-[0.2em] backdrop-blur-md`}
-										style={{ border: "1px solid #6514DB" }}
-										onClick={() => handleRarityClick(rarityValue)}
-									>
-										{rarityValue}
-									</button>
-								);
-							})}
+			<div className="flex justify-center my-4">
+				<div className="relative inline-block w-64 h-12 rounded-full bg-[#6514DB]/20 backdrop-blur-md">
+					<button
+						onClick={toggleView}
+						className={`absolute top-0 w-32 h-12 rounded-full transition-all duration-300 flex items-center justify-center font-bold ${showBattleView
+							? 'left-0 bg-[#6514DB] text-white shadow-lg'
+							: 'left-32 bg-[#6514DB] text-white shadow-lg'
+							}`}
+					>
+						{showBattleView ? 'Sec Battle NFTs' : 'Battle NFTs'}
+					</button>
+					<div className="flex h-full" >
+						<span onClick={toggleView}
+							className={`flex-1 flex items-center justify-center font-bold transition-all duration-300 cursor-pointer ${showBattleView ? 'text-gray-400' : 'text-white'
+								}`}
+						>
+							Sec Battle NFTs
+						</span>
+						<span onClick={toggleView}
+							className={`flex-1 flex items-center justify-center font-bold transition-all duration-300 cursor-pointer ${!showBattleView ? 'text-gray-400' : 'text-white'
+								}`}
+						>
+							Battle NFTs
+						</span>
 					</div>
-
 				</div>
-				{/*<div className='title2Main'>Secured by <img className='chainlink' src={cl} /></div>*/}
+			</div>
 
-				{/*<div className="nfts-grid">
+			{showBattleView ? (
+				<InventoryBattle />
+			) : (
+				<div className='cont-2'>
+					<div id="titles" className='titleMain'>My Battle NFTs</div>
+
+					{/* Container for rarity*/}
+					<div id="borderStyles2" className="w-fit bg-white/30 mx-auto px-[3em] pt-[1em] pb-[1.3em] *:font-american-captain text-[15px] rounded-[0.5em] text-center backdrop-blur-md sm:text-[16px] md:text-[17px] lg:text-[18px] xl:text-[19px] 2xl:text-[26px]">
+						<h6 className="mb-[0.3em] tracking-wider">Rarity</h6>
+						<div className="flex items-center justify-center gap-[1em] *:font-american-captain">
+							{Array(7)
+								.fill(undefined)
+								.map((_e, i) => {
+									const rarityValue = i + 1;
+									const isSelected = selectedRarity === rarityValue;
+
+									return (
+										<button
+											key={i}
+											className={`${isSelected ? "bg-[#6514DB] text-white" : "bg-white/30 text-[#6514DB]"
+												} px-[0.5em] py-[0.2em] leading-none rounded-[0.2em] backdrop-blur-md`}
+											style={{ border: "1px solid #6514DB" }}
+											onClick={() => handleRarityClick(rarityValue)}
+										>
+											{rarityValue}
+										</button>
+									);
+								})}
+						</div>
+
+					</div>
+					{/*<div className='title2Main'>Secured by <img className='chainlink' src={cl} /></div>*/}
+
+					{/*<div className="nfts-grid">
 					{_MyWallet.length > 0 ? (
 						_MyWallet.map((nft, index) => (
 							<div key={index} className="nft-card">
@@ -2563,87 +764,77 @@ const Inventory = () => {
 				</div>*/}
 
 
-				{filteredMints && filteredMints.length > 0 ? (
-					<div id="showMyNFTs" className="relative text-[12px] my-[2em] px-[30px]">
-						{filteredMints.map((nft, index) => {
-							const nexttime = ((Number(nft.lastBattleTime) * 1000) + 14400000);
-							console.log("nexttime :" + nexttime);
-							const timeDiff = Number(nexttime) - Number(Date.now());
-							console.log("timeDiff :" + timeDiff);
+					{filteredMints && filteredMints.length > 0 ? (
+						<div id="showMyNFTs" className="relative text-[12px] my-[2em] px-[30px]">
+							{filteredMints.map((nft, index) => {
+								const nexttime = ((Number(nft.lastBattleTime) * 1000) + 14400000);
+								console.log("nexttime :" + nexttime);
+								const timeDiff = Number(nexttime) - Number(Date.now());
+								console.log("timeDiff :" + timeDiff);
 
+								const formatTime = (ms) => {
+									let totalSeconds = Math.floor(ms / 1000);
+									let hours = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+									let minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+									let seconds = String(totalSeconds % 60).padStart(2, '0');
 
+									return { hours, minutes, seconds };
+								};
 
-							const formatTime = (ms) => {
-								let totalSeconds = Math.floor(ms / 1000);
-								let hours = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
-								let minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
-								let seconds = String(totalSeconds % 60).padStart(2, '0');
+								const { hours, minutes, seconds } = formatTime(timeDiff);
 
-								return { hours, minutes, seconds };
-							};
-
-							const { hours, minutes, seconds } = formatTime(timeDiff);
-
-							return (
-								<div key={index}>
-									<div className="flex items-center justify-center">
-										<article className="w-[17em] max-w-[17em] mx-auto text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[15.5px] 2xl:text-[16px]">
-											<div
-												className="relative h-[14em] bg-contain bg-bottom bg-no-repeat z-[1] animate-hover"
-												style={{
-													backgroundImage: `url(${rarityImages[nft.rarity]})`,
-												}}
-											></div>
-											<div className="relative bg-gradient-to-br from-[#DF00824D] to-[#FFFFFF4D] -mt-[4.8em] pt-[5em] pb-[1em] rounded-[0.5em] backdrop-blur-md">
+								return (
+									<div key={index}>
+										<div className="flex items-center justify-center">
+											<article className="w-[17em] max-w-[17em] mx-auto text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[15.5px] 2xl:text-[16px]">
 												<div
-													className="absolute inset-0 h-[60%] bg-contain bg-center bg-no-repeat rounded-[0.5em] animate-terrain-hover"
-													style={{ backgroundImage: `url(${terrain})` }}
+													className="relative h-[14em] bg-contain bg-bottom bg-no-repeat z-[1] animate-hover"
+													style={{
+														backgroundImage: `url(${rarityImages[nft.rarity]})`,
+													}}
 												></div>
-												<div className="w-[15em] mx-auto bg-white/30 px-[0.5em] py-[1em] rounded-[0.5em]">
-													<h3 className="relative font-vermin-vibes-v text-[1.8em] text-center z-[1]">
-														{imgNames[nft.rarity]}
-													</h3>
-													<hr className="my-[1em]" />
-													<p className="uppercase font-bold">
-														Token ID:{" "}
-														<span className="text-[#6E0B35]">{nft.tokenid.toString()}</span>
-													</p>
-													<p className="uppercase font-bold">
-														Rarity: <span className="text-[#6E0B35]">{Number(nft.rarity) + 1}</span>
-													</p>
-
-													{Number(nft.battlesRemainingInCoolingPeriod) < 1 && timeDiff > 0 ? (
+												<div className="relative bg-gradient-to-br from-[#DF00824D] to-[#FFFFFF4D] -mt-[4.8em] pt-[5em] pb-[1em] rounded-[0.5em] backdrop-blur-md">
+													<div
+														className="absolute inset-0 h-[60%] bg-contain bg-center bg-no-repeat rounded-[0.5em] animate-terrain-hover"
+														style={{ backgroundImage: `url(${terrain})` }}
+													></div>
+													<div className="w-[15em] mx-auto bg-white/30 px-[0.5em] py-[1em] rounded-[0.5em]">
+														<h3 className="relative font-vermin-vibes-v text-[1.8em] text-center z-[1]">
+															{imgNames[nft.rarity]}
+														</h3>
+														<hr className="my-[1em]" />
 														<p className="uppercase font-bold">
-															Time Left:{" "}
-															<span className="text-[#6E0B35]">
-																{hours}H:{minutes}M:{seconds}S
-															</span>
-														</p>) :
-														(<p className="uppercase font-bold">
-															Time Left:{" "}
-															<span className="text-[#6E0B35]">
-																-
-															</span>
-														</p>)
-													}
-
-													{Number(nft.battlesRemainingInCoolingPeriod) > 0 ?
+															Token ID:{" "}
+															<span className="text-[#6E0B35]">{nft.tokenid.toString()}</span>
+														</p>
 														<p className="uppercase font-bold">
-															Fights Left: <span className="text-[#6E0B35]">{Number(nft.battlesRemainingInCoolingPeriod)}</span>
-														</p> : null}
+															Rarity: <span className="text-[#6E0B35]">{Number(nft.rarity) + 1}</span>
+														</p>
 
-													<hr className="my-[1em]" />
-													<div className="inBtnsMain">
+														{Number(nft.battlesRemainingInCoolingPeriod) < 1 && timeDiff > 0 ? (
+															<p className="uppercase font-bold">
+																Time Left:{" "}
+																<span className="text-[#6E0B35]">
+																	{hours}H:{minutes}M:{seconds}S
+																</span>
+															</p>) :
+															(<p className="uppercase font-bold">
+																Time Left:{" "}
+																<span className="text-[#6E0B35]">
+																	-
+																</span>
+															</p>)
+														}
 
 														{Number(nft.battlesRemainingInCoolingPeriod) > 0 ?
-															<button
-																className="inBtns1"
-																onClick={() => { navigate(`/battle2/${nft.tokenid}/${nft.rarity}`); }}
-																style={{ cursor: "pointer" }}
-															>
-																Fight
-															</button> :
-															timeDiff < 0 ?
+															<p className="uppercase font-bold">
+																Fights Left: <span className="text-[#6E0B35]">{Number(nft.battlesRemainingInCoolingPeriod)}</span>
+															</p> : null}
+
+														<hr className="my-[1em]" />
+														<div className="inBtnsMain">
+
+															{Number(nft.battlesRemainingInCoolingPeriod) > 0 ?
 																<button
 																	className="inBtns1"
 																	onClick={() => { navigate(`/battle2/${nft.tokenid}/${nft.rarity}`); }}
@@ -2651,45 +842,52 @@ const Inventory = () => {
 																>
 																	Fight
 																</button> :
+																timeDiff < 0 ?
+																	<button
+																		className="inBtns1"
+																		onClick={() => { navigate(`/battle2/${nft.tokenid}/${nft.rarity}`); }}
+																		style={{ cursor: "pointer" }}
+																	>
+																		Fight
+																	</button> :
 
-																<button
-																	className="inBtns1"
-																	style={{ cursor: "not-allowed", opacity: 0.5 }}
-																>
-																	Fight
-																</button>
+																	<button
+																		className="inBtns1"
+																		style={{ cursor: "not-allowed", opacity: 0.5 }}
+																	>
+																		Fight
+																	</button>
 
-														}
+															}
 
-
-														<button className="inBtns2" onClick={sellPopUp}>
-															Sell
-														</button>
+															<button className="inBtns2" onClick={sellPopUp}>
+																Sell
+															</button>
+														</div>
 													</div>
 												</div>
-											</div>
-										</article>
+											</article>
+										</div>
 									</div>
-								</div>
-							);
-						})}
-					</div>
-				) : (
-					<p className="noNFTs"></p>
-				)}
-
-
-				{_sell ?
-					<div class="popup-containerIn">
-						<div class="popupIn">
-							<div class="popup-closeIn" onClick={sellClose}>×</div>
-							<h2>Set Selling Price</h2>
-							<input type="number" id="price" placeholder="Enter amount" />
-							<button className='listBtn'><a href="marketplace">List in the Marketplace</a></button>
+								);
+							})}
 						</div>
-					</div> : null}
-			</div>
+					) : (
+						<p className="noNFTs">No NFTs found</p>
+					)}
 
+
+					{_sell ?
+						<div class="popup-containerIn">
+							<div class="popupIn">
+								<div class="popup-closeIn" onClick={sellClose}>×</div>
+								<h2>Set Selling Price</h2>
+								<input type="number" id="price" placeholder="Enter amount" />
+								<button className='listBtn'><a href="marketplace">List in the Marketplace</a></button>
+							</div>
+						</div> : null}
+				</div>
+			)}
 			<div className='nftSectionIn'></div>
 
 			<section className="h-[160px] bg-black/10 backdrop-blur-md">
